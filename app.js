@@ -6,8 +6,8 @@ var clock = new THREE.Clock();
 var gridSize = 11;
 var cellSize = 1;
 var borderThickness = 0.05;
-var isDragging = false; // Variable to track dragging state
-var mouseDownPosition; // Stores the position of the mouse down event
+var isDragging = false;
+var mouseDownPosition;
 const cellThickness = 0.1;
 
 const Type = {
@@ -36,7 +36,6 @@ const inventory = {
 
 var currentColor = 'RED'
 
-// Loop through each element and attach onclick event
 document.querySelectorAll('.color').forEach(function(element) {
     element.addEventListener('click', function() {
         currentColor = element.getAttribute('color')
@@ -72,27 +71,24 @@ chatElement.addEventListener('keydown', function(event) {
 
 var userSelectorElement = document.getElementById("userSelector");
 
-// Add an event listener for the "change" event
 userSelectorElement.addEventListener("change", function() {
     if(userSelectorElement.checked){
         currentUser = User.BUILDER
     } else {
         currentUser = User.ARCHITECT
     }
-    // Perform any other actions you want based on the changed value
 });
 
 
-// Function to format the time
 function formatTime(minutes, seconds) {
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
 let startTime;
-// Function to update the timer
+
 function updateTimer() {
-    const duration = (new Date()) - startTime; // Duration in milliseconds
-    const durationInSeconds = Math.floor(duration / 1000); // Convert to seconds
+    const duration = (new Date()) - startTime;
+    const durationInSeconds = Math.floor(duration / 1000);
 
     const minutes = Math.floor((durationInSeconds % 3600) / 60);
     const seconds = durationInSeconds % 60;
@@ -143,8 +139,8 @@ addEntryToLogs()
 function init() {
     container = document.getElementById('container');
     camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 1, 3000);
-    camera.position.set(0, 5, 20); // Adjusted camera position
-    camera.lookAt(0, 0, 0); // Look at the center of the scene
+    camera.position.set(0, 5, 20);
+    camera.lookAt(0, 0, 0);
 
     scene = new THREE.Scene();
 
@@ -204,8 +200,7 @@ function init() {
     renderer.domElement.addEventListener('mouseup', onMouseUp, false);
     renderer.domElement.addEventListener('contextmenu', onRightClick, false);
     
-    renderer.setClearColor('#212431'); // Transparent white background
-    
+    renderer.setClearColor('#212431');
     canvas = document.querySelector('#container > canvas');
 }
 
@@ -264,7 +259,6 @@ function onMouseDown(event) {
 
 function onMouseUp(event) {
     if (!isDragging) {
-        // Only execute the click logic if not dragging and right-clicked
         var mouseUpPosition = { x: event.clientX, y: event.clientY };
         if (mouseUpPosition.x === mouseDownPosition.x && mouseUpPosition.y === mouseDownPosition.y) {
             onClick(event);
@@ -274,7 +268,7 @@ function onMouseUp(event) {
 }
 
 function onRightClick(event) {
-    event.preventDefault(); // Prevent default context menu
+    event.preventDefault(); 
 }
 
 function onClick(event) {
@@ -301,7 +295,7 @@ function onClick(event) {
                     inventory[block.color] += 1
                     document.querySelector(`.color[color="${block.color}"] > span`).textContent  = inventory[block.color]
                     placedBlocks.splice(i, 1);
-                    break; // Exit loop after removing the block
+                    break;
                 }
             }
             addEntryToLogs()
@@ -340,7 +334,6 @@ function onClick(event) {
     }
 }
 
-
 function render() {
     requestAnimationFrame(render);
     renderer.render(scene, camera);
@@ -352,23 +345,18 @@ render();
 
 const downloadElement = document.querySelector('#download');
 downloadElement.addEventListener('click', function(event) { 
-    // Convert JSON object to string
     const jsonString = JSON.stringify(logs, null, 2);
 
-    // Create a Blob object with the JSON string
     const blob = new Blob([jsonString], { type: "application/json" });
 
-    // Create a download link
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
     a.download = "data.json";
     
-    // Append the link to the body and click it
     document.body.appendChild(a);
     a.click();
 
-      // Clean up
     window.URL.revokeObjectURL(url);
     document.body.removeChild(a);
 });
