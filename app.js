@@ -113,7 +113,6 @@ const logs = {
 }
 
 function addEntryToLogs(){
-    
     function formatDateTime(date) {
       const year = date.getFullYear();
       const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -125,8 +124,8 @@ function addEntryToLogs(){
       return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
     }
 
-    logs["WorldStates"].push({
-        ChatHistory: historyChat,
+    logs["WorldStates"] = [...logs["WorldStates"], {
+        ChatHistory: [...historyChat],
         Timestamp: formatDateTime(new Date()),
         BlocksInGrid: placedBlocks.map(e => ({
 					"X": e.x,
@@ -135,7 +134,8 @@ function addEntryToLogs(){
 					"Type": "wool",
 					"Colour": e.color
 				}))
-    })
+    }]
+    console.log(logs)
 }
 
 addEntryToLogs()
