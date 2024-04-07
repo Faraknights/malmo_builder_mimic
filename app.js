@@ -124,9 +124,9 @@ function addEntryToLogs(){
         ChatHistory: [...historyChat],
         Timestamp: formatDateTime(new Date()),
         BlocksInGrid: placedBlocks.map(e => ({
-					"X": e.x,
-					"Y": e.y,
-					"Z": e.z,
+					"X": e.x - 5,
+					"Y": e.z + 1,
+					"Z": e.y - 5,
 					"Type": "wool",
 					"Colour": e.color
 				}))
