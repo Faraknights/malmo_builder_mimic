@@ -26,12 +26,12 @@ const Color = {
 }
 
 const inventory = {
-    RED: 10,
-    BLUE: 10,
-    ORANGE: 10,
-    PURPLE: 10,
-    YELLOW: 10,
-    GREEN: 10
+    RED: 20,
+    BLUE: 20,
+    ORANGE: 20,
+    PURPLE: 20,
+    YELLOW: 20,
+    GREEN: 20
 }
 
 var currentColor = 'RED'
