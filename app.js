@@ -124,14 +124,13 @@ function addEntryToLogs(){
         ChatHistory: [...historyChat],
         Timestamp: formatDateTime(new Date()),
         BlocksInGrid: placedBlocks.map(e => ({
-					"X": e.x - 5,
+					"X": e.x,
 					"Y": e.z + 1,
-					"Z": e.y - 5,
+					"Z": e.y,
 					"Type": "wool",
 					"Colour": e.color
 				}))
     }]
-    console.log(logs)
 }
 
 addEntryToLogs()
@@ -148,17 +147,17 @@ function init() {
     var borderMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
     var cellMaterial = new THREE.MeshBasicMaterial({ color: 0x888888, side: THREE.FrontSide });
 
-    for (var i = 0; i < gridSize; i++) {
-        for (var j = 0; j < gridSize; j++) {
-            var x = (i - (gridSize - 1) / 2) * (cellSize + borderThickness);
-            var z = (j - (gridSize - 1) / 2) * (cellSize + borderThickness);
+    for (var i = -5; i <= 5; i+=1) {
+        for (var j = -5; j <= 5; j++) {
+            var x = i * (cellSize + borderThickness);
+            var z = j * (cellSize + borderThickness);
 
             var cellMesh = new THREE.Mesh(cellGeometry, cellMaterial);
             cellMesh.position.set(x, -cellThickness / 2, z);
             cellMesh.rotation.x = -Math.PI / 2;
             scene.add(cellMesh);
 
-            if (i < gridSize - 1) {
+            if (i <= 5) {
                 var borderX = new THREE.Mesh(new THREE.PlaneGeometry(borderThickness, cellSize), borderMaterial);
                 borderX.position.set(x + cellSize / 2 + borderThickness / 2, -cellThickness / 2, z);
                 borderX.rotation.x = -Math.PI / 2;
@@ -166,7 +165,7 @@ function init() {
                 scene.add(borderX);
             }
 
-            if (j < gridSize - 1) {
+            if (j <= 5) {
                 var borderZ = new THREE.Mesh(new THREE.PlaneGeometry(cellSize, borderThickness), borderMaterial);
                 borderZ.position.set(x, -cellThickness / 2, z + cellSize / 2 + borderThickness / 2);
                 borderZ.rotation.x = -Math.PI / 2;
@@ -176,7 +175,7 @@ function init() {
 
             cellMesh["x"] = i
             cellMesh["y"] = j
-            cellMesh["z"] = -1
+            cellMesh["z"] = 0
             cellMesh["type"] = Type.BOARD_CELL
         }
     }
@@ -215,20 +214,18 @@ function blockExists(x, y, z) {
 }
 
 function placeBlock(x, y, z, color){
-    
-    console.log(currentColor, inventory, inventory[currentColor])
-    if(x <= 10 && x >= 0 && y <= 10 && y >= 0 && z <= 11 && z >= 0 && !blockExists(x, y, z) && inventory[currentColor] > 0){
+    if(x <= 5 && x >= -5 && y <= 5 && y >= -5 && z <= 10 && z > 0 && !blockExists(x, y, z) && inventory[currentColor] > 0){
         var cubeGeometry = new THREE.BoxGeometry(cellSize, cellSize, cellSize);
         var cubeMaterial = new THREE.MeshBasicMaterial({ color: color});
         var cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial);
         cubeMesh.position.set(
-            (x - (gridSize - 1) / 2) * (cellSize + borderThickness),
-            0.5 + borderThickness + z + z * borderThickness,
-            (y - (gridSize - 1) / 2) * (cellSize + borderThickness)
+            x * (cellSize + borderThickness),
+            - 0.5 + z + z * borderThickness,
+            y * (cellSize + borderThickness)
         );
 
         const edges = new THREE.EdgesGeometry(cubeGeometry);
-        const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 10 }));
+        const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 3 }));
         cubeMesh.add(line);
         cubeMesh["type"] = Type.CUBE
         cubeMesh["x"] = x
@@ -239,7 +236,6 @@ function placeBlock(x, y, z, color){
         placedBlocks.push(block);
 
         scene.add(cubeMesh);
-        console.log(document.querySelector(`.color[color="${currentColor}"] > span`))
         inventory[currentColor] -= 1
         document.querySelector(`.color[color="${currentColor}"] > span`).textContent  = inventory[currentColor]
     addEntryToLogs()        
@@ -272,20 +268,20 @@ function onRightClick(event) {
 }
 
 function onClick(event) {
-    console.log(inventory)
-    var mouse = new THREE.Vector2();
-    mouse.x = (event.offsetX / canvas.width) * 2 - 1;
-    mouse.y = -(event.offsetY / canvas.height) * 2 + 1;
+    var rect = canvas.getBoundingClientRect();
+    var mouse = {
+        x: ((event.clientX - rect.left) / canvas.clientWidth) * 2 - 1,
+        y: -((event.clientY - rect.top) / canvas.clientHeight) * 2 + 1
+    };
 
     var raycaster = new THREE.Raycaster();
     raycaster.setFromCamera(mouse, camera);
 
-    var intersects = raycaster.intersectObjects(scene.children);
-
+    var intersects = raycaster.intersectObjects(scene.children, true);
     if (intersects.length > 0) {
-        var intersect = intersects[0];
+        console.log(intersects.map(v => v.object))
+        var intersect = intersects.filter(v => v.object.type != "LineSegments")[0];
         var mesh = intersect.object;
-
         if (event.button === 0 && mesh.type === Type.CUBE) { 
             scene.remove(mesh);
             
@@ -320,24 +316,15 @@ function onClick(event) {
         }
 
         if (event.button === 2 && mesh.type === Type.BOARD_CELL) {
-            var halfCellSize = cellSize / 2;
-            var halfBorderThickness = borderThickness / 2;
-
-            var x = Math.floor((intersect.point.x + halfCellSize) / (cellSize + borderThickness));
-            var y = Math.floor((intersect.point.z + halfCellSize) / (cellSize + borderThickness));
-
-            x += 5;
-            y += 5;
-
-            placeBlock(x, y, 0, Color[currentColor])
+            placeBlock(mesh.x, mesh.y, mesh.z + 1, Color[currentColor])
         }
     }
 }
 
 function render() {
-    requestAnimationFrame(render);
     renderer.render(scene, camera);
     controls.update();
+    requestAnimationFrame(render);
 }
 
 init();
