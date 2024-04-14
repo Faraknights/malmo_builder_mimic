@@ -125,7 +125,7 @@ function addEntryToLogs(){
         Timestamp: formatDateTime(new Date()),
         BlocksInGrid: placedBlocks.map(e => ({
 					"X": e.x,
-					"Y": e.z + 1,
+					"Y": e.z,
 					"Z": e.y,
 					"Type": "wool",
 					"Colour": e.color
