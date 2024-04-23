@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nebula Simulator</title>
+    <link rel="stylesheet" type="text/css" href="../src/styles/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="container"></div>
+        <div id="side">
+            <div id="timer">0:00</div>
+            <div id="colorPicker">
+                <span>Color Picker</span>
+                <div class="color selected" color="RED" style="background-color: #c0392b"><span>20</span></div>
+                <div class="color" color="BLUE" style="background-color: #3498db"><span>20</span></div>
+                <div class="color" color="ORANGE" style="background-color: #e67e22"><span>20</span></div>
+                <div class="color" color="PURPLE" style="background-color: #9b59b6"><span>20</span></div>
+                <div class="color" color="YELLOW" style="background-color: #f1c40f"><span>20</span></div>
+                <div class="color" color="GREEN" style="background-color: #27ae60"><span>20</span></div>
+            </div>
+            <div id="chatWrapper">
+                <div id="historyChat">
+                    
+                </div>
+                <div>
+                    <input type="checkbox" id="userSelector" name="userSelector">
+                    <label for="userSelector"></label>
+                    <input type="text" id="chat" contenteditable="true">
+                </div>
+            </div>
+
+            <button id="download">Download</button>
+        </div>
+    </div>
+    <div id="hider" style="display: none;">
+        Click anywhere to start a session...
+    </div>
+    <script type="module" src="../dist/bundle.js"></script>
+</body>
+</html>
