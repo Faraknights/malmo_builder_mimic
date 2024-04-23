@@ -1,6 +1,5 @@
 import { Block } from "./worldState";
 
-
 interface WorldState {
     ChatHistory: string[];
     Timestamp: string;

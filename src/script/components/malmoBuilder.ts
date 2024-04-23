@@ -279,4 +279,9 @@ export class MalmoBuilder {
             }
         }
     }
+
+    changeMode(placeBlockFunction: BlockPlacementFunction, breakBlockFunction: BlockBreakingFunction): void{
+        this.placeBlockFunction = placeBlockFunction;
+        this.breakBlockFunction = breakBlockFunction;
+    }
 }

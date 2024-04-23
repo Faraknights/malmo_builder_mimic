@@ -12,13 +12,15 @@ export interface InventorySlot {
 export class Inventory {
   private slots: InventorySlot[];
   private nbBlocks: number;
+  private wrapperElement: Element
 
-  constructor(Colors: Color[], nbBlocks: number = 20) {
+  constructor(colors: Color[], nbBlocks: number = 20, wrapperElement: Element) {
     this.nbBlocks = nbBlocks;
-    this.slots = Colors.map(color => ({
+    this.slots = colors.map(color => ({
       color,
       blockCount: nbBlocks
     }));
+    this.wrapperElement = wrapperElement
   }
 
   private colorExists(id: string): boolean {
