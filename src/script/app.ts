@@ -4,29 +4,6 @@ import { MalmoBuilder } from "./components/malmoBuilder";
 import { Color } from "three";
 import { Mode, ModeMaster } from "./components/mode";
 
-export type BlockPlacementFunction = (x: number, y: number, z: number) => void;
-export type BlockBreakingFunction = (x: number, y: number, z: number) => void;
-
-function placeBlockSimulator(x:number, y:number, z:number): void{
-    malmoBuilder.placeBlock(x, y, z, currentColor)
-    currentWorldState.addBlock({
-        color: currentColor,
-        position: {
-            x: x,
-            y: y,
-            z: z
-        }
-    })
-    inventory.decreaseColor(currentColor.id)
-    console.log(currentWorldState)
-}
-
-function breakBlockSimulator(x:number, y:number, z:number): void{
-    malmoBuilder.breakBlock(x, y, z)
-    currentWorldState.removeBlock(x, y, z)
-    inventory.increaseColor(currentColor.id)
-}
-
 const inventory = new Inventory(
     [
         { id: "RED", hex: "#c0392b" },
@@ -39,14 +16,29 @@ const inventory = new Inventory(
     20,
     document.querySelector('#colorPickerWrapper')!
 );
-
-let currentColor = inventory.getAllColors()[0].color;
 const currentWorldState = new WorldState();
-const malmoBuilder = new MalmoBuilder(20, placeBlockSimulator, breakBlockSimulator);
+const currentMode = new ModeMaster()
 
-const mode = new ModeMaster(Mode.SIMULATION)
-document.querySelector("#modeSelector .simulator")?.addEventListener("click", () => mode.changeMode(Mode.SIMULATION));
-document.querySelector("#modeSelector .visualizer")?.addEventListener("click", () => mode.changeMode(Mode.VISUALIZATION));
+const malmoBuilder = new MalmoBuilder(20, currentWorldState, inventory, currentMode);
+
+function clearGame(){
+    malmoBuilder.clearBoard()
+    inventory.clear()
+    currentWorldState.clear()
+}
+
+document.querySelectorAll("#modeSelector > *").forEach(button => {
+    button.addEventListener("click", e => {
+        const target = e.target as HTMLElement;
+        const newModeStr = target.getAttribute("mode");
+        if (newModeStr) {
+            const newMode = Mode[newModeStr as keyof typeof Mode];
+            currentMode.changeMode(newMode);
+            console.log(currentMode)
+            clearGame()
+        }
+    });
+});
 
 document.getElementById('download')?.addEventListener("click", e => {
     malmoBuilder.clearBoard()

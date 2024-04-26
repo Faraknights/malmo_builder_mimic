@@ -1,8 +1,8 @@
-import { Color } from './inventory';
-import { CartesianCoordinate } from './worldState';
+import { Color, Inventory } from './inventory';
+import { CartesianCoordinate, WorldState } from './worldState';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { BlockPlacementFunction, BlockBreakingFunction } from '../app';
+import { Mode, ModeMaster } from './mode';
 
 export enum Type {
     BORDER,
@@ -42,14 +42,15 @@ export class MalmoBuilder {
     private canvas: Element;
 
     //external functions
-    private placeBlockFunction: BlockPlacementFunction;
-    private breakBlockFunction: BlockBreakingFunction;
+    private currentWorldState: WorldState;
+    private inventory: Inventory;
+    private currentMode: ModeMaster;
 
-    constructor(nbCubeInInventory = 20, placeBlockFunction: BlockPlacementFunction, breakBlockFunction: BlockBreakingFunction){
-
-        //external functions
-        this.placeBlockFunction = placeBlockFunction;
-        this.breakBlockFunction = breakBlockFunction;
+    constructor(nbCubeInInventory: 20, currentWorldState: WorldState, inventory: Inventory, currentMode: ModeMaster){
+        //external parameters
+        this.currentWorldState = currentWorldState
+        this.inventory = inventory
+        this.currentMode = currentMode
 
         //functions set up
         this.onWindowResize = this.onWindowResize.bind(this);
@@ -149,7 +150,7 @@ export class MalmoBuilder {
         this.renderer.domElement.addEventListener('mouseup', this.onMouseUp, false);
         this.renderer.domElement.addEventListener('contextmenu', this.onRightClick, false);
         
-        this.renderer.setClearColor('#212431');
+        this.renderer.setClearColor('#1a1b1e');
 
         this.render()
         this.canvas = document.querySelector('#container > canvas')!;
@@ -161,9 +162,9 @@ export class MalmoBuilder {
         requestAnimationFrame(this.render);
     }
 
-    placeBlock(x: number, y: number, z: number, color: Color){
+    placeBlock(x: number, y: number, z: number){
         var cubeGeometry = new THREE.BoxGeometry(this.cellSize, this.cellSize, this.cellSize) as any;
-        var cubeMaterial = new THREE.MeshBasicMaterial({ color: color.hex});
+        var cubeMaterial = new THREE.MeshBasicMaterial({ color: this.inventory.currentColor.hex});
         var cubeMesh = new THREE.Mesh(cubeGeometry, cubeMaterial) as any;
         cubeMesh.position.set(
             x * (this.cellSize + this.borderThickness),
@@ -181,6 +182,17 @@ export class MalmoBuilder {
         }, type: Type.BLOCK}
         
         this.scene.add(cubeMesh);
+
+        this.currentWorldState.addBlock({
+            color: this.inventory.currentColor,
+            position: {
+                x: x,
+                y: y,
+                z: z
+            }
+        })
+        this.inventory.decreaseColor(this.inventory.currentColor.id)
+        console.log(this.currentWorldState)
     }
 
     breakBlock (x: number, y: number, z: number){
@@ -193,6 +205,8 @@ export class MalmoBuilder {
                 break;
             }
         }
+        this.currentWorldState.removeBlock(x, y, z)
+        this.inventory.increaseColor(this.inventory.currentColor.id)
     };
 
     clearBoard(){
@@ -234,54 +248,51 @@ export class MalmoBuilder {
     }
 
     onClick(event: MouseEvent) {
-        var rect = this.canvas.getBoundingClientRect();
-        var mouse = new THREE.Vector2(
-            ((event.clientX - rect.left) / this.canvas.clientWidth) * 2 - 1,
-            -((event.clientY - rect.top) / this.canvas.clientHeight) * 2 + 1
-        );
+        if(this.currentMode.currentMode == Mode.SIMULATION){
+            var rect = this.canvas.getBoundingClientRect();
+            var mouse = new THREE.Vector2(
+                ((event.clientX - rect.left) / this.canvas.clientWidth) * 2 - 1,
+                -((event.clientY - rect.top) / this.canvas.clientHeight) * 2 + 1
+            );
 
-        var raycaster = new THREE.Raycaster();
-        raycaster.setFromCamera(mouse, this.camera);
+            var raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, this.camera);
 
-        var intersects = raycaster.intersectObjects(this.scene.children, true);
-        if (intersects.length > 0) {
-            const intersect = intersects.filter(v => v.object.type != "LineSegments")[0];
-            const mesh = intersect.object as CustomMesh
-            const position = mesh.meshProperties?.position
+            var intersects = raycaster.intersectObjects(this.scene.children, true);
+            if (intersects.length > 0) {
+                const intersect = intersects.filter(v => v.object.type != "LineSegments")[0];
+                const mesh = intersect.object as CustomMesh
+                const position = mesh.meshProperties?.position
 
-            // Si un click gauche est réalisé sur un block, on le détruit
-            if (position && event.button === 0 && mesh.meshProperties?.type === Type.BLOCK) { 
-                this.breakBlockFunction(position.x, position.y, position.z)
-            }
-            
-            // Si un click droit est réalisé sur un bock, nous placeront le novueau block en face de la bonne face.
-            if (position && event.button === 2 && mesh.meshProperties?.type === Type.BLOCK){
-                if (intersect.face) {
-                    if (intersect.face.normal.equals(new THREE.Vector3(0, 1, 0))) {
-                        this.placeBlockFunction(position.x, position.y, position.z + 1)
-                    } else if (intersect.face.normal.equals(new THREE.Vector3(0, -1, 0))) {
-                        this.placeBlockFunction(position.x, position.y, position.z - 1)
-                    } else if (intersect.face.normal.equals(new THREE.Vector3(1, 0, 0))) {
-                        this.placeBlockFunction(position.x + 1, position.y, position.z)
-                    } else if (intersect.face.normal.equals(new THREE.Vector3(-1, 0, 0))) {
-                        this.placeBlockFunction(position.x - 1, position.y, position.z)
-                    } else if (intersect.face.normal.equals(new THREE.Vector3(0, 0, 1))) {
-                        this.placeBlockFunction(position.x, position.y + 1, position.z)
-                    } else if (intersect.face.normal.equals(new THREE.Vector3(0, 0, -1))) {
-                        this.placeBlockFunction(position.x, position.y - 1, position.z)
+                // Si un click gauche est réalisé sur un block, on le détruit
+                if (position && event.button === 0 && mesh.meshProperties?.type === Type.BLOCK) { 
+                    this.breakBlock(position.x, position.y, position.z)
+                }
+                
+                // Si un click droit est réalisé sur un bock, nous placeront le novueau block en face de la bonne face.
+                if (position && event.button === 2 && mesh.meshProperties?.type === Type.BLOCK){
+                    if (intersect.face) {
+                        if (intersect.face.normal.equals(new THREE.Vector3(0, 1, 0))) {
+                            this.placeBlock(position.x, position.y, position.z + 1)
+                        } else if (intersect.face.normal.equals(new THREE.Vector3(0, -1, 0))) {
+                            this.placeBlock(position.x, position.y, position.z - 1)
+                        } else if (intersect.face.normal.equals(new THREE.Vector3(1, 0, 0))) {
+                            this.placeBlock(position.x + 1, position.y, position.z)
+                        } else if (intersect.face.normal.equals(new THREE.Vector3(-1, 0, 0))) {
+                            this.placeBlock(position.x - 1, position.y, position.z)
+                        } else if (intersect.face.normal.equals(new THREE.Vector3(0, 0, 1))) {
+                            this.placeBlock(position.x, position.y + 1, position.z)
+                        } else if (intersect.face.normal.equals(new THREE.Vector3(0, 0, -1))) {
+                            this.placeBlock(position.x, position.y - 1, position.z)
+                        }
                     }
                 }
-            }
 
-            // Si un click droit est réalisé sur une cellule du plateau, nous placeront un block au dessus.
-            if (position && event.button === 2 && mesh.meshProperties?.type === Type.BOARD_CELL) {
-                this.placeBlockFunction(position.x, position.y, position.z + 1)
+                // Si un click droit est réalisé sur une cellule du plateau, nous placeront un block au dessus.
+                if (position && event.button === 2 && mesh.meshProperties?.type === Type.BOARD_CELL) {
+                    this.placeBlock(position.x, position.y, position.z + 1)
+                }
             }
         }
-    }
-
-    changeMode(placeBlockFunction: BlockPlacementFunction, breakBlockFunction: BlockBreakingFunction): void{
-        this.placeBlockFunction = placeBlockFunction;
-        this.breakBlockFunction = breakBlockFunction;
     }
 }

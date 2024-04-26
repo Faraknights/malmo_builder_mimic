@@ -1,25 +1,17 @@
-export enum Mode {
-    VISUALIZATION,
-    SIMULATION
+export enum Mode{
+	SIMULATION,
+	VISUALIZATION
 }
 
 export class ModeMaster{
-    private currentMode: Mode;
+	currentMode: Mode;
 
-    constructor(initialMode: Mode = Mode.SIMULATION){
-        this.currentMode = initialMode
-        this.addAttributeToWrapper()
-    }
+	constructor(initialMode:Mode = Mode.SIMULATION){
+		this.currentMode = initialMode
+	}
 
-    private addAttributeToWrapper(){
-        document.querySelector('#wrapper')?.setAttribute("mode", Mode[this.currentMode])
-    }
-
-    getMode(): Mode{
-        return this.currentMode
-    }
-    changeMode(newMode: Mode): void{
-        this.currentMode = newMode
-        this.addAttributeToWrapper()
-    }
+	changeMode(newMode: Mode){
+		this.currentMode = newMode
+		document.querySelector("#modeSelector")?.setAttribute("mode", Mode[newMode])
+	}
 }
