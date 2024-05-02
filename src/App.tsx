@@ -1,23 +1,24 @@
-import React from 'react';
-import './styles/app.scss'; // Import CSS file
+import React, { useState } from 'react';
+import './styles/app.scss';
+import {Mode} from './interfaces/mode';
+import Header from './components/structurals/Header';
+import Simulation from './components/structurals/Simulation';
+import Visualization from './components/structurals/Visualization';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to My React App</h1>
-        <p>Edit <code>src/App.js</code> and save to reload.</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Reac
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    const [mode, setMode] = useState<Mode>(Mode.VISUALIZATION);
+
+	return (
+		<>
+			<Header currentMode={mode} setMode={setMode} />
+			{mode === Mode.SIMULATION && 
+				<Simulation />
+			}
+			{mode === Mode.VISUALIZATION && 
+				<Visualization />
+			}
+		</>
+	);
 }
 
 export default App;
