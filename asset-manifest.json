@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/malmo_builder_mimic/static/css/main.a23dba1e.css",
+    "main.js": "/malmo_builder_mimic/static/js/main.0b5a859b.js",
+    "static/js/453.1a156734.chunk.js": "/malmo_builder_mimic/static/js/453.1a156734.chunk.js",
+    "index.html": "/malmo_builder_mimic/index.html",
+    "main.a23dba1e.css.map": "/malmo_builder_mimic/static/css/main.a23dba1e.css.map",
+    "main.0b5a859b.js.map": "/malmo_builder_mimic/static/js/main.0b5a859b.js.map",
+    "453.1a156734.chunk.js.map": "/malmo_builder_mimic/static/js/453.1a156734.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a23dba1e.css",
+    "static/js/main.0b5a859b.js"
+  ]
+}
