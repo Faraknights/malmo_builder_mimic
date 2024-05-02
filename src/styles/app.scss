@@ -1,0 +1,319 @@
+$header_height: 80px;
+
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	height: 100%;
+
+	#root{
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+
+		header{
+			height: $header_height;
+			grid-column	: span 2;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			background: linear-gradient(to bottom, rgb(33, 35, 37), rgb(48, 52, 56));
+
+			#modeSelector{
+				color: white;
+				display: flex;
+				align-items: center;
+				margin: 0 20px;
+				height: 70%;
+
+				& > *{
+					margin: 0 20px;
+					cursor: pointer;
+					height: 100%;
+					padding: 0 15px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-family: "Gill Sans", sans-serif;
+					font-size: 21px;
+					border-bottom: 2px solid rgba(255, 255, 255, 0);
+
+					&.selected{
+						border-bottom: 2px solid rgba(255, 255, 255, 1) !important;
+					}
+				}
+			}
+		}
+		
+		main{
+			display: flex;
+			height: calc(100% - #{$header_height});
+
+			#side{
+				height: 100%;
+				width: 400px;
+				background-color: rgb(48, 52, 56);
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+
+				#fileManager{
+					height: 50%;
+					width: 95%;
+					background-color: rgba(0, 200, 255, 0.153);
+					border: 1px solid rgb(0, 225, 255);
+					border-radius: 10px;
+					margin: 10px;
+
+					scrollbar-color: rgba(0, 225, 255, 0.7) rgba(255, 255, 255, 0);
+					scrollbar-width: thin;
+
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+
+					& *{
+						user-select: none;
+					}
+
+					#gameFileInput{
+						display: none;
+					}
+
+					label{
+						display: flex;
+						width: 80%;
+						padding: 10px;
+						background-color: rgba(0, 200, 255, 0.335);
+						border: 1px solid rgb(0, 225, 255);
+						border-radius: 10px;
+						margin-top: 15px;
+						cursor: pointer;
+						color: white;
+						align-items: center;
+						justify-content: center;
+					}
+
+					hr{
+						width: calc(100% - 20px);
+						margin: 20px;
+						border-top: 1px solid rgba(0, 200, 255, 0.7);
+						border-bottom: 0;
+					}
+					
+					#games{
+						width: 100%;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						overflow-y: auto;
+						height: 100%;
+						
+						.game{
+							display: flex;
+							justify-content: flex-start;
+							align-items: center;
+							width: 90%;
+							margin: 3px 0;
+							padding: 10px;
+							background-color: #ffffff0d;
+							border-radius: 8px;
+							color: #c7f5fd;
+							cursor: pointer;
+
+							&.selected{
+								cursor: auto;
+								background-color: #00e1ff85;
+							}
+
+							& > *{
+								pointer-events: none;
+							}
+
+							.new{
+								height: 14px;
+								width: 14px;
+								border-radius: 50%;
+								background-color: #00e1ffb7;
+								margin-right: 8px;
+							}
+
+							.old{
+								height: 4px;
+								width: 14px;
+								background-color: #00e1ffb7;
+								margin-right: 8px;
+							}
+						}
+					}
+
+					#gameManager{
+						width: 100%;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+
+						&.disabled{
+							pointer-events: none;
+							opacity: 30%;
+						}
+
+						input[type="range"]{
+							width: 90%;
+							-webkit-appearance: none;
+							appearance: none;
+							background-color: rgba(255, 255, 255, 0);
+
+							&::-webkit-slider-runnable-track{
+								-webkit-appearance: none;
+								appearance: none;
+								background: #00e1ff5f;
+								height: 3px;
+								border-radius: 5px;
+								cursor: pointer;
+							}
+							
+							&::-moz-range-track {
+								-webkit-appearance: none;
+								appearance: none;
+								background: #00e1ff5f;
+								height: 3px;
+								border-radius: 5px;
+								cursor: pointer;
+							}
+
+							&::-webkit-slider-thumb{
+								-webkit-appearance: none;
+								appearance: none;
+								margin-top: -4.5px;
+								height: 12px;
+								width: 12px;
+								background: #00e1ff;
+								border-radius: 50%;
+								cursor: pointer;
+							}
+
+							&::-moz-range-thumb{
+								-webkit-appearance: none;
+								appearance: none;
+								margin-top: -4.5px;
+								height: 12px;
+								width: 12px;
+								background: #00e1ff;
+								border-radius: 50%;
+								cursor: pointer;
+							}
+						}
+					}
+
+					.buttonWrapper{
+						display: flex;
+						width: 100%;
+						justify-content: space-evenly;
+						margin: 10px 0;
+
+						> *{
+							position: relative;
+							width: 35px;
+							height: 35px;
+							cursor: pointer;
+							background-color: #00e1ff2f;
+							border-radius: 8px;
+							
+							&.disabled{
+								pointer-events: none;
+								opacity: 30%;
+							}
+
+							&::after{
+								content: "";
+								position: absolute;
+								left: 50%;
+								top: 50%;
+								transform: translate(-50%, -50%);
+								display: block;
+								height: 20px;
+								width: 20px;
+								background: #00e1ff;
+							}
+
+							&.previousGame::after{
+								clip-path: polygon(100% 0, 100% 100%, 50% 50%, 50% 100%, 0 50%, 50% 0, 50% 50%);
+							}
+
+							&.previousStep::after{
+								clip-path: polygon(75% 0, 75% 100%, 25% 50%);
+							}
+
+							&.nextStep::after{
+								clip-path: polygon(25% 0, 25% 100%, 75% 50%);
+							}
+
+							&.nextGame::after{
+								clip-path: polygon(0% 0, 0% 100%, 50% 50%, 50% 100%, 100% 50%, 50% 0, 50% 50%);
+							}
+						}
+					}
+				}
+
+				#chat{
+					height: 100%;
+					width: 95%;
+					background-color: rgba(255, 179, 0, 0.153);
+					border: 1px solid rgb(255, 208, 0);
+					border-radius: 10px;
+					margin-bottom: 10px;
+
+					scrollbar-color: rgb(255, 187, 0) rgba(255, 255, 255, 0);
+					scrollbar-width: thin;
+
+					display: flex;
+					align-items: center;
+					flex-direction: column;
+					overflow-y: auto;
+					color: rgb(255, 248, 229);
+
+					& > span{
+						font-size: x-large;
+						margin: 5px 0;
+					}
+
+					hr{
+						width: calc(100% - 20px);
+						border-top: 1px solid rgba(255, 208, 0, 0.7);
+						border-bottom: 0;
+					}
+
+					& > div{
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						width: 100%;
+						margin-bottom: 15px;
+
+						& > div{
+							margin: 1px 0;
+							padding: 4px;
+							width: 95%;
+							background-color: rgba(255, 225, 0, 0.201);
+							border-radius: 7px;
+						}
+
+						.userName{
+							display: block;
+							width: 95%;
+							color: rgb(254, 254, 240);
+							font-size: large;
+
+							&:not(:first-child){
+								margin-top: 5px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
