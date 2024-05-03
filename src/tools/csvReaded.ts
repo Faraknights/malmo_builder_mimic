@@ -21,7 +21,7 @@ export function parseCSV(file: File): Promise<GameLog[]> {
 
             let match;
             const csv_spliter = /"(.+?)","?(.*?)"?(?=(\n"|$))/gs;
-            const dial_spliter = /((?:^(?:(?:place|pick) .*?\n)+|EMPTY))(.*?)(<.*)/s
+            const dial_spliter = /((?:^(?:(?:place|pick) .*?\n)*|EMPTY))(.*?)(<.*)/s
             while ((match = csv_spliter.exec(csv)) !== null) {
                 const dial_with_actions = match[1].replace(/\r$/, "").replace(/"$/, "").replace(/^"/, "").replace(/^\s/, "")
                 const action_seq = match[2].replace(/\r$/, "").replace(/"$/, "").replace(/^"/, "").trim().split("\n")
@@ -29,7 +29,7 @@ export function parseCSV(file: File): Promise<GameLog[]> {
                 const dial_split = dial_with_actions.match(dial_spliter)!
                 
                 const prevMoves = dial_split[1].trim().split("\n")
-                const prevWorldState = dial_split[2].trim()
+                const prevWorldState = dial_split[2].trim().replace(/^"+/, '').replace(/"+$/, '')
                 const instructions = dial_split[3].trim().split("\n")
                 
                 const worldState: worldStateProps = {
@@ -37,10 +37,11 @@ export function parseCSV(file: File): Promise<GameLog[]> {
                     shapeInPlace: []
                 }
 
-                if(prevMoves[0] !== "EMPTY"){
+                if(prevMoves[0] !== "EMPTY" && prevWorldState !== "EMPTY" && prevWorldState){   
                     const worldStateSplitted = prevWorldState.split(":");
     
                     worldStateSplitted.forEach(blockStr => {
+                        
                         const matches = blockStr.split(/(\d+) (\w+) (.*)/gm)
                         const positions = matches[3].split(',');
                         
@@ -65,9 +66,11 @@ export function parseCSV(file: File): Promise<GameLog[]> {
                 gameLog.addWorldState(worldState)
                 
                 instructions.forEach(instruction => {
+                    const cleanedInstruction = instruction.trim()
                     const lastWorldState = gameLog.getLastWorldState()
-                    if(instruction.startsWith("place")){
-                        const placement = instruction.split(" ")
+                    if(cleanedInstruction.startsWith("place")){
+                        
+                        const placement = cleanedInstruction.split(" ")
                         lastWorldState?.shapeInPlace.push({
                             color: COLORS[placement[1].toUpperCase() as keyof typeof COLORS],
                             position: {
@@ -77,8 +80,10 @@ export function parseCSV(file: File): Promise<GameLog[]> {
                             },
                             shape: shapeList.CUBE
                         })
-                    } else if (instruction.startsWith("pick")){
-                        const criteria = instruction.split(" ");
+                    } else if (cleanedInstruction.startsWith("pick")){
+
+                        
+                        const criteria = cleanedInstruction.split(" ");
                         const position = {
                             x: parseInt(criteria[1]),
                             y: parseInt(criteria[2]),
@@ -91,7 +96,8 @@ export function parseCSV(file: File): Promise<GameLog[]> {
                                     shape.position.z !== position.z;
                         });
                     } else {
-                        const message = instruction.split(/<(.*)> (.*)/gm)
+                        
+                        const message = cleanedInstruction.split(/<(.*)> (.*)/gm)
                         lastWorldState?.chatHistory.push({
                             user: message[1],
                             content: message[2]
@@ -101,9 +107,11 @@ export function parseCSV(file: File): Promise<GameLog[]> {
                 })
                 
                 action_seq.forEach(instruction => {
+                    const cleanedInstruction = instruction.trim()
                     const lastWorldState = gameLog.getLastWorldState()
-                    if(instruction.startsWith("place")){
-                        const placement = instruction.split(" ")
+                    if(cleanedInstruction.startsWith("place")){
+                        
+                        const placement = cleanedInstruction.split(" ")
                         lastWorldState?.shapeInPlace.push({
                             color: COLORS[placement[1].toUpperCase() as keyof typeof COLORS],
                             position: {
@@ -113,8 +121,9 @@ export function parseCSV(file: File): Promise<GameLog[]> {
                             },
                             shape: shapeList.CUBE
                         })
-                    } else if (instruction.startsWith("pick")){
-                        const criteria = instruction.split(" ");
+                    } else if (cleanedInstruction.startsWith("pick")){
+                        
+                        const criteria = cleanedInstruction.split(" ");
                         const position = {
                             x: parseInt(criteria[1]),
                             y: parseInt(criteria[2]),
