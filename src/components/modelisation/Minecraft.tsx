@@ -1,26 +1,38 @@
-import { useEffect } from "react";
 import { ShapeInPlaceProps } from "../../classes/shapeInPlace";
-import { shapeList, Shapes } from "./shapes/Shape";
+import { Shapes } from "./shapes/Shape";
+import { GameMode } from "../../interfaces/mode";
+import Board from "./Board";
+import { inventoryProps } from "../../classes/Inventory";
 
-const Minecraft: React.FC<ShapeInPlaceProps> = ({
-    objects, addObject
+interface MinecraftProps{
+    shapeInPlace: ShapeInPlaceProps
+    gameMode: GameMode
+    inventory?: inventoryProps
+}
+
+const Minecraft: React.FC<MinecraftProps> = ({
+    shapeInPlace,
+    gameMode //will use it later
 }) => {
-
-    useEffect(() => {
-        console.log(objects)
-    }, [objects])
-    
+    const { objects, pending } = shapeInPlace
 	return (
-        <>
+        <mesh onPointerMove={gameMode === GameMode.SIMULATION ? (e => {
+            console.log(e)
+        }): undefined}>
+            <Board />
             {objects.map(object => (
                 <Shapes
-                    key={`${object.position.x},${object.position.y},${object.position.z}`}
-                    shape={object.shape} 
-                    position={object.position}
-                    color={object.color}
+                    key={object.uuid}
+                    {...object}
                 />
             ))}
-        </>
+            {pending && gameMode === GameMode.SIMULATION && (
+                <Shapes
+                    key={pending.uuid}
+                    {...pending}
+                />
+            )}
+        </mesh>
 	)
 };
 

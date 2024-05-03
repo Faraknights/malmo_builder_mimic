@@ -6,7 +6,6 @@ const ColorPicker: React.FC<inventoryProps> = ({
     slots,
     changeColor
 }) => {
-    console.log(slots)
     return (
         <div id="colorPicker">
             <span>Color Picker</span>

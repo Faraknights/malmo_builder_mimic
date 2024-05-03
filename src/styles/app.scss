@@ -4,8 +4,12 @@ $header_height: 80px;
 	box-sizing: border-box;
 }
 
-html, body{
+html, body{	
 	height: 100%;
+
+	canvas{
+		user-select: none;
+	}
 
 	#root{
 		height: 100%;

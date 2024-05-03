@@ -24,7 +24,6 @@ const FileManager: React.FC<FileManagerProps> = ({
     useEffect(() => {
         if(gameLogs[currentgameId]){
             const worldState = gameLogs[currentgameId].getWorldStateById(step)!
-            console.log(worldState)
             if(worldState){
                 shapeInPlace.setObjects(worldState.shapeInPlace)
                 chatHistory.setChatHistory(worldState.chatHistory)

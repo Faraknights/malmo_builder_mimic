@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 import './styles/app.scss';
-import {Mode} from './interfaces/mode';
+import {GameMode} from './interfaces/mode';
 import Header from './components/structurals/Header';
 import Simulation from './components/structurals/Simulation';
 import Visualization from './components/structurals/Visualization';
 
 const App = () => {
-    const [mode, setMode] = useState<Mode>(Mode.VISUALIZATION);
+    const [gameMode, setGameMode] = useState<GameMode>(GameMode.VISUALIZATION);
 
 	return (
 		<>
-			<Header currentMode={mode} setMode={setMode} />
-			{mode === Mode.SIMULATION && 
+			<Header currentMode={gameMode} setMode={setGameMode} />
+			{gameMode === GameMode.SIMULATION && 
 				<Simulation />
 			}
-			{mode === Mode.VISUALIZATION && 
+			{gameMode === GameMode.VISUALIZATION && 
 				<Visualization />
 			}
 		</>

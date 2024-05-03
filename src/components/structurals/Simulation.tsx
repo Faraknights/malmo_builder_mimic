@@ -1,5 +1,6 @@
 import { useInventory, inventoryProps } from '../../classes/Inventory';
 import { useShapeInPlace, ShapeInPlaceProps } from '../../classes/shapeInPlace';
+import { EnvironmentMode, GameMode } from '../../interfaces/mode';
 import Environment from '../modelisation/environment';
 import ColorPicker from './simulation/ColorPicker';
 
@@ -18,6 +19,8 @@ const Simulation = () => {
         <>
             <Environment 
 				shapeInPlace = {{...shapeInPlace}}
+				environmentMode={EnvironmentMode.MINECRAFT}
+				gameMode={GameMode.SIMULATION}
 			/>
             <div id="side">
 				<ColorPicker {...inventory}/>

@@ -1,24 +1,24 @@
 import React from 'react';
-import { Mode } from '../../interfaces/mode';
+import { GameMode } from '../../interfaces/mode';
 
 interface HeaderProps {
-  currentMode: Mode;
-  setMode: React.Dispatch<React.SetStateAction<Mode>>;
+  currentMode: GameMode;
+  setMode: React.Dispatch<React.SetStateAction<GameMode>>;
 }
 
 const Header: React.FC<HeaderProps> = ({ currentMode, setMode }) => {
   return (
     <header>
       <nav id="modeSelector">
-        {Object.keys(Mode).map((modeKey: string) => {
-          const mode = Mode[modeKey as keyof typeof Mode];
+        {Object.keys(GameMode).map((gameModeKey: string) => {
+          const gameMode = GameMode[gameModeKey as keyof typeof GameMode];
           return (
             <div
-              key={mode}
-              onClick={() => setMode(mode)}
-              className={currentMode === mode ? 'selected' : ''}
+              key={gameMode}
+              onClick={() => setMode(gameMode)}
+              className={currentMode === gameMode ? 'selected' : ''}
             >
-              {mode}
+              {gameMode}
             </div>
           );
         })}

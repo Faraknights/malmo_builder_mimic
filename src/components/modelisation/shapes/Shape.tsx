@@ -9,28 +9,23 @@ export enum shapeList {
 }
 
 export interface shapeComponentProps{
-	position: CartesianCoordinate,
+    pending: boolean
+    uuid: string
+	position: CartesianCoordinate
 	color: Color
 }
 
-// Define a mapping object to associate enum values with components
 const shapeComponents: { [key in shapeList]: React.ComponentType<shapeComponentProps> } = {
     [shapeList.CUBE]: Cube,
-    //[shapes.DIAMOND]: Diamond
 };
 
 export interface shapeProps extends shapeComponentProps{
 	shape: shapeList
 }
-// Usage example
-export const Shapes = ({shape , position, color }:shapeProps) => {
-    const ShapeComponent = shapeComponents[shape];
-    return <ShapeComponent 
-        position={{x: position.x, y: position.y, z: position.z} as CartesianCoordinate}
-        color={color}
+
+export const Shapes = (props :shapeProps) => {
+    const ShapeComponent = shapeComponents[props.shape];
+    return <ShapeComponent
+        {... props}
     />;
 };
-
-// Usage:
-//<MyComponent shape={shapes.CUBE} /> // Renders Cube component
-//<MyComponent shape={shapes.DIAMOND} />

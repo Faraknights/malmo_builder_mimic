@@ -11,27 +11,27 @@ export enum definedColors {
 
 export const COLORS: { [key in definedColors]: Color } = {
 	[definedColors.RED]: {
-		hex: "#ff0000",
+		hex: "#ff4444",
 		id: definedColors.RED
 	},
 	[definedColors.BLUE]: {
-		hex: "#0000ff",
+		hex: "#00a4ff",
 		id: definedColors.BLUE
 	},
 	[definedColors.GREEN]: {
-		hex: "#00ff00",
+		hex: "#68c341",
 		id: definedColors.GREEN
 	},
 	[definedColors.ORANGE]: {
-		hex: "#ffa500",
+		hex: "#ff8954",
 		id: definedColors.ORANGE
 	},
 	[definedColors.PURPLE]: {
-		hex: "#800080",
+		hex: "#d354ff",
 		id: definedColors.PURPLE
 	},
 	[definedColors.YELLOW]: {
-		hex: "#ffff00",
+		hex: "#ffdd00",
 		id: definedColors.YELLOW
 	}
 };

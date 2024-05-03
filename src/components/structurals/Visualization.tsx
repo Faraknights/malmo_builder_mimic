@@ -1,5 +1,6 @@
 import { chatProps, useChat } from '../../classes/Chat';
 import { useShapeInPlace, ShapeInPlaceProps } from '../../classes/shapeInPlace';
+import { EnvironmentMode, GameMode } from '../../interfaces/mode';
 import Environment from '../modelisation/environment';
 import Chat from './Chat';
 import Side from './Side';
@@ -13,6 +14,8 @@ const Visualization = () => {
 		<main>
 			<Environment 
 				shapeInPlace = {{...shapeInPlace}}
+				environmentMode={EnvironmentMode.MINECRAFT}
+				gameMode={GameMode.VISUALIZATION}
 			/>
 			<Side>
 				<FileManager 

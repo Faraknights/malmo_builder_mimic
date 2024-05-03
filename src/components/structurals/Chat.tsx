@@ -19,7 +19,7 @@ const Chat: React.FC<chatProps> = ({
             <hr />
             <div>
                 {chatHistory.map((chat, i) => (
-                    <>
+                    <div key={i}>
                         {(i === 0 || chat.user !== chatHistory[i-1].user) && (
                             <span className='userName' key={`user-${i}`}>
                                 {chat.user}
@@ -31,7 +31,7 @@ const Chat: React.FC<chatProps> = ({
                         >
                             {chat.content}
                         </div>
-                    </>
+                    </div>
                 ))}
             </div>
         </div>
