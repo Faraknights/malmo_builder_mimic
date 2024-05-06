@@ -46,7 +46,8 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 
     const confirmPending = (newPending?: shapeProps): void => {
         if (pending) {
-            addObject(pending);
+            const updatedPending = { ...pending, pending: false };
+            addObject(updatedPending);
             setPending(newPending ?? undefined);
         }
     };

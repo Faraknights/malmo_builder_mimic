@@ -2,6 +2,7 @@ import { CartesianCoordinate } from "../../interfaces/cartesianCoordinate";
 import { Edges } from "@react-three/drei";
 import { CELL_COLOR, MINECRAFT_BLOCK_SIZE } from "../../constants/environment";
 import * as THREE from "three"
+import { CellBoardUserData, MeshType } from "../../constants/meshType";
 
 interface cellBoardProps{
 	position: CartesianCoordinate,
@@ -9,7 +10,10 @@ interface cellBoardProps{
 
 const CellBoard= ({position}: cellBoardProps) => (
 	<mesh
-		userData={{ position }}
+		userData={{ 
+			type: MeshType.CELL_BOARD,
+			position: position 
+		} as CellBoardUserData}
 		rotation={[-Math.PI / 2, 0, 0]}
 		position={[
 			position.x * MINECRAFT_BLOCK_SIZE.x,

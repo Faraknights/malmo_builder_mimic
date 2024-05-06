@@ -14,7 +14,7 @@ interface EnvironmentProps {
     inventory?: inventoryProps
 }
 
-const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, environmentMode, gameMode }) => {
+const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, environmentMode, gameMode, inventory }) => {
 
     return (
         <>
@@ -22,6 +22,7 @@ const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, environmentMode, game
                 <Minecraft 
                     shapeInPlace={shapeInPlace}
                     gameMode={gameMode}
+                    inventory={inventory}
                 />
             )}
             { gameMode === GameMode.VISUALIZATION && (

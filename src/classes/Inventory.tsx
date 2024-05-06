@@ -20,7 +20,9 @@ export interface inventoryProps {
 }
 
 export const useInventory = (colors: Color[], nbBlocks: number = 20): inventoryProps => {
+    
     const [currentColor, setCurrentColor] = useState<Color>(colors[0]);
+    console.log(currentColor)
     const [slots, setSlots] = useState<InventorySlot[]>(() => (
         colors.map(color => ({
             color,

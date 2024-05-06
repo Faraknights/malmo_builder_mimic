@@ -3,8 +3,9 @@ import * as THREE from 'three'
 import { shapeComponentProps } from "./Shape";
 import { Edges } from "@react-three/drei";
 import { MINECRAFT_BLOCK_SIZE, OPACITY_PENDING_OBJECT } from "../../../constants/environment";
+import { CubeFaceUserData, CubeUserData, MeshType } from "../../../constants/meshType";
 
-enum DIRECTION {
+export enum DIRECTION {
 	FRONT = "FRONT",
 	BACK = "BACK",
 	TOP = "TOP",
@@ -21,7 +22,7 @@ interface DirectionProperties {
     pendingBlock: CartesianCoordinate;
 }
 
-const DirectionInfo: Record<DIRECTION, DirectionProperties> = {
+export const DirectionInfo: Record<DIRECTION, DirectionProperties> = {
     [DIRECTION.FRONT]: {
         facingDirection: DIRECTION.FRONT,
         translation: new THREE.Vector3(0, 0, MINECRAFT_BLOCK_SIZE.z/2),
@@ -81,9 +82,9 @@ const CubeFace = (props: CubeFaceProps) => {
 			position={properties.translation} 
 			rotation={properties.rotation} 
 			userData={{
-				position: props.position,
-				facingDirection: props.facingDirection,
-			}}
+				type: MeshType.CUBE_FACE,
+				faceDirection: props.facingDirection
+			} as CubeFaceUserData}
 		>
 			<planeGeometry attach="geometry" args={properties.geometry}/>
 			{props.opacity === 1 && (
@@ -96,14 +97,13 @@ const CubeFace = (props: CubeFaceProps) => {
 
 const Cube = ({pending, position, color} : shapeComponentProps) => {
 	const cubeColor = new THREE.Color(color.hex)
-	console.log("cube spawned")
 	return (
 		<mesh 
 			userData={{
-				color: color,
+				type: MeshType.CUBE,
 				position: position,
 				pending: pending
-			} as shapeComponentProps}
+			} as CubeUserData}
 			position={[
 				position.x * MINECRAFT_BLOCK_SIZE.x, 
 				position.y * MINECRAFT_BLOCK_SIZE.y, 
