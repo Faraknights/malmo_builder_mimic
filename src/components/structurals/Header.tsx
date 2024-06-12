@@ -1,12 +1,15 @@
 import React from 'react';
 import { GameMode } from '../../interfaces/mode';
+import { EnvironmentMode, useEnvironmentState } from '../../classes/EnvironmentMode';
 
 interface HeaderProps {
-  currentMode: GameMode;
-  setMode: React.Dispatch<React.SetStateAction<GameMode>>;
+  currentGameMode: GameMode;
+  setGameMode: React.Dispatch<React.SetStateAction<GameMode>>;
 }
 
-const Header: React.FC<HeaderProps> = ({ currentMode, setMode }) => {
+const Header: React.FC<HeaderProps> = (props) => {
+  const {currentGameMode, setGameMode} = props
+  const {environmentMode, setEnvironmentMode} = useEnvironmentState()
   return (
     <header>
       <nav id="modeSelector">
@@ -15,14 +18,22 @@ const Header: React.FC<HeaderProps> = ({ currentMode, setMode }) => {
           return (
             <div
               key={gameMode}
-              onClick={() => setMode(gameMode)}
-              className={currentMode === gameMode ? 'selected' : ''}
+              onClick={() => setGameMode(gameMode)}
+              className={currentGameMode === gameMode ? 'selected' : ''}
             >
               {gameMode}
             </div>
           );
         })}
       </nav>
+      <button 
+        onClick={() => {
+          setEnvironmentMode(Object.keys(EnvironmentMode)[(Object.keys(EnvironmentMode).findIndex(x => x === environmentMode) + 1) % Object.keys(EnvironmentMode).length] as EnvironmentMode)
+        }}
+        id='environmentMode'
+      >
+        {environmentMode}
+      </button>
     </header>
   );
 };

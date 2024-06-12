@@ -1,8 +1,8 @@
 import { chatProps, useChat } from '../../classes/Chat';
 import { useShapeInPlace, ShapeInPlaceProps } from '../../classes/shapeInPlace';
-import { EnvironmentMode, GameMode } from '../../interfaces/mode';
-import Environment from '../modelisation/environment';
-import Chat from './Chat';
+import { GameMode } from '../../interfaces/mode';
+import Environment from './environment';
+import ChatComponent from './Chat';
 import Side from './Side';
 import FileManager from './visualization/FileManager';
 
@@ -14,7 +14,6 @@ const Visualization = () => {
 		<main>
 			<Environment 
 				shapeInPlace = {{...shapeInPlace}}
-				environmentMode={EnvironmentMode.MINECRAFT}
 				gameMode={GameMode.VISUALIZATION}
 			/>
 			<Side>
@@ -22,7 +21,7 @@ const Visualization = () => {
 					chatHistory={chat}
 					shapeInPlace={shapeInPlace}
 				/>
-				<Chat {... chat}/>
+				<ChatComponent chat={chat} readOnly={true}/>
 			</Side>
 		</main>
 	);

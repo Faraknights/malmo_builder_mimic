@@ -6,7 +6,8 @@ export enum definedColors {
 	GREEN = "GREEN",
 	ORANGE = "ORANGE",
 	PURPLE = "PURPLE",
-	YELLOW = "YELLOW"
+	YELLOW = "YELLOW",
+	WHITE = "WHITE"
 }
 
 export const COLORS: { [key in definedColors]: Color } = {
@@ -33,5 +34,9 @@ export const COLORS: { [key in definedColors]: Color } = {
 	[definedColors.YELLOW]: {
 		hex: "#ffdd00",
 		id: definedColors.YELLOW
+	},
+	[definedColors.WHITE]: {
+		hex: "#ffffff",
+		id: definedColors.WHITE
 	}
 };

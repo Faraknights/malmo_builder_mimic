@@ -1,10 +1,15 @@
-import { DIRECTION } from "../components/modelisation/shapes/Cube"
+import { Object3D, Object3DEventMap } from "three"
 import { CartesianCoordinate } from "../interfaces/cartesianCoordinate"
+import { DIRECTION } from "./direction"
+import { shapeList } from "./shapeList"
 
 export enum MeshType{
     CELL_BOARD = "CELL_BOARD",
-    CUBE = "CUBE",
-    CUBE_FACE = "CUBE_FACE"
+    SHAPE = "SHAPE",
+    SHAPE_FACE = "SHAPE_FACE",
+    GROUP = "GROUP",
+    NON_CLICKABLE_FACE = "NON_CLICKABLE_FACE",
+    SCENE = "SCENE"
 }
 
 export interface UserData{
@@ -16,13 +21,28 @@ export interface CellBoardUserData extends UserData{
     position: CartesianCoordinate
 }
 
-export interface CubeUserData extends UserData{
-    type: MeshType.CUBE
+export interface ShapeUserData extends UserData{
+    type: MeshType.SHAPE
+    position: CartesianCoordinate
+    pending: boolean
+    shape: shapeList
+}
+
+export interface ShapeFaceUserData extends UserData{
+    type: MeshType.SHAPE_FACE
+    faceDirection: DIRECTION
+}
+
+export interface GroupUserData extends UserData{
+    type: MeshType.GROUP
     position: CartesianCoordinate
     pending: boolean
 }
 
-export interface CubeFaceUserData extends UserData{
-    type: MeshType.CUBE_FACE
-    faceDirection: DIRECTION
+export interface NonClickableFaceUserData extends UserData{
+    type: MeshType.NON_CLICKABLE_FACE
+}
+
+export interface Object3DWithUserData<T extends Object3DEventMap> extends Object3D<T> {
+    userData: UserData;
 }

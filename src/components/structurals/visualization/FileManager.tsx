@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { chatProps } from '../../../classes/Chat';
 import { ShapeInPlaceProps } from '../../../classes/shapeInPlace';
 import { parseCSV } from '../../../tools/csvReaded';
+import { parseJSON } from '../../../tools/jsonReaded';
 import { GameLog } from '../../../classes/gameLog';
 
 export interface FileManagerProps{
@@ -32,19 +33,29 @@ const FileManager: React.FC<FileManagerProps> = ({
     }, [currentgameId, step]);
 
     const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-        const file = event.target.files && event.target.files[0]!;
-        if(file){
+        const file = event.target.files && event.target.files[0];
+        if (file) {
+            const fileExtension = file.name.split('.').pop()?.toLowerCase();
+            
             try {
-                const newGameLogs = await parseCSV(file);
-                setGameLogs(prevGameLogs => [...prevGameLogs, ...newGameLogs]);
+                if (fileExtension === 'csv') {
+                    const newGameLogs = await parseCSV(file);
+                    setGameLogs(prevGameLogs => [...prevGameLogs, ...newGameLogs]);
+                } else if (fileExtension === 'json') {
+                    const newGameLogs = await parseJSON(file);
+                    setGameLogs(prevGameLogs => [...prevGameLogs, ...newGameLogs]);
+                } else {
+                    console.error('Unsupported file type:', fileExtension);
+                }
             } catch (error) {
-                console.error('Error parsing CSV:', error);
+                console.error('Error processing file:', error);
             }
         }
     };
+    
 
     return (
-        <div id="fileManager">
+        <div id="fileManager" className='module'>
             <label htmlFor="gameFileInput">Upload Game file</label>
             <input
                 id="gameFileInput"

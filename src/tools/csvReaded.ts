@@ -1,7 +1,7 @@
 import { GameLog, worldStateProps } from "../classes/gameLog";
-import { shapeList } from "../components/modelisation/shapes/Shape";
 import { COLORS } from "../constants/colors";
 import { v4 as uuidv4 } from 'uuid';
+import { shapeList } from "../constants/shapeList";
 
 export interface csvFormat {
     dial_with_actions: {
@@ -75,6 +75,7 @@ function parseWorldState(prevWorldState: string, worldState: worldStateProps) {
         worldStateSplitted.forEach((blockStr) => {
             const matches = blockStr.match(/(\d+) (\w+) (.*)/);
             if (matches) {
+                console.log(matches)
                 const [, , colorName, positionsStr] = matches;
                 const positions = positionsStr.split(",");
 
@@ -83,6 +84,7 @@ function parseWorldState(prevWorldState: string, worldState: worldStateProps) {
                     const color = COLORS[colorName.toUpperCase() as keyof typeof COLORS];
                     worldState.shapeInPlace.push({
                         pending: false,
+                        breakable: false,
                         uuid: uuidv4(),
                         color,
                         shape: shapeList.CUBE,
@@ -102,9 +104,11 @@ function parseInstruction(instruction: string, gameLog: GameLog) {
     const cleanedInstruction = instruction.trim();
     const lastWorldState = gameLog.getLastWorldState();
     if (cleanedInstruction.startsWith("place")) {
+        console.log(cleanedInstruction)
         const placement = cleanedInstruction.split(" ");
         lastWorldState?.shapeInPlace.push({
             pending: false,
+            breakable: false,
             uuid: uuidv4(),
             color: COLORS[placement[1].toUpperCase() as keyof typeof COLORS],
             position: {

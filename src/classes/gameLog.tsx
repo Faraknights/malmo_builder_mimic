@@ -8,10 +8,14 @@ export interface worldStateProps {
 }
 
 export class GameLog {
-    private gameLog: worldStateProps[];
+    public gameLog: worldStateProps[];
 
     constructor() {
-        this.gameLog = [];
+        this.gameLog = [{
+            chatHistory: [],
+            shapeInPlace: [],
+            timestamp: new Date()
+        }];
     }
 
     getLength(): number{
@@ -27,19 +31,22 @@ export class GameLog {
     }
 
     getLastWorldState(): worldStateProps | undefined {
-        const lastGame = this.gameLog[this.gameLog.length - 1]
-    
-        if(lastGame.timestamp){
-            return {
-                timestamp: lastGame.timestamp,
-                chatHistory: [...lastGame.chatHistory],
-                shapeInPlace: [...lastGame.shapeInPlace]
+        const lastGame = this.gameLog[this.gameLog.length - 1]   
+        if(lastGame){
+            if(lastGame.timestamp){
+                return {
+                    timestamp: lastGame.timestamp,
+                    chatHistory: [...lastGame.chatHistory],
+                    shapeInPlace: [...lastGame.shapeInPlace]
+                }
+            } else {
+                return {
+                    chatHistory: [...lastGame.chatHistory],
+                    shapeInPlace: [...lastGame.shapeInPlace]
+                }
             }
         } else {
-            return {
-                chatHistory: [...lastGame.chatHistory],
-                shapeInPlace: [...lastGame.shapeInPlace]
-            }
+            return undefined
         }
     }
 
