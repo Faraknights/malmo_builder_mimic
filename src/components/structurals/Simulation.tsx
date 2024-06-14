@@ -65,7 +65,6 @@ const Simulation = () => {
                 setGameLog(gameLog);
             }
         }
-        console.log(gameLog)
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [shapeInPlace.objects, chat.chatHistory])
     

@@ -75,7 +75,6 @@ function parseWorldState(prevWorldState: string, worldState: worldStateProps) {
         worldStateSplitted.forEach((blockStr) => {
             const matches = blockStr.match(/(\d+) (\w+) (.*)/);
             if (matches) {
-                console.log(matches)
                 const [, , colorName, positionsStr] = matches;
                 const positions = positionsStr.split(",");
 
@@ -104,7 +103,6 @@ function parseInstruction(instruction: string, gameLog: GameLog) {
     const cleanedInstruction = instruction.trim();
     const lastWorldState = gameLog.getLastWorldState();
     if (cleanedInstruction.startsWith("place")) {
-        console.log(cleanedInstruction)
         const placement = cleanedInstruction.split(" ");
         lastWorldState?.shapeInPlace.push({
             pending: false,
