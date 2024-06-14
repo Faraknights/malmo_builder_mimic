@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/malmo_builder_mimic/static/css/main.7d7817bd.css",
-    "main.js": "/malmo_builder_mimic/static/js/main.f350ad5a.js",
+    "main.js": "/malmo_builder_mimic/static/js/main.afc478c9.js",
     "static/js/453.1a156734.chunk.js": "/malmo_builder_mimic/static/js/453.1a156734.chunk.js",
     "index.html": "/malmo_builder_mimic/index.html",
     "main.7d7817bd.css.map": "/malmo_builder_mimic/static/css/main.7d7817bd.css.map",
-    "main.f350ad5a.js.map": "/malmo_builder_mimic/static/js/main.f350ad5a.js.map",
+    "main.afc478c9.js.map": "/malmo_builder_mimic/static/js/main.afc478c9.js.map",
     "453.1a156734.chunk.js.map": "/malmo_builder_mimic/static/js/453.1a156734.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7d7817bd.css",
-    "static/js/main.f350ad5a.js"
+    "static/js/main.afc478c9.js"
   ]
 }
