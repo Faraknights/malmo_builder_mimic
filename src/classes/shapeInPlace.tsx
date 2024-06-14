@@ -14,8 +14,8 @@ export interface ShapeInPlaceProps {
     removeObject: (x: number, y: number, z: number) => void;
     clear: () => void;
     confirmPending: (newPending?: shapeProps) => void; 
-    setBlinking: (position: CartesianCoordinate) => void;
-    removeBlinking: () => void;
+    setBreaking: (position: CartesianCoordinate) => void;
+    removeBreaking: () => void;
     getPosition: () => CartesianCoordinate[];
 }
 
@@ -89,7 +89,7 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
         setPending(newPending);
     };
 
-    const setBlinking = (position: CartesianCoordinate) => {
+    const setBreaking = (position: CartesianCoordinate) => {
         const updateShape = (shape: shapeProps | ShapeGroup): shapeProps | ShapeGroup => {
             if (shape.breakable)
                 return shape
@@ -111,7 +111,7 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
         }));
     }
 
-    const removeBlinking = () => {
+    const removeBreaking = () => {
         const updateShape = (shape: shapeProps | ShapeGroup): shapeProps | ShapeGroup => {
             if (shape instanceof ShapeGroup) {
                 return new ShapeGroup(shape.startingPoint, shape.shapes.map(updateShape), shape.pending, false);
@@ -150,8 +150,8 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
         removeObject,
         clear,
         confirmPending,
-        setBlinking,
-        removeBlinking,
+        setBreaking,
+        removeBreaking,
         getPosition
     };
 };

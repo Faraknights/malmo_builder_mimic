@@ -110,6 +110,7 @@ const Game: React.FC<GameProps> = ({
 				const position = getPosition(pointedMesh)
 				shapeInPlace.removeObject(position.x, position.y, position.z)
 			}
+			handleBreakingBlock(e.intersections.slice(1))
 		}
 		e.stopPropagation()
 	};
@@ -127,7 +128,7 @@ const Game: React.FC<GameProps> = ({
 		if(action?.current === Action.PLACE){
 			handlePendingBlock(intersectionWithoutPending);
 		} else {
-			handleBlinkingBlock(intersectionWithoutPending)
+			handleBreakingBlock(intersectionWithoutPending)
 		}
 	};
 
@@ -173,16 +174,16 @@ const Game: React.FC<GameProps> = ({
 		}
 	};
 
-	const handleBlinkingBlock = (intersections: Intersection[]) => {
+	const handleBreakingBlock = (intersections: Intersection[]) => {
 		if(intersections[0]){
-			shapeInPlace.removeBlinking()
+			shapeInPlace.removeBreaking()
 			let pointedMesh = findParentShape(intersections[0].object as Object3DWithUserData<Object3DEventMap>)
 			if(pointedMesh.userData.type === MeshType.SHAPE){
 				while(pointedMesh.parent?.userData.type === MeshType.GROUP){
 					pointedMesh = pointedMesh.parent as Object3DWithUserData<Object3DEventMap>
 				} 
 				const position = getPosition(pointedMesh)
-				shapeInPlace.setBlinking(position)
+				shapeInPlace.setBreaking(position)
 			}
 		}
 	};
@@ -193,7 +194,7 @@ const Game: React.FC<GameProps> = ({
 		onPointerOut: ((e: ThreeEvent<PointerEvent>) => {
 			if(e.intersections.length === 0){
 				shapeInPlace.setPending(undefined)
-				shapeInPlace.removeBlinking()
+				shapeInPlace.removeBreaking()
 			}
 		}),
 		onPointerUp: ((e: ThreeEvent<PointerEvent>) => {
