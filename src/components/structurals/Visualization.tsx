@@ -5,6 +5,7 @@ import Environment from './environment';
 import ChatComponent from './Chat';
 import Side from './Side';
 import FileManager from './visualization/FileManager';
+import { CameraMode } from '../../classes/Camera';
 
 const Visualization = () => {
 	const chat: chatProps = useChat();
@@ -15,6 +16,7 @@ const Visualization = () => {
 			<Environment 
 				shapeInPlace = {{...shapeInPlace}}
 				gameMode={GameMode.VISUALIZATION}
+				camera={CameraMode.FREE}
 			/>
 			<Side>
 				<FileManager 

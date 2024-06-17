@@ -13,6 +13,8 @@ import { ENVIRONMENT_COLORS, ENVIRONMENT_SHAPES, EXPORT_GAME_LOG } from '../../c
 import { useChat } from '../../classes/Chat';
 import ChatComponent from './Chat';
 import { GameLog, worldStateProps } from '../../classes/gameLog';
+import CameraSelector from './simulation/CameraPicker';
+import useCamera from '../../classes/Camera';
 
 const Simulation = () => {
     const {environmentMode} = useEnvironmentState()
@@ -22,6 +24,7 @@ const Simulation = () => {
     );
     const shapeInPlace = useShapeInPlace();
     const action = useAction()
+    const camera = useCamera()
 	const chat = useChat();
     const [gameLog, setGameLog] = useState<GameLog>(new GameLog())
 
@@ -71,12 +74,16 @@ const Simulation = () => {
 
     return (
 		<main>
-            <Environment 
-				gameMode={GameMode.SIMULATION}
-				shapeInPlace={shapeInPlace}
-                inventory={inventory}
-                action={action}
-			/>
+            <div id='mainView'>
+                <CameraSelector {...camera}/>
+                <Environment 
+                    gameMode={GameMode.SIMULATION}
+                    shapeInPlace={shapeInPlace}
+                    inventory={inventory}
+                    action={action}
+                    camera={camera.current}
+                />
+            </div>
             <Side>
                 <ActionSelector {...action}/>
 				<ColorPicker {...inventory}/>

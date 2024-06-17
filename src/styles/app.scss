@@ -65,6 +65,37 @@ html, body{
 			display: flex;
 			height: calc(100% - #{$header_height});
 
+			#mainView{
+				width: 100%;
+				position: relative;
+
+
+				#cameraSelector{
+					display: flex;
+					position: absolute;
+					top: 5px;
+					right: 5px;
+					z-index: 1;
+
+					button {
+						padding: 5px 10px;
+						color: white;
+						background-color: rgba(255, 255, 255, 0.131);
+						border: 0;
+						margin-left: 5px;
+						cursor: pointer;
+
+						&.selected{
+							background-color: rgba(255, 255, 255, 0.405);
+							transition: .3s;
+							cursor: auto;
+						}
+
+						border-radius: 5px;
+					}
+				}
+			}
+
 			#side{
 				height: 100%;
 				width: 400px;

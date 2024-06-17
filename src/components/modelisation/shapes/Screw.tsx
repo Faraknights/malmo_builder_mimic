@@ -12,7 +12,7 @@ function Screw({pending, position, color} : shapeComponentProps) {
 	);
 	const nutColor = new THREE.Color(color.hex)
     const opacity = pending ? OPACITY_PENDING_OBJECT: 1
-    const material = <meshBasicMaterial attach="material" color={nutColor} side={THREE.FrontSide}  transparent={opacity !== 1} opacity={opacity}/>
+    const material = <meshStandardMaterial attach="material" color={nutColor} side={THREE.FrontSide}  transparent={opacity !== 1} opacity={opacity}/>
 	return (
 		<mesh 
             userData={{

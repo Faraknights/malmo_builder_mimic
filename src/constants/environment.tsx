@@ -152,3 +152,5 @@ export const EXPORT_GAME_LOG: { [key in EnvironmentMode]: ( gameLog: GameLog ) =
 export const OPACITY_PENDING_OBJECT = 0.4
 
 export const CELL_COLOR = new THREE.Color(0xaaaaaa)
+
+

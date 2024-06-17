@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export enum CameraMode{
-    FREE = "FREE",
-    SIDE_VIEW = "SIDE_VIEW",
-    UPPER_VIEW = "UPPER_VIEW"
+    FREE = "Free camera",
+    SIDE_VIEW = "Side view",
+    UPPER_VIEW = "Upper view"
 }
 
 export interface CameraProps{
@@ -18,6 +18,63 @@ export const useCamera = (): CameraProps => {
         current,
         setCurrent,
     };
+};
+
+interface CanvasCameraSettingsProps {
+    orthographic: boolean
+    polarAngle: {
+        min: number,
+        max: number
+    },
+    cameraSettings: any
+    azimuthAngle?: {
+        max: number,
+        min: number
+    }
+}
+
+const d = 0
+export const CanvasCameraSettings: { [key in CameraMode]: CanvasCameraSettingsProps } = {
+    [CameraMode.FREE]: {
+        orthographic: false,
+        polarAngle:{
+            max: Math.PI,
+            min: 0
+        },
+        cameraSettings: {
+            fov: 75,
+            aspect: window.innerWidth / window.innerHeight,
+            near: 0.1,
+            far: 1000,
+            position: [0, 5, 10],
+        }
+    },
+    [CameraMode.SIDE_VIEW]: {
+        orthographic: true,
+        polarAngle:{
+            max: Math.PI/2,
+            min: Math.PI/2
+        },
+        cameraSettings: {
+            zoom: 50,
+            position: [100, 5, 10]
+        }
+    },
+    [CameraMode.UPPER_VIEW]: {
+        orthographic: true,
+        polarAngle:{
+            max: 0,
+            min: 0
+        },
+        cameraSettings: {
+            zoom: 50,
+            position: [0, 5, 10]
+        },
+        azimuthAngle: {
+            max: 0,
+            min: 0
+        }
+    },
 };
 
 export default useCamera
