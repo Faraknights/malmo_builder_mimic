@@ -33,7 +33,6 @@ interface CanvasCameraSettingsProps {
     }
 }
 
-const d = 0
 export const CanvasCameraSettings: { [key in CameraMode]: CanvasCameraSettingsProps } = {
     [CameraMode.FREE]: {
         orthographic: false,

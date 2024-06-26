@@ -26,6 +26,8 @@ export const ENVIRONMENT_COLORS: { [key in EnvironmentMode]: Color[] } = {
         COLORS[definedColors.BLUE],
         COLORS[definedColors.RED],
         COLORS[definedColors.YELLOW],
+        COLORS[definedColors.NEW],
+
     ],
 }
 

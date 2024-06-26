@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './styles/app.scss';
-import {GameMode} from './interfaces/mode';
+import {GameMode, gameModeComponent} from './interfaces/mode';
 import Header from './components/structurals/Header';
-import Simulation from './components/structurals/Simulation';
-import Visualization from './components/structurals/Visualization';
 import { GlobalEnvironmentModeProvider } from './classes/EnvironmentMode';
 
 const App = () => {
     const [gameMode, setGameMode] = useState<GameMode>(GameMode.VISUALIZATION);
+    const GameModeComp = gameModeComponent[gameMode];
 
 	return (
 		<GlobalEnvironmentModeProvider>
@@ -16,12 +15,7 @@ const App = () => {
 					currentGameMode={gameMode} 
 					setGameMode={setGameMode}
 				/>
-				{gameMode === GameMode.SIMULATION && 
-					<Simulation />
-				}
-				{gameMode === GameMode.VISUALIZATION && 
-					<Visualization />
-				}
+				<GameModeComp />
 			</>
 		</GlobalEnvironmentModeProvider>
 	);

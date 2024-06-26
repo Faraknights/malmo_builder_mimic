@@ -4,8 +4,6 @@ import { MeshType, NonClickableFaceUserData, ShapeFaceUserData } from '../../../
 import { DIRECTION } from '../../../constants/direction';
 import { OPACITY_PENDING_OBJECT } from '../../../constants/environment';
 import { Edges } from '@react-three/drei';
-import { useThree } from '@react-three/fiber';
-import { useEffect } from 'react';
 
 function Washer({pending, color} : shapeComponentProps) {
 	const path = new THREE.LineCurve3(

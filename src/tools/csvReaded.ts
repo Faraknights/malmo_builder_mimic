@@ -30,7 +30,6 @@ export function parseCSV(file: File): Promise<GameLog[]> {
 
                     const dialSplit = dialWithActions.match(dialSplitter)!;
 
-                    //const prevMoves = dialSplit[1].trim().split("\n");
                     const prevWorldState = dialSplit[2].trim().replace(/^"+|"+$/g, "");
                     const instructions = dialSplit[3].trim().split("\n");
 

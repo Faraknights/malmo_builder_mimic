@@ -13,8 +13,8 @@ const ChatComponent: React.FC<chatComponentProps> = ({
     const chatRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        // Scroll to the bottom of the chat when chatHistory changes
         if (chatRef.current) {
+            console.log(chatRef.current)
             chatRef.current.scrollTop = chatRef.current.scrollHeight;
         }
     }, [chat.chatHistory]);
@@ -27,10 +27,10 @@ const ChatComponent: React.FC<chatComponentProps> = ({
     const [user, setUser] = useState<Users>(Users.ARCHITECT)
 
     return (
-        <div id="chat" className='module' ref={chatRef}>
+        <div id="chat" className='module'>
             <h3>Chat</h3>
-            <hr />
-            <div>
+            <hr/>
+            <div ref={chatRef}>
                 {chat.chatHistory.map((message, i) => (
                     <div key={i}>
                         {(i === 0 || message.user !== chat.chatHistory[i-1].user) && (

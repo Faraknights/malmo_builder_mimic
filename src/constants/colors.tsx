@@ -7,36 +7,46 @@ export enum definedColors {
 	ORANGE = "ORANGE",
 	PURPLE = "PURPLE",
 	YELLOW = "YELLOW",
-	WHITE = "WHITE"
+	WHITE = "WHITE",
+	BLACK = "BLACK",
+	NEW = "NEW"
 }
 
 export const COLORS: { [key in definedColors]: Color } = {
 	[definedColors.RED]: {
-		hex: "#ff4444",
+		hex: "#ff0000",
 		id: definedColors.RED
 	},
 	[definedColors.BLUE]: {
-		hex: "#00a4ff",
+		hex: "#1b4ccd",
 		id: definedColors.BLUE
 	},
 	[definedColors.GREEN]: {
-		hex: "#68c341",
+		hex: "#008000",
 		id: definedColors.GREEN
 	},
 	[definedColors.ORANGE]: {
-		hex: "#ff8954",
+		hex: "#ff6600",
 		id: definedColors.ORANGE
 	},
 	[definedColors.PURPLE]: {
-		hex: "#d354ff",
+		hex: "#ac00e6",
 		id: definedColors.PURPLE
 	},
 	[definedColors.YELLOW]: {
-		hex: "#ffdd00",
+		hex: "#ffa500",
 		id: definedColors.YELLOW
 	},
 	[definedColors.WHITE]: {
 		hex: "#ffffff",
 		id: definedColors.WHITE
+	},
+	[definedColors.BLACK]: {
+		hex: "#000000",
+		id: definedColors.BLACK
+	},
+	[definedColors.NEW]: {
+		hex: "#deefe1",
+		id: definedColors.NEW
 	}
 };

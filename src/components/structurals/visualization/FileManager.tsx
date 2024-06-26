@@ -30,6 +30,7 @@ const FileManager: React.FC<FileManagerProps> = ({
                 chatHistory.setChatHistory(worldState.chatHistory)
             }
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentgameId, step]);
 
     const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {

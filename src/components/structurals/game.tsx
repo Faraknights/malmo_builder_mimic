@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { ShapeInPlaceProps } from "../../classes/shapeInPlace";
 import { shapeHitbox, Shapes } from "../modelisation/shapes/Shape";
 import { GameMode } from "../../interfaces/mode";
