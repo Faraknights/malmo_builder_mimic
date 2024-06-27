@@ -1,33 +1,53 @@
 import React, { useEffect, useState } from 'react';
 import { chatProps } from '../../../classes/Chat';
 import { ShapeInPlaceProps } from '../../../classes/shapeInPlace';
-import { parseCSV } from '../../../tools/csvReaded';
+import { parseCSV } from '../../../tools/csvReader';
 import { parseJSON } from '../../../tools/jsonReaded';
 import { GameLog } from '../../../classes/gameLog';
 
-export interface FileManagerProps{
+export interface FileManagerProps {
     chatHistory: chatProps,
     shapeInPlace: ShapeInPlaceProps
 }
+
+// Memoized GameComponent to optimize rendering
+const GameComponent: React.FC<{ gameLog: GameLog, currentIndex: number, onClick: () => void }> = React.memo(({ gameLog, currentIndex, onClick }) => {
+    const lastChangeId = gameLog.gameLog.reduce((acc, cur, idx, arr) => cur.chatHistory.length !== (arr[idx - 1]?.chatHistory.length ?? 0) ? idx : acc, 0);
+
+    return (
+        <div
+            className={`game${currentIndex === 0 ? " selected" : ""}`}
+            onClick={onClick}
+        >
+            {(!gameLog.getWorldStateById(0)?.chatHistory.length && !gameLog.getWorldStateById(0)?.shapeInPlace.length &&
+                <div className="new"></div>
+            ) || (
+                <div className="old"></div>
+            )}
+            <span>Game {currentIndex}</span>
+        </div>
+    );
+});
 
 const FileManager: React.FC<FileManagerProps> = ({
     chatHistory,
     shapeInPlace
 }) => {
-    const [gameLogs, setGameLogs] = useState<GameLog[]>([])
-    const [currentgameId, setcurrentgameId] = useState<number>(0)
-    const [step, setStep] = useState<number>(0)
-    
+    const [gameLogs, setGameLogs] = useState<GameLog[]>([]);
+    const [currentgameId, setcurrentgameId] = useState<number>(0);
+    const [step, setStep] = useState<number>(0);
+
     useEffect(() => {
-        setStep(0)
+        const lastChangeId = gameLogs[currentgameId]?.gameLog.reduce((acc, cur, idx, arr) => cur.chatHistory.length !== (arr[idx - 1]?.chatHistory.length ?? 0) ? idx : acc, 0);
+        setStep(lastChangeId);
     }, [currentgameId]);
 
     useEffect(() => {
-        if(gameLogs[currentgameId]){
-            const worldState = gameLogs[currentgameId].getWorldStateById(step)!
-            if(worldState){
-                shapeInPlace.setObjects(worldState.shapeInPlace)
-                chatHistory.setChatHistory(worldState.chatHistory)
+        if (gameLogs[currentgameId]) {
+            const worldState = gameLogs[currentgameId].getWorldStateById(step)!;
+            if (worldState) {
+                shapeInPlace.setObjects(worldState.shapeInPlace);
+                chatHistory.setChatHistory(worldState.chatHistory);
             }
         }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -54,7 +74,6 @@ const FileManager: React.FC<FileManagerProps> = ({
         }
     };
     
-
     return (
         <div id="fileManager" className='module'>
             <label htmlFor="gameFileInput">Upload Game file</label>
@@ -65,21 +84,17 @@ const FileManager: React.FC<FileManagerProps> = ({
             />
             <hr />
             <div id='games'>
-                {gameLogs.map((GameLog, i) => (
-                    <div 
-                        className={`game${i === currentgameId ? " selected": ""}`}
+                {gameLogs.map((gameLog, i) => (
+                    <GameComponent
                         key={i}
-                        onClick={e => {
-                            setcurrentgameId(i)
+                        gameLog={gameLog}
+                        currentIndex={i}
+                        onClick={() => {
+                            if (i !== currentgameId) {
+                                setcurrentgameId(i);
+                            }
                         }}
-                    >
-                        {(!GameLog.getWorldStateById(0)?.chatHistory.length && !GameLog.getWorldStateById(0)?.shapeInPlace.length && 
-                            <div className="new"></div>
-                        ) || (
-                            <div className="old"></div>
-                        )}
-                        <span>Game {i}</span>
-                    </div>
+                    />
                 ))}
             </div>
             <hr />
@@ -88,35 +103,33 @@ const FileManager: React.FC<FileManagerProps> = ({
                     type='range'
                     min={0}
                     step={1}
-                    max={gameLogs[currentgameId] ? gameLogs[currentgameId].getLength() - 1: 1}
+                    max={gameLogs[currentgameId] ? gameLogs[currentgameId].getLength() - 1 : 1}
                     value={step}
                     onChange={e => {
                         setStep(parseInt(e.target.value))
                     }}
                 />
-                <div
-                    className='buttonWrapper'
-                >
+                <div className='buttonWrapper'>
                     <div
-                        className={`previousGame${!!gameLogs[currentgameId] && currentgameId === 0 ? " disabled": ""}`}
+                        className={`previousGame${!!gameLogs[currentgameId] && currentgameId === 0 ? " disabled" : ""}`}
                         onClick={e => {
                             setcurrentgameId(prevId => prevId - 1)
                         }}
                     ></div>
                     <div
-                        className={`previousStep${!!gameLogs[currentgameId] && step === 0 ? " disabled": ""}`}
+                        className={`previousStep${!!gameLogs[currentgameId] && step === 0 ? " disabled" : ""}`}
                         onClick={e => {
                             setStep(prevStep => prevStep - 1)
                         }}
                     ></div>
                     <div
-                        className={`nextStep${!!gameLogs[currentgameId] && step === gameLogs[currentgameId].getLength() - 1 ? " disabled": ""}`}
+                        className={`nextStep${!!gameLogs[currentgameId] && step === gameLogs[currentgameId].getLength() - 1 ? " disabled" : ""}`}
                         onClick={e => {
                             setStep(prevStep => prevStep + 1)
                         }}
                     ></div>
                     <div
-                        className={`nextGame${!!gameLogs[currentgameId] && currentgameId === gameLogs.length - 1 ? " disabled": ""}`}
+                        className={`nextGame${!!gameLogs[currentgameId] && currentgameId === gameLogs.length - 1 ? " disabled" : ""}`}
                         onClick={e => {
                             setcurrentgameId(prevId => prevId + 1)
                         }}

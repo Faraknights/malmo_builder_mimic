@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Color } from 'three';
@@ -41,24 +41,25 @@ const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, gameMode, inventory, 
 };
 
 const App: React.FC<EnvironmentProps> = (props) => {
+
     const bgColor = new Color(0x1a1b1e);
+
+    const scene = useMemo(() => <Scene {...props} />, [props]);
     
     return (
-        
         <Canvas 
             key={props.camera}
             frameloop="demand"
             orthographic={CanvasCameraSettings[props.camera].orthographic}
             camera={CanvasCameraSettings[props.camera].cameraSettings}
         >
-            <Scene {...props}/>
+            {scene}
             <OrbitControls 
                 enablePan={false}
                 minPolarAngle={CanvasCameraSettings[props.camera].polarAngle.min}
                 maxPolarAngle={CanvasCameraSettings[props.camera].polarAngle.max}
                 minAzimuthAngle={CanvasCameraSettings[props.camera].azimuthAngle?.min}
                 maxAzimuthAngle={CanvasCameraSettings[props.camera].azimuthAngle?.max} 
-
             />
             <fog attach="fog" args={["white", 20, 1000]} />
             <ambientLight intensity={1}/>

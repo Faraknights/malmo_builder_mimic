@@ -253,7 +253,7 @@ const Game: React.FC<GameProps> = ({
 				type: MeshType.SCENE,
 			} as UserData}
 		>
-			<Board />
+			<Board key={environmentMode}/>
 			{renderedObjects}
 			{pendingObject}
 		</mesh>
