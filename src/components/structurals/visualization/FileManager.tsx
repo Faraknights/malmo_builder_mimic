@@ -11,12 +11,12 @@ export interface FileManagerProps {
 }
 
 // Memoized GameComponent to optimize rendering
-const GameComponent: React.FC<{ gameLog: GameLog, currentIndex: number, onClick: () => void }> = React.memo(({ gameLog, currentIndex, onClick }) => {
+const GameComponent: React.FC<{ gameLog: GameLog, currentIndex: number, currentgameId: number, onClick: () => void }> = React.memo(({ gameLog, currentIndex, currentgameId, onClick }) => {
     const lastChangeId = gameLog.gameLog.reduce((acc, cur, idx, arr) => cur.chatHistory.length !== (arr[idx - 1]?.chatHistory.length ?? 0) ? idx : acc, 0);
 
     return (
         <div
-            className={`game${currentIndex === 0 ? " selected" : ""}`}
+            className={`game ${currentIndex === currentgameId ? "selected" : ""}`}
             onClick={onClick}
         >
             {(!gameLog.getWorldStateById(0)?.chatHistory.length && !gameLog.getWorldStateById(0)?.shapeInPlace.length &&
@@ -89,6 +89,7 @@ const FileManager: React.FC<FileManagerProps> = ({
                         key={i}
                         gameLog={gameLog}
                         currentIndex={i}
+                        currentgameId={currentgameId}
                         onClick={() => {
                             if (i !== currentgameId) {
                                 setcurrentgameId(i);
