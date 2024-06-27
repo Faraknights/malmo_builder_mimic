@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/malmo_builder_mimic/static/css/main.34282e59.css",
-    "main.js": "/malmo_builder_mimic/static/js/main.add10b8b.js",
-    "static/js/453.1a156734.chunk.js": "/malmo_builder_mimic/static/js/453.1a156734.chunk.js",
-    "index.html": "/malmo_builder_mimic/index.html",
-    "main.34282e59.css.map": "/malmo_builder_mimic/static/css/main.34282e59.css.map",
-    "main.add10b8b.js.map": "/malmo_builder_mimic/static/js/main.add10b8b.js.map",
-    "453.1a156734.chunk.js.map": "/malmo_builder_mimic/static/js/453.1a156734.chunk.js.map"
+    "main.css": "/malmo_builder_mimic/static/css/main.ea6c6bf5.css",
+    "main.js": "/malmo_builder_mimic/static/js/main.611223a1.js",
+    "static/js/474.f4134c14.chunk.js": "/malmo_builder_mimic/static/js/474.f4134c14.chunk.js",
+    "static/js/206.7502495a.chunk.js": "/malmo_builder_mimic/static/js/206.7502495a.chunk.js",
+    "index.html": "/malmo_builder_mimic/index.html"
   },
   "entrypoints": [
-    "static/css/main.34282e59.css",
-    "static/js/main.add10b8b.js"
+    "static/css/main.ea6c6bf5.css",
+    "static/js/main.611223a1.js"
   ]
 }
