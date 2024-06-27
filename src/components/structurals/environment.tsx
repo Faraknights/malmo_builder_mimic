@@ -33,9 +33,6 @@ const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, gameMode, inventory, 
                 inventory={inventory}
                 action={action}
             />
-            { gameMode === GameMode.VISUALIZATION && (
-                <axesHelper args={[5]} position={[(gridSize.x.max + gridSize.x.min) / 2, 1, (gridSize.z.max + gridSize.z.min) / 2]} />
-            )}
         </mesh>
     );
 };
@@ -49,6 +46,7 @@ const App: React.FC<EnvironmentProps> = (props) => {
     return (
         <Canvas 
             key={props.camera}
+            gl={{ preserveDrawingBuffer: true }}
             frameloop="demand"
             orthographic={CanvasCameraSettings[props.camera].orthographic}
             camera={CanvasCameraSettings[props.camera].cameraSettings}

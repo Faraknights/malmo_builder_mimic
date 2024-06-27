@@ -15,6 +15,7 @@ import ChatComponent from './Chat';
 import { GameLog, worldStateProps } from '../../classes/gameLog';
 import CameraSelector from './simulation/CameraPicker';
 import useCamera from '../../classes/Camera';
+import { useThree } from '@react-three/fiber';
 
 const Simulation = () => {
     const {environmentMode} = useEnvironmentState()
@@ -22,9 +23,10 @@ const Simulation = () => {
         ENVIRONMENT_COLORS[environmentMode],
         ENVIRONMENT_SHAPES[environmentMode]
     );
+
     const shapeInPlace = useShapeInPlace();
     const action = useAction()
-    const camera = useCamera()
+    const myCamera = useCamera()
 	const chat = useChat();
     const [gameLog, setGameLog] = useState<GameLog>(new GameLog())
 
@@ -75,13 +77,13 @@ const Simulation = () => {
     return (
 		<main>
             <div id='mainView'>
-                <CameraSelector {...camera}/>
+                <CameraSelector {...myCamera}/>
                 <Environment 
                     gameMode={GameMode.SIMULATION}
                     shapeInPlace={shapeInPlace}
                     inventory={inventory}
                     action={action}
-                    camera={camera.current}
+                    camera={myCamera.current}
                 />
             </div>
             <Side>
@@ -104,7 +106,26 @@ const Simulation = () => {
                             document.body.removeChild(a);
                             URL.revokeObjectURL(url);
                         }}
-                    >Download</button>
+                    >Download json</button>
+                    <button 
+                        id="download"
+                        onClick={e => {
+                            const canvas = document.querySelector<HTMLCanvasElement>('canvas[data-engine="three.js r164"]');
+
+                            if (canvas) {
+                                const image = canvas.toDataURL("image/png")
+                                const a = document.createElement("a");
+                                a.href = image;
+                                a.download = "canvas-image.png"; 
+                                document.body.appendChild(a);
+                                a.click();
+                                document.body.removeChild(a);
+                            } else {
+                                console.error("Canvas element not found");
+                            }
+
+                        }}
+                    >Download png</button>
                     <button 
                         id="reset"
                         onClick={e => {
