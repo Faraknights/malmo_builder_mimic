@@ -1,27 +1,26 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Color } from 'three';
 import { ShapeInPlaceProps } from '../../classes/shapeInPlace';
 import Game from './game';
-import { GameMode } from '../../interfaces/mode';
+import { GameMode } from '../../classes/gameMode';
 import { inventoryProps } from '../../classes/Inventory';
 import { ActionProps } from '../../classes/Action';
-import { useEnvironmentState } from '../../classes/EnvironmentMode';
+import { EnvironmentMode } from '../../classes/EnvironmentMode';
 import { GRID_SIZE } from '../../constants/environment';
 import { CameraMode, CanvasCameraSettings } from '../../classes/Camera';
-
 
 interface EnvironmentProps {
     shapeInPlace: ShapeInPlaceProps,
     gameMode: GameMode,
+    environmentMode: EnvironmentMode,
     inventory?: inventoryProps,
     action?: ActionProps
     camera: CameraMode
 }
 
-const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, gameMode, inventory, action }) => {
-    const {environmentMode} = useEnvironmentState()
+const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, gameMode, environmentMode, inventory, action }) => {
     const gridSize = GRID_SIZE[environmentMode]
     return (
         <mesh
@@ -32,6 +31,7 @@ const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, gameMode, inventory, 
                 gameMode={gameMode}
                 inventory={inventory}
                 action={action}
+                environmentMode={environmentMode}
             />
         </mesh>
     );

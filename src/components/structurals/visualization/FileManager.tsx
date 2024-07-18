@@ -12,8 +12,6 @@ export interface FileManagerProps {
 
 // Memoized GameComponent to optimize rendering
 const GameComponent: React.FC<{ gameLog: GameLog, currentIndex: number, currentgameId: number, onClick: () => void }> = React.memo(({ gameLog, currentIndex, currentgameId, onClick }) => {
-    const lastChangeId = gameLog.gameLog.reduce((acc, cur, idx, arr) => cur.chatHistory.length !== (arr[idx - 1]?.chatHistory.length ?? 0) ? idx : acc, 0);
-
     return (
         <div
             className={`game ${currentIndex === currentgameId ? "selected" : ""}`}
@@ -40,6 +38,7 @@ const FileManager: React.FC<FileManagerProps> = ({
     useEffect(() => {
         const lastChangeId = gameLogs[currentgameId]?.gameLog.reduce((acc, cur, idx, arr) => cur.chatHistory.length !== (arr[idx - 1]?.chatHistory.length ?? 0) ? idx : acc, 0);
         setStep(lastChangeId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentgameId]);
 
     useEffect(() => {

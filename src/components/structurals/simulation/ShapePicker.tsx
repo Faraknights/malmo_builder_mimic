@@ -3,20 +3,25 @@ import { inventoryProps } from '../../../classes/Inventory';
 import { shapeHitbox, Shapes } from '../../modelisation/shapes/Shape';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { useEnvironmentState } from '../../../classes/EnvironmentMode';
+import { EnvironmentMode } from '../../../classes/EnvironmentMode';
 import { BLOCK_SIZE } from '../../../constants/environment';
 import { shapeList } from '../../../constants/shapeList';
 import { CartesianCoordinate } from '../../../interfaces/cartesianCoordinate';
 
-const ShapePicker: React.FC<inventoryProps> = ({
-    currentColor,
-    currentShape,
-    shapes,
-    setCurrentShape
+const ShapePicker: React.FC<{
+    inventory: inventoryProps,
+    environmentMode: EnvironmentMode
+}> = ({
+    inventory: {
+        currentColor,
+        currentShape,
+        shapes,
+        setCurrentShape,
+    },
+    environmentMode
 }) => {
     const nbShapeByRow = 2
     const ShapesByRow = [];
-    const {environmentMode} = useEnvironmentState()
     for (let i = 0; i < shapes.length; i += nbShapeByRow) {
         ShapesByRow.push(shapes.slice(i, i + nbShapeByRow));
     }

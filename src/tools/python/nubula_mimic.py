@@ -1,1 +1,0 @@
-print("Action : screw\nAction Input: {\"position\": [1, 2, 0], \"color\": \"green\"}")

@@ -1,24 +1,22 @@
 import { useEffect, useState } from 'react';
 import { useInventory } from '../../classes/Inventory';
 import { useShapeInPlace } from '../../classes/shapeInPlace';
-import { GameMode } from '../../interfaces/mode';
+import { GameMode } from '../../classes/gameMode';
 import Environment from './environment';
 import Side from './Side';
 import ColorPicker from './simulation/ColorPicker';
 import useAction from '../../classes/Action';
 import ActionSelector from './simulation/ActionSelector';
 import ShapePicker from './simulation/ShapePicker';
-import { useEnvironmentState } from '../../classes/EnvironmentMode';
+import { EnvironmentTypeProps } from '../../classes/EnvironmentMode';
 import { ENVIRONMENT_COLORS, ENVIRONMENT_SHAPES, EXPORT_GAME_LOG } from '../../constants/environment';
 import { useChat } from '../../classes/Chat';
 import ChatComponent from './Chat';
 import { GameLog, worldStateProps } from '../../classes/gameLog';
 import CameraSelector from './simulation/CameraPicker';
 import useCamera from '../../classes/Camera';
-import { useThree } from '@react-three/fiber';
 
-const Simulation = () => {
-    const {environmentMode} = useEnvironmentState()
+const Simulation: React.FC<EnvironmentTypeProps> = ({environmentMode}) => {
     const inventory = useInventory( 
         ENVIRONMENT_COLORS[environmentMode],
         ENVIRONMENT_SHAPES[environmentMode]
@@ -84,12 +82,13 @@ const Simulation = () => {
                     inventory={inventory}
                     action={action}
                     camera={myCamera.current}
+                    environmentMode={environmentMode}
                 />
             </div>
             <Side>
                 <ActionSelector {...action}/>
 				<ColorPicker {...inventory}/>
-                <ShapePicker {...inventory}/>
+                <ShapePicker inventory={inventory} environmentMode={environmentMode}/>
 				<ChatComponent chat={chat} readOnly={false}/>
                 <div id="gameButtons">
                     <button 
@@ -123,7 +122,6 @@ const Simulation = () => {
                             } else {
                                 console.error("Canvas element not found");
                             }
-
                         }}
                     >Download png</button>
                     <button 

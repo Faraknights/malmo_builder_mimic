@@ -1,11 +1,15 @@
 import { CartesianCoordinate, hasCommonCoordinate } from "../interfaces/cartesianCoordinate";
 import * as THREE from 'three'
-import { EnvironmentMode } from "../classes/EnvironmentMode";
+import { EnvironmentMode, EnvironmentTypeProps } from "../classes/EnvironmentMode";
 import { COLORS, definedColors } from "./colors";
 import Color from "../interfaces/Color";
 import { shapeList } from "./shapeList";
 import { shapeProps } from "../components/modelisation/shapes/Shape";
 import { GameLog } from "../classes/gameLog";
+import Simulation from "../components/structurals/Simulation";
+import Visualization from "../components/structurals/Visualization";
+import Nebula from "../components/structurals/Nebula";
+import { GameMode } from "../classes/gameMode";
 
 export const BLOCK_SIZE: { [key in EnvironmentMode]: CartesianCoordinate } = {
     [EnvironmentMode.MINECRAFT]:{x:1,y:1,z:1},
@@ -150,6 +154,23 @@ export const EXPORT_GAME_LOG: { [key in EnvironmentMode]: ( gameLog: GameLog ) =
         }))
     })
 };
+
+export const gameModesAvailable: { [key in EnvironmentMode]: GameMode[] } = {
+    [EnvironmentMode.MINECRAFT]: [
+        GameMode.SIMULATION,
+        GameMode.VISUALIZATION
+    ],
+    [EnvironmentMode.COCOBOTS]: [
+        GameMode.SIMULATION,
+        GameMode.NEBULA
+    ],
+}
+
+export const gameModeComponent: { [key in GameMode]: React.ComponentType<EnvironmentTypeProps>} = {
+    [GameMode.SIMULATION]: Simulation,
+    [GameMode.VISUALIZATION]: Visualization,
+    [GameMode.NEBULA]: Nebula
+}
 
 export const OPACITY_PENDING_OBJECT = 0.4
 

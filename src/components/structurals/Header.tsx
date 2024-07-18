@@ -1,19 +1,35 @@
-import React from 'react';
-import { GameMode } from '../../interfaces/mode';
-import { EnvironmentMode, useEnvironmentState } from '../../classes/EnvironmentMode';
+import React, { useEffect } from 'react';
+import { GameMode } from '../../classes/gameMode';
+import { EnvironmentMode } from '../../classes/EnvironmentMode';
+import { gameModesAvailable } from '../../constants/environment';
 
 interface HeaderProps {
   currentGameMode: GameMode;
   setGameMode: React.Dispatch<React.SetStateAction<GameMode>>;
+  environmentMode: EnvironmentMode;
+  setEnvironmentMode: React.Dispatch<React.SetStateAction<EnvironmentMode>>;
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
-  const {currentGameMode, setGameMode} = props
-  const {environmentMode, setEnvironmentMode} = useEnvironmentState()
+  const { currentGameMode, setGameMode, environmentMode, setEnvironmentMode } = props;
+
+  useEffect(() => {
+    if (!gameModesAvailable[environmentMode].includes(currentGameMode)) {
+      setGameMode(gameModesAvailable[environmentMode][0]);
+    }
+  }, [environmentMode, currentGameMode, setGameMode]);
+
+  const handleEnvironmentModeChange = () => {
+    const modes = Object.keys(EnvironmentMode) as EnvironmentMode[];
+    const currentIndex = modes.indexOf(environmentMode);
+    const nextMode = modes[(currentIndex + 1) % modes.length];
+    setEnvironmentMode(nextMode);
+  };
+
   return (
     <header>
       <nav id="modeSelector">
-        {Object.keys(GameMode).map((gameModeKey: string) => {
+        {gameModesAvailable[environmentMode].map((gameModeKey) => {
           const gameMode = GameMode[gameModeKey as keyof typeof GameMode];
           return (
             <div
@@ -26,12 +42,7 @@ const Header: React.FC<HeaderProps> = (props) => {
           );
         })}
       </nav>
-      <button 
-        onClick={() => {
-          setEnvironmentMode(Object.keys(EnvironmentMode)[(Object.keys(EnvironmentMode).findIndex(x => x === environmentMode) + 1) % Object.keys(EnvironmentMode).length] as EnvironmentMode)
-        }}
-        id='environmentMode'
-      >
+      <button onClick={handleEnvironmentModeChange} id='environmentMode'>
         {environmentMode}
       </button>
     </header>

@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { ShapeInPlaceProps } from "../../classes/shapeInPlace";
 import { shapeHitbox, Shapes } from "../modelisation/shapes/Shape";
-import { GameMode } from "../../interfaces/mode";
+import { GameMode } from "../../classes/gameMode";
 import Board from "../modelisation/Board";
 import { inventoryProps } from "../../classes/Inventory";
 import { ThreeEvent } from "@react-three/fiber";
@@ -13,14 +13,15 @@ import Group, { ShapeGroup } from "../modelisation/shapes/group";
 import { Action, ActionProps } from "../../classes/Action";
 import { pendingDirection } from "../../constants/direction";
 import { BLOCK_SIZE, GAME_RULE} from "../../constants/environment";
-import { useEnvironmentState } from "../../classes/EnvironmentMode";
 import { shapeList } from "../../constants/shapeList";
+import { EnvironmentMode } from "../../classes/EnvironmentMode";
 
 interface GameProps {
 	shapeInPlace: ShapeInPlaceProps
 	gameMode: GameMode
 	inventory?: inventoryProps
 	action?: ActionProps
+	environmentMode: EnvironmentMode
 }
 
 function findParentShape (object: Object3DWithUserData<Object3DEventMap>): Object3DWithUserData<Object3DEventMap>{
@@ -60,11 +61,11 @@ const Game: React.FC<GameProps> = ({
 	shapeInPlace,
 	gameMode,
 	inventory,
-	action
+	action,
+	environmentMode
 }) => {
 	const { objects, pending } = shapeInPlace;
 	const [mouseDownPosition, setMouseDownPosition] = useState<{ x: number; y: number } | null>(null);
-    const {environmentMode} = useEnvironmentState()
 
 	const handlePendingPlacement = (position: CartesianCoordinate, shape: shapeList, skipCheckBelow?: boolean) => {
 		const newShape = {
@@ -253,7 +254,10 @@ const Game: React.FC<GameProps> = ({
 				type: MeshType.SCENE,
 			} as UserData}
 		>
-			<Board key={environmentMode}/>
+			<Board 
+				key={environmentMode}
+				environmentMode={environmentMode}
+			/>
 			{renderedObjects}
 			{pendingObject}
 		</mesh>

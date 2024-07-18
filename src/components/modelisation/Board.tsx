@@ -3,7 +3,7 @@ import { Edges, Text } from "@react-three/drei";
 import { CELL_COLOR, GRID_SIZE } from "../../constants/environment";
 import * as THREE from "three"
 import { CellBoardUserData, MeshType } from "../../constants/meshType";
-import { useEnvironmentState } from "../../classes/EnvironmentMode";
+import { EnvironmentMode } from "../../classes/EnvironmentMode";
 import React from "react";
 
 interface cellBoardProps{
@@ -32,8 +32,7 @@ const CellBoard= ({position}: cellBoardProps) => (
 	</mesh>
 )
 
-const Board = () => {
-	const {environmentMode} = useEnvironmentState()
+const Board = ({environmentMode}: {environmentMode: EnvironmentMode}) => {
 	const gridSize = GRID_SIZE[environmentMode]
 	 
 	return (

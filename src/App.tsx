@@ -1,23 +1,28 @@
-import { useState } from 'react';
-import './styles/app.scss';
-import {GameMode, gameModeComponent} from './interfaces/mode';
+import {GameMode} from './classes/gameMode';
 import Header from './components/structurals/Header';
-import { GlobalEnvironmentModeProvider } from './classes/EnvironmentMode';
+import { EnvironmentMode } from './classes/EnvironmentMode';
+import { gameModeComponent } from './constants/environment';
+import { useState } from 'react';
 
-const App = () => {
-    const [gameMode, setGameMode] = useState<GameMode>(GameMode.VISUALIZATION);
+const App = ({initialEnvironmentMode, initialGameMode}: {
+	initialEnvironmentMode: EnvironmentMode,
+	initialGameMode: GameMode
+}) => {
+	const [environmentMode, setEnvironmentMode] = useState<EnvironmentMode>(initialEnvironmentMode);
+	const [gameMode, setGameMode] = useState<GameMode>(initialGameMode);
+
     const GameModeComp = gameModeComponent[gameMode];
 
 	return (
-		<GlobalEnvironmentModeProvider>
-			<>
-				<Header 
-					currentGameMode={gameMode} 
-					setGameMode={setGameMode}
-				/>
-				<GameModeComp />
-			</>
-		</GlobalEnvironmentModeProvider>
+		<>
+			<Header 
+				currentGameMode={gameMode} 
+				setGameMode={setGameMode}
+				environmentMode={environmentMode}
+				setEnvironmentMode={setEnvironmentMode}
+			/>
+			<GameModeComp environmentMode={environmentMode} />
+		</>
 	);
 }
 
