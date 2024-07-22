@@ -33,7 +33,7 @@ const Nebula: React.FC<EnvironmentTypeProps> = ({environmentMode}) => {
                 />
             </div>
             <Side>
-				<ChatComponent chat={chat} readOnly={false}/>
+				<ChatComponent chat={chat} readOnly={false} nebula={true}/>
             </Side>
         </main>
     );

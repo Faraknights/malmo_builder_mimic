@@ -1,22 +1,45 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { chatProps } from '../../classes/Chat';
+import Nebula from './Nebula';
+import { fetchEventSource } from '@microsoft/fetch-event-source';
 
 interface chatComponentProps{
     chat: chatProps,
     readOnly: boolean
+    nebula?: boolean
 }
 
 const ChatComponent: React.FC<chatComponentProps> = ({
     chat,
-    readOnly
+    readOnly,
+    nebula
 }) => {
     const chatRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (chatRef.current) {
-            console.log(chatRef.current)
             chatRef.current.scrollTop = chatRef.current.scrollHeight;
         }
+
+        if(chat.chatHistory.length){
+            const message = chat.chatHistory[chat.chatHistory.length - 1].content
+            if(nebula) {
+                const runPythonScript = async () => {
+                    await fetchEventSource(("/api/new_message"), {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ message }),
+                        onmessage(ev) {
+                            console.log(ev.data)
+                        }
+                    });
+                };
+                runPythonScript()
+            }
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [chat.chatHistory]);
 
     enum Users{

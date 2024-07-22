@@ -18,6 +18,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   });
 
   res.on("close", () => {
+    pythonProcess.kill();
     res.end();
   });
 }
