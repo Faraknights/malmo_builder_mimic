@@ -19,17 +19,21 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     res.setHeader('Content-Type', 'text/event-stream');
     res.flushHeaders();
 
-    const pythonProcess = spawn('python', ['-u', './src/tools/python/message.py', message as string]);
+    //const pythonProcess = spawn('python', ['-u', './src/tools/python/message.py', message as string]);
+    const pythonProcess = spawn('python', ['-u', './src/tools/python/call_llama_local.py', message as string]);
+    //const pythonProcess = spawn('python', ['-u', './src/tools/python/test_infer.py', message as string]);
 
     pythonProcess.stdout.on('data', (data) => {
         res.write(`data: ${data.toString().trim()}\n\n`);
         console.log(data.toString().trim());
     });
 
+
+
     pythonProcess.stderr.on('data', (data) => {
         res.write(`error: ${data.toString().trim()}\n\n`);
         console.error(data.toString().trim());
-    });
+    }); 
 
     pythonProcess.on('close', (code) => {
         res.write(`process exited with code ${code}\n\n`);

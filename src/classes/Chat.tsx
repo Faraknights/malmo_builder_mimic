@@ -16,7 +16,10 @@ export const useChat = (): chatProps => {
     const [chatHistory, setChatHistory] = useState<Message[]>([]);
 
     const addMessage = (message: Message): void => {
-        setChatHistory(prevChatHistory => [...prevChatHistory, message]);
+        if (message.content){
+            setChatHistory(prevChatHistory => [...prevChatHistory, message]);
+        }
+        //setChatHistory(prevChatHistory => [...prevChatHistory, message]);
     };
 
     const clear = (): void => {

@@ -8,7 +8,7 @@ def main():
         return
     
     message = sys.argv[1]
-    print(message)
+    print(message+' is processed !!')
 
 if __name__ == "__main__":
     main()

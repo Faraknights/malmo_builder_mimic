@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { chatProps } from '../../classes/Chat';
 import Nebula from './Nebula';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
-
+import isBase64 from '../../tools/isBase64';
 interface chatComponentProps{
     chat: chatProps,
     readOnly: boolean
@@ -15,36 +15,22 @@ const ChatComponent: React.FC<chatComponentProps> = ({
     nebula
 }) => {
     const chatRef = useRef<HTMLDivElement>(null);
+    //const [messages, setMessages] = useState<string[]>([]);
+    const [newMessage, setNewMessage] = useState("");
 
     useEffect(() => {
         if (chatRef.current) {
             chatRef.current.scrollTop = chatRef.current.scrollHeight;
         }
 
-        if(chat.chatHistory.length){
-            const message = chat.chatHistory[chat.chatHistory.length - 1].content
-            if(nebula) {
-                const runPythonScript = async () => {
-                    await fetchEventSource(("/api/new_message"), {
-                        method: "POST",
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ message }),
-                        onmessage(ev) {
-                            console.log(ev.data)
-                        }
-                    });
-                };
-                runPythonScript()
-            }
-        }
+        
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [chat.chatHistory]);
 
     enum Users{
         ARCHITECT = "ARCHITECT", 
-        BUILDER = "BUILDER "
+        BUILDER = "BUILDER ",
+        NEBULA="NEBULA"
     }
 
     const [user, setUser] = useState<Users>(Users.ARCHITECT)
@@ -66,10 +52,14 @@ const ChatComponent: React.FC<chatComponentProps> = ({
                             className={`message`}
                         >
                             {message.content}
+                            
                         </div>
+                        
                     </div>
                 ))}
+            
             </div>
+            
             {(!readOnly && (
                 <>
                     <hr />
@@ -85,10 +75,43 @@ const ChatComponent: React.FC<chatComponentProps> = ({
                             type='text'
                             onKeyDown={e => {
                                 if(e.key === 'Enter'){
+                                    const message = e.currentTarget.value
                                     chat.addMessage({
-                                        content:e.currentTarget.value,
+                                        content:message,
                                         user: user
                                     })
+                                    
+                                        //const message = chat.chatHistory[chat.chatHistory.length - 1].content
+                                        if(nebula) {
+                                            const runPythonScript = async () => {
+                                                await fetchEventSource(("/api/new_message"), {
+                                                    method: "POST",
+                                                    headers: {
+                                                        'Content-Type': 'application/json'
+                                                    },
+                                                    body: JSON.stringify({ message }),
+                                                    onmessage: async (ev) => {
+                                                        
+                                                        let full_message = "";
+                                                        if(isBase64(ev.data)){
+                                                            full_message = atob(ev.data)
+                                                          } else {
+                                                            full_message = ev.data
+                                                            
+                                                          }
+                                                        console.log(full_message)
+                                                        setNewMessage((prevNewMessage) => prevNewMessage + full_message);
+                                                        chat.addMessage({
+                                                            content:full_message,
+                                                            user: Users.NEBULA
+                                                        })
+                                                        
+                                                    }
+                                                });
+                                            };
+                                            runPythonScript()
+                                        }
+                                    
                                     e.currentTarget.value = ""
                                 }
                             }}
