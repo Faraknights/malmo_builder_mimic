@@ -1,15 +1,11 @@
 import React, { ReactNode } from 'react';
 
 interface SideProps {
-    children: ReactNode;
+	children: ReactNode;
 }
 
 const Side: React.FC<SideProps> = ({ children }) => {
-    return (
-        <div id="side">
-            {children}
-        </div>
-    );
+	return <div id="side">{children}</div>;
 };
 
 export default Side;

@@ -1,6 +1,6 @@
-import { definedColors } from "../constants/colors";
+import { definedColors } from '../constants/colors';
 
 export default interface Color {
-    id: definedColors;
-    hex: string;
+	id: definedColors;
+	hex: string;
 }

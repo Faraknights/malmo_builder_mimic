@@ -1,22 +1,22 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-export enum Action{
-    PLACE = "PLACE",
-    BREAK = "BREAK"
+export enum Action {
+	PLACE = 'PLACE',
+	BREAK = 'BREAK',
 }
 
-export interface ActionProps{
-    current: Action,
-    setCurrent: React.Dispatch<React.SetStateAction<Action>>
+export interface ActionProps {
+	current: Action;
+	setCurrent: React.Dispatch<React.SetStateAction<Action>>;
 }
 
 export const useAction = (): ActionProps => {
-    const [current, setCurrent] = useState<Action>(Action.PLACE);
+	const [current, setCurrent] = useState<Action>(Action.PLACE);
 
-    return {
-        current,
-        setCurrent,
-    };
+	return {
+		current,
+		setCurrent,
+	};
 };
 
-export default useAction
+export default useAction;
