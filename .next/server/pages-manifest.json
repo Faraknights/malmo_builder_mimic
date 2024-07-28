@@ -1,7 +1,0 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/api/new_message": "pages/api/new_message.js",
-  "/[gameMode]/[environmentMode]": "pages/[gameMode]/[environmentMode].js"
-}
