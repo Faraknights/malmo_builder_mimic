@@ -37,20 +37,14 @@ interface GameProps {
 	environmentMode: EnvironmentMode;
 }
 
-function findParentShape(
-	object: Object3DWithUserData<Object3DEventMap>
-): Object3DWithUserData<Object3DEventMap> {
+function findParentShape(object: Object3DWithUserData<Object3DEventMap>): Object3DWithUserData<Object3DEventMap> {
 	if (object.userData.type === MeshType.SHAPE) {
 		return object;
-	} else if (
-		object.userData.type === MeshType.NON_CLICKABLE_FACE ||
-		object.userData.type === MeshType.SHAPE_FACE
-	) {
+	} else if (object.userData.type === MeshType.NON_CLICKABLE_FACE || object.userData.type === MeshType.SHAPE_FACE) {
 		let currentMesh = object;
 		while (currentMesh.userData.type !== MeshType.SHAPE) {
 			if (currentMesh.parent) {
-				currentMesh =
-					currentMesh.parent as Object3DWithUserData<Object3DEventMap>;
+				currentMesh = currentMesh.parent as Object3DWithUserData<Object3DEventMap>;
 			}
 		}
 		return currentMesh;
@@ -59,52 +53,31 @@ function findParentShape(
 	}
 }
 
-function getPosition(
-	shape: Object3DWithUserData<Object3DEventMap>
-): CartesianCoordinate {
+function getPosition(shape: Object3DWithUserData<Object3DEventMap>): CartesianCoordinate {
 	let position = { x: 0, y: 0, z: 0 } as CartesianCoordinate;
 	if (shape.userData.type === MeshType.SHAPE) {
 		const userData = shape.userData as ShapeUserData;
-		position = coordinateAddition(
-			position,
-			userData.position
-		) as CartesianCoordinate;
+		position = coordinateAddition(position, userData.position) as CartesianCoordinate;
 	} else if (shape.userData.type === MeshType.GROUP) {
 		const userData = shape.userData as GroupUserData;
-		position = coordinateAddition(
-			position,
-			userData.position
-		) as CartesianCoordinate;
+		position = coordinateAddition(position, userData.position) as CartesianCoordinate;
 	}
 	const parentShape = shape.parent as Object3DWithUserData<Object3DEventMap>;
 	if (parentShape.userData.type === MeshType.GROUP) {
-		return coordinateAddition(
-			position,
-			getPosition(parentShape)
-		) as CartesianCoordinate;
+		return coordinateAddition(position, getPosition(parentShape)) as CartesianCoordinate;
 	} else {
 		return position;
 	}
 }
 
-const Game: React.FC<GameProps> = ({
-	shapeInPlace,
-	gameMode,
-	inventory,
-	action,
-	environmentMode,
-}) => {
+const Game: React.FC<GameProps> = ({ shapeInPlace, gameMode, inventory, action, environmentMode }) => {
 	const { objects, pending } = shapeInPlace;
 	const [mouseDownPosition, setMouseDownPosition] = useState<{
 		x: number;
 		y: number;
 	} | null>(null);
 
-	const handlePendingPlacement = (
-		position: CartesianCoordinate,
-		shape: shapeList,
-		skipCheckBelow?: boolean
-	) => {
+	const handlePendingPlacement = (position: CartesianCoordinate, shape: shapeList, skipCheckBelow?: boolean) => {
 		const newShape = {
 			uuid: uuidv4(),
 			pending: true,
@@ -125,11 +98,8 @@ const Game: React.FC<GameProps> = ({
 	};
 	//getPosition
 	const placingObject = (e: ThreeEvent<PointerEvent>) => {
-		const firstPendingMesh = e.intersections[0]
-			.object as Object3DWithUserData<Object3DEventMap>;
-		const pendingShape = findParentShape(
-			firstPendingMesh
-		) as Object3DWithUserData<Object3DEventMap>;
+		const firstPendingMesh = e.intersections[0].object as Object3DWithUserData<Object3DEventMap>;
+		const pendingShape = findParentShape(firstPendingMesh) as Object3DWithUserData<Object3DEventMap>;
 		//?.userData as ShapeUserData
 		if (firstPendingMesh.userData.type === MeshType.SHAPE_FACE) {
 			const userData = firstPendingMesh.userData as ShapeFaceUserData;
@@ -137,13 +107,7 @@ const Game: React.FC<GameProps> = ({
 				getPosition(pendingShape),
 				pendingDirection[userData.faceDirection]
 			) as CartesianCoordinate;
-			shapeInPlace.confirmPending(
-				handlePendingPlacement(
-					pendingPosition,
-					inventory!.currentShape,
-					true
-				)
-			);
+			shapeInPlace.confirmPending(handlePendingPlacement(pendingPosition, inventory!.currentShape, true));
 		} else {
 			shapeInPlace.confirmPending();
 		}
@@ -152,14 +116,10 @@ const Game: React.FC<GameProps> = ({
 
 	const removingObject = (e: ThreeEvent<PointerEvent>) => {
 		if (e.intersections[0]) {
-			let pointedMesh = findParentShape(
-				e.intersections[0]
-					.object as Object3DWithUserData<Object3DEventMap>
-			);
+			let pointedMesh = findParentShape(e.intersections[0].object as Object3DWithUserData<Object3DEventMap>);
 			if (pointedMesh.userData.type === MeshType.SHAPE) {
 				while (pointedMesh.parent?.userData.type === MeshType.GROUP) {
-					pointedMesh =
-						pointedMesh.parent as Object3DWithUserData<Object3DEventMap>;
+					pointedMesh = pointedMesh.parent as Object3DWithUserData<Object3DEventMap>;
 				}
 				const position = getPosition(pointedMesh);
 				shapeInPlace.removeObject(position.x, position.y, position.z);
@@ -170,19 +130,15 @@ const Game: React.FC<GameProps> = ({
 	};
 
 	const handlePointerMove = (e: ThreeEvent<PointerEvent>) => {
-		const intersectionWithoutPending = e.intersections.filter(
-			(intersection) => {
-				const shape = findParentShape(
-					intersection.object as Object3DWithUserData<Object3DEventMap>
-				);
-				if (shape.userData.type === MeshType.SHAPE) {
-					const userData = shape.userData as ShapeUserData;
-					return !userData.pending;
-				} else {
-					return true;
-				}
+		const intersectionWithoutPending = e.intersections.filter((intersection) => {
+			const shape = findParentShape(intersection.object as Object3DWithUserData<Object3DEventMap>);
+			if (shape.userData.type === MeshType.SHAPE) {
+				const userData = shape.userData as ShapeUserData;
+				return !userData.pending;
+			} else {
+				return true;
 			}
-		);
+		});
 		if (action?.current === Action.PLACE) {
 			handlePendingBlock(intersectionWithoutPending);
 		} else {
@@ -192,11 +148,9 @@ const Game: React.FC<GameProps> = ({
 
 	const handlePendingBlock = (intersections: Intersection[]) => {
 		if (intersections[0]) {
-			const pointedMesh = intersections[0]
-				.object as Object3DWithUserData<Object3DEventMap>;
+			const pointedMesh = intersections[0].object as Object3DWithUserData<Object3DEventMap>;
 			if (pointedMesh.userData.type === MeshType.CELL_BOARD) {
-				const cellBoardUserData =
-					pointedMesh.userData as CellBoardUserData;
+				const cellBoardUserData = pointedMesh.userData as CellBoardUserData;
 				const currentPending = shapeInPlace.pending;
 				const pendingPosition = {
 					...cellBoardUserData.position,
@@ -204,35 +158,16 @@ const Game: React.FC<GameProps> = ({
 				};
 				if (currentPending) {
 					const currentPendingPosition =
-						currentPending instanceof ShapeGroup
-							? currentPending.startingPoint
-							: currentPending.position;
-					if (
-						!coordinatesAreEqual(
-							currentPendingPosition,
-							pendingPosition
-						)
-					) {
-						shapeInPlace.setPending(
-							handlePendingPlacement(
-								pendingPosition,
-								inventory!.currentShape
-							)
-						);
+						currentPending instanceof ShapeGroup ? currentPending.startingPoint : currentPending.position;
+					if (!coordinatesAreEqual(currentPendingPosition, pendingPosition)) {
+						shapeInPlace.setPending(handlePendingPlacement(pendingPosition, inventory!.currentShape));
 					}
 				} else {
-					shapeInPlace.setPending(
-						handlePendingPlacement(
-							pendingPosition,
-							inventory!.currentShape
-						)
-					);
+					shapeInPlace.setPending(handlePendingPlacement(pendingPosition, inventory!.currentShape));
 				}
 			} else if (pointedMesh.userData.type === MeshType.SHAPE_FACE) {
 				const userData = pointedMesh.userData as ShapeFaceUserData;
-				const shape = findParentShape(
-					pointedMesh
-				) as Object3DWithUserData<Object3DEventMap>;
+				const shape = findParentShape(pointedMesh) as Object3DWithUserData<Object3DEventMap>;
 				const shapeUserData = shape?.userData as ShapeUserData;
 				if (!shapeUserData.pending) {
 					const currentPending = shapeInPlace.pending;
@@ -247,26 +182,11 @@ const Game: React.FC<GameProps> = ({
 								? currentPending.startingPoint
 								: currentPending.position;
 
-						if (
-							!hasCommonCoordinate(
-								[currentPendingPosition],
-								[pendingPosition]
-							)
-						) {
-							shapeInPlace.setPending(
-								handlePendingPlacement(
-									pendingPosition,
-									inventory!.currentShape
-								)
-							);
+						if (!hasCommonCoordinate([currentPendingPosition], [pendingPosition])) {
+							shapeInPlace.setPending(handlePendingPlacement(pendingPosition, inventory!.currentShape));
 						}
 					} else {
-						shapeInPlace.setPending(
-							handlePendingPlacement(
-								pendingPosition,
-								inventory!.currentShape
-							)
-						);
+						shapeInPlace.setPending(handlePendingPlacement(pendingPosition, inventory!.currentShape));
 					}
 				}
 			} else {
@@ -278,14 +198,10 @@ const Game: React.FC<GameProps> = ({
 	const handleBreakingBlock = (intersections: Intersection[]) => {
 		if (intersections[0]) {
 			shapeInPlace.removeBreaking();
-			let pointedMesh = findParentShape(
-				intersections[0]
-					.object as Object3DWithUserData<Object3DEventMap>
-			);
+			let pointedMesh = findParentShape(intersections[0].object as Object3DWithUserData<Object3DEventMap>);
 			if (pointedMesh.userData.type === MeshType.SHAPE) {
 				while (pointedMesh.parent?.userData.type === MeshType.GROUP) {
-					pointedMesh =
-						pointedMesh.parent as Object3DWithUserData<Object3DEventMap>;
+					pointedMesh = pointedMesh.parent as Object3DWithUserData<Object3DEventMap>;
 				}
 				const position = getPosition(pointedMesh);
 				shapeInPlace.setBreaking(position);
@@ -294,8 +210,7 @@ const Game: React.FC<GameProps> = ({
 	};
 
 	const eventHandlers = {
-		onPointerDown: (e: ThreeEvent<PointerEvent>) =>
-			setMouseDownPosition({ x: e.clientX, y: e.clientY }),
+		onPointerDown: (e: ThreeEvent<PointerEvent>) => setMouseDownPosition({ x: e.clientX, y: e.clientY }),
 		onPointerMove: handlePointerMove,
 		onPointerOut: (e: ThreeEvent<PointerEvent>) => {
 			if (e.intersections.length === 0) {
@@ -352,11 +267,7 @@ const Game: React.FC<GameProps> = ({
 	return (
 		<mesh
 			{...(gameMode === GameMode.SIMULATION ? eventHandlers : {})}
-			scale={[
-				BLOCK_SIZE[environmentMode].x,
-				BLOCK_SIZE[environmentMode].y,
-				BLOCK_SIZE[environmentMode].z,
-			]}
+			scale={[BLOCK_SIZE[environmentMode].x, BLOCK_SIZE[environmentMode].y, BLOCK_SIZE[environmentMode].z]}
 			userData={
 				{
 					type: MeshType.SCENE,

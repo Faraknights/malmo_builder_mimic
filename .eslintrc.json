@@ -31,7 +31,9 @@
   "rules": {
     "prettier/prettier": "error",
     "react/no-unknown-property": "off",
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-inner-declarations": "off"
   },
   "parser": "@typescript-eslint/parser",
   "overrides": [

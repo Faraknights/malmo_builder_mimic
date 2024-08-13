@@ -1,24 +1,13 @@
 import { useState } from 'react';
-import {
-	shapeHitbox,
-	shapeProps,
-} from '../components/modelisation/shapes/Shape';
+import { shapeHitbox, shapeProps } from '../components/modelisation/shapes/Shape';
 import { ShapeGroup } from '../components/modelisation/shapes/group';
-import {
-	CartesianCoordinate,
-	coordinateAddition,
-	coordinatesAreEqual,
-} from '../interfaces/cartesianCoordinate';
+import { CartesianCoordinate, coordinateAddition, coordinatesAreEqual } from '../interfaces/cartesianCoordinate';
 
 export interface ShapeInPlaceProps {
 	objects: (shapeProps | ShapeGroup)[];
 	pending: (shapeProps | ShapeGroup) | undefined;
-	setObjects: React.Dispatch<
-		React.SetStateAction<(shapeProps | ShapeGroup)[]>
-	>;
-	setPending: React.Dispatch<
-		React.SetStateAction<(shapeProps | ShapeGroup) | undefined>
-	>;
+	setObjects: React.Dispatch<React.SetStateAction<(shapeProps | ShapeGroup)[]>>;
+	setPending: React.Dispatch<React.SetStateAction<(shapeProps | ShapeGroup) | undefined>>;
 	nbObjects: () => number;
 	objectExists: (x: number, y: number, z: number) => boolean;
 	addObject: (object: shapeProps) => void;
@@ -32,9 +21,7 @@ export interface ShapeInPlaceProps {
 
 export const useShapeInPlace = (): ShapeInPlaceProps => {
 	const [objects, setObjects] = useState<(shapeProps | ShapeGroup)[]>([]);
-	const [pending, setPending] = useState<
-		shapeProps | ShapeGroup | undefined
-	>();
+	const [pending, setPending] = useState<shapeProps | ShapeGroup | undefined>();
 
 	const nbObjects = (): number => {
 		let count = 0;
@@ -55,11 +42,7 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 					return true;
 				}
 			} else {
-				if (
-					x === shape.position.x &&
-					y === shape.position.y &&
-					z === shape.position.z
-				) {
+				if (x === shape.position.x && y === shape.position.y && z === shape.position.z) {
 					return true;
 				}
 			}
@@ -79,11 +62,7 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 						return false;
 					}
 				} else {
-					if (
-						shape.position.x === x &&
-						shape.position.y === y &&
-						shape.position.z === z
-					) {
+					if (shape.position.x === x && shape.position.y === y && shape.position.z === z) {
 						return false;
 					}
 				}
@@ -100,12 +79,7 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 		if (pending) {
 			const updatedPending =
 				pending instanceof ShapeGroup
-					? new ShapeGroup(
-							pending.startingPoint,
-							pending.shapes,
-							false,
-							pending.breakable
-						)
+					? new ShapeGroup(pending.startingPoint, pending.shapes, false, pending.breakable)
 					: { ...pending, pending: false };
 			addObject(updatedPending);
 		}
@@ -113,17 +87,10 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 	};
 
 	const setBreaking = (position: CartesianCoordinate) => {
-		const updateShape = (
-			shape: shapeProps | ShapeGroup
-		): shapeProps | ShapeGroup => {
+		const updateShape = (shape: shapeProps | ShapeGroup): shapeProps | ShapeGroup => {
 			if (shape.breakable) return shape;
 			if (shape instanceof ShapeGroup) {
-				return new ShapeGroup(
-					shape.startingPoint,
-					shape.shapes.map(updateShape),
-					shape.pending,
-					true
-				);
+				return new ShapeGroup(shape.startingPoint, shape.shapes.map(updateShape), shape.pending, true);
 			} else {
 				return { ...shape, breakable: true };
 			}
@@ -131,15 +98,9 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 
 		setObjects((prevObjects) =>
 			prevObjects.map((shape) => {
-				if (
-					shape instanceof ShapeGroup &&
-					coordinatesAreEqual(shape.startingPoint, position)
-				) {
+				if (shape instanceof ShapeGroup && coordinatesAreEqual(shape.startingPoint, position)) {
 					return updateShape(shape);
-				} else if (
-					'position' in shape &&
-					coordinatesAreEqual(shape.position, position)
-				) {
+				} else if ('position' in shape && coordinatesAreEqual(shape.position, position)) {
 					return updateShape(shape);
 				} else {
 					return shape;
@@ -149,16 +110,9 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 	};
 
 	const removeBreaking = () => {
-		const updateShape = (
-			shape: shapeProps | ShapeGroup
-		): shapeProps | ShapeGroup => {
+		const updateShape = (shape: shapeProps | ShapeGroup): shapeProps | ShapeGroup => {
 			if (shape instanceof ShapeGroup) {
-				return new ShapeGroup(
-					shape.startingPoint,
-					shape.shapes.map(updateShape),
-					shape.pending,
-					false
-				);
+				return new ShapeGroup(shape.startingPoint, shape.shapes.map(updateShape), shape.pending, false);
 			} else {
 				return { ...shape, breakable: false };
 			}

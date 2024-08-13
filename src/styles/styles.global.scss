@@ -145,6 +145,21 @@ html, body, #__next{
 						display: none;
 					}
 
+					.inputFinder{
+						outline: none;
+						margin-top: 10px;
+						width: 90%;
+						border: none;
+						border-radius: 5px;
+						padding: 5px 5px;
+						background-color: #20eaff30;
+						color: white;
+						
+						&::placeholder{
+							color: rgb(164, 193, 210);
+						}
+					}
+
 					label{
 						display: flex;
 						width: 80%;
@@ -161,7 +176,7 @@ html, body, #__next{
 
 					hr{
 						width: calc(100% - 20px);
-						margin: 20px;
+						margin: 10px;
 						border-top: 1px solid rgba(0, 200, 255, 0.7);
 						border-bottom: 0;
 					}
@@ -185,6 +200,10 @@ html, body, #__next{
 							border-radius: 8px;
 							color: #c7f5fd;
 							cursor: pointer;
+
+							&.searched{
+								background-color: #00ff3c51;
+							}
 
 							&.selected{
 								cursor: auto;
@@ -379,6 +398,12 @@ html, body, #__next{
 								padding: 010px;
 								color: white;
 								font-weight: 100;
+								outline: none;
+
+								&.disable{
+									background-color: rgba(116, 114, 71, 0.595);
+									pointer-events: none;
+								}
 							}
 						}
 

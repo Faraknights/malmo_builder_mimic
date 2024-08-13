@@ -1,11 +1,7 @@
 import React from 'react';
 import { inventoryProps } from '../../../classes/Inventory';
 
-const ColorPicker: React.FC<inventoryProps> = ({
-	currentColor,
-	colors,
-	changeColor,
-}) => {
+const ColorPicker: React.FC<inventoryProps> = ({ currentColor, colors, changeColor }) => {
 	const nbColorByRow = 3;
 	const ColorsByRow = [];
 	for (let i = 0; i < colors.length; i += nbColorByRow) {
@@ -23,13 +19,8 @@ const ColorPicker: React.FC<inventoryProps> = ({
 								className={`color${currentColor.id === color.id ? ' selected' : ''}`}
 								onClick={() => changeColor(color.id)}
 							>
-								<div
-									style={{ backgroundColor: color.hex }}
-								></div>
-								<span>
-									{color.id[0] +
-										color.id.slice(1).toLowerCase()}
-								</span>
+								<div style={{ backgroundColor: color.hex }}></div>
+								<span>{color.id[0] + color.id.slice(1).toLowerCase()}</span>
 							</div>
 						))}
 					</div>

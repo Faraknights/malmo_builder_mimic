@@ -2,17 +2,25 @@ import React, { useEffect, useRef, useState } from 'react';
 import { chatProps } from '../../classes/Chat';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 import isBase64 from '../../tools/isBase64';
+import { ServerMessage } from '../../interfaces/serverMessage';
+import { parseInstruction } from '../../tools/csvReader';
+import { GameLog } from '../../classes/gameLog';
+import { ShapeInPlaceProps } from '../../classes/shapeInPlace';
 interface chatComponentProps {
 	chat: chatProps;
-	readOnly: boolean;
+	availableUsers: Users[];
+	shapeInPlace: ShapeInPlaceProps;
 	nebula?: boolean;
 }
 
-const ChatComponent: React.FC<chatComponentProps> = ({
-	chat,
-	readOnly,
-	nebula,
-}) => {
+export enum Users {
+	SYSTEM = 'SYSTEM',
+	ARCHITECT = 'ARCHITECT',
+	BUILDER = 'BUILDER ',
+	NEBULA = 'NEBULA',
+}
+
+const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, nebula, shapeInPlace }) => {
 	const chatRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -21,13 +29,8 @@ const ChatComponent: React.FC<chatComponentProps> = ({
 		}
 	}, [chat.chatHistory]);
 
-	enum Users {
-		ARCHITECT = 'ARCHITECT',
-		BUILDER = 'BUILDER ',
-		NEBULA = 'NEBULA',
-	}
-
 	const [user, setUser] = useState<Users>(Users.ARCHITECT);
+	const [disable, setDisable] = useState<boolean>(false);
 
 	return (
 		<div id="chat" className="module">
@@ -36,8 +39,7 @@ const ChatComponent: React.FC<chatComponentProps> = ({
 			<div ref={chatRef}>
 				{chat.chatHistory.map((message, i) => (
 					<div key={i}>
-						{(i === 0 ||
-							message.user !== chat.chatHistory[i - 1].user) && (
+						{(i === 0 || message.user !== chat.chatHistory[i - 1].user) && (
 							<span className="userName" key={`user-${i}`}>
 								{message.user}
 							</span>
@@ -49,19 +51,15 @@ const ChatComponent: React.FC<chatComponentProps> = ({
 				))}
 			</div>
 
-			{!readOnly && (
+			{availableUsers.length >= 1 && (
 				<>
 					<hr />
 					<div>
 						<button
 							onClick={() => {
 								setUser(
-									Object.keys(Users)[
-										(Object.keys(Users).findIndex(
-											(x) => x === user
-										) +
-											1) %
-											Object.keys(Users).length
+									availableUsers[
+										(availableUsers.findIndex((x) => x === user) + 1) % availableUsers.length
 									] as Users
 								);
 							}}
@@ -70,6 +68,8 @@ const ChatComponent: React.FC<chatComponentProps> = ({
 						</button>
 						<input
 							type="text"
+							className={disable ? 'disable' : ''}
+							disabled={disable}
 							onKeyDown={(e) => {
 								if (e.key === 'Enter') {
 									const message = e.currentTarget.value;
@@ -78,41 +78,88 @@ const ChatComponent: React.FC<chatComponentProps> = ({
 										user: user,
 									});
 
-									//const message = chat.chatHistory[chat.chatHistory.length - 1].content
 									if (nebula) {
 										const runPythonScript = async () => {
-											await fetchEventSource(
-												'/api/new_message',
-												{
-													method: 'POST',
-													headers: {
-														'Content-Type':
-															'application/json',
-													},
-													body: JSON.stringify({
-														message,
-													}),
-													onmessage: async (ev) => {
+											await fetchEventSource('/api/new_message2', {
+												method: 'POST',
+												headers: {
+													'Content-Type': 'application/json',
+												},
+												body: JSON.stringify({
+													message,
+												}),
+												onmessage: async (ev) => {
+													if (ev.data) {
 														let full_message = '';
 														if (isBase64(ev.data)) {
-															full_message = atob(
-																ev.data
-															);
+															full_message = atob(ev.data);
 														} else {
-															full_message =
-																ev.data;
+															full_message = ev.data;
 														}
-														console.log(
-															full_message
-														);
-														chat.addMessage({
-															content:
-																full_message,
-															user: Users.NEBULA,
-														});
-													},
-												}
-											);
+														try {
+															const message = JSON.parse(full_message) as ServerMessage;
+															console.log(message);
+
+															if (message.type === 'WAIT') {
+																chat.addMessage({
+																	content: message.content,
+																	user: Users.SYSTEM,
+																});
+																setDisable(true);
+															} else if (message.type === 'MESSAGE') {
+																if (
+																	/^((place|pick) .* [0-9]* [0-9]* [0-9]*\n?)*$/.test(
+																		message.content
+																	)
+																) {
+																	const instructions = message.content
+																		.trim()
+																		.split('\n');
+																	const gameLog = new GameLog();
+
+																	instructions.forEach((instruction) => {
+																		parseInstruction(instruction.trim(), gameLog);
+																	});
+
+																	function delay(ms: number) {
+																		return new Promise((resolve) =>
+																			setTimeout(resolve, ms)
+																		);
+																	}
+
+																	async function processLogs(gameLog: GameLog) {
+																		for (
+																			let i = 1;
+																			i < gameLog.gameLog.length;
+																			i++
+																		) {
+																			const log = gameLog.gameLog[i];
+																			shapeInPlace.addObject(
+																				log.shapeInPlace[
+																					log.shapeInPlace.length - 1
+																				]
+																			);
+																			await delay(500); // 500ms delay
+																		}
+																	}
+
+																	processLogs(gameLog);
+																	console.log(gameLog);
+																} else {
+																	chat.addMessage({
+																		content: message.content,
+																		user: Users.NEBULA,
+																	});
+																}
+															} else if (message.type === 'RESUME') {
+																setDisable(false);
+															}
+														} catch (error) {
+															console.error('Failed to parse JSON:', error);
+														}
+													}
+												},
+											});
 										};
 										runPythonScript();
 									}

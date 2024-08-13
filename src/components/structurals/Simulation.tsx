@@ -10,22 +10,15 @@ import useAction from '../../classes/Action';
 import ActionSelector from './simulation/ActionSelector';
 import ShapePicker from './simulation/ShapePicker';
 import { EnvironmentTypeProps } from '../../classes/EnvironmentMode';
-import {
-	ENVIRONMENT_COLORS,
-	ENVIRONMENT_SHAPES,
-	EXPORT_GAME_LOG,
-} from '../../constants/environment';
+import { ENVIRONMENT_COLORS, ENVIRONMENT_SHAPES, EXPORT_GAME_LOG } from '../../constants/environment';
 import { useChat } from '../../classes/Chat';
-import ChatComponent from './Chat';
+import ChatComponent, { Users } from './Chat';
 import { GameLog, worldStateProps } from '../../classes/gameLog';
 import CameraSelector from './simulation/CameraPicker';
 import useCamera from '../../classes/Camera';
 
 const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
-	const inventory = useInventory(
-		ENVIRONMENT_COLORS[environmentMode],
-		ENVIRONMENT_SHAPES[environmentMode]
-	);
+	const inventory = useInventory(ENVIRONMENT_COLORS[environmentMode], ENVIRONMENT_SHAPES[environmentMode]);
 
 	const shapeInPlace = useShapeInPlace();
 	const action = useAction();
@@ -55,8 +48,7 @@ const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 		const lastWolrdState = gameLog.getLastWorldState();
 		if (lastWolrdState) {
 			if (
-				shapeInPlace.objects.length !==
-					lastWolrdState.shapeInPlace.length ||
+				shapeInPlace.objects.length !== lastWolrdState.shapeInPlace.length ||
 				chat.chatHistory.length !== lastWolrdState.chatHistory.length
 			) {
 				gameLog.addWorldState({
@@ -67,10 +59,7 @@ const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 				setGameLog(gameLog);
 			}
 		} else {
-			if (
-				shapeInPlace.objects.length !== 0 ||
-				chat.chatHistory.length !== 0
-			) {
+			if (shapeInPlace.objects.length !== 0 || chat.chatHistory.length !== 0) {
 				gameLog.addWorldState({
 					timestamp: new Date(),
 					chatHistory: [...chat.chatHistory],
@@ -97,18 +86,17 @@ const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 			<Side>
 				<ActionSelector {...action} />
 				<ColorPicker {...inventory} />
-				<ShapePicker
-					inventory={inventory}
-					environmentMode={environmentMode}
+				<ShapePicker inventory={inventory} environmentMode={environmentMode} />
+				<ChatComponent
+					chat={chat}
+					availableUsers={[Users.ARCHITECT, Users.BUILDER]}
+					shapeInPlace={shapeInPlace}
 				/>
-				<ChatComponent chat={chat} readOnly={false} />
 				<div id="gameButtons">
 					<button
 						id="download"
 						onClick={() => {
-							const gameLogJson = JSON.stringify(
-								EXPORT_GAME_LOG[environmentMode](gameLog)
-							);
+							const gameLogJson = JSON.stringify(EXPORT_GAME_LOG[environmentMode](gameLog));
 							const blob = new Blob([gameLogJson], {
 								type: 'application/json',
 							});
@@ -127,10 +115,9 @@ const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 					<button
 						id="download"
 						onClick={() => {
-							const canvas =
-								document.querySelector<HTMLCanvasElement>(
-									'canvas[data-engine="three.js r164"]'
-								);
+							const canvas = document.querySelector<HTMLCanvasElement>(
+								'canvas[data-engine="three.js r164"]'
+							);
 
 							if (canvas) {
 								const image = canvas.toDataURL('image/png');

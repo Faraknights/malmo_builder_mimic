@@ -16,16 +16,17 @@ const GameComponent: React.FC<{
 	currentIndex: number;
 	currentgameId: number;
 	onClick: () => void;
-}> = React.memo(({ gameLog, currentIndex, currentgameId, onClick }) => {
+	searched: boolean;
+}> = React.memo(({ gameLog, currentIndex, currentgameId, onClick, searched }) => {
 	return (
 		<div
-			className={`game ${currentIndex === currentgameId ? 'selected' : ''}`}
+			className={`game ${currentIndex === currentgameId ? 'selected' : ''} ${searched ? 'searched' : ''}`}
 			onClick={onClick}
 		>
 			{(!gameLog.getWorldStateById(0)?.chatHistory.length &&
-				!gameLog.getWorldStateById(0)?.shapeInPlace.length && (
-					<div className="new"></div>
-				)) || <div className="old"></div>}
+				!gameLog.getWorldStateById(0)?.shapeInPlace.length && <div className="new"></div>) || (
+				<div className="old"></div>
+			)}
 			<span>Game {currentIndex}</span>
 		</div>
 	);
@@ -33,21 +34,15 @@ const GameComponent: React.FC<{
 
 GameComponent.displayName = 'GameComponent';
 
-const FileManager: React.FC<FileManagerProps> = ({
-	chatHistory,
-	shapeInPlace,
-}) => {
+const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace }) => {
 	const [gameLogs, setGameLogs] = useState<GameLog[]>([]);
 	const [currentgameId, setcurrentgameId] = useState<number>(0);
 	const [step, setStep] = useState<number>(0);
+	const [textFinder, setTextFinder] = useState<string>('');
 
 	useEffect(() => {
 		const lastChangeId = gameLogs[currentgameId]?.gameLog.reduce(
-			(acc, cur, idx, arr) =>
-				cur.chatHistory.length !==
-				(arr[idx - 1]?.chatHistory.length ?? 0)
-					? idx
-					: acc,
+			(acc, cur, idx, arr) => (cur.chatHistory.length !== (arr[idx - 1]?.chatHistory.length ?? 0) ? idx : acc),
 			0
 		);
 		setStep(lastChangeId);
@@ -63,26 +58,28 @@ const FileManager: React.FC<FileManagerProps> = ({
 		}
 	}, [currentgameId, step]);
 
-	const handleFileChange = async (
-		event: React.ChangeEvent<HTMLInputElement>
-	) => {
+	const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
 		const file = event.target.files && event.target.files[0];
+		console.log('1');
+
 		if (file) {
 			const fileExtension = file.name.split('.').pop()?.toLowerCase();
+			console.log('2');
 
 			try {
 				if (fileExtension === 'csv') {
-					const newGameLogs = await parseCSV(file);
-					setGameLogs((prevGameLogs) => [
-						...prevGameLogs,
-						...newGameLogs,
-					]);
+					console.log('3');
+					const reader = new FileReader();
+					reader.onload = (event) => {
+						console.log('csv');
+						const csv = event.target?.result as string;
+						const newGameLogs = parseCSV(csv);
+						setGameLogs((prevGameLogs) => [...prevGameLogs, ...newGameLogs]);
+					};
+					reader.readAsText(file);
 				} else if (fileExtension === 'json') {
 					const newGameLogs = await parseJSON(file);
-					setGameLogs((prevGameLogs) => [
-						...prevGameLogs,
-						...newGameLogs,
-					]);
+					setGameLogs((prevGameLogs) => [...prevGameLogs, ...newGameLogs]);
 				} else {
 					console.error('Unsupported file type:', fileExtension);
 				}
@@ -109,23 +106,33 @@ const FileManager: React.FC<FileManagerProps> = ({
 								setcurrentgameId(i);
 							}
 						}}
+						searched={
+							textFinder !== '' &&
+							gameLog.gameLog.some((log) =>
+								log.chatHistory.some((text) => text.content && text.content.includes(textFinder))
+							)
+						}
 					/>
 				))}
 			</div>
+			{gameLogs.length >= 1 && (
+				<input
+					type="text"
+					className="inputFinder"
+					value={textFinder}
+					onChange={(e) => {
+						setTextFinder(e.target.value);
+					}}
+					placeholder="text to search"
+				/>
+			)}
 			<hr />
-			<div
-				id="gameManager"
-				className={!gameLogs[currentgameId] ? 'disabled' : ''}
-			>
+			<div id="gameManager" className={!gameLogs[currentgameId] ? 'disabled' : ''}>
 				<input
 					type="range"
 					min={0}
 					step={1}
-					max={
-						gameLogs[currentgameId]
-							? gameLogs[currentgameId].getLength() - 1
-							: 1
-					}
+					max={gameLogs[currentgameId] ? gameLogs[currentgameId].getLength() - 1 : 1}
 					value={step}
 					onChange={(e) => {
 						setStep(parseInt(e.target.value));
@@ -148,6 +155,7 @@ const FileManager: React.FC<FileManagerProps> = ({
 						className={`nextStep${!!gameLogs[currentgameId] && step === gameLogs[currentgameId].getLength() - 1 ? ' disabled' : ''}`}
 						onClick={() => {
 							setStep((prevStep) => prevStep + 1);
+							console.log(gameLogs);
 						}}
 					></div>
 					<div

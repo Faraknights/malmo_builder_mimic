@@ -12,65 +12,48 @@ export interface csvFormat {
 	action_seq: string[];
 }
 
-export function parseCSV(file: File): Promise<GameLog[]> {
-	return new Promise((resolve, reject) => {
-		const reader = new FileReader();
+export function parseCSV(csv: string): GameLog[] {
+	try {
+		const games: GameLog[] = [];
 
-		reader.onload = (event) => {
-			try {
-				const csv = event.target?.result as string;
-				const games: GameLog[] = [];
+		const csvSplitter = /"(.+?)","?(.*?)"?(?=(\n"|$))/gs;
+		const dialSplitter =
+			/((?:^(?:(?:place|pick) .*?\n)*|EMPTY))(.*?)(<.*)/s;
 
-				const csvSplitter = /"(.+?)","?(.*?)"?(?=(\n"|$))/gs;
-				const dialSplitter =
-					/((?:^(?:(?:place|pick) .*?\n)*|EMPTY))(.*?)(<.*)/s;
+		let match;
+		while ((match = csvSplitter.exec(csv)) !== null) {
+			const [dialWithActions, actionSeq] = [match[1], match[2]];
 
-				let match;
-				while ((match = csvSplitter.exec(csv)) !== null) {
-					const [dialWithActions, actionSeq] = [match[1], match[2]];
+			const dialSplit = dialWithActions.match(dialSplitter)!;
 
-					const dialSplit = dialWithActions.match(dialSplitter)!;
+			const prevWorldState = dialSplit[2].trim().replace(/^"+|"+$/g, '');
+			const instructions = dialSplit[3].trim().split('\n');
 
-					const prevWorldState = dialSplit[2]
-						.trim()
-						.replace(/^"+|"+$/g, '');
-					const instructions = dialSplit[3].trim().split('\n');
+			const worldState: worldStateProps = {
+				chatHistory: [],
+				shapeInPlace: [],
+			};
 
-					const worldState: worldStateProps = {
-						chatHistory: [],
-						shapeInPlace: [],
-					};
+			parseWorldState(prevWorldState, worldState);
 
-					parseWorldState(prevWorldState, worldState);
+			const gameLog = new GameLog();
+			gameLog.addWorldState(worldState);
 
-					const gameLog = new GameLog();
-					gameLog.addWorldState(worldState);
+			instructions.forEach((instruction) => {
+				parseInstruction(instruction.trim(), gameLog);
+			});
 
-					instructions.forEach((instruction) => {
-						parseInstruction(instruction.trim(), gameLog);
-					});
+			actionSeq.split('\n').forEach((instruction) => {
+				parseInstruction(instruction.trim(), gameLog);
+			});
 
-					actionSeq.split('\n').forEach((instruction) => {
-						parseInstruction(instruction.trim(), gameLog);
-					});
+			games.push(gameLog);
+		}
 
-					games.push(gameLog);
-				}
-
-				resolve(games);
-			} catch (error) {
-				reject(error);
-			}
-		};
-
-		reader.onerror = (event) => {
-			reject(
-				event.target?.error || new Error('Unknown FileReader error')
-			);
-		};
-
-		reader.readAsText(file);
-	});
+		return games;
+	} catch (error: any) {
+		throw new Error(`Error parsing CSV: ${error.message}`);
+	}
 }
 
 function parseWorldState(prevWorldState: string, worldState: worldStateProps) {
@@ -104,7 +87,7 @@ function parseWorldState(prevWorldState: string, worldState: worldStateProps) {
 	}
 }
 
-function parseInstruction(instruction: string, gameLog: GameLog) {
+export function parseInstruction(instruction: string, gameLog: GameLog) {
 	const cleanedInstruction = instruction.trim();
 	const lastWorldState = gameLog.getLastWorldState();
 	if (cleanedInstruction.startsWith('place')) {

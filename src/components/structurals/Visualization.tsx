@@ -23,7 +23,7 @@ const Visualization: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 			/>
 			<Side>
 				<FileManager chatHistory={chat} shapeInPlace={shapeInPlace} />
-				<ChatComponent chat={chat} readOnly={true} />
+				<ChatComponent chat={chat} availableUsers={[]} shapeInPlace={shapeInPlace} />
 			</Side>
 		</main>
 	);

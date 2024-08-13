@@ -25,7 +25,7 @@ interface CanvasCameraSettingsProps {
 		min: number;
 		max: number;
 	};
-	cameraSettings: unknown;
+	cameraSettings: any;
 	azimuthAngle?: {
 		max: number;
 		min: number;
