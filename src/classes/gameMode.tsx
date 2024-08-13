@@ -1,5 +1,0 @@
-export enum GameMode {
-	SIMULATION = 'SIMULATION',
-	VISUALIZATION = 'VISUALIZATION',
-	NEBULA = 'NEBULA',
-}
