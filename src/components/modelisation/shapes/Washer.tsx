@@ -1,11 +1,7 @@
 import React from 'react';
 import * as THREE from 'three';
 import { shapeComponentProps } from './Shape';
-import {
-	MeshType,
-	NonClickableFaceUserData,
-	ShapeFaceUserData,
-} from '../../../constants/meshType';
+import { MeshType, NonClickableFaceUserData, ShapeFaceUserData } from '../../../constants/meshType';
 import { DIRECTION } from '../../../constants/direction';
 import { OPACITY_PENDING_OBJECT } from '../../../constants/environment';
 import { Edges } from '@react-three/drei';
@@ -48,12 +44,7 @@ function Washer({ pending, color }: shapeComponentProps) {
 			>
 				<circleGeometry args={[0.5, 4]} />
 				{material}
-				{opacity === 1 && (
-					<Edges
-						linewidth={1}
-						color={nutColor.clone().addScalar(0.2)}
-					/>
-				)}
+				{opacity === 1 && <Edges linewidth={1} color={nutColor.clone().addScalar(0.2)} />}
 			</mesh>
 			<mesh
 				position={[0, -0.5, 0]}
@@ -67,12 +58,7 @@ function Washer({ pending, color }: shapeComponentProps) {
 			>
 				<circleGeometry args={[0.5, 4]} />
 				{material}
-				{opacity === 1 && (
-					<Edges
-						linewidth={1}
-						color={nutColor.clone().addScalar(0.2)}
-					/>
-				)}
+				{opacity === 1 && <Edges linewidth={1} color={nutColor.clone().addScalar(0.2)} />}
 			</mesh>
 			<mesh
 				userData={
@@ -82,12 +68,7 @@ function Washer({ pending, color }: shapeComponentProps) {
 				}
 			>
 				<tubeGeometry args={[path, 1, 0.5, 4, false]} />
-				{opacity === 1 && (
-					<Edges
-						linewidth={1}
-						color={nutColor.clone().addScalar(0.2)}
-					/>
-				)}
+				{opacity === 1 && <Edges linewidth={1} color={nutColor.clone().addScalar(0.2)} />}
 				{material}
 			</mesh>
 		</mesh>

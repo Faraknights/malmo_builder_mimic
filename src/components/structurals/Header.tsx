@@ -12,30 +12,17 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = (props) => {
-	const {
-		currentGameMode,
-		setGameMode,
-		environmentMode,
-		setEnvironmentMode,
-	} = props;
+	const { currentGameMode, setGameMode, environmentMode, setEnvironmentMode } = props;
 	const router = useRouter();
 
 	useEffect(() => {
 		if (!gameModesAvailable[environmentMode].includes(currentGameMode)) {
 			setGameMode(gameModesAvailable[environmentMode][0]);
 			router.push(
-				'/' +
-					gameModesAvailable[environmentMode][0].toLowerCase() +
-					'/' +
-					environmentMode.toLowerCase()
+				'/' + gameModesAvailable[environmentMode][0].toLowerCase() + '/' + environmentMode.toLowerCase()
 			);
 		} else {
-			router.push(
-				'/' +
-					currentGameMode.toLowerCase() +
-					'/' +
-					environmentMode.toLowerCase()
-			);
+			router.push('/' + currentGameMode.toLowerCase() + '/' + environmentMode.toLowerCase());
 		}
 	}, [environmentMode, currentGameMode]);
 
@@ -50,15 +37,12 @@ const Header: React.FC<HeaderProps> = (props) => {
 		<header>
 			<nav id="modeSelector">
 				{gameModesAvailable[environmentMode].map((gameModeKey) => {
-					const gameMode =
-						GameMode[gameModeKey as keyof typeof GameMode];
+					const gameMode = GameMode[gameModeKey as keyof typeof GameMode];
 					return (
 						<div
 							key={gameMode}
 							onClick={() => setGameMode(gameMode)}
-							className={
-								currentGameMode === gameMode ? 'selected' : ''
-							}
+							className={currentGameMode === gameMode ? 'selected' : ''}
 						>
 							{gameMode}
 						</div>

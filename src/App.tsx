@@ -12,9 +12,7 @@ const App = ({
 	initialEnvironmentMode: EnvironmentMode;
 	initialGameMode: GameMode;
 }) => {
-	const [environmentMode, setEnvironmentMode] = useState<EnvironmentMode>(
-		initialEnvironmentMode
-	);
+	const [environmentMode, setEnvironmentMode] = useState<EnvironmentMode>(initialEnvironmentMode);
 	const [gameMode, setGameMode] = useState<GameMode>(initialGameMode);
 
 	const GameModeComp = gameModeComponent[gameMode];

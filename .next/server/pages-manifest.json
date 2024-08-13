@@ -1,7 +1,1 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/[gameMode]/[environmentMode]": "pages/[gameMode]/[environmentMode].js",
-  "/": "pages/index.js"
-}
+{"/_app":"pages/_app.js","/api/new_message":"pages/api/new_message.js","/api/new_message2":"pages/api/new_message2.js","/api/run-python":"pages/api/run-python.js","/_error":"pages/_error.js","/":"pages/index.html","/[gameMode]/[environmentMode]":"pages/[gameMode]/[environmentMode].js","/_document":"pages/_document.js","/404":"pages/404.html"}

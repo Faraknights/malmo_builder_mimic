@@ -33,10 +33,7 @@ interface CanvasCameraSettingsProps {
 }
 
 export const getDefaultCameraSettings = (): CanvasCameraSettingsProps => {
-	const aspect =
-		typeof window !== 'undefined'
-			? window.innerWidth / window.innerHeight
-			: 1;
+	const aspect = typeof window !== 'undefined' ? window.innerWidth / window.innerHeight : 1;
 	return {
 		orthographic: false,
 		polarAngle: {

@@ -1,9 +1,6 @@
 import React from 'react';
 import { GroupUserData, MeshType } from '../../../constants/meshType';
-import {
-	CartesianCoordinate,
-	coordinateAddition,
-} from '../../../interfaces/cartesianCoordinate';
+import { CartesianCoordinate, coordinateAddition } from '../../../interfaces/cartesianCoordinate';
 import { shapeHitbox, shapeProps, Shapes } from './Shape';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -45,13 +42,7 @@ export class ShapeGroup {
 	objectExists = (x: number, y: number, z: number): boolean => {
 		for (const shape of this.shapes) {
 			if (shape instanceof ShapeGroup) {
-				if (
-					shape.objectExists(
-						x - this.startingPoint.x,
-						y - this.startingPoint.y,
-						z - this.startingPoint.z
-					)
-				) {
+				if (shape.objectExists(x - this.startingPoint.x, y - this.startingPoint.y, z - this.startingPoint.z)) {
 					return true;
 				}
 			} else {
@@ -95,12 +86,7 @@ export const Group = ({ shapeGroup }: { shapeGroup: ShapeGroup }) => {
 					/>
 				);
 			} else {
-				return (
-					<Shapes
-						key={`shape-${index}`}
-						{...{ ...shape, breakable: shapeGroup.breakable }}
-					/>
-				);
+				return <Shapes key={`shape-${index}`} {...{ ...shape, breakable: shapeGroup.breakable }} />;
 			}
 		});
 	};

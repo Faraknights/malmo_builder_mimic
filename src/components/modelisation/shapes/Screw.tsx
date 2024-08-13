@@ -1,11 +1,7 @@
 import React from 'react';
 import * as THREE from 'three';
 import { shapeComponentProps } from './Shape';
-import {
-	MeshType,
-	NonClickableFaceUserData,
-	ShapeFaceUserData,
-} from '../../../constants/meshType';
+import { MeshType, NonClickableFaceUserData, ShapeFaceUserData } from '../../../constants/meshType';
 import { DIRECTION } from '../../../constants/direction';
 import { OPACITY_PENDING_OBJECT } from '../../../constants/environment';
 import { Edges } from '@react-three/drei';
@@ -71,12 +67,7 @@ function Screw({ pending, position, color }: shapeComponentProps) {
 				}
 			>
 				<tubeGeometry args={[path, 1, 0.5, 25, false]} />
-				{opacity === 1 && (
-					<Edges
-						linewidth={1}
-						color={nutColor.clone().addScalar(0.2)}
-					/>
-				)}
+				{opacity === 1 && <Edges linewidth={1} color={nutColor.clone().addScalar(0.2)} />}
 				{material}
 			</mesh>
 		</mesh>

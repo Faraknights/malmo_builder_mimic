@@ -3,11 +3,7 @@ import * as THREE from 'three';
 import { shapeComponentProps } from './Shape';
 import { Edges } from '@react-three/drei';
 import { OPACITY_PENDING_OBJECT } from '../../../constants/environment';
-import {
-	ShapeFaceUserData,
-	MeshType,
-	NonClickableFaceUserData,
-} from '../../../constants/meshType';
+import { ShapeFaceUserData, MeshType, NonClickableFaceUserData } from '../../../constants/meshType';
 import { DIRECTION } from '../../../constants/direction';
 
 interface CubeFaceDirectionProperties {
@@ -16,39 +12,38 @@ interface CubeFaceDirectionProperties {
 	type: MeshType;
 }
 
-export const CubeFaceDirection: Record<DIRECTION, CubeFaceDirectionProperties> =
-	{
-		[DIRECTION.FRONT]: {
-			translation: new THREE.Vector3(0, 0, 1 / 2),
-			rotation: new THREE.Euler(0, 0, 0),
-			type: MeshType.NON_CLICKABLE_FACE,
-		},
-		[DIRECTION.BACK]: {
-			translation: new THREE.Vector3(0, 0, -1 / 2),
-			rotation: new THREE.Euler(0, Math.PI, 0),
-			type: MeshType.NON_CLICKABLE_FACE,
-		},
-		[DIRECTION.TOP]: {
-			translation: new THREE.Vector3(0, 1 / 2, 0),
-			rotation: new THREE.Euler(-Math.PI / 2, 0, 0),
-			type: MeshType.SHAPE_FACE,
-		},
-		[DIRECTION.BOTTOM]: {
-			translation: new THREE.Vector3(0, -1 / 2, 0),
-			rotation: new THREE.Euler(Math.PI / 2, 0, 0),
-			type: MeshType.SHAPE_FACE,
-		},
-		[DIRECTION.LEFT]: {
-			translation: new THREE.Vector3(1 / 2, 0, 0),
-			rotation: new THREE.Euler(0, Math.PI / 2, 0),
-			type: MeshType.NON_CLICKABLE_FACE,
-		},
-		[DIRECTION.RIGHT]: {
-			translation: new THREE.Vector3(-1 / 2, 0, 0),
-			rotation: new THREE.Euler(0, -Math.PI / 2, 0),
-			type: MeshType.NON_CLICKABLE_FACE,
-		},
-	};
+export const CubeFaceDirection: Record<DIRECTION, CubeFaceDirectionProperties> = {
+	[DIRECTION.FRONT]: {
+		translation: new THREE.Vector3(0, 0, 1 / 2),
+		rotation: new THREE.Euler(0, 0, 0),
+		type: MeshType.NON_CLICKABLE_FACE,
+	},
+	[DIRECTION.BACK]: {
+		translation: new THREE.Vector3(0, 0, -1 / 2),
+		rotation: new THREE.Euler(0, Math.PI, 0),
+		type: MeshType.NON_CLICKABLE_FACE,
+	},
+	[DIRECTION.TOP]: {
+		translation: new THREE.Vector3(0, 1 / 2, 0),
+		rotation: new THREE.Euler(-Math.PI / 2, 0, 0),
+		type: MeshType.SHAPE_FACE,
+	},
+	[DIRECTION.BOTTOM]: {
+		translation: new THREE.Vector3(0, -1 / 2, 0),
+		rotation: new THREE.Euler(Math.PI / 2, 0, 0),
+		type: MeshType.SHAPE_FACE,
+	},
+	[DIRECTION.LEFT]: {
+		translation: new THREE.Vector3(1 / 2, 0, 0),
+		rotation: new THREE.Euler(0, Math.PI / 2, 0),
+		type: MeshType.NON_CLICKABLE_FACE,
+	},
+	[DIRECTION.RIGHT]: {
+		translation: new THREE.Vector3(-1 / 2, 0, 0),
+		rotation: new THREE.Euler(0, -Math.PI / 2, 0),
+		type: MeshType.NON_CLICKABLE_FACE,
+	},
+};
 
 interface CubeFaceProps {
 	color: THREE.Color;
@@ -74,9 +69,7 @@ const CubeFace = (props: CubeFaceProps) => {
 			}
 		>
 			<planeGeometry attach="geometry" args={[1, 1]} />
-			{props.opacity === 1 && (
-				<Edges linewidth={1} threshold={15} color={props.color} />
-			)}
+			{props.opacity === 1 && <Edges linewidth={1} threshold={15} color={props.color} />}
 			<meshStandardMaterial
 				attach="material"
 				color={props.color}
@@ -91,20 +84,10 @@ export interface BridgeComponentProps extends shapeComponentProps {
 	rotation: 'HORIZONTAL' | 'VERTICAL';
 }
 
-const BridgeComponent = ({
-	pending,
-	color,
-	rotation,
-}: BridgeComponentProps) => {
+const BridgeComponent = ({ pending, color, rotation }: BridgeComponentProps) => {
 	const cubeColor = new THREE.Color(color.hex);
 	return (
-		<mesh
-			scale={[
-				rotation === 'HORIZONTAL' ? 1 : 0.6,
-				1,
-				rotation === 'HORIZONTAL' ? 0.6 : 1,
-			]}
-		>
+		<mesh scale={[rotation === 'HORIZONTAL' ? 1 : 0.6, 1, rotation === 'HORIZONTAL' ? 0.6 : 1]}>
 			{Object.entries(DIRECTION).map(([key, properties]) => (
 				<CubeFace
 					key={key}

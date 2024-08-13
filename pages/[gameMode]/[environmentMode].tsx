@@ -10,16 +10,10 @@ interface PageProps {
 	initialEnvironmentMode: EnvironmentMode;
 }
 
-const Root: React.FC<PageProps> = ({
-	initialGameMode,
-	initialEnvironmentMode,
-}) => {
+const Root: React.FC<PageProps> = ({ initialGameMode, initialEnvironmentMode }) => {
 	return (
 		<div id="root">
-			<App
-				initialEnvironmentMode={initialEnvironmentMode}
-				initialGameMode={initialGameMode}
-			/>
+			<App initialEnvironmentMode={initialEnvironmentMode} initialGameMode={initialGameMode} />
 		</div>
 	);
 };
@@ -54,17 +48,12 @@ export async function getStaticPaths() {
 	};
 }
 
-export async function getStaticProps({
-	params,
-}: {
-	params: { gameMode: string; environmentMode: string };
-}) {
+export async function getStaticProps({ params }: { params: { gameMode: string; environmentMode: string } }) {
 	const { gameMode, environmentMode } = params;
 
 	// Convert the string parameters back to the appropriate enum values
 	const initialGameMode = gameMode.toUpperCase() as GameMode;
-	const initialEnvironmentMode =
-		environmentMode.toUpperCase() as EnvironmentMode;
+	const initialEnvironmentMode = environmentMode.toUpperCase() as EnvironmentMode;
 
 	return {
 		props: {

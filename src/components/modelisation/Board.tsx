@@ -23,10 +23,7 @@ const CellBoard = ({ position }: cellBoardProps) => (
 	>
 		<planeGeometry args={[1, 1]} />
 		<Edges linewidth={1} threshold={15} color={'black'} />
-		<meshStandardMaterial
-			color={[CELL_COLOR.r, CELL_COLOR.g, CELL_COLOR.b]}
-			side={THREE.FrontSide}
-		/>
+		<meshStandardMaterial color={[CELL_COLOR.r, CELL_COLOR.g, CELL_COLOR.b]} side={THREE.FrontSide} />
 	</mesh>
 );
 
@@ -35,34 +32,26 @@ const Board = ({ environmentMode }: { environmentMode: EnvironmentMode }) => {
 
 	return (
 		<>
-			{Array.from(
-				{ length: gridSize.x.max - gridSize.x.min + 1 },
-				(_, i) => gridSize.x.min + i
-			).map((x) => (
+			{Array.from({ length: gridSize.x.max - gridSize.x.min + 1 }, (_, i) => gridSize.x.min + i).map((x) => (
 				<React.Fragment key={x}>
-					{Array.from(
-						{ length: gridSize.z.max - gridSize.z.min + 1 },
-						(_, j) => gridSize.z.min + j
-					).map((z) => (
-						<CellBoard
-							key={`${x},${z}`}
-							position={{
-								x: x,
-								y: 0,
-								z: z,
-							}}
-						/>
-					))}
+					{Array.from({ length: gridSize.z.max - gridSize.z.min + 1 }, (_, j) => gridSize.z.min + j).map(
+						(z) => (
+							<CellBoard
+								key={`${x},${z}`}
+								position={{
+									x: x,
+									y: 0,
+									z: z,
+								}}
+							/>
+						)
+					)}
 				</React.Fragment>
 			))}
 			<Text
 				scale={[1, 1, 1]}
 				rotation={[Math.PI / 2, Math.PI, 0]}
-				position={[
-					(gridSize.x.max + gridSize.x.min) / 2,
-					0.5,
-					gridSize.z.min - 2,
-				]}
+				position={[(gridSize.x.max + gridSize.x.min) / 2, 0.5, gridSize.z.min - 2]}
 				color="white"
 				anchorX="center"
 				anchorY="middle"
@@ -72,11 +61,7 @@ const Board = ({ environmentMode }: { environmentMode: EnvironmentMode }) => {
 			<Text
 				scale={[1, 1, 1]}
 				rotation={[Math.PI / 2, 0, 0]}
-				position={[
-					gridSize.x.max + 2,
-					0.5,
-					(gridSize.z.max + gridSize.z.min) / 2,
-				]}
+				position={[gridSize.x.max + 2, 0.5, (gridSize.z.max + gridSize.z.min) / 2]}
 				color="white"
 				anchorX="center"
 				anchorY="middle"
@@ -86,11 +71,7 @@ const Board = ({ environmentMode }: { environmentMode: EnvironmentMode }) => {
 			<Text
 				scale={[1, 1, 1]}
 				rotation={[Math.PI / 2, 0, Math.PI]}
-				position={[
-					gridSize.x.min - 2,
-					0.5,
-					(gridSize.z.max + gridSize.z.min) / 2,
-				]}
+				position={[gridSize.x.min - 2, 0.5, (gridSize.z.max + gridSize.z.min) / 2]}
 				color="white"
 				anchorX="center"
 				anchorY="middle"
@@ -100,11 +81,7 @@ const Board = ({ environmentMode }: { environmentMode: EnvironmentMode }) => {
 			<Text
 				scale={[1, 1, 1]}
 				rotation={[Math.PI / 2, Math.PI, Math.PI]}
-				position={[
-					(gridSize.x.max + gridSize.x.min) / 2,
-					0.5,
-					gridSize.z.max + 2,
-				]}
+				position={[(gridSize.x.max + gridSize.x.min) / 2, 0.5, gridSize.z.max + 2]}
 				color="white"
 				anchorX="center"
 				anchorY="middle"

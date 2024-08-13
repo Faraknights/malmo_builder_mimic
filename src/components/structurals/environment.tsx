@@ -20,22 +20,10 @@ interface EnvironmentProps {
 	camera: CameraMode;
 }
 
-const Scene: React.FC<EnvironmentProps> = ({
-	shapeInPlace,
-	gameMode,
-	environmentMode,
-	inventory,
-	action,
-}) => {
+const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, gameMode, environmentMode, inventory, action }) => {
 	const gridSize = GRID_SIZE[environmentMode];
 	return (
-		<mesh
-			position={[
-				-(gridSize.x.max + gridSize.x.min) / 2,
-				1,
-				-(gridSize.z.max + gridSize.z.min) / 2,
-			]}
-		>
+		<mesh position={[-(gridSize.x.max + gridSize.x.min) / 2, 1, -(gridSize.z.max + gridSize.z.min) / 2]}>
 			<Game
 				shapeInPlace={shapeInPlace}
 				gameMode={gameMode}
@@ -63,26 +51,15 @@ const App: React.FC<EnvironmentProps> = (props) => {
 			{scene}
 			<OrbitControls
 				enablePan={false}
-				minPolarAngle={
-					CanvasCameraSettings[props.camera].polarAngle.min
-				}
-				maxPolarAngle={
-					CanvasCameraSettings[props.camera].polarAngle.max
-				}
-				minAzimuthAngle={
-					CanvasCameraSettings[props.camera].azimuthAngle?.min
-				}
-				maxAzimuthAngle={
-					CanvasCameraSettings[props.camera].azimuthAngle?.max
-				}
+				minPolarAngle={CanvasCameraSettings[props.camera].polarAngle.min}
+				maxPolarAngle={CanvasCameraSettings[props.camera].polarAngle.max}
+				minAzimuthAngle={CanvasCameraSettings[props.camera].azimuthAngle?.min}
+				maxAzimuthAngle={CanvasCameraSettings[props.camera].azimuthAngle?.max}
 			/>
 			<fog attach="fog" args={['white', 20, 1000]} />
 			<ambientLight intensity={1} />
 			<pointLight color="white" position={[3, 10, 3]} intensity={200} />
-			<color
-				attach="background"
-				args={[bgColor.r, bgColor.g, bgColor.b]}
-			/>
+			<color attach="background" args={[bgColor.r, bgColor.g, bgColor.b]} />
 		</Canvas>
 	);
 };

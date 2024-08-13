@@ -1,12 +1,6 @@
-import {
-	CartesianCoordinate,
-	hasCommonCoordinate,
-} from '../interfaces/cartesianCoordinate';
+import { CartesianCoordinate, hasCommonCoordinate } from '../interfaces/cartesianCoordinate';
 import * as THREE from 'three';
-import {
-	EnvironmentMode,
-	EnvironmentTypeProps,
-} from '../classes/EnvironmentMode';
+import { EnvironmentMode, EnvironmentTypeProps } from '../classes/EnvironmentMode';
 import { COLORS, definedColors } from './colors';
 import Color from '../interfaces/Color';
 import { shapeList } from './shapeList';
@@ -79,10 +73,7 @@ export const GRID_SIZE: { [key in EnvironmentMode]: gridSizeProps } = {
 	},
 };
 
-const isWithinLimits = (
-	coordinates: CartesianCoordinate[],
-	gridSize: gridSizeProps
-): boolean => {
+const isWithinLimits = (coordinates: CartesianCoordinate[], gridSize: gridSizeProps): boolean => {
 	return coordinates.every(
 		(coord) =>
 			coord.x >= gridSize.x.min &&
@@ -94,17 +85,12 @@ const isWithinLimits = (
 	);
 };
 
-const hasCoordinateBelow = (
-	coordinate: CartesianCoordinate,
-	placedCoordinates: CartesianCoordinate[]
-): boolean => {
+const hasCoordinateBelow = (coordinate: CartesianCoordinate, placedCoordinates: CartesianCoordinate[]): boolean => {
 	return (
 		coordinate.y === 1 ||
 		placedCoordinates.some(
 			(placedCoord) =>
-				placedCoord.x === coordinate.x &&
-				placedCoord.y === coordinate.y - 1 &&
-				placedCoord.z === coordinate.z
+				placedCoord.x === coordinate.x && placedCoord.y === coordinate.y - 1 && placedCoord.z === coordinate.z
 		)
 	);
 };
@@ -127,24 +113,13 @@ export const GAME_RULE: {
 			return shape;
 		return undefined;
 	},
-	[EnvironmentMode.COCOBOTS]: (
-		shape,
-		newCoordinates,
-		placedCoordinates,
-		skipCheckBelow?
-	) => {
+	[EnvironmentMode.COCOBOTS]: (shape, newCoordinates, placedCoordinates, skipCheckBelow?) => {
 		//const newCoordinates = coordinateAddition(shapeHitbox[shape.shape] as CartesianCoordinate[], shape.position) as CartesianCoordinate[];
 		//const placedCoordinates = shapeInPlace.getPosition();
 		if (
 			!hasCommonCoordinate(newCoordinates, placedCoordinates) &&
-			isWithinLimits(
-				newCoordinates,
-				GRID_SIZE[EnvironmentMode.COCOBOTS]
-			) &&
-			(skipCheckBelow ||
-				newCoordinates.every((coord) =>
-					hasCoordinateBelow(coord, placedCoordinates)
-				))
+			isWithinLimits(newCoordinates, GRID_SIZE[EnvironmentMode.COCOBOTS]) &&
+			(skipCheckBelow || newCoordinates.every((coord) => hasCoordinateBelow(coord, placedCoordinates)))
 		)
 			return shape;
 		return undefined;
@@ -158,8 +133,7 @@ export const EXPORT_GAME_LOG: {
 		WorldStates: gameLog.gameLog.map((worldState) => ({
 			Timestamp: worldState.timestamp,
 			ChatHistory: worldState.chatHistory.map(
-				(message) =>
-					`<${message.user[0]}${message.user.slice(1).toLowerCase()}> ${message.content}`
+				(message) => `<${message.user[0]}${message.user.slice(1).toLowerCase()}> ${message.content}`
 			),
 			BlocksInGrid: worldState.shapeInPlace.map((block) => ({
 				X: block.position.x,
@@ -174,8 +148,7 @@ export const EXPORT_GAME_LOG: {
 		worldStates: gameLog.gameLog.map((worldState) => ({
 			timestamp: worldState.timestamp,
 			chatHistory: worldState.chatHistory.map(
-				(message) =>
-					`<${message.user[0]}${message.user.slice(1).toLowerCase()}> ${message.content}`
+				(message) => `<${message.user[0]}${message.user.slice(1).toLowerCase()}> ${message.content}`
 			),
 			blocksInGrid: worldState.shapeInPlace.map((shape) => ({
 				shape: `${(Object.values(shapeList)[shape.shape] as string)[0]}${(Object.values(shapeList)[shape.shape] as string).slice(1).toLowerCase()}`,

@@ -33,11 +33,7 @@ export function parseJSON(file: File): Promise<GameLog[]> {
 
 				json.forEach((block) => {
 					worldState.shapeInPlace.push({
-						color: COLORS[
-							definedColors[
-								block.color.toUpperCase() as keyof typeof definedColors
-							]
-						],
+						color: COLORS[definedColors[block.color.toUpperCase() as keyof typeof definedColors]],
 						breakable: false,
 						pending: false,
 						position: {
@@ -48,9 +44,7 @@ export function parseJSON(file: File): Promise<GameLog[]> {
 						shape: shapeList.CUBE,
 						uuid: uuidv4(),
 					});
-					const clonedWorldState = JSON.parse(
-						JSON.stringify(worldState)
-					);
+					const clonedWorldState = JSON.parse(JSON.stringify(worldState));
 					game.addWorldState(clonedWorldState);
 				});
 
@@ -63,9 +57,7 @@ export function parseJSON(file: File): Promise<GameLog[]> {
 		};
 
 		reader.onerror = (event) => {
-			reject(
-				event.target?.error || new Error('Unknown FileReader error')
-			);
+			reject(event.target?.error || new Error('Unknown FileReader error'));
 		};
 
 		reader.readAsText(file);

@@ -17,8 +17,7 @@ export function parseCSV(csv: string): GameLog[] {
 		const games: GameLog[] = [];
 
 		const csvSplitter = /"(.+?)","?(.*?)"?(?=(\n"|$))/gs;
-		const dialSplitter =
-			/((?:^(?:(?:place|pick) .*?\n)*|EMPTY))(.*?)(<.*)/s;
+		const dialSplitter = /((?:^(?:(?:place|pick) .*?\n)*|EMPTY))(.*?)(<.*)/s;
 
 		let match;
 		while ((match = csvSplitter.exec(csv)) !== null) {
@@ -67,8 +66,7 @@ function parseWorldState(prevWorldState: string, worldState: worldStateProps) {
 
 				positions.forEach((position) => {
 					const [x, y, z] = position.trim().split(' ');
-					const color =
-						COLORS[colorName.toUpperCase() as keyof typeof COLORS];
+					const color = COLORS[colorName.toUpperCase() as keyof typeof COLORS];
 					worldState.shapeInPlace.push({
 						pending: false,
 						breakable: false,
@@ -111,15 +109,11 @@ export function parseInstruction(instruction: string, gameLog: GameLog) {
 			y: parseInt(criteria[2]),
 			z: parseInt(criteria[3]),
 		};
-		lastWorldState!.shapeInPlace = lastWorldState!.shapeInPlace.filter(
-			(shape) => {
-				return (
-					shape.position.x !== position.x ||
-					shape.position.y !== position.y ||
-					shape.position.z !== position.z
-				);
-			}
-		);
+		lastWorldState!.shapeInPlace = lastWorldState!.shapeInPlace.filter((shape) => {
+			return (
+				shape.position.x !== position.x || shape.position.y !== position.y || shape.position.z !== position.z
+			);
+		});
 	} else {
 		const message = cleanedInstruction.split(/<(.*)> (.*)/);
 		lastWorldState?.chatHistory.push({

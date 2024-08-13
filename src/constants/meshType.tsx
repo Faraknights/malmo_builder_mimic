@@ -43,7 +43,6 @@ export interface NonClickableFaceUserData extends UserData {
 	type: MeshType.NON_CLICKABLE_FACE;
 }
 
-export interface Object3DWithUserData<T extends Object3DEventMap>
-	extends Object3D<T> {
+export interface Object3DWithUserData<T extends Object3DEventMap> extends Object3D<T> {
 	userData: UserData;
 }

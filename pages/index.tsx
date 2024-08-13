@@ -11,9 +11,7 @@ const Home: React.FC = () => {
 
 	return (
 		<div>
-			<h1>
-				Welcome on our simulator for the project COCOPIL and COCOBOTS
-			</h1>
+			<h1>Welcome on our simulator for the project COCOPIL and COCOBOTS</h1>
 			<div>
 				<div>
 					<h2>If you want to see more</h2>

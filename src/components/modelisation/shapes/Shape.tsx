@@ -59,11 +59,7 @@ export interface shapeProps extends shapeComponentProps {
 	shape: shapeList;
 }
 
-const interpolateColor = (
-	initial: string,
-	final: string,
-	percent: number
-): string => {
+const interpolateColor = (initial: string, final: string, percent: number): string => {
 	const hexToRGB = (hex: string): number[] => [
 		parseInt(hex.slice(1, 3), 16),
 		parseInt(hex.slice(3, 5), 16),
@@ -71,24 +67,13 @@ const interpolateColor = (
 	];
 
 	const rgbToHex = (rgb: number[]): string =>
-		'#' +
-		rgb
-			.map((component) => component.toString(16).padStart(2, '0'))
-			.join('');
+		'#' + rgb.map((component) => component.toString(16).padStart(2, '0')).join('');
 
 	const initialRGB = hexToRGB(initial);
 	const finalRGB = hexToRGB(final);
 
 	const intermediateRGB = initialRGB.map((component, index) =>
-		Math.max(
-			0,
-			Math.min(
-				255,
-				Math.round(
-					component + ((finalRGB[index] - component) * percent) / 100
-				)
-			)
-		)
+		Math.max(0, Math.min(255, Math.round(component + ((finalRGB[index] - component) * percent) / 100)))
 	);
 
 	return rgbToHex(intermediateRGB);
@@ -113,11 +98,7 @@ export const Shapes = (props: shapeProps) => {
 					{...props}
 					color={
 						{
-							hex: interpolateColor(
-								props.color.hex,
-								COLORS.WHITE.hex,
-								40
-							),
+							hex: interpolateColor(props.color.hex, COLORS.WHITE.hex, 40),
 							id: definedColors.WHITE,
 						} as Color
 					}

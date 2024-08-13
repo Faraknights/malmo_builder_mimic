@@ -11,10 +11,7 @@ import { CartesianCoordinate } from '../../../interfaces/cartesianCoordinate';
 const ShapePicker: React.FC<{
 	inventory: inventoryProps;
 	environmentMode: EnvironmentMode;
-}> = ({
-	inventory: { currentColor, currentShape, shapes, setCurrentShape },
-	environmentMode,
-}) => {
+}> = ({ inventory: { currentColor, currentShape, shapes, setCurrentShape }, environmentMode }) => {
 	const nbShapeByRow = 2;
 	const ShapesByRow = [];
 	for (let i = 0; i < shapes.length; i += nbShapeByRow) {
@@ -28,19 +25,13 @@ const ShapePicker: React.FC<{
 					{ShapesByRow.map((rowOfShape, i) => (
 						<div key={i}>
 							{rowOfShape.map((shapeId) => {
-								const hitbox = shapeHitbox[
-									shapeId
-								] as CartesianCoordinate[];
+								const hitbox = shapeHitbox[shapeId] as CartesianCoordinate[];
 
-								const xValues = hitbox.map(
-									(coordinate) => coordinate.x
-								);
+								const xValues = hitbox.map((coordinate) => coordinate.x);
 								const minX = Math.min(...xValues);
 								const maxX = Math.max(...xValues);
 
-								const zValues = hitbox.map(
-									(coordinate) => coordinate.z
-								);
+								const zValues = hitbox.map((coordinate) => coordinate.z);
 								const minZ = Math.min(...zValues);
 								const maxZ = Math.max(...zValues);
 
@@ -59,18 +50,11 @@ const ShapePicker: React.FC<{
 										>
 											<mesh
 												scale={[
-													BLOCK_SIZE[environmentMode]
-														.x,
-													BLOCK_SIZE[environmentMode]
-														.y,
-													BLOCK_SIZE[environmentMode]
-														.z,
+													BLOCK_SIZE[environmentMode].x,
+													BLOCK_SIZE[environmentMode].y,
+													BLOCK_SIZE[environmentMode].z,
 												]}
-												position={[
-													-((maxX - minX) / 2),
-													0,
-													-((maxZ - minZ) / 2),
-												]}
+												position={[-((maxX - minX) / 2), 0, -((maxZ - minZ) / 2)]}
 											>
 												<Shapes
 													breakable={false}
@@ -86,23 +70,13 @@ const ShapePicker: React.FC<{
 												/>
 											</mesh>
 											<OrbitControls />
-											<fog
-												attach="fog"
-												args={['white', 20, 1000]}
-											/>
+											<fog attach="fog" args={['white', 20, 1000]} />
 											<ambientLight intensity={1} />
-											<pointLight
-												color="white"
-												position={[3, 10, 3]}
-												intensity={200}
-											/>
+											<pointLight color="white" position={[3, 10, 3]} intensity={200} />
 										</Canvas>
 										<span>
 											{shapeList[shapeId][0] +
-												shapeList[shapeId]
-													.slice(1)
-													.toLowerCase()
-													.replace('_', ' ')}
+												shapeList[shapeId].slice(1).toLowerCase().replace('_', ' ')}
 										</span>
 									</div>
 								);

@@ -58,9 +58,7 @@ const CubeFace = (props: CubeFaceProps) => {
 			}
 		>
 			<planeGeometry attach="geometry" args={[1, 1]} />
-			{props.opacity === 1 && (
-				<Edges linewidth={1} threshold={15} color={props.color} />
-			)}
+			{props.opacity === 1 && <Edges linewidth={1} threshold={15} color={props.color} />}
 			<meshStandardMaterial
 				attach="material"
 				color={props.color}

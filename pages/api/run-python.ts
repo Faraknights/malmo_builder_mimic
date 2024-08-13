@@ -9,10 +9,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 	res.setHeader('Content-Type', 'text/event-stream');
 	res.flushHeaders();
 
-	const pythonProcess = spawn('python', [
-		'-u',
-		'./src/tools/python/test_websocket.py',
-	]);
+	const pythonProcess = spawn('python', ['-u', './src/tools/python/test_websocket.py']);
 
 	pythonProcess.stdout.on('data', (data) => {
 		res.write(`data: ${data.toString().trim()}\n\n`);

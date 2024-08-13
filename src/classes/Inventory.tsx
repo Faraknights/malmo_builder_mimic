@@ -15,15 +15,10 @@ export interface inventoryProps {
 	changeColor: (id: definedColors) => void;
 }
 
-export const useInventory = (
-	selectedColors: Color[],
-	selectedShapes: shapeList[]
-): inventoryProps => {
+export const useInventory = (selectedColors: Color[], selectedShapes: shapeList[]): inventoryProps => {
 	const [currentColor, setCurrentColor] = useState<Color>(selectedColors[0]);
 	const [colors, setColors] = useState<Color[]>(selectedColors);
-	const [currentShape, setCurrentShape] = useState<shapeList>(
-		selectedShapes[0]
-	);
+	const [currentShape, setCurrentShape] = useState<shapeList>(selectedShapes[0]);
 	const [shapes, setShapes] = useState<shapeList[]>(selectedShapes);
 
 	const changeColor = (id: definedColors): void => {
