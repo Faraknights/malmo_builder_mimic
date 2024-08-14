@@ -1,12 +1,5 @@
 {
-  "node_modules\\@react-three\\drei\\core\\Text.js -> troika-three-text": {
-    "id": 7777,
-    "files": [
-      "static/chunks/4d99978a.4806332c8e301076.js",
-      "static/chunks/351.2ddec9c2e63f17aa.js"
-    ]
-  },
-  "node_modules\\@react-three\\drei\\core\\useVideoTexture.js -> hls.js": {
+  "node_modules\\@react-three\\drei\\core\\VideoTexture.js -> hls.js": {
     "id": null,
     "files": []
   },

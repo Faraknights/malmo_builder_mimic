@@ -1,6 +1,5 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import RunPythonComponent from '../src/components/api/RunPythonComponent';
 
 const Home: React.FC = () => {
 	const router = useRouter();
@@ -21,7 +20,6 @@ const Home: React.FC = () => {
 					<button onClick={navigateToSimulator}>Access</button>
 				</div>
 			</div>
-			<RunPythonComponent />
 		</div>
 	);
 };
