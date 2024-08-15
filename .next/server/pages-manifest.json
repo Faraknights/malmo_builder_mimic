@@ -1,10 +1,7 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/api/new_message": "pages/api/new_message.js",
-  "/api/new_message2": "pages/api/new_message2.js",
-  "/api/run-python": "pages/api/run-python.js",
+  "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/[gameMode]/[environmentMode]": "pages/[gameMode]/[environmentMode].js",
-  "/_document": "pages/_document.js"
+  "/[gameMode]/[environmentMode]": "pages/[gameMode]/[environmentMode].js"
 }

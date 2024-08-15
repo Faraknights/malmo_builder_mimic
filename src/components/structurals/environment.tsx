@@ -10,6 +10,8 @@ import { ActionProps } from '../../classes/Action';
 import { EnvironmentMode } from '../../classes/EnvironmentMode';
 import { GRID_SIZE } from '../../constants/environment';
 import { CameraMode, CanvasCameraSettings } from '../../classes/Camera';
+import { CartesianCoordinate } from '../../interfaces/cartesianCoordinate';
+import { PointerProps } from './Visualization';
 
 interface EnvironmentProps {
 	shapeInPlace: ShapeInPlaceProps;
@@ -17,19 +19,16 @@ interface EnvironmentProps {
 	environmentMode: EnvironmentMode;
 	inventory?: inventoryProps;
 	action?: ActionProps;
+	setPointer? : React.Dispatch<React.SetStateAction<PointerProps | undefined>>;
 	camera: CameraMode;
 }
 
-const Scene: React.FC<EnvironmentProps> = ({ shapeInPlace, gameMode, environmentMode, inventory, action }) => {
-	const gridSize = GRID_SIZE[environmentMode];
+const Scene: React.FC<EnvironmentProps> = (props) => {
+	const gridSize = GRID_SIZE[props.environmentMode];
 	return (
 		<mesh position={[-(gridSize.x.max + gridSize.x.min) / 2, 1, -(gridSize.z.max + gridSize.z.min) / 2]}>
 			<Game
-				shapeInPlace={shapeInPlace}
-				gameMode={gameMode}
-				inventory={inventory}
-				action={action}
-				environmentMode={environmentMode}
+				{...props}
 			/>
 		</mesh>
 	);

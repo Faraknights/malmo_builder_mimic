@@ -28,12 +28,14 @@ import { pendingDirection } from '../../constants/direction';
 import { BLOCK_SIZE, GAME_RULE } from '../../constants/environment';
 import { shapeList } from '../../constants/shapeList';
 import { EnvironmentMode } from '../../classes/EnvironmentMode';
+import { PointerProps } from './Visualization';
 
 interface GameProps {
 	shapeInPlace: ShapeInPlaceProps;
 	gameMode: GameMode;
 	inventory?: inventoryProps;
 	action?: ActionProps;
+	setPointer?: React.Dispatch<React.SetStateAction<PointerProps | undefined>>;
 	environmentMode: EnvironmentMode;
 }
 
@@ -70,7 +72,7 @@ function getPosition(shape: Object3DWithUserData<Object3DEventMap>): CartesianCo
 	}
 }
 
-const Game: React.FC<GameProps> = ({ shapeInPlace, gameMode, inventory, action, environmentMode }) => {
+const Game: React.FC<GameProps> = ({ shapeInPlace, gameMode, inventory, action, environmentMode, setPointer }) => {
 	const { objects, pending } = shapeInPlace;
 	const [mouseDownPosition, setMouseDownPosition] = useState<{
 		x: number;
@@ -204,7 +206,21 @@ const Game: React.FC<GameProps> = ({ shapeInPlace, gameMode, inventory, action, 
 					pointedMesh = pointedMesh.parent as Object3DWithUserData<Object3DEventMap>;
 				}
 				const position = getPosition(pointedMesh);
+				if (setPointer) {
+					setPointer({
+						cartesianCoordinate: position,
+						type: MeshType.SHAPE,
+					});
+				}
 				shapeInPlace.setBreaking(position);
+			} else if (pointedMesh.userData.type === MeshType.CELL_BOARD) {
+				const cell = pointedMesh.userData as CellBoardUserData;
+				if (setPointer) {
+					setPointer({
+						cartesianCoordinate: cell.position,
+						type: MeshType.CELL_BOARD,
+					});
+				}
 			}
 		}
 	};
@@ -216,6 +232,9 @@ const Game: React.FC<GameProps> = ({ shapeInPlace, gameMode, inventory, action, 
 			if (e.intersections.length === 0) {
 				shapeInPlace.setPending(undefined);
 				shapeInPlace.removeBreaking();
+				if (setPointer) {
+					setPointer(undefined);
+				}
 			}
 		},
 		onPointerUp: (e: ThreeEvent<PointerEvent>) => {
@@ -266,7 +285,7 @@ const Game: React.FC<GameProps> = ({ shapeInPlace, gameMode, inventory, action, 
 
 	return (
 		<mesh
-			{...(gameMode === GameMode.SIMULATION ? eventHandlers : {})}
+			{...eventHandlers}
 			scale={[BLOCK_SIZE[environmentMode].x, BLOCK_SIZE[environmentMode].y, BLOCK_SIZE[environmentMode].z]}
 			userData={
 				{

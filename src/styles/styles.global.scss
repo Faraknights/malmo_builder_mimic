@@ -71,6 +71,24 @@ html, body, #__next{
 				position: relative;
 				background-color: #1a1b1e;	
 
+				.pointerIndicator{
+					display: flex;
+					position: absolute;
+					top: 5px;
+					left: 5px;
+					z-index: 1;
+					background-color: rgba(255, 255, 255, 0.153);
+					border-radius: 5px;
+					color: white;
+					flex-direction: column;
+					padding: 10px 5px;
+					padding-bottom: 5px;
+
+					span{
+						margin: 5px;
+						margin-top: 0;
+					}
+				}
 
 				#cameraSelector{
 					display: flex;
