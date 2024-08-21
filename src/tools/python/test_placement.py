@@ -23,6 +23,15 @@ def print_message(message: dict) -> None:
     
     print(f"{base64_message}")
 
+
+
+
+
+
+
+
+
+
 example_message = {
     'type': ServerMessageType.WAIT,
     'content': 'Please Wait...'
@@ -30,7 +39,29 @@ example_message = {
 
 print_message(example_message)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 time.sleep(2)
+
+
+
+
+
+
+
+
 
 
 example_message = {
@@ -39,6 +70,18 @@ example_message = {
 }
 
 print_message(example_message)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 example_message = {

@@ -2,6 +2,6 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/[gameMode]/[environmentMode]": "pages/[gameMode]/[environmentMode].js"
+  "/[gameMode]/[environmentMode]": "pages/[gameMode]/[environmentMode].js",
+  "/api/new_message2": "pages/api/new_message2.js"
 }

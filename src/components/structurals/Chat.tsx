@@ -77,9 +77,12 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 										content: message,
 										user: user,
 									});
-
+                                    console.log(nebula)
+                                    
 									if (nebula) {
+                                        console.log("test")
 										const runPythonScript = async () => {
+                                            console.log("fetching")
 											await fetchEventSource('/api/new_message2', {
 												method: 'POST',
 												headers: {
@@ -89,6 +92,7 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 													message,
 												}),
 												onmessage: async (ev) => {
+                                                    console.log("test")
 													if (ev.data) {
 														let full_message = '';
 														if (isBase64(ev.data)) {
