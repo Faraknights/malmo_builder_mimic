@@ -25,7 +25,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
 	pythonProcess.stdout.on('data', (data) => {
 		res.write(`data: ${data.toString().trim()}\n\n`);
-		console.log(data.toString().trim());
 	});
 
 	pythonProcess.stderr.on('data', (data) => {

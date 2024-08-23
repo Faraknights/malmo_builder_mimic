@@ -1,10 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { spawn } from 'child_process';
 
-console.log('fichier');
-
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-	console.log('fichier');
 	if (req.method !== 'POST') {
 		res.status(405).json({ error: 'Method not allowed' });
 		return;
@@ -22,7 +19,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 	res.setHeader('Content-Type', 'text/event-stream');
 	res.flushHeaders();
 
-	console.log('test2');
 	//const pythonProcess = spawn('python', ['-u', './src/tools/python/message.py', message as string]);
 	const pythonProcess = spawn('python3', ['-u', './src/tools/python/test_placement.py', message as string]);
 
@@ -30,8 +26,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
 	pythonProcess.stdout.on('data', (data) => {
 		res.write(`data: ${data.toString().trim()}\n\n`);
-		console.log('test');
-		console.log(data.toString().trim());
 	});
 
 	pythonProcess.stderr.on('data', (data) => {

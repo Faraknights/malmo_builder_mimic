@@ -6,7 +6,6 @@ import base64
 class ServerMessageType(Enum):
     WAIT = 'WAIT'
     MESSAGE = 'MESSAGE'
-    RESUME = 'RESUME'
     
 
 def print_message(message: dict) -> None:

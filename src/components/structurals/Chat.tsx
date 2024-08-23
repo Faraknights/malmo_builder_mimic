@@ -77,12 +77,9 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 										content: message,
 										user: user,
 									});
-									console.log(nebula);
 
 									if (nebula) {
-										console.log('test');
 										const runPythonScript = async () => {
-											console.log('fetching');
 											await fetchEventSource('/api/new_message2', {
 												method: 'POST',
 												headers: {
@@ -92,7 +89,6 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 													message,
 												}),
 												onmessage: async (ev) => {
-													console.log('test');
 													if (ev.data) {
 														let full_message = '';
 														if (isBase64(ev.data)) {
@@ -103,7 +99,6 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 														try {
 															const message = JSON.parse(full_message) as ServerMessage;
 															console.log(message);
-
 															if (message.type === 'WAIT') {
 																chat.addMessage({
 																	content: message.content,
@@ -148,14 +143,12 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 																	}
 
 																	processLogs(gameLog);
-																	console.log(gameLog);
 																} else {
 																	chat.addMessage({
 																		content: message.content,
 																		user: Users.NEBULA,
 																	});
 																}
-															} else if (message.type === 'RESUME') {
 																setDisable(false);
 															}
 														} catch (error) {
