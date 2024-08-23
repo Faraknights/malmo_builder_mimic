@@ -106,8 +106,13 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 																});
 																setDisable(true);
 															} else if (message.type === 'MESSAGE') {
+																console.log(
+																	/^(place .*|pick) -?[0-9]+ -?[0-9]+ -?[0-9]+\n?$/gm.test(
+																		message.content
+																	)
+																);
 																if (
-																	/^((place|pick) .* [0-9]* [0-9]* [0-9]*\n?)*$/.test(
+																	/^(place .*|pick) -?[0-9]+ -?[0-9]+ -?[0-9]+\n?$/gm.test(
 																		message.content
 																	)
 																) {
@@ -115,10 +120,14 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 																		.trim()
 																		.split('\n');
 																	const gameLog = new GameLog();
+																	gameLog.gameLog[0].shapeInPlace =
+																		shapeInPlace.objects;
 
 																	instructions.forEach((instruction) => {
 																		parseInstruction(instruction.trim(), gameLog);
 																	});
+
+																	console.log(gameLog);
 
 																	function delay(ms: number) {
 																		return new Promise((resolve) =>
@@ -133,11 +142,8 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 																			i++
 																		) {
 																			const log = gameLog.gameLog[i];
-																			shapeInPlace.addObject(
-																				log.shapeInPlace[
-																					log.shapeInPlace.length - 1
-																				]
-																			);
+
+																			shapeInPlace.setObjects(log.shapeInPlace);
 																			await delay(500); // 500ms delay
 																		}
 																	}
