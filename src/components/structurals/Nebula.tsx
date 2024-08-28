@@ -36,6 +36,7 @@ const Nebula: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 					availableUsers={[Users.ARCHITECT]}
 					shapeInPlace={shapeInPlace}
 					nebula={true}
+					environmentMode={environmentMode}
 				/>
 			</Side>
 		</main>

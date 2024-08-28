@@ -65,7 +65,7 @@ time.sleep(2)
 
 example_message = {
     'type': ServerMessageType.MESSAGE,
-    'content': 'place red 0 1 0\nplace blue 0 2 0\nplace green 0 3 0'
+    'content': 'place red 0 1 0\npick 0 1 0'
 }
 
 print_message(example_message)

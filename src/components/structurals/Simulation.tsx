@@ -91,6 +91,7 @@ const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 					chat={chat}
 					availableUsers={[Users.ARCHITECT, Users.BUILDER]}
 					shapeInPlace={shapeInPlace}
+					environmentMode={environmentMode}
 				/>
 				<div id="gameButtons">
 					<button

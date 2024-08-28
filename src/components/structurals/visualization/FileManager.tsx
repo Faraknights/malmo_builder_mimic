@@ -4,10 +4,13 @@ import { ShapeInPlaceProps } from '../../../classes/shapeInPlace';
 import { parseCSV } from '../../../tools/csvReader';
 import { parseJSON } from '../../../tools/jsonReaded';
 import { GameLog } from '../../../classes/gameLog';
+import { JsonlEvent } from '../../../interfaces/jsonlDataStructure';
+import { EnvironmentMode } from '../../../classes/EnvironmentMode';
 
 export interface FileManagerProps {
 	chatHistory: chatProps;
 	shapeInPlace: ShapeInPlaceProps;
+	environmentMode: EnvironmentMode;
 }
 
 // Memoized GameComponent to optimize rendering
@@ -34,7 +37,7 @@ const GameComponent: React.FC<{
 
 GameComponent.displayName = 'GameComponent';
 
-const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace }) => {
+const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace, environmentMode }) => {
 	const [gameLogs, setGameLogs] = useState<GameLog[]>([]);
 	const [currentgameId, setcurrentgameId] = useState<number>(0);
 	const [step, setStep] = useState<number>(0);
@@ -60,26 +63,42 @@ const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace }) 
 
 	const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
 		const file = event.target.files && event.target.files[0];
-		console.log('1');
-
 		if (file) {
 			const fileExtension = file.name.split('.').pop()?.toLowerCase();
-			console.log('2');
 
 			try {
+				console.log(fileExtension);
 				if (fileExtension === 'csv') {
-					console.log('3');
 					const reader = new FileReader();
 					reader.onload = (event) => {
-						console.log('csv');
 						const csv = event.target?.result as string;
-						const newGameLogs = parseCSV(csv);
+						const newGameLogs = parseCSV(csv, environmentMode);
 						setGameLogs((prevGameLogs) => [...prevGameLogs, ...newGameLogs]);
 					};
 					reader.readAsText(file);
 				} else if (fileExtension === 'json') {
 					const newGameLogs = await parseJSON(file);
 					setGameLogs((prevGameLogs) => [...prevGameLogs, ...newGameLogs]);
+				} else if (fileExtension === 'jsonl') {
+					const reader = new FileReader();
+					reader.onload = (event) => {
+						const jsonl = event.target?.result as string;
+						const lines = jsonl
+							.split('\n')
+							.filter(
+								(line) =>
+									typeof line === 'string' &&
+									// eslint-disable-next-line no-useless-escape
+									/^[\[\{]/.test(line.trim()) &&
+									(() => {
+										JSON.parse(line);
+										return true;
+									})
+							)
+							.map((line) => JSON.parse(line) as JsonlEvent);
+						console.log(lines);
+					};
+					reader.readAsText(file);
 				} else {
 					console.error('Unsupported file type:', fileExtension);
 				}

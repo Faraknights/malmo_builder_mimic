@@ -165,7 +165,7 @@ export const EXPORT_GAME_LOG: {
 
 export const gameModesAvailable: { [key in EnvironmentMode]: GameMode[] } = {
 	[EnvironmentMode.MINECRAFT]: [GameMode.SIMULATION, GameMode.VISUALIZATION, GameMode.NEBULA],
-	[EnvironmentMode.COCOBOTS]: [GameMode.SIMULATION],
+	[EnvironmentMode.COCOBOTS]: [GameMode.SIMULATION, GameMode.NEBULA],
 };
 
 export const gameModeComponent: {

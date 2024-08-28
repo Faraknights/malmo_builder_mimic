@@ -6,11 +6,13 @@ import { ServerMessage } from '../../interfaces/serverMessage';
 import { parseInstruction } from '../../tools/csvReader';
 import { GameLog } from '../../classes/gameLog';
 import { ShapeInPlaceProps } from '../../classes/shapeInPlace';
+import { EnvironmentMode } from '../../classes/EnvironmentMode';
 interface chatComponentProps {
 	chat: chatProps;
 	availableUsers: Users[];
 	shapeInPlace: ShapeInPlaceProps;
 	nebula?: boolean;
+	environmentMode: EnvironmentMode;
 }
 
 export enum Users {
@@ -20,7 +22,13 @@ export enum Users {
 	NEBULA = 'NEBULA',
 }
 
-const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, nebula, shapeInPlace }) => {
+const ChatComponent: React.FC<chatComponentProps> = ({
+	chat,
+	availableUsers,
+	nebula,
+	shapeInPlace,
+	environmentMode,
+}) => {
 	const chatRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
@@ -80,7 +88,11 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 
 									if (nebula) {
 										const runPythonScript = async () => {
-											await fetchEventSource('/api/new_message2', {
+											const link =
+												environmentMode === EnvironmentMode.MINECRAFT
+													? '/api/nebula_minecraft'
+													: '/api/nebula_cocobots';
+											await fetchEventSource(link, {
 												method: 'POST',
 												headers: {
 													'Content-Type': 'application/json',
@@ -124,7 +136,11 @@ const ChatComponent: React.FC<chatComponentProps> = ({ chat, availableUsers, neb
 																		shapeInPlace.objects;
 
 																	instructions.forEach((instruction) => {
-																		parseInstruction(instruction.trim(), gameLog);
+																		parseInstruction(
+																			instruction.trim(),
+																			gameLog,
+																			environmentMode
+																		);
 																	});
 
 																	console.log(gameLog);

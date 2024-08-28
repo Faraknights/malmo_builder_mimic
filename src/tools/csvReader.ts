@@ -2,6 +2,7 @@ import { GameLog, worldStateProps } from '../classes/gameLog';
 import { COLORS } from '../constants/colors';
 import { v4 as uuidv4 } from 'uuid';
 import { shapeList } from '../constants/shapeList';
+import { EnvironmentMode } from '../classes/EnvironmentMode';
 
 export interface csvFormat {
 	dial_with_actions: {
@@ -12,7 +13,7 @@ export interface csvFormat {
 	action_seq: string[];
 }
 
-export function parseCSV(csv: string): GameLog[] {
+export function parseCSV(csv: string, environmentMode: EnvironmentMode): GameLog[] {
 	try {
 		const games: GameLog[] = [];
 
@@ -39,11 +40,11 @@ export function parseCSV(csv: string): GameLog[] {
 			gameLog.addWorldState(worldState);
 
 			instructions.forEach((instruction) => {
-				parseInstruction(instruction.trim(), gameLog);
+				parseInstruction(instruction.trim(), gameLog, environmentMode);
 			});
 
 			actionSeq.split('\n').forEach((instruction) => {
-				parseInstruction(instruction.trim(), gameLog);
+				parseInstruction(instruction.trim(), gameLog, environmentMode);
 			});
 
 			games.push(gameLog);
@@ -85,23 +86,38 @@ function parseWorldState(prevWorldState: string, worldState: worldStateProps) {
 	}
 }
 
-export function parseInstruction(instruction: string, gameLog: GameLog) {
+export function parseInstruction(instruction: string, gameLog: GameLog, environmentMode: EnvironmentMode) {
 	const cleanedInstruction = instruction.trim();
 	const lastWorldState = gameLog.getLastWorldState();
 	if (cleanedInstruction.startsWith('place')) {
 		const placement = cleanedInstruction.split(' ');
-		lastWorldState?.shapeInPlace.push({
-			pending: false,
-			breakable: false,
-			uuid: uuidv4(),
-			color: COLORS[placement[1].toUpperCase() as keyof typeof COLORS],
-			position: {
-				x: parseInt(placement[2]),
-				y: parseInt(placement[3]),
-				z: parseInt(placement[4]),
-			},
-			shape: shapeList.CUBE,
-		});
+		if (environmentMode === EnvironmentMode.MINECRAFT) {
+			lastWorldState?.shapeInPlace.push({
+				pending: false,
+				breakable: false,
+				uuid: uuidv4(),
+				color: COLORS[placement[1].toUpperCase() as keyof typeof COLORS],
+				position: {
+					x: parseInt(placement[2]),
+					y: parseInt(placement[3]),
+					z: parseInt(placement[4]),
+				},
+				shape: shapeList.CUBE,
+			});
+		} else if (environmentMode === EnvironmentMode.COCOBOTS) {
+			lastWorldState?.shapeInPlace.push({
+				pending: false,
+				breakable: false,
+				uuid: uuidv4(),
+				color: COLORS[placement[2].toUpperCase() as keyof typeof COLORS],
+				position: {
+					x: parseInt(placement[3]),
+					y: parseInt(placement[4]),
+					z: parseInt(placement[5]),
+				},
+				shape: shapeList[placement[1].toUpperCase() as keyof typeof shapeList],
+			});
+		}
 	} else if (cleanedInstruction.startsWith('pick')) {
 		const criteria = cleanedInstruction.split(' ');
 		const position = {
