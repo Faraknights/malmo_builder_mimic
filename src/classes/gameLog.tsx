@@ -1,11 +1,10 @@
-import { ShapeGroup } from '../components/modelisation/shapes/group';
 import { shapeProps } from '../components/modelisation/shapes/Shape';
 import { Message } from './Chat';
 
 export interface worldStateProps {
 	timestamp?: Date;
 	chatHistory: Message[];
-	shapeInPlace: (shapeProps | ShapeGroup)[];
+	shapeInPlace: shapeProps[];
 }
 
 export class GameLog {

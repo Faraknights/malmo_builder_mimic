@@ -17,12 +17,13 @@ const Nebula: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 	const action = useAction();
 	const camera = useCamera();
 	const chat = useChat();
+	const gameMode = GameMode.NEBULA;
 
 	return (
 		<main>
 			<div id="mainView">
 				<Environment
-					gameMode={GameMode.NEBULA}
+					gameMode={gameMode}
 					shapeInPlace={shapeInPlace}
 					inventory={inventory}
 					action={action}
@@ -35,8 +36,8 @@ const Nebula: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 					chat={chat}
 					availableUsers={[Users.ARCHITECT]}
 					shapeInPlace={shapeInPlace}
-					nebula={true}
 					environmentMode={environmentMode}
+					gameMode={gameMode}
 				/>
 			</Side>
 		</main>

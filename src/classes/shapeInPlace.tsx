@@ -4,10 +4,10 @@ import { ShapeGroup } from '../components/modelisation/shapes/group';
 import { CartesianCoordinate, coordinateAddition, coordinatesAreEqual } from '../interfaces/cartesianCoordinate';
 
 export interface ShapeInPlaceProps {
-	objects: (shapeProps | ShapeGroup)[];
-	pending: (shapeProps | ShapeGroup) | undefined;
-	setObjects: React.Dispatch<React.SetStateAction<(shapeProps | ShapeGroup)[]>>;
-	setPending: React.Dispatch<React.SetStateAction<(shapeProps | ShapeGroup) | undefined>>;
+	objects: shapeProps[];
+	pending: shapeProps | undefined;
+	setObjects: React.Dispatch<React.SetStateAction<shapeProps[]>>;
+	setPending: React.Dispatch<React.SetStateAction<shapeProps | undefined>>;
 	nbObjects: () => number;
 	objectExists: (x: number, y: number, z: number) => boolean;
 	addObject: (object: shapeProps) => void;
@@ -20,8 +20,8 @@ export interface ShapeInPlaceProps {
 }
 
 export const useShapeInPlace = (): ShapeInPlaceProps => {
-	const [objects, setObjects] = useState<(shapeProps | ShapeGroup)[]>([]);
-	const [pending, setPending] = useState<shapeProps | ShapeGroup | undefined>();
+	const [objects, setObjects] = useState<shapeProps[]>([]);
+	const [pending, setPending] = useState<shapeProps | undefined>();
 
 	const nbObjects = (): number => {
 		let count = 0;
@@ -50,7 +50,7 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 		return false;
 	};
 
-	const addObject = (object: shapeProps | ShapeGroup): void => {
+	const addObject = (object: shapeProps): void => {
 		setObjects((prevObject) => [...prevObject, object]);
 	};
 
@@ -75,25 +75,18 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 		setObjects([]);
 	};
 
-	const confirmPending = (newPending?: shapeProps | ShapeGroup): void => {
+	const confirmPending = (newPending?: shapeProps): void => {
 		if (pending) {
-			const updatedPending =
-				pending instanceof ShapeGroup
-					? new ShapeGroup(pending.startingPoint, pending.shapes, false, pending.breakable)
-					: { ...pending, pending: false };
+			const updatedPending = { ...pending, pending: false };
 			addObject(updatedPending);
 		}
 		setPending(newPending);
 	};
 
 	const setBreaking = (position: CartesianCoordinate) => {
-		const updateShape = (shape: shapeProps | ShapeGroup): shapeProps | ShapeGroup => {
+		const updateShape = (shape: shapeProps): shapeProps => {
 			if (shape.breakable) return shape;
-			if (shape instanceof ShapeGroup) {
-				return new ShapeGroup(shape.startingPoint, shape.shapes.map(updateShape), shape.pending, true);
-			} else {
-				return { ...shape, breakable: true };
-			}
+			return { ...shape, breakable: true };
 		};
 
 		setObjects((prevObjects) =>
@@ -110,12 +103,8 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 	};
 
 	const removeBreaking = () => {
-		const updateShape = (shape: shapeProps | ShapeGroup): shapeProps | ShapeGroup => {
-			if (shape instanceof ShapeGroup) {
-				return new ShapeGroup(shape.startingPoint, shape.shapes.map(updateShape), shape.pending, false);
-			} else {
-				return { ...shape, breakable: false };
-			}
+		const updateShape = (shape: shapeProps): shapeProps => {
+			return { ...shape, breakable: false };
 		};
 
 		setObjects((prevObjects) =>
@@ -131,14 +120,10 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 
 	const getPosition = (): CartesianCoordinate[] => {
 		return objects.flatMap((object) => {
-			if (object instanceof ShapeGroup) {
-				return object.getPositions();
-			} else {
-				return coordinateAddition(
-					shapeHitbox[object.shape] as CartesianCoordinate[],
-					object.position
-				) as CartesianCoordinate[];
-			}
+			return coordinateAddition(
+				shapeHitbox[object.shape] as CartesianCoordinate[],
+				object.position
+			) as CartesianCoordinate[];
 		});
 	};
 

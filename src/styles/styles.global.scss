@@ -368,6 +368,14 @@ html, body, #__next{
 
 					color: rgb(255, 248, 229);
 
+					
+					.system{
+						color: rgb(255, 248, 229);
+						text-align: center;
+						font-size: 20px;
+						margin: 10px 0;
+					}
+
 					hr{
 						width: calc(100% - 20px);
 						border-top: 1px solid rgba(255, 208, 0, 0.7);
@@ -381,46 +389,91 @@ html, body, #__next{
 						width: 100%;
 						margin-bottom: 15px;
 
-						&:first-of-type{
+						&.historyMessages{
 							height: 100%;
 							overflow-y: auto;
 						}
 
-						&:nth-of-type(2){
+						&.buttons{
 							display: flex;
-							flex-direction: row;
-							align-items: center;
-							width: 100%;
-							padding: 0 10px;
+							flex-direction: column;
 
-							button{
-								height: 25px;
-								border: 0;
-								margin-top: 3px;
-								margin-right: 10px;
-								border-radius: 5px;
+							.mainButtons{
 								display: flex;
+								flex-direction: row;
 								align-items: center;
-								justify-content: center;
-								font-size: x-small;
-								cursor: pointer;
+								width: 100%;
+								padding: 0 10px;
+	
+								button{
+									height: 25px;
+									border: 0;
+									margin-top: 3px;
+									margin-right: 10px;
+									border-radius: 5px;
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									font-size: x-small;
+									cursor: pointer;
+								}
+	
+								& > input[type="text"]{
+									background-color: rgba(255, 244, 42, 0.361);
+									margin-top: 4px;
+									width: 100%;
+									border: 00;
+									border-radius: 5px;
+									height: 25px;
+									padding: 010px;
+									color: white;
+									font-weight: 100;
+									outline: none;
+	
+									&.disable{
+										background-color: rgba(116, 114, 71, 0.595);
+										pointer-events: none;
+									}
+								}
 							}
 
-							& > input[type="text"]{
-								background-color: rgba(255, 244, 42, 0.361);
-								margin-top: 4px;
-								width: 100%;
-								border: 00;
-								border-radius: 5px;
-								height: 25px;
-								padding: 010px;
-								color: white;
-								font-weight: 100;
-								outline: none;
+							.generate {
+								display: flex;
+								flex-direction: row;
+								height: 35px;
+								align-items: center;
+								width: 95%;
+								margin-top: 10px;
+								border: none;
+								border-radius: 8px;
+								justify-content: center;
+								cursor: pointer;
 
-								&.disable{
-									background-color: rgba(116, 114, 71, 0.595);
+								&.disabled{
+									opacity: 0.3;
 									pointer-events: none;
+								}
+
+								*{
+									pointer-events: none;
+								}
+
+								span{
+									font-size: 18px;
+									background: -webkit-linear-gradient(30deg, rgb(0, 89, 167) 0%, rgb(255, 35, 35) 57%, rgb(21, 210, 0) 100%);
+									-webkit-background-clip: text;
+									-webkit-text-fill-color: transparent;
+									font-weight: 700;
+								}
+
+								svg {
+									height: 17px; 
+									width: 17px;
+									margin-left: 5px;
+
+									path{
+										fill: rgb(250, 150, 36);
+									}
 								}
 							}
 						}

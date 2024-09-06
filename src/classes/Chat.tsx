@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { Users } from '../components/structurals/Chat';
 
 export interface Message {
-	user: string;
+	user: Users;
 	content: string;
 }
 

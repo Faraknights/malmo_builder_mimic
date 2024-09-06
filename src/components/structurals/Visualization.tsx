@@ -21,6 +21,7 @@ const Visualization: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 	const chat: chatProps = useChat();
 	const shapeInPlace: ShapeInPlaceProps = useShapeInPlace();
 	const [pointer, setPointer] = useState<PointerProps | undefined>(undefined);
+	const gameMode = GameMode.VISUALIZATION;
 
 	return (
 		<main>
@@ -29,7 +30,7 @@ const Visualization: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 				<Environment
 					environmentMode={environmentMode}
 					shapeInPlace={{ ...shapeInPlace }}
-					gameMode={GameMode.VISUALIZATION}
+					gameMode={gameMode}
 					camera={CameraMode.FREE}
 					setPointer={setPointer}
 				/>
@@ -41,6 +42,7 @@ const Visualization: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 					environmentMode={environmentMode}
 					availableUsers={[]}
 					shapeInPlace={shapeInPlace}
+					gameMode={gameMode}
 				/>
 			</Side>
 		</main>

@@ -25,6 +25,7 @@ const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 	const myCamera = useCamera();
 	const chat = useChat();
 	const [gameLog, setGameLog] = useState<GameLog>(new GameLog());
+	const gameMode = GameMode.SIMULATION;
 
 	useEffect(() => {
 		if (shapeInPlace.pending) {
@@ -75,7 +76,7 @@ const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 			<div id="mainView">
 				<CameraSelector {...myCamera} />
 				<Environment
-					gameMode={GameMode.SIMULATION}
+					gameMode={gameMode}
 					shapeInPlace={shapeInPlace}
 					inventory={inventory}
 					action={action}
@@ -92,6 +93,7 @@ const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 					availableUsers={[Users.ARCHITECT, Users.BUILDER]}
 					shapeInPlace={shapeInPlace}
 					environmentMode={environmentMode}
+					gameMode={gameMode}
 				/>
 				<div id="gameButtons">
 					<button
