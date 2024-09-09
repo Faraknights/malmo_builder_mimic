@@ -30,7 +30,6 @@ export const ENVIRONMENT_COLORS: { [key in EnvironmentMode]: Color[] } = {
 		COLORS[definedColors.BLUE],
 		COLORS[definedColors.RED],
 		COLORS[definedColors.YELLOW],
-		COLORS[definedColors.NEW],
 	],
 };
 
@@ -46,18 +45,9 @@ export const ENVIRONMENT_SHAPES: { [key in EnvironmentMode]: shapeList[] } = {
 };
 
 interface gridSizeProps {
-	x: {
-		min: number;
-		max: number;
-	};
-	y: {
-		min: number;
-		max: number;
-	};
-	z: {
-		min: number;
-		max: number;
-	};
+	x: { min: number; max: number };
+	y: { min: number; max: number };
+	z: { min: number; max: number };
 }
 
 export const GRID_SIZE: { [key in EnvironmentMode]: gridSizeProps } = {
@@ -68,7 +58,7 @@ export const GRID_SIZE: { [key in EnvironmentMode]: gridSizeProps } = {
 	},
 	[EnvironmentMode.COCOBOTS]: {
 		x: { min: 0, max: 7 },
-		y: { min: 1, max: 11 },
+		y: { min: 1, max: 8 },
 		z: { min: 0, max: 7 },
 	},
 };
@@ -165,7 +155,7 @@ export const EXPORT_GAME_LOG: {
 
 export const gameModesAvailable: { [key in EnvironmentMode]: GameMode[] } = {
 	[EnvironmentMode.MINECRAFT]: [GameMode.SIMULATION, GameMode.VISUALIZATION, GameMode.NEBULA],
-	[EnvironmentMode.COCOBOTS]: [GameMode.SIMULATION, GameMode.NEBULA],
+	[EnvironmentMode.COCOBOTS]: [GameMode.SIMULATION, GameMode.VISUALIZATION, GameMode.NEBULA],
 };
 
 export const gameModeComponent: {
