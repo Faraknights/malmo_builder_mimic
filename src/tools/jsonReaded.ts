@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export interface csvFormat {
 	worldStates: {
+		shape?: string;
 		color: string;
 		x: number;
 		y: number;
@@ -41,7 +42,9 @@ export function parseJSON(file: File): Promise<GameLog[]> {
 							y: block.y,
 							z: block.z,
 						},
-						shape: shapeList.CUBE,
+						shape: block.shape
+							? shapeList[block.shape.toUpperCase() as keyof typeof shapeList]
+							: shapeList.CUBE,
 						uuid: uuidv4(),
 					});
 					const clonedWorldState = JSON.parse(JSON.stringify(worldState));
