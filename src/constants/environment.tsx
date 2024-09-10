@@ -10,6 +10,7 @@ import Simulation from '../components/structurals/Simulation';
 import Visualization from '../components/structurals/Visualization';
 import Nebula from '../components/structurals/Nebula';
 import { GameMode } from '../classes/gameMode';
+import { CameraMode } from '../classes/Camera';
 
 export const BLOCK_SIZE: { [key in EnvironmentMode]: CartesianCoordinate } = {
 	[EnvironmentMode.MINECRAFT]: { x: 1, y: 1, z: 1 },
@@ -156,6 +157,11 @@ export const EXPORT_GAME_LOG: {
 export const gameModesAvailable: { [key in EnvironmentMode]: GameMode[] } = {
 	[EnvironmentMode.MINECRAFT]: [GameMode.SIMULATION, GameMode.VISUALIZATION, GameMode.NEBULA],
 	[EnvironmentMode.COCOBOTS]: [GameMode.SIMULATION, GameMode.VISUALIZATION, GameMode.NEBULA],
+};
+
+export const defaultCameraByEnvironment: { [key in EnvironmentMode]: CameraMode } = {
+	[EnvironmentMode.MINECRAFT]: CameraMode.FREE,
+	[EnvironmentMode.COCOBOTS]: CameraMode.UPPER_VIEW,
 };
 
 export const gameModeComponent: {

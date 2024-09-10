@@ -11,8 +11,8 @@ export interface CameraProps {
 	setCurrent: React.Dispatch<React.SetStateAction<CameraMode>>;
 }
 
-export const useCamera = (): CameraProps => {
-	const [current, setCurrent] = useState<CameraMode>(CameraMode.FREE);
+export const useCamera = (defaultCamera?: CameraMode): CameraProps => {
+	const [current, setCurrent] = useState<CameraMode>(defaultCamera ? defaultCamera : CameraMode.FREE);
 	return {
 		current,
 		setCurrent,

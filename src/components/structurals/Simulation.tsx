@@ -10,7 +10,12 @@ import useAction from '../../classes/Action';
 import ActionSelector from './simulation/ActionSelector';
 import ShapePicker from './simulation/ShapePicker';
 import { EnvironmentTypeProps } from '../../classes/EnvironmentMode';
-import { ENVIRONMENT_COLORS, ENVIRONMENT_SHAPES, EXPORT_GAME_LOG } from '../../constants/environment';
+import {
+	defaultCameraByEnvironment,
+	ENVIRONMENT_COLORS,
+	ENVIRONMENT_SHAPES,
+	EXPORT_GAME_LOG,
+} from '../../constants/environment';
 import { useChat } from '../../classes/Chat';
 import ChatComponent, { Users } from './Chat';
 import { GameLog, worldStateProps } from '../../classes/gameLog';
@@ -22,7 +27,7 @@ const Simulation: React.FC<EnvironmentTypeProps> = ({ environmentMode }) => {
 
 	const shapeInPlace = useShapeInPlace();
 	const action = useAction();
-	const myCamera = useCamera();
+	const myCamera = useCamera(defaultCameraByEnvironment[environmentMode]);
 	const chat = useChat();
 	const [gameLog, setGameLog] = useState<GameLog>(new GameLog());
 	const gameMode = GameMode.SIMULATION;

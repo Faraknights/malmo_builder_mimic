@@ -12,6 +12,77 @@ html, body, #__next{
 		user-select: none;
 	}
 
+	#homepage{
+		background: linear-gradient(to bottom, rgb(226, 151, 229), rgb(152, 107, 29));
+		color: #e0e0e0; // Light text color
+		font-family: Arial, sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 20px;
+		min-height: 100vh;
+	  
+		h1 {
+			text-align: center;
+			font-size: 2rem; // Larger font size for prominence
+			margin-bottom: 20px;
+			color: white; // Bright color for the title
+			font-weight: bold; // Make the text bold
+			text-shadow: 2px 3px 8px rgba(224, 224, 224, 0.7); // Add a subtle shadow for depth
+			transition: color 0.3s ease; // Smooth transition for color change
+
+			span{
+				font-size: 4rem;
+			}
+		}
+	  
+		& > img {
+		  max-width: 100%;
+		  height: 200px;
+		  margin: 20px 0;
+		  background-color: white;
+		  padding: 15px;
+		  border-radius: 15px;
+		}
+	  
+		button {
+			background-image: linear-gradient(225deg, #ff3c56, #c5992b);					
+			border: none;
+			border-radius: 15px;
+			padding: 20px 70px;
+			margin-top: 30px;
+			border: solid white 3px;
+			height: 75px;
+			width: 300px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			box-shadow: 0px 15px 0px #d5d5d5; // Add a subtle shadow for depth
+			transition: box-shadow 0.3s ease, transform 0.3s ease;		
+		
+			&:hover{
+				box-shadow: 0px 12px 0px #d5d5d5;;
+				transform: translateY(3px);
+			}	
+		
+			&:active{
+				box-shadow: 0px 5px 0px #d5d5d5;;
+				transform: translateY(10px);
+			}
+
+			span{
+				color: white;
+				font-size: 1.5rem;
+			}
+
+			img{
+				height: 60px;
+			}
+		}
+	}
+
 	#root{
 		height: 100%;
 		display: flex;
@@ -448,6 +519,10 @@ html, body, #__next{
 								border-radius: 8px;
 								justify-content: center;
 								cursor: pointer;
+
+								img{
+									height: 150%;
+								}
 
 								&.disabled{
 									opacity: 0.3;

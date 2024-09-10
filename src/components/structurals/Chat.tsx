@@ -44,8 +44,10 @@ const ChatComponent: React.FC<chatComponentProps> = ({
 
 	const [user, setUser] = useState<Users>(Users.ARCHITECT);
 	const [disable, setDisable] = useState<boolean>(false);
+	const [clicked, setClicked] = useState<boolean>(false);
 
 	const pythonCall = () => {
+		setClicked(true);
 		const message = (
 			chat.chatHistory.some(
 				(message) => message.user === Users.SYSTEM && message.content === systemMessage.PLACEMENT
@@ -95,6 +97,7 @@ const ChatComponent: React.FC<chatComponentProps> = ({
 										user: Users.SYSTEM,
 									});
 									setDisable(true);
+									setClicked(false);
 								} else if (message.type === 'MESSAGE') {
 									console.log(
 										/^(place .*|pick) -?[0-9]+ -?[0-9]+ -?[0-9]+\n?$/gm.test(message.content)
@@ -234,15 +237,25 @@ const ChatComponent: React.FC<chatComponentProps> = ({
 								}
 								onClick={pythonCall}
 							>
-								<span>Generate</span>
-								<svg version="1.0" viewBox="0 0 200 200">
-									<g transform="translate(0,200) scale(0.1,-0.1)" fill="#000000" stroke="none">
-										{/* prettier-ignore */}
-										<path d="M1426 1808 c-9 -12 -16 -30 -16 -40 0 -9 -11 -48 -25 -85 -37 -103 -78 -134 -236 -177 -58 -16 -76 -37 -58 -68 5 -9 39 -23 76 -32 38 -10 90 -29 118 -44 59 -32 95 -90 121 -195 27 -110 80 -116 103 -10 18 82 57 159 94 187 27 21 88 44 197 75 28 8 39 44 20 66 -6 7 -27 16 -47 20 -60 11 -141 45 -174 72 -37 32 -63 81 -84 164 -9 35 -21 70 -27 77 -16 19 -45 14 -62 -10z"/>
-										{/* prettier-ignore */}
-										<path d="M791 1451 c-7 -5 -27 -60 -43 -122 -77 -293 -153 -370 -442 -449 -122 -33 -131 -37 -134 -61 -4 -34 10 -43 98 -64 115 -27 229 -71 287 -111 89 -61 152 -180 198 -374 21 -88 30 -102 64 -98 24 3 28 12 61 133 43 157 74 225 130 288 55 62 167 116 319 154 95 23 115 32 124 52 10 20 8 26 -12 42 -13 11 -31 19 -41 19 -34 0 -196 51 -267 84 -130 62 -194 154 -247 358 -40 148 -56 174 -95 149z"/>
-									</g>
-								</svg>
+								{clicked ? (
+									<img src="/assets/images/loading_colorful.gif" alt="loading image" />
+								) : (
+									<>
+										<span>Generate</span>
+										<svg version="1.0" viewBox="0 0 200 200">
+											<g
+												transform="translate(0,200) scale(0.1,-0.1)"
+												fill="#000000"
+												stroke="none"
+											>
+												{/* prettier-ignore */}
+												<path d="M1426 1808 c-9 -12 -16 -30 -16 -40 0 -9 -11 -48 -25 -85 -37 -103 -78 -134 -236 -177 -58 -16 -76 -37 -58 -68 5 -9 39 -23 76 -32 38 -10 90 -29 118 -44 59 -32 95 -90 121 -195 27 -110 80 -116 103 -10 18 82 57 159 94 187 27 21 88 44 197 75 28 8 39 44 20 66 -6 7 -27 16 -47 20 -60 11 -141 45 -174 72 -37 32 -63 81 -84 164 -9 35 -21 70 -27 77 -16 19 -45 14 -62 -10z"/>
+												{/* prettier-ignore */}
+												<path d="M791 1451 c-7 -5 -27 -60 -43 -122 -77 -293 -153 -370 -442 -449 -122 -33 -131 -37 -134 -61 -4 -34 10 -43 98 -64 115 -27 229 -71 287 -111 89 -61 152 -180 198 -374 21 -88 30 -102 64 -98 24 3 28 12 61 133 43 157 74 225 130 288 55 62 167 116 319 154 95 23 115 32 124 52 10 20 8 26 -12 42 -13 11 -31 19 -41 19 -34 0 -196 51 -267 84 -130 62 -194 154 -247 358 -40 148 -56 174 -95 149z"/>
+											</g>
+										</svg>
+									</>
+								)}
 							</button>
 						)}
 					</div>
