@@ -1,9 +1,7 @@
 import React, { useMemo, useState } from 'react';
-import { ShapeInPlaceProps } from '../../classes/shapeInPlace';
 import { shapeHitbox, Shapes } from '../modelisation/shapes/Shape';
 import { GameMode } from '../../classes/gameMode';
 import Board from '../modelisation/Board';
-import { inventoryProps } from '../../classes/Inventory';
 import { ThreeEvent } from '@react-three/fiber';
 import {
 	CellBoardUserData,
@@ -23,21 +21,11 @@ import {
 	hasCommonCoordinate,
 } from '../../interfaces/cartesianCoordinate';
 import Group, { ShapeGroup } from '../modelisation/shapes/group';
-import { Action, ActionProps } from '../../classes/Action';
+import { Action } from '../../classes/Action';
 import { pendingDirection } from '../../constants/direction';
 import { BLOCK_SIZE, GAME_RULE } from '../../constants/environment';
 import { shapeList } from '../../constants/shapeList';
-import { EnvironmentMode } from '../../classes/EnvironmentMode';
-import { PointerProps } from './Visualization';
-
-interface GameProps {
-	shapeInPlace: ShapeInPlaceProps;
-	gameMode: GameMode;
-	inventory?: inventoryProps;
-	action?: ActionProps;
-	setPointer?: React.Dispatch<React.SetStateAction<PointerProps | undefined>>;
-	environmentMode: EnvironmentMode;
-}
+import { useGlobalState } from './GlobalStateProvider';
 
 function findParentShape(object: Object3DWithUserData<Object3DEventMap>): Object3DWithUserData<Object3DEventMap> {
 	if (object.userData.type === MeshType.SHAPE) {
@@ -72,7 +60,16 @@ function getPosition(shape: Object3DWithUserData<Object3DEventMap>): CartesianCo
 	}
 }
 
-const Game: React.FC<GameProps> = ({ shapeInPlace, gameMode, inventory, action, environmentMode, setPointer }) => {
+const Game: React.FC = () => {
+	const {
+		gameMode: { gameMode },
+		environmentMode: { environmentMode },
+		pointer: { setPointer },
+		shapeInPlace,
+		inventory,
+		action,
+	} = useGlobalState();
+
 	const { objects, pending } = shapeInPlace;
 	const [mouseDownPosition, setMouseDownPosition] = useState<{
 		x: number;
@@ -141,7 +138,7 @@ const Game: React.FC<GameProps> = ({ shapeInPlace, gameMode, inventory, action, 
 				return true;
 			}
 		});
-		if (action?.current === Action.PLACE) {
+		if (action.action === Action.PLACE) {
 			handlePendingBlock(intersectionWithoutPending);
 		} else {
 			handleBreakingBlock(intersectionWithoutPending);
@@ -242,11 +239,11 @@ const Game: React.FC<GameProps> = ({ shapeInPlace, gameMode, inventory, action, 
 				const deltaX = Math.abs(e.clientX - mouseDownPosition.x);
 				const deltaY = Math.abs(e.clientY - mouseDownPosition.y);
 				if (deltaX < 5 && deltaY < 5) {
-					if (action?.current === Action.PLACE) {
+					if (action.action === Action.PLACE) {
 						if (shapeInPlace.pending) {
 							placingObject(e);
 						}
-					} else if (action?.current === Action.BREAK) {
+					} else if (action.action === Action.BREAK) {
 						removingObject(e);
 					}
 				}

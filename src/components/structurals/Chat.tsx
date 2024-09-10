@@ -1,19 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { chatProps } from '../../classes/Chat';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 import isBase64 from '../../tools/isBase64';
 import { ServerMessage } from '../../interfaces/serverMessage';
 import { parseInstruction } from '../../tools/csvReader';
 import { GameLog } from '../../classes/gameLog';
-import { ShapeInPlaceProps } from '../../classes/shapeInPlace';
 import { EnvironmentMode } from '../../classes/EnvironmentMode';
 import { GameMode } from '../../classes/gameMode';
+import { useGlobalState } from './GlobalStateProvider';
+
 interface chatComponentProps {
-	chat: chatProps;
 	availableUsers: Users[];
-	shapeInPlace: ShapeInPlaceProps;
-	gameMode: GameMode;
-	environmentMode: EnvironmentMode;
 }
 
 export enum Users {
@@ -27,14 +23,14 @@ enum systemMessage {
 	PLACEMENT = 'Placement...',
 }
 
-const ChatComponent: React.FC<chatComponentProps> = ({
-	chat,
-	availableUsers,
-	shapeInPlace,
-	environmentMode,
-	gameMode,
-}) => {
+const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 	const chatRef = useRef<HTMLDivElement>(null);
+	const {
+		chat,
+		gameMode: { gameMode },
+		environmentMode: { environmentMode },
+		shapeInPlace,
+	} = useGlobalState();
 
 	useEffect(() => {
 		if (chatRef.current) {

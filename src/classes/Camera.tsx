@@ -6,13 +6,13 @@ export enum CameraMode {
 	UPPER_VIEW = 'Upper view',
 }
 
-export interface CameraProps {
+export interface cameraProps {
 	current: CameraMode;
 	setCurrent: React.Dispatch<React.SetStateAction<CameraMode>>;
 }
 
-export const useCamera = (defaultCamera?: CameraMode): CameraProps => {
-	const [current, setCurrent] = useState<CameraMode>(defaultCamera ? defaultCamera : CameraMode.FREE);
+export const useCamera = (defaultCamera: CameraMode): cameraProps => {
+	const [current, setCurrent] = useState<CameraMode>(defaultCamera);
 	return {
 		current,
 		setCurrent,

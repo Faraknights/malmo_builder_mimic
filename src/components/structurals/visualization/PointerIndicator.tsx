@@ -1,11 +1,8 @@
 import React from 'react';
-import { PointerProps } from '../Visualization';
+import { useGlobalState } from '../GlobalStateProvider';
 
-interface PointerIndicatorProps {
-	pointer: PointerProps | undefined;
-}
-
-const PointerIndicator: React.FC<PointerIndicatorProps> = ({ pointer }) => {
+const PointerIndicator: React.FC = () => {
+	const { pointer } = useGlobalState().pointer;
 	return (
 		<>
 			{pointer && (

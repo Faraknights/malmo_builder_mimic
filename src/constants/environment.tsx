@@ -1,6 +1,6 @@
 import { CartesianCoordinate, hasCommonCoordinate } from '../interfaces/cartesianCoordinate';
 import * as THREE from 'three';
-import { EnvironmentMode, EnvironmentTypeProps } from '../classes/EnvironmentMode';
+import { EnvironmentMode } from '../classes/EnvironmentMode';
 import { COLORS, definedColors } from './colors';
 import Color from '../interfaces/Color';
 import { shapeList } from './shapeList';
@@ -165,7 +165,7 @@ export const defaultCameraByEnvironment: { [key in EnvironmentMode]: CameraMode 
 };
 
 export const gameModeComponent: {
-	[key in GameMode]: React.ComponentType<EnvironmentTypeProps>;
+	[key in GameMode]: React.FC;
 } = {
 	[GameMode.SIMULATION]: Simulation,
 	[GameMode.VISUALIZATION]: Visualization,

@@ -2,55 +2,45 @@ import React, { useMemo } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Color } from 'three';
-import { ShapeInPlaceProps } from '../../classes/shapeInPlace';
 import Game from './game';
-import { GameMode } from '../../classes/gameMode';
-import { inventoryProps } from '../../classes/Inventory';
-import { ActionProps } from '../../classes/Action';
-import { EnvironmentMode } from '../../classes/EnvironmentMode';
 import { GRID_SIZE } from '../../constants/environment';
-import { CameraMode, CanvasCameraSettings } from '../../classes/Camera';
-import { PointerProps } from './Visualization';
+import { CanvasCameraSettings } from '../../classes/Camera';
+import { useGlobalState } from './GlobalStateProvider';
 
-interface EnvironmentProps {
-	shapeInPlace: ShapeInPlaceProps;
-	gameMode: GameMode;
-	environmentMode: EnvironmentMode;
-	inventory?: inventoryProps;
-	action?: ActionProps;
-	setPointer?: React.Dispatch<React.SetStateAction<PointerProps | undefined>>;
-	camera: CameraMode;
-}
+const Scene: React.FC = () => {
+	const {
+		environmentMode: { environmentMode },
+	} = useGlobalState();
 
-const Scene: React.FC<EnvironmentProps> = (props) => {
-	const gridSize = GRID_SIZE[props.environmentMode];
+	const gridSize = GRID_SIZE[environmentMode];
 	return (
 		<mesh position={[-(gridSize.x.max + gridSize.x.min) / 2, 1, -(gridSize.z.max + gridSize.z.min) / 2]}>
-			<Game {...props} />
+			<Game />
 		</mesh>
 	);
 };
 
-const App: React.FC<EnvironmentProps> = (props) => {
+const App: React.FC = () => {
 	const bgColor = new Color(0x1a1b1e);
+	const camera = useGlobalState().camera;
 
-	const scene = useMemo(() => <Scene {...props} />, [props]);
+	const scene = useMemo(() => <Scene />, []);
 
 	return (
 		<Canvas
-			key={props.camera}
+			key={camera.current}
 			gl={{ preserveDrawingBuffer: true }}
 			frameloop="demand"
-			orthographic={CanvasCameraSettings[props.camera].orthographic}
-			camera={CanvasCameraSettings[props.camera].cameraSettings}
+			orthographic={CanvasCameraSettings[camera.current].orthographic}
+			camera={CanvasCameraSettings[camera.current].cameraSettings}
 		>
 			{scene}
 			<OrbitControls
 				enablePan={false}
-				minPolarAngle={CanvasCameraSettings[props.camera].polarAngle.min}
-				maxPolarAngle={CanvasCameraSettings[props.camera].polarAngle.max}
-				minAzimuthAngle={CanvasCameraSettings[props.camera].azimuthAngle?.min}
-				maxAzimuthAngle={CanvasCameraSettings[props.camera].azimuthAngle?.max}
+				minPolarAngle={CanvasCameraSettings[camera.current].polarAngle.min}
+				maxPolarAngle={CanvasCameraSettings[camera.current].polarAngle.max}
+				minAzimuthAngle={CanvasCameraSettings[camera.current].azimuthAngle?.min}
+				maxAzimuthAngle={CanvasCameraSettings[camera.current].azimuthAngle?.max}
 			/>
 			<fog attach="fog" args={['white', 20, 1000]} />
 			<ambientLight intensity={1} />

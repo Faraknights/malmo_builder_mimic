@@ -1,7 +1,9 @@
 import React from 'react';
-import { Action, ActionProps } from '../../../classes/Action';
+import { Action } from '../../../classes/Action';
+import { useGlobalState } from '../GlobalStateProvider';
 
-const ActionSelector: React.FC<ActionProps> = ({ current, setCurrent }) => {
+const ActionSelector: React.FC = () => {
+	const { action: current, setAction } = useGlobalState().action;
 	return (
 		<div id="actionSelector" className="module">
 			<h3>Action:</h3>
@@ -10,7 +12,7 @@ const ActionSelector: React.FC<ActionProps> = ({ current, setCurrent }) => {
 					<button
 						key={action}
 						className={`${action}${current === action ? ' selected' : ''}`}
-						onClick={() => setCurrent(action)}
+						onClick={() => setAction(action)}
 					>
 						{action[0] + action.slice(1).toLowerCase()}
 					</button>

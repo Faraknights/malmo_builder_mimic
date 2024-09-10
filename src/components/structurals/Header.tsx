@@ -3,16 +3,13 @@ import { GameMode } from '../../classes/gameMode';
 import { EnvironmentMode } from '../../classes/EnvironmentMode';
 import { gameModesAvailable } from '../../constants/environment';
 import { useRouter } from 'next/router';
+import { useGlobalState } from './GlobalStateProvider';
 
-interface HeaderProps {
-	currentGameMode: GameMode;
-	setGameMode: React.Dispatch<React.SetStateAction<GameMode>>;
-	environmentMode: EnvironmentMode;
-	setEnvironmentMode: React.Dispatch<React.SetStateAction<EnvironmentMode>>;
-}
-
-const Header: React.FC<HeaderProps> = (props) => {
-	const { currentGameMode, setGameMode, environmentMode, setEnvironmentMode } = props;
+const Header: React.FC = () => {
+	const {
+		environmentMode: { environmentMode, setEnvironmentMode },
+		gameMode: { gameMode: currentGameMode, setGameMode },
+	} = useGlobalState();
 	const router = useRouter();
 
 	useEffect(() => {

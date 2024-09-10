@@ -1,17 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { chatProps } from '../../../classes/Chat';
-import { ShapeInPlaceProps } from '../../../classes/shapeInPlace';
 import { parseCSV } from '../../../tools/csvReader';
 import { parseJSON } from '../../../tools/jsonReaded';
 import { GameLog } from '../../../classes/gameLog';
 import { JsonlEvent } from '../../../interfaces/jsonlDataStructure';
-import { EnvironmentMode } from '../../../classes/EnvironmentMode';
-
-export interface FileManagerProps {
-	chatHistory: chatProps;
-	shapeInPlace: ShapeInPlaceProps;
-	environmentMode: EnvironmentMode;
-}
+import { useGlobalState } from '../GlobalStateProvider';
 
 // Memoized GameComponent to optimize rendering
 const GameComponent: React.FC<{
@@ -37,7 +29,13 @@ const GameComponent: React.FC<{
 
 GameComponent.displayName = 'GameComponent';
 
-const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace, environmentMode }) => {
+const FileManager: React.FC = () => {
+	const {
+		environmentMode: { environmentMode },
+		chat,
+		shapeInPlace,
+	} = useGlobalState();
+
 	const [gameLogs, setGameLogs] = useState<GameLog[]>([]);
 	const [currentgameId, setcurrentgameId] = useState<number>(0);
 	const [step, setStep] = useState<number>(0);
@@ -60,7 +58,7 @@ const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace, en
 			const worldState = gameLogs[currentgameId].getWorldStateById(step)!;
 			if (worldState) {
 				shapeInPlace.setObjects(worldState.shapeInPlace);
-				chatHistory.setChatHistory(worldState.chatHistory);
+				chat.setChatHistory(worldState.chatHistory);
 			}
 		}
 	}, [currentgameId, step]);
