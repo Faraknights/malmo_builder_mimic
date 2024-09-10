@@ -22,15 +22,6 @@ def print_message(message: dict) -> None:
     
     print(f"{base64_message}")
 
-
-
-
-
-
-
-
-
-
 example_message = {
     'type': ServerMessageType.WAIT,
     'content': 'Please Wait...'
@@ -38,53 +29,11 @@ example_message = {
 
 print_message(example_message)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 time.sleep(2)
-
-
-
-
-
-
-
-
-
 
 example_message = {
     'type': ServerMessageType.MESSAGE,
-    'content': 'place nut red 0 1 0\npick 0 1 0'
+    'content': 'place washer red 0 1 0\nplace nut blue 1 1 1\nplace screw green 2 1 2\nplace horizontal_bridge orange 3 1 3\npick 1 1 1\nplace screw yellow 2 2 2'
 }
 
-print_message(example_message)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-example_message = {
-    'type': ServerMessageType.RESUME,
-    'content': ''
-}
 print_message(example_message)

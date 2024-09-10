@@ -48,7 +48,11 @@ const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace, en
 			(acc, cur, idx, arr) => (cur.chatHistory.length !== (arr[idx - 1]?.chatHistory.length ?? 0) ? idx : acc),
 			0
 		);
-		setStep(lastChangeId);
+		if (lastChangeId) {
+			setStep(lastChangeId);
+		} else {
+			setStep(0);
+		}
 	}, [currentgameId]);
 
 	useEffect(() => {
@@ -102,6 +106,7 @@ const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace, en
 				} else {
 					console.error('Unsupported file type:', fileExtension);
 				}
+				event.target.value = '';
 			} catch (error) {
 				console.error('Error processing file:', error);
 			}
@@ -173,6 +178,7 @@ const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace, en
 					<div
 						className={`nextStep${!!gameLogs[currentgameId] && step === gameLogs[currentgameId].getLength() - 1 ? ' disabled' : ''}`}
 						onClick={() => {
+							console.log(step);
 							setStep((prevStep) => prevStep + 1);
 							console.log(gameLogs);
 						}}
