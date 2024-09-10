@@ -3,6 +3,7 @@ import { COLORS } from '../constants/colors';
 import { v4 as uuidv4 } from 'uuid';
 import { shapeList } from '../constants/shapeList';
 import { EnvironmentMode } from '../classes/EnvironmentMode';
+import { Users } from '../components/structurals/Chat';
 
 export interface csvFormat {
 	dial_with_actions: {
@@ -132,10 +133,12 @@ export function parseInstruction(instruction: string, gameLog: GameLog, environm
 		});
 	} else {
 		const message = cleanedInstruction.split(/<(.*)> (.*)/);
-		lastWorldState?.chatHistory.push({
-			user: message[1],
-			content: message[2],
-		});
+		if (message[1] && message[2]) {
+			lastWorldState?.chatHistory.push({
+				user: Users[message[1].toUpperCase() as keyof typeof Users],
+				content: message[2],
+			});
+		}
 	}
 	gameLog.addWorldState(lastWorldState!);
 }

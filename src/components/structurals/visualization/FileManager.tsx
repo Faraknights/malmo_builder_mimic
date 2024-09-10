@@ -113,6 +113,7 @@ const FileManager: React.FC<FileManagerProps> = ({ chatHistory, shapeInPlace, en
 		}
 	};
 
+	console.log(gameLogs);
 	return (
 		<div id="fileManager" className="module">
 			<label htmlFor="gameFileInput">Upload Game file</label>
