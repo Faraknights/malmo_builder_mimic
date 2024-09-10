@@ -1,7 +1,9 @@
 import React from 'react';
-import { inventoryProps } from '../../../classes/Inventory';
+import { useGlobalState } from '../GlobalStateProvider';
 
-const ColorPicker: React.FC<inventoryProps> = ({ currentColor, colors, changeColor }) => {
+const ColorPicker: React.FC = () => {
+	const { currentColor, colors, changeColor } = useGlobalState().inventory;
+
 	const nbColorByRow = 3;
 	const ColorsByRow = [];
 	for (let i = 0; i < colors.length; i += nbColorByRow) {

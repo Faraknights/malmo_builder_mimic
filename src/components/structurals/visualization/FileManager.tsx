@@ -42,6 +42,10 @@ const FileManager: React.FC = () => {
 	const [textFinder, setTextFinder] = useState<string>('');
 
 	useEffect(() => {
+		setGameLogs([]);
+	}, [environmentMode]);
+
+	useEffect(() => {
 		const lastChangeId = gameLogs[currentgameId]?.gameLog.reduce(
 			(acc, cur, idx, arr) => (cur.chatHistory.length !== (arr[idx - 1]?.chatHistory.length ?? 0) ? idx : acc),
 			0

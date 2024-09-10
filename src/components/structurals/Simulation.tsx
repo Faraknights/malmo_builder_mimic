@@ -13,7 +13,6 @@ import { useGlobalState } from './GlobalStateProvider';
 const Simulation: React.FC = () => {
 	const {
 		shapeInPlace,
-		inventory,
 		environmentMode: { environmentMode },
 		gameLog: { gameLog },
 		chat,
@@ -35,7 +34,7 @@ const Simulation: React.FC = () => {
 			</div>
 			<Side>
 				<ActionSelector />
-				<ColorPicker {...inventory} />
+				<ColorPicker />
 				<ShapePicker />
 				<ChatComponent availableUsers={[Users.ARCHITECT, Users.BUILDER]} />
 				<div id="gameButtons">
