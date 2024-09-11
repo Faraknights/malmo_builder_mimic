@@ -1,5 +1,5 @@
 import React from 'react';
-import { gameModeComponent } from '../../constants/environment';
+import { gameModeComponent } from '../../constants/ENVIRONMENT_CONSTANTS';
 import { useGlobalState } from './GlobalStateProvider';
 
 const GameCompSelector: React.FC = () => {

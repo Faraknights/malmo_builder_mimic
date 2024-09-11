@@ -19,9 +19,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 	res.setHeader('Content-Type', 'text/event-stream');
 	res.flushHeaders();
 
-	//const pythonProcess = spawn('python', ['-u', './src/tools/python/message.py', message as string]);
-	const pythonProcess = spawn('python', ['-u', './src/tools/python/call_llama_local.py', message as string]);
-	//const pythonProcess = spawn('python', ['-u', './src/tools/python/test_infer.py', message as string]);
+	//const pythonProcess = spawn('python', ['-u', './src/python/message.py', message as string]);
+	const pythonProcess = spawn('python', ['-u', './src/python/call_llama_local.py', message as string]);
+	//const pythonProcess = spawn('python', ['-u', './src/python/test_infer.py', message as string]);
 
 	pythonProcess.stdout.on('data', (data) => {
 		res.write(`data: ${data.toString().trim()}\n\n`);

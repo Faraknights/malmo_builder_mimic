@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGlobalState } from '../GlobalStateProvider';
+import { useGlobalState } from '../../GlobalStateProvider';
 
 const ColorPicker: React.FC = () => {
 	const { currentColor, colors, changeColor } = useGlobalState().inventory;

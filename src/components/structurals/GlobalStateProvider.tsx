@@ -1,15 +1,19 @@
 // GlobalStateContext.js
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
-import { EnvironmentMode } from '../../classes/EnvironmentMode';
-import { GameMode } from '../../classes/gameMode';
+import { EnvironmentMode } from '../../enum/EnvironmentMode';
+import { GameMode } from '../../enum/GameMode';
 import { ShapeInPlaceProps, useShapeInPlace } from '../../classes/shapeInPlace';
 import { inventoryProps, useInventory } from '../../classes/Inventory';
-import { defaultCameraByEnvironment, ENVIRONMENT_COLORS, ENVIRONMENT_SHAPES } from '../../constants/environment';
-import { Action } from '../../classes/Action';
+import {
+	defaultCameraByEnvironment,
+	ENVIRONMENT_COLORS,
+	ENVIRONMENT_SHAPES,
+} from '../../constants/ENVIRONMENT_CONSTANTS';
+import { Action } from '../../enum/Action';
 import { chatProps, useChat } from '../../classes/Chat';
-import useCamera, { cameraProps } from '../../classes/Camera';
-import { PointerProps } from '../../interfaces/pointer';
 import { GameLog, worldStateProps } from '../../classes/gameLog';
+import { Pointer } from '../../interfaces/Pointer';
+import { CameraMode } from '../../enum/CameraMode';
 
 export interface GlobalState {
 	environmentMode: {
@@ -25,17 +29,20 @@ export interface GlobalState {
 		setAction: React.Dispatch<React.SetStateAction<Action>>;
 	};
 	pointer: {
-		pointer: PointerProps | undefined;
-		setPointer: React.Dispatch<React.SetStateAction<PointerProps | undefined>>;
+		pointer: Pointer | undefined;
+		setPointer: React.Dispatch<React.SetStateAction<Pointer | undefined>>;
 	};
 	gameLog: {
 		gameLog: GameLog;
 		setGameLog: React.Dispatch<React.SetStateAction<GameLog>>;
 	};
+	camera: {
+		camera: CameraMode;
+		setCamera: React.Dispatch<React.SetStateAction<CameraMode>>;
+	};
 	shapeInPlace: ShapeInPlaceProps;
 	inventory: inventoryProps;
 	chat: chatProps;
-	camera: cameraProps;
 }
 
 interface GlobalStateProviderProps {
@@ -55,14 +62,14 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
 	const [gameMode, setGameMode] = useState<GameMode>(initialGameMode);
 	const [action, setAction] = useState<Action>(Action.PLACE);
 	const [gameLog, setGameLog] = useState<GameLog>(new GameLog());
+	const [camera, setCamera] = useState<CameraMode>(defaultCameraByEnvironment[initialEnvironmentMode]);
 	const shapeInPlace = useShapeInPlace();
 	const chat = useChat();
 	const inventory = useInventory(
 		ENVIRONMENT_COLORS[initialEnvironmentMode],
 		ENVIRONMENT_SHAPES[initialEnvironmentMode]
 	);
-	const camera = useCamera(defaultCameraByEnvironment[initialEnvironmentMode]);
-	const [pointer, setPointer] = useState<PointerProps | undefined>(undefined);
+	const [pointer, setPointer] = useState<Pointer | undefined>(undefined);
 
 	const clearAll = () => {
 		setAction(Action.PLACE);
@@ -73,7 +80,7 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
 		inventory.setCurrentColor(ENVIRONMENT_COLORS[environmentMode][0]);
 		inventory.setShapes(ENVIRONMENT_SHAPES[environmentMode]);
 		inventory.setCurrentShape(ENVIRONMENT_SHAPES[environmentMode][0]);
-		camera.setCurrent(defaultCameraByEnvironment[environmentMode]);
+		setCamera(defaultCameraByEnvironment[environmentMode]);
 		setPointer(undefined);
 	};
 
@@ -111,10 +118,10 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
 		action: { action, setAction },
 		pointer: { pointer, setPointer },
 		gameLog: { gameLog, setGameLog },
+		camera: { camera, setCamera },
 		shapeInPlace,
 		inventory,
 		chat,
-		camera,
 	};
 
 	return <GlobalStateContext.Provider value={value}>{children}</GlobalStateContext.Provider>;

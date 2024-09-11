@@ -1,6 +1,6 @@
 import React from 'react';
-import { CameraMode } from '../../../classes/Camera';
-import { useGlobalState } from '../GlobalStateProvider';
+import { useGlobalState } from '../../GlobalStateProvider';
+import { CameraMode } from '../../../../enum/CameraMode';
 
 const CameraSelector: React.FC = () => {
 	const camera = useGlobalState().camera;
@@ -9,8 +9,8 @@ const CameraSelector: React.FC = () => {
 			{Object.values(CameraMode).map((cameraMode) => (
 				<button
 					key={cameraMode}
-					className={`${cameraMode}${camera.current === cameraMode ? ' selected' : ''}`}
-					onClick={() => camera.setCurrent(cameraMode)}
+					className={`${cameraMode}${camera.camera === cameraMode ? ' selected' : ''}`}
+					onClick={() => camera.setCamera(cameraMode)}
 				>
 					{cameraMode[0] + cameraMode.slice(1).toLowerCase()}
 				</button>

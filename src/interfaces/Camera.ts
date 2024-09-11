@@ -1,23 +1,4 @@
-import { useState } from 'react';
-
-export enum CameraMode {
-	FREE = 'Free camera',
-	SIDE_VIEW = 'Side view',
-	UPPER_VIEW = 'Upper view',
-}
-
-export interface cameraProps {
-	current: CameraMode;
-	setCurrent: React.Dispatch<React.SetStateAction<CameraMode>>;
-}
-
-export const useCamera = (defaultCamera: CameraMode): cameraProps => {
-	const [current, setCurrent] = useState<CameraMode>(defaultCamera);
-	return {
-		current,
-		setCurrent,
-	};
-};
+import { CameraMode } from '../enum/CameraMode';
 
 interface CanvasCameraSettingsProps {
 	orthographic: boolean;
@@ -81,5 +62,3 @@ export const CanvasCameraSettings: {
 		},
 	},
 };
-
-export default useCamera;

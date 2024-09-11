@@ -1,6 +1,6 @@
 import React from 'react';
-import { Action } from '../../../classes/Action';
-import { useGlobalState } from '../GlobalStateProvider';
+import { Action } from '../../../../enum/Action';
+import { useGlobalState } from '../../GlobalStateProvider';
 
 const ActionSelector: React.FC = () => {
 	const { action: current, setAction } = useGlobalState().action;

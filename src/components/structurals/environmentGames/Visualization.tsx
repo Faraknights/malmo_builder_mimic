@@ -1,9 +1,9 @@
 import React from 'react';
 import Environment from './environment';
-import ChatComponent from './Chat';
-import Side from './Side';
-import FileManager from './visualization/FileManager';
-import PointerIndicator from './visualization/PointerIndicator';
+import ChatComponent from '../side/general/Chat';
+import Side from '../side/Side';
+import FileManager from '../side/visualization/FileManager';
+import PointerIndicator from '../side/visualization/PointerIndicator';
 
 const Visualization: React.FC = () => {
 	return (

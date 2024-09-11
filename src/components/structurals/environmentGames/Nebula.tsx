@@ -1,8 +1,9 @@
 import React from 'react';
 import Environment from './environment';
-import Side from './Side';
-import ChatComponent, { Users } from './Chat';
-import CameraSelector from './simulation/CameraPicker';
+import Side from '../side/Side';
+import ChatComponent from '../side/general/Chat';
+import CameraSelector from '../side/general/CameraPicker';
+import { Users } from '../../../enum/Chat';
 
 const Nebula: React.FC = () => {
 	return (

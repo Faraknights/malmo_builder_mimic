@@ -1,11 +1,11 @@
 import React from 'react';
-import { shapeHitbox, Shapes } from '../../modelisation/shapes/Shape';
+import { shapeHitbox, Shapes } from '../../../modelisation/shapes/Shape';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
-import { BLOCK_SIZE } from '../../../constants/environment';
-import { shapeList } from '../../../constants/shapeList';
-import { CartesianCoordinate } from '../../../interfaces/cartesianCoordinate';
-import { useGlobalState } from '../GlobalStateProvider';
+import { BLOCK_SIZE } from '../../../../constants/ENVIRONMENT_CONSTANTS';
+import { CartesianCoordinate } from '../../../../interfaces/CartesianCoordinate';
+import { useGlobalState } from '../../GlobalStateProvider';
+import { ShapeList } from '../../../../enum/ShapeList';
 
 const ShapePicker: React.FC = () => {
 	const {
@@ -67,7 +67,7 @@ const ShapePicker: React.FC = () => {
 														z: 0,
 													}}
 													shape={shapeId}
-													uuid={shapeList[shapeId]}
+													uuid={ShapeList[shapeId]}
 												/>
 											</mesh>
 											<OrbitControls />
@@ -76,8 +76,8 @@ const ShapePicker: React.FC = () => {
 											<pointLight color="white" position={[3, 10, 3]} intensity={200} />
 										</Canvas>
 										<span>
-											{shapeList[shapeId][0] +
-												shapeList[shapeId].slice(1).toLowerCase().replace('_', ' ')}
+											{ShapeList[shapeId][0] +
+												ShapeList[shapeId].slice(1).toLowerCase().replace('_', ' ')}
 										</span>
 									</div>
 								);

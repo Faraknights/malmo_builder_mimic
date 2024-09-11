@@ -1,4 +1,4 @@
-export enum shapeList {
+export enum ShapeList {
 	CUBE,
 	SCREW,
 	NUT,

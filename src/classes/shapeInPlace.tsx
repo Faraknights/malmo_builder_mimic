@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { shapeHitbox, shapeProps } from '../components/modelisation/shapes/Shape';
 import { ShapeGroup } from '../components/modelisation/shapes/group';
-import { CartesianCoordinate, coordinateAddition, coordinatesAreEqual } from '../interfaces/cartesianCoordinate';
+import { CartesianCoordinate, coordinateAddition, coordinatesAreEqual } from '../interfaces/CartesianCoordinate';
 
 export interface ShapeInPlaceProps {
 	objects: shapeProps[];

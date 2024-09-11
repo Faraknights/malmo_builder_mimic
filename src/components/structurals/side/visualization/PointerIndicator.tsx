@@ -1,8 +1,9 @@
 import React from 'react';
-import { useGlobalState } from '../GlobalStateProvider';
+import { useGlobalState } from '../../GlobalStateProvider';
 
 const PointerIndicator: React.FC = () => {
 	const { pointer } = useGlobalState().pointer;
+	console.log(pointer);
 	return (
 		<>
 			{pointer && (

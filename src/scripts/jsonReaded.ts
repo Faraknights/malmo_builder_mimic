@@ -1,7 +1,8 @@
 import { GameLog, worldStateProps } from '../classes/gameLog';
-import { COLORS, definedColors } from '../constants/colors';
-import { shapeList } from '../constants/shapeList';
+import { COLORS } from '../constants/COLORS';
 import { v4 as uuidv4 } from 'uuid';
+import { Colors } from '../enum/Colors';
+import { ShapeList } from '../enum/ShapeList';
 
 export interface csvFormat {
 	worldStates: {
@@ -34,7 +35,7 @@ export function parseJSON(file: File): Promise<GameLog[]> {
 
 				json.forEach((block) => {
 					worldState.shapeInPlace.push({
-						color: COLORS[definedColors[block.color.toUpperCase() as keyof typeof definedColors]],
+						color: COLORS[Colors[block.color.toUpperCase() as keyof typeof Colors]],
 						breakable: false,
 						pending: false,
 						position: {
@@ -43,8 +44,8 @@ export function parseJSON(file: File): Promise<GameLog[]> {
 							z: block.z,
 						},
 						shape: block.shape
-							? shapeList[block.shape.toUpperCase() as keyof typeof shapeList]
-							: shapeList.CUBE,
+							? ShapeList[block.shape.toUpperCase() as keyof typeof ShapeList]
+							: ShapeList.CUBE,
 						uuid: uuidv4(),
 					});
 					const clonedWorldState = JSON.parse(JSON.stringify(worldState));

@@ -1,10 +1,5 @@
 import { useState } from 'react';
-import { Users } from '../components/structurals/Chat';
-
-export interface Message {
-	user: Users;
-	content: string;
-}
+import { Message } from '../enum/Chat';
 
 export interface chatProps {
 	chatHistory: Message[];

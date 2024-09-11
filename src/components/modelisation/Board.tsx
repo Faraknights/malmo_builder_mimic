@@ -1,10 +1,11 @@
-import { CartesianCoordinate } from '../../interfaces/cartesianCoordinate';
+import { CartesianCoordinate } from '../../interfaces/CartesianCoordinate';
 import { Edges, Text } from '@react-three/drei';
-import { CELL_COLOR, GRID_SIZE } from '../../constants/environment';
+import { CELL_COLOR, GRID_SIZE } from '../../constants/ENVIRONMENT_CONSTANTS';
 import * as THREE from 'three';
-import { CellBoardUserData, MeshType } from '../../constants/meshType';
-import { EnvironmentMode } from '../../classes/EnvironmentMode';
+import { CellBoardUserData } from '../../interfaces/userDatas';
+import { EnvironmentMode } from '../../enum/EnvironmentMode';
 import React from 'react';
+import { MeshTypes } from '../../enum/Mesh';
 
 interface cellBoardProps {
 	position: CartesianCoordinate;
@@ -14,7 +15,7 @@ const CellBoard = ({ position }: cellBoardProps) => (
 	<mesh
 		userData={
 			{
-				type: MeshType.CELL_BOARD,
+				type: MeshTypes.CELL_BOARD,
 				position: position,
 			} as CellBoardUserData
 		}

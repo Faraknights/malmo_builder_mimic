@@ -1,10 +1,10 @@
 import React from 'react';
 import * as THREE from 'three';
 import { shapeComponentProps } from './Shape';
-import { MeshType, NonClickableFaceUserData, ShapeFaceUserData } from '../../../constants/meshType';
-import { DIRECTION } from '../../../constants/direction';
-import { OPACITY_PENDING_OBJECT } from '../../../constants/environment';
+import { NonClickableFaceUserData, ShapeFaceUserData } from '../../../interfaces/userDatas';
+import { OPACITY_PENDING_OBJECT } from '../../../constants/ENVIRONMENT_CONSTANTS';
 import { Edges } from '@react-three/drei';
+import { MeshDirections, MeshTypes } from '../../../enum/Mesh';
 
 function Nut({ pending, position, color }: shapeComponentProps) {
 	const path = new THREE.LineCurve3(
@@ -27,7 +27,7 @@ function Nut({ pending, position, color }: shapeComponentProps) {
 		<mesh
 			userData={
 				{
-					type: MeshType.NON_CLICKABLE_FACE,
+					type: MeshTypes.NON_CLICKABLE_FACE,
 				} as NonClickableFaceUserData
 			}
 			scale={[1.1, 1, 1.1]}
@@ -38,8 +38,8 @@ function Nut({ pending, position, color }: shapeComponentProps) {
 				rotation={[-Math.PI / 2, 0, 0]}
 				userData={
 					{
-						type: MeshType.SHAPE_FACE,
-						faceDirection: DIRECTION.TOP,
+						type: MeshTypes.SHAPE_FACE,
+						faceDirection: MeshDirections.TOP,
 					} as ShapeFaceUserData
 				}
 			>
@@ -51,8 +51,8 @@ function Nut({ pending, position, color }: shapeComponentProps) {
 				rotation={[Math.PI / 2, 0, 0]}
 				userData={
 					{
-						type: MeshType.SHAPE_FACE,
-						faceDirection: DIRECTION.BOTTOM,
+						type: MeshTypes.SHAPE_FACE,
+						faceDirection: MeshDirections.BOTTOM,
 					} as ShapeFaceUserData
 				}
 			>
@@ -62,7 +62,7 @@ function Nut({ pending, position, color }: shapeComponentProps) {
 			<mesh
 				userData={
 					{
-						type: MeshType.NON_CLICKABLE_FACE,
+						type: MeshTypes.NON_CLICKABLE_FACE,
 						position: position,
 						pending: pending,
 					} as NonClickableFaceUserData

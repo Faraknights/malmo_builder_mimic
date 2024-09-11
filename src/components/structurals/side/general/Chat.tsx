@@ -1,22 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
-import isBase64 from '../../tools/isBase64';
-import { ServerMessage } from '../../interfaces/serverMessage';
-import { parseInstruction } from '../../tools/csvReader';
-import { GameLog } from '../../classes/gameLog';
-import { EnvironmentMode } from '../../classes/EnvironmentMode';
-import { GameMode } from '../../classes/gameMode';
-import { useGlobalState } from './GlobalStateProvider';
+import isBase64 from '../../../../scripts/isBase64';
+import { ServerMessage } from '../../../../interfaces/ServerMessage';
+import { parseInstruction } from '../../../../scripts/csvReader';
+import { GameLog } from '../../../../classes/gameLog';
+import { EnvironmentMode } from '../../../../enum/EnvironmentMode';
+import { GameMode } from '../../../../enum/GameMode';
+import { useGlobalState } from '../../GlobalStateProvider';
+import { Users } from '../../../../enum/Chat';
 
 interface chatComponentProps {
 	availableUsers: Users[];
-}
-
-export enum Users {
-	SYSTEM = 'SYSTEM',
-	ARCHITECT = 'ARCHITECT',
-	BUILDER = 'BUILDER ',
-	NEBULA = 'NEBULA',
 }
 
 enum systemMessage {

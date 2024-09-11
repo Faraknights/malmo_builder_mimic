@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { parseCSV } from '../../../tools/csvReader';
-import { parseJSON } from '../../../tools/jsonReaded';
-import { GameLog } from '../../../classes/gameLog';
-import { JsonlEvent } from '../../../interfaces/jsonlDataStructure';
-import { useGlobalState } from '../GlobalStateProvider';
+import { parseCSV } from '../../../../scripts/csvReader';
+import { parseJSON } from '../../../../scripts/jsonReaded';
+import { GameLog } from '../../../../classes/gameLog';
+import { JsonlEvent } from '../../../../interfaces/jsonlDataStructure';
+import { useGlobalState } from '../../GlobalStateProvider';
 
 // Memoized GameComponent to optimize rendering
 const GameComponent: React.FC<{
@@ -115,7 +115,6 @@ const FileManager: React.FC = () => {
 		}
 	};
 
-	console.log(gameLogs);
 	return (
 		<div id="fileManager" className="module">
 			<label htmlFor="gameFileInput">Upload Game file</label>
@@ -181,9 +180,7 @@ const FileManager: React.FC = () => {
 					<div
 						className={`nextStep${!!gameLogs[currentgameId] && step === gameLogs[currentgameId].getLength() - 1 ? ' disabled' : ''}`}
 						onClick={() => {
-							console.log(step);
 							setStep((prevStep) => prevStep + 1);
-							console.log(gameLogs);
 						}}
 					></div>
 					<div

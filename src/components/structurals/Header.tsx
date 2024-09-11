@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { GameMode } from '../../classes/gameMode';
-import { EnvironmentMode } from '../../classes/EnvironmentMode';
-import { gameModesAvailable } from '../../constants/environment';
+import { EnvironmentMode } from '../../enum/EnvironmentMode';
+import { gameModesAvailable } from '../../constants/ENVIRONMENT_CONSTANTS';
 import { useRouter } from 'next/router';
 import { useGlobalState } from './GlobalStateProvider';
+import { GameMode } from '../../enum/GameMode';
 
 const Header: React.FC = () => {
 	const {

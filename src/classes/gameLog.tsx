@@ -1,5 +1,5 @@
 import { shapeProps } from '../components/modelisation/shapes/Shape';
-import { Message } from './Chat';
+import { Message } from '../enum/Chat';
 
 export interface worldStateProps {
 	timestamp?: Date;

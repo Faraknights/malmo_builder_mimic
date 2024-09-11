@@ -1,14 +1,15 @@
 import React from 'react';
 import { useEffect } from 'react';
 import Environment from './environment';
-import Side from './Side';
-import ColorPicker from './simulation/ColorPicker';
-import ActionSelector from './simulation/ActionSelector';
-import ShapePicker from './simulation/ShapePicker';
-import { EXPORT_GAME_LOG } from '../../constants/environment';
-import ChatComponent, { Users } from './Chat';
-import CameraSelector from './simulation/CameraPicker';
-import { useGlobalState } from './GlobalStateProvider';
+import Side from '../side/Side';
+import ColorPicker from '../side/simulation/ColorPicker';
+import ActionSelector from '../side/simulation/ActionSelector';
+import ShapePicker from '../side/simulation/ShapePicker';
+import { EXPORT_GAME_LOG } from '../../../constants/ENVIRONMENT_CONSTANTS';
+import ChatComponent from '../side/general/Chat';
+import CameraSelector from '../side/general/CameraPicker';
+import { useGlobalState } from '../GlobalStateProvider';
+import { Users } from '../../../enum/Chat';
 
 const Simulation: React.FC = () => {
 	const {

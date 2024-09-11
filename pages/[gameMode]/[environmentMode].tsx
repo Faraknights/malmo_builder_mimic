@@ -1,9 +1,9 @@
 import React from 'react';
 import reportWebVitals from '../../src/reportWebVitals';
-import { GameMode } from '../../src/classes/gameMode';
-import { EnvironmentMode } from '../../src/classes/EnvironmentMode';
-import { gameModesAvailable } from '../../src/constants/environment';
+import { EnvironmentMode } from '../../src/enum/EnvironmentMode';
+import { gameModesAvailable } from '../../src/constants/ENVIRONMENT_CONSTANTS';
 import App from '../../src/App';
+import { GameMode } from '../../src/enum/GameMode';
 
 interface PageProps {
 	initialGameMode: GameMode;

@@ -1,10 +1,9 @@
 import React from 'react';
-import { GameMode } from './classes/gameMode';
 import Header from './components/structurals/Header';
-import { EnvironmentMode } from './classes/EnvironmentMode';
-import { gameModeComponent } from './constants/environment';
+import { EnvironmentMode } from './enum/EnvironmentMode';
 import { GlobalStateProvider } from './components/structurals/GlobalStateProvider';
 import GameCompSelector from './components/structurals/GameCompSelector';
+import { GameMode } from './enum/GameMode';
 
 const App = ({
 	initialEnvironmentMode,

@@ -1,9 +1,9 @@
 import { GameLog, worldStateProps } from '../classes/gameLog';
-import { COLORS } from '../constants/colors';
+import { COLORS } from '../constants/COLORS';
 import { v4 as uuidv4 } from 'uuid';
-import { shapeList } from '../constants/shapeList';
-import { EnvironmentMode } from '../classes/EnvironmentMode';
-import { Users } from '../components/structurals/Chat';
+import { EnvironmentMode } from '../enum/EnvironmentMode';
+import { ShapeList } from '../enum/ShapeList';
+import { Users } from '../enum/Chat';
 
 export interface csvFormat {
 	dial_with_actions: {
@@ -74,7 +74,7 @@ function parseWorldState(prevWorldState: string, worldState: worldStateProps) {
 						breakable: false,
 						uuid: uuidv4(),
 						color,
-						shape: shapeList.CUBE,
+						shape: ShapeList.CUBE,
 						position: {
 							x: parseInt(x),
 							y: parseInt(y),
@@ -103,7 +103,7 @@ export function parseInstruction(instruction: string, gameLog: GameLog, environm
 					y: parseInt(placement[3]),
 					z: parseInt(placement[4]),
 				},
-				shape: shapeList.CUBE,
+				shape: ShapeList.CUBE,
 			});
 		} else if (environmentMode === EnvironmentMode.COCOBOTS) {
 			lastWorldState?.shapeInPlace.push({
@@ -116,7 +116,7 @@ export function parseInstruction(instruction: string, gameLog: GameLog, environm
 					y: parseInt(placement[4]),
 					z: parseInt(placement[5]),
 				},
-				shape: shapeList[placement[1].toUpperCase() as keyof typeof shapeList],
+				shape: ShapeList[placement[1].toUpperCase() as keyof typeof ShapeList],
 			});
 		}
 	} else if (cleanedInstruction.startsWith('pick')) {

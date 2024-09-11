@@ -1,16 +1,17 @@
-import { CartesianCoordinate, hasCommonCoordinate } from '../interfaces/cartesianCoordinate';
+import { CartesianCoordinate, hasCommonCoordinate } from '../interfaces/CartesianCoordinate';
 import * as THREE from 'three';
-import { EnvironmentMode } from '../classes/EnvironmentMode';
-import { COLORS, definedColors } from './colors';
+import { EnvironmentMode } from '../enum/EnvironmentMode';
+import { COLORS } from './COLORS';
 import Color from '../interfaces/Color';
-import { shapeList } from './shapeList';
 import { shapeProps } from '../components/modelisation/shapes/Shape';
 import { GameLog } from '../classes/gameLog';
-import Simulation from '../components/structurals/Simulation';
-import Visualization from '../components/structurals/Visualization';
-import Nebula from '../components/structurals/Nebula';
-import { GameMode } from '../classes/gameMode';
-import { CameraMode } from '../classes/Camera';
+import Simulation from '../components/structurals/environmentGames/Simulation';
+import Visualization from '../components/structurals/environmentGames/Visualization';
+import Nebula from '../components/structurals/environmentGames/Nebula';
+import { GameMode } from '../enum/GameMode';
+import { Colors } from '../enum/Colors';
+import { ShapeList } from '../enum/ShapeList';
+import { CameraMode } from '../enum/CameraMode';
 
 export const BLOCK_SIZE: { [key in EnvironmentMode]: CartesianCoordinate } = {
 	[EnvironmentMode.MINECRAFT]: { x: 1, y: 1, z: 1 },
@@ -19,29 +20,24 @@ export const BLOCK_SIZE: { [key in EnvironmentMode]: CartesianCoordinate } = {
 
 export const ENVIRONMENT_COLORS: { [key in EnvironmentMode]: Color[] } = {
 	[EnvironmentMode.MINECRAFT]: [
-		COLORS[definedColors.GREEN],
-		COLORS[definedColors.BLUE],
-		COLORS[definedColors.PURPLE],
-		COLORS[definedColors.RED],
-		COLORS[definedColors.ORANGE],
-		COLORS[definedColors.YELLOW],
+		COLORS[Colors.GREEN],
+		COLORS[Colors.BLUE],
+		COLORS[Colors.PURPLE],
+		COLORS[Colors.RED],
+		COLORS[Colors.ORANGE],
+		COLORS[Colors.YELLOW],
 	],
-	[EnvironmentMode.COCOBOTS]: [
-		COLORS[definedColors.GREEN],
-		COLORS[definedColors.BLUE],
-		COLORS[definedColors.RED],
-		COLORS[definedColors.YELLOW],
-	],
+	[EnvironmentMode.COCOBOTS]: [COLORS[Colors.GREEN], COLORS[Colors.BLUE], COLORS[Colors.RED], COLORS[Colors.YELLOW]],
 };
 
-export const ENVIRONMENT_SHAPES: { [key in EnvironmentMode]: shapeList[] } = {
-	[EnvironmentMode.MINECRAFT]: [shapeList.CUBE],
+export const ENVIRONMENT_SHAPES: { [key in EnvironmentMode]: ShapeList[] } = {
+	[EnvironmentMode.MINECRAFT]: [ShapeList.CUBE],
 	[EnvironmentMode.COCOBOTS]: [
-		shapeList.NUT,
-		shapeList.WASHER,
-		shapeList.SCREW,
-		shapeList.HORIZONTAL_BRIDGE,
-		shapeList.VERTICAL_BRIDGE,
+		ShapeList.NUT,
+		ShapeList.WASHER,
+		ShapeList.SCREW,
+		ShapeList.HORIZONTAL_BRIDGE,
+		ShapeList.VERTICAL_BRIDGE,
 	],
 };
 
@@ -142,7 +138,7 @@ export const EXPORT_GAME_LOG: {
 				(message) => `<${message.user[0]}${message.user.slice(1).toLowerCase()}> ${message.content}`
 			),
 			blocksInGrid: worldState.shapeInPlace.map((shape) => ({
-				shape: `${(Object.values(shapeList)[shape.shape] as string)[0]}${(Object.values(shapeList)[shape.shape] as string).slice(1).toLowerCase()}`,
+				shape: `${(Object.values(ShapeList)[shape.shape] as string)[0]}${(Object.values(ShapeList)[shape.shape] as string).slice(1).toLowerCase()}`,
 				position: {
 					x: shape.position.x,
 					y: shape.position.y,

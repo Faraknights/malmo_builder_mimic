@@ -1,46 +1,37 @@
 import { Object3D, Object3DEventMap } from 'three';
-import { CartesianCoordinate } from '../interfaces/cartesianCoordinate';
-import { DIRECTION } from './direction';
-import { shapeList } from './shapeList';
-
-export enum MeshType {
-	CELL_BOARD = 'CELL_BOARD',
-	SHAPE = 'SHAPE',
-	SHAPE_FACE = 'SHAPE_FACE',
-	GROUP = 'GROUP',
-	NON_CLICKABLE_FACE = 'NON_CLICKABLE_FACE',
-	SCENE = 'SCENE',
-}
+import { CartesianCoordinate } from './CartesianCoordinate';
+import { MeshDirections, MeshTypes } from '../enum/Mesh';
+import { ShapeList } from '../enum/ShapeList';
 
 export interface UserData {
-	type: MeshType;
+	type: MeshTypes;
 }
 
 export interface CellBoardUserData extends UserData {
-	type: MeshType.CELL_BOARD;
+	type: MeshTypes.CELL_BOARD;
 	position: CartesianCoordinate;
 }
 
 export interface ShapeUserData extends UserData {
-	type: MeshType.SHAPE;
+	type: MeshTypes.SHAPE;
 	position: CartesianCoordinate;
 	pending: boolean;
-	shape: shapeList;
+	shape: ShapeList;
 }
 
 export interface ShapeFaceUserData extends UserData {
-	type: MeshType.SHAPE_FACE;
-	faceDirection: DIRECTION;
+	type: MeshTypes.SHAPE_FACE;
+	faceDirection: MeshDirections;
 }
 
 export interface GroupUserData extends UserData {
-	type: MeshType.GROUP;
+	type: MeshTypes.GROUP;
 	position: CartesianCoordinate;
 	pending: boolean;
 }
 
 export interface NonClickableFaceUserData extends UserData {
-	type: MeshType.NON_CLICKABLE_FACE;
+	type: MeshTypes.NON_CLICKABLE_FACE;
 }
 
 export interface Object3DWithUserData<T extends Object3DEventMap> extends Object3D<T> {
