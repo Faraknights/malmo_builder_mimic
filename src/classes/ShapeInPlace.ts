@@ -3,6 +3,7 @@ import { shapeHitbox, shapeProps } from '../components/modelisation/shapes/Shape
 import { ShapeGroup } from '../components/modelisation/shapes/group';
 import { CartesianCoordinate, coordinateAddition, coordinatesAreEqual } from '../interfaces/CartesianCoordinate';
 
+//
 export interface ShapeInPlaceProps {
 	objects: shapeProps[];
 	pending: shapeProps | undefined;

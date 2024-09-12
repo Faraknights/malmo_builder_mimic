@@ -51,7 +51,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: { params: { gameMode: string; environmentMode: string } }) {
 	const { gameMode, environmentMode } = params;
 
-	// Convert the string parameters back to the appropriate enum values
 	const initialGameMode = gameMode.toUpperCase() as GameMode;
 	const initialEnvironmentMode = environmentMode.toUpperCase() as EnvironmentMode;
 

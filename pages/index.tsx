@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
+//
 const Home: React.FC = () => {
 	const router = useRouter();
 	const [clicked, setClicked] = useState(false);

@@ -5,6 +5,7 @@ import { shapeHitbox, shapeProps, Shapes } from './Shape';
 import { v4 as uuidv4 } from 'uuid';
 import { MeshTypes } from '../../../enum/Mesh';
 
+//
 export class ShapeGroup {
 	public uuid: string;
 	public pending: boolean;

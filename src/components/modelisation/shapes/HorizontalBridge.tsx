@@ -4,6 +4,7 @@ import Group, { ShapeGroup } from './group';
 import { shapeComponentProps, shapeProps } from './Shape';
 import { v4 as uuidv4 } from 'uuid';
 
+//
 export const HorizontalBridge = ({ color, pending, position, breakable }: shapeComponentProps) => {
 	const shapes: shapeProps[] = [
 		{

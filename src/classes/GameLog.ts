@@ -1,6 +1,7 @@
 import { shapeProps } from '../components/modelisation/shapes/Shape';
 import { Message } from '../enum/Chat';
 
+//
 export interface WorldStateProps {
 	timestamp?: Date;
 	chatHistory: Message[];

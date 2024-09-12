@@ -16,6 +16,7 @@ import { GameLog, WorldStateProps } from '../../classes/GameLog';
 import { Pointer } from '../../interfaces/Pointer';
 import { CameraMode } from '../../enum/CameraMode';
 
+//
 export interface GlobalState {
 	environmentMode: {
 		environmentMode: EnvironmentMode;

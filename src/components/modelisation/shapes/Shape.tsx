@@ -12,8 +12,8 @@ import { VerticalBridge } from './VerticalBridge';
 import { COLORS } from '../../../constants/COLORS';
 import { MeshTypes } from '../../../enum/Mesh';
 import { ShapeList } from '../../../enum/ShapeList';
-//import Diamond from "./Diamond";
 
+//
 export interface shapeComponentProps {
 	pending: boolean;
 	breakable: boolean;

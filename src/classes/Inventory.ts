@@ -4,6 +4,7 @@ import { COLORS } from '../constants/COLORS';
 import { Colors } from '../enum/Colors';
 import { ShapeList } from '../enum/ShapeList';
 
+//
 export interface inventoryProps {
 	currentColor: Color;
 	colors: Color[];

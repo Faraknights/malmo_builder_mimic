@@ -7,6 +7,7 @@ import { EnvironmentMode } from '../../enum/EnvironmentMode';
 import React from 'react';
 import { MeshTypes } from '../../enum/Mesh';
 
+//
 interface cellBoardProps {
 	position: CartesianCoordinate;
 }

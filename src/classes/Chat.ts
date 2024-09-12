@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Message } from '../enum/Chat';
 
+//
 export interface chatProps {
 	chatHistory: Message[];
 	setChatHistory: React.Dispatch<React.SetStateAction<Message[]>>;

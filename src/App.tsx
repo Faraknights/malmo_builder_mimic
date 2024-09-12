@@ -5,6 +5,7 @@ import { GlobalStateProvider } from './components/structurals/GlobalStateProvide
 import GameCompSelector from './components/structurals/GameCompSelector';
 import { GameMode } from './enum/GameMode';
 
+//
 const App = ({
 	initialEnvironmentMode,
 	initialGameMode,

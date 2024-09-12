@@ -6,6 +6,7 @@ import { OPACITY_PENDING_OBJECT } from '../../../constants/ENVIRONMENT_CONSTANTS
 import { ShapeFaceUserData } from '../../../interfaces/userDatas';
 import { MeshDirections, MeshTypes } from '../../../enum/Mesh';
 
+//
 interface CubeFaceDirectionProperties {
 	translation: THREE.Vector3;
 	rotation: THREE.Euler;

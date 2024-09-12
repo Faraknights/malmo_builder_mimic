@@ -6,6 +6,7 @@ import { OPACITY_PENDING_OBJECT } from '../../../constants/ENVIRONMENT_CONSTANTS
 import { Edges } from '@react-three/drei';
 import { MeshDirections, MeshTypes } from '../../../enum/Mesh';
 
+//
 function Screw({ pending, position, color }: shapeComponentProps) {
 	const path = new THREE.LineCurve3(
 		new THREE.Vector3(0, -0.5, 0), // Start point
