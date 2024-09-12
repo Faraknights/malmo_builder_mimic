@@ -5,6 +5,7 @@ export default {
 		includePaths: [path.join(process.cwd(), 'src/styles')],
 	},
 	basePath: '/malmo_builder_mimic',
+	assetPrefix: '/malmo_builder_mimic/',
 	output: 'export',
 	webpack(config) {
 		config.module.rules.push({
