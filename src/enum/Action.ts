@@ -1,4 +1,4 @@
 export enum Action {
 	PLACE = 'PLACE',
-	BREAK = 'BREAK',
+	BREAK = 'REMOVE',
 }

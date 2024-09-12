@@ -4,6 +4,7 @@ import { gameModesAvailable } from '../../constants/ENVIRONMENT_CONSTANTS';
 import { useRouter } from 'next/router';
 import { useGlobalState } from './GlobalStateProvider';
 import { GameMode } from '../../enum/GameMode';
+import { ENVIRONMENT_MODE_ICON_URL } from '../../constants/ICONS';
 
 const Header: React.FC = () => {
 	const {
@@ -47,7 +48,8 @@ const Header: React.FC = () => {
 				})}
 			</nav>
 			<button onClick={handleEnvironmentModeChange} id="environmentMode">
-				{environmentMode}
+				<img src={ENVIRONMENT_MODE_ICON_URL[environmentMode]} alt="enviromentModeIcon" />
+				<span>{environmentMode}</span>
 			</button>
 		</header>
 	);

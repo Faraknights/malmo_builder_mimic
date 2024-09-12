@@ -1,8 +1,9 @@
 export enum Users {
 	SYSTEM = 'SYSTEM',
 	ARCHITECT = 'ARCHITECT',
-	BUILDER = 'BUILDER ',
+	BUILDER = 'BUILDER',
 	NEBULA = 'NEBULA',
+	UNKNOWN = 'UNKNOWN',
 }
 
 export interface Message {

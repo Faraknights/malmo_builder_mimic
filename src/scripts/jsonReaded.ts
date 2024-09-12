@@ -1,4 +1,4 @@
-import { GameLog, worldStateProps } from '../classes/gameLog';
+import { GameLog, WorldStateProps } from '../classes/GameLog';
 import { COLORS } from '../constants/COLORS';
 import { v4 as uuidv4 } from 'uuid';
 import { Colors } from '../enum/Colors';
@@ -28,7 +28,7 @@ export function parseJSON(file: File): Promise<GameLog[]> {
 					chatHistory: [],
 					shapeInPlace: [],
 					timestamp: new Date(),
-				} as worldStateProps;
+				} as WorldStateProps;
 
 				const games: GameLog[] = [];
 				const game = new GameLog();

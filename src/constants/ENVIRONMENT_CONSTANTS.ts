@@ -4,7 +4,7 @@ import { EnvironmentMode } from '../enum/EnvironmentMode';
 import { COLORS } from './COLORS';
 import Color from '../interfaces/Color';
 import { shapeProps } from '../components/modelisation/shapes/Shape';
-import { GameLog } from '../classes/gameLog';
+import { GameLog } from '../classes/GameLog';
 import Simulation from '../components/structurals/environmentGames/Simulation';
 import Visualization from '../components/structurals/environmentGames/Visualization';
 import Nebula from '../components/structurals/environmentGames/Nebula';
@@ -12,6 +12,7 @@ import { GameMode } from '../enum/GameMode';
 import { Colors } from '../enum/Colors';
 import { ShapeList } from '../enum/ShapeList';
 import { CameraMode } from '../enum/CameraMode';
+import { Action } from '../enum/Action';
 
 export const BLOCK_SIZE: { [key in EnvironmentMode]: CartesianCoordinate } = {
 	[EnvironmentMode.MINECRAFT]: { x: 1, y: 1, z: 1 },
@@ -158,6 +159,12 @@ export const gameModesAvailable: { [key in EnvironmentMode]: GameMode[] } = {
 export const defaultCameraByEnvironment: { [key in EnvironmentMode]: CameraMode } = {
 	[EnvironmentMode.MINECRAFT]: CameraMode.FREE,
 	[EnvironmentMode.COCOBOTS]: CameraMode.UPPER_VIEW,
+};
+
+export const defaultActionByGameMode: { [key in GameMode]: Action } = {
+	[GameMode.SIMULATION]: Action.PLACE,
+	[GameMode.VISUALIZATION]: Action.BREAK,
+	[GameMode.NEBULA]: Action.BREAK,
 };
 
 export const gameModeComponent: {

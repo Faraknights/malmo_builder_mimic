@@ -1,4 +1,4 @@
-import { GameLog, worldStateProps } from '../classes/gameLog';
+import { GameLog, WorldStateProps } from '../classes/GameLog';
 import { COLORS } from '../constants/COLORS';
 import { v4 as uuidv4 } from 'uuid';
 import { EnvironmentMode } from '../enum/EnvironmentMode';
@@ -30,7 +30,7 @@ export function parseCSV(csv: string, environmentMode: EnvironmentMode): GameLog
 			const prevWorldState = dialSplit[2].trim().replace(/^"+|"+$/g, '');
 			const instructions = dialSplit[3].trim().split('\n');
 
-			const worldState: worldStateProps = {
+			const worldState: WorldStateProps = {
 				chatHistory: [],
 				shapeInPlace: [],
 			};
@@ -57,7 +57,7 @@ export function parseCSV(csv: string, environmentMode: EnvironmentMode): GameLog
 	}
 }
 
-function parseWorldState(prevWorldState: string, worldState: worldStateProps) {
+function parseWorldState(prevWorldState: string, worldState: WorldStateProps) {
 	if (prevWorldState !== 'EMPTY' && prevWorldState) {
 		const worldStateSplitted = prevWorldState.split(':');
 		worldStateSplitted.forEach((blockStr) => {

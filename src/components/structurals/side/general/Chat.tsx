@@ -2,19 +2,17 @@ import React, { useEffect, useRef, useState } from 'react';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 import isBase64 from '../../../../scripts/isBase64';
 import { ServerMessage } from '../../../../interfaces/ServerMessage';
-import { parseInstruction } from '../../../../scripts/csvReader';
-import { GameLog } from '../../../../classes/gameLog';
+import { GameLog } from '../../../../classes/GameLog';
 import { EnvironmentMode } from '../../../../enum/EnvironmentMode';
 import { GameMode } from '../../../../enum/GameMode';
 import { useGlobalState } from '../../GlobalStateProvider';
 import { Users } from '../../../../enum/Chat';
+import { USERS_ICON_URL } from '../../../../constants/ICONS';
+import { SystemMessage } from '../../../../enum/SystemMessage';
+import { parseInstruction } from '../../../../scripts/csvReader';
 
 interface chatComponentProps {
 	availableUsers: Users[];
-}
-
-enum systemMessage {
-	PLACEMENT = 'Placement...',
 }
 
 const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
@@ -40,14 +38,14 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 		setClicked(true);
 		const message = (
 			chat.chatHistory.some(
-				(message) => message.user === Users.SYSTEM && message.content === systemMessage.PLACEMENT
+				(message) => message.user === Users.SYSTEM && message.content === SystemMessage.PLACEMENT
 			)
 				? chat.chatHistory.slice(
 						chat.chatHistory.reduceRight(
 							(acc, message, index) =>
 								acc === -1 &&
 								message.user === Users.SYSTEM &&
-								message.content === systemMessage.PLACEMENT
+								message.content === SystemMessage.PLACEMENT
 									? index
 									: acc,
 							-1
@@ -107,11 +105,6 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 											return new Promise((resolve) => setTimeout(resolve, ms));
 										}
 
-										chat.addMessage({
-											user: Users.SYSTEM,
-											content: systemMessage.PLACEMENT,
-										});
-
 										async function processLogs(gameLog: GameLog) {
 											for (let i = 1; i < gameLog.gameLog.length; i++) {
 												const log = gameLog.gameLog[i];
@@ -119,6 +112,11 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 												shapeInPlace.setObjects(log.shapeInPlace);
 												await delay(200); // 500ms delay
 											}
+
+											chat.addMessage({
+												user: Users.SYSTEM,
+												content: SystemMessage.PLACEMENT,
+											});
 										}
 
 										processLogs(gameLog);
@@ -146,25 +144,21 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 			<h3>Chat</h3>
 			<hr />
 			<div className="historyMessages" ref={chatRef}>
-				{chat.chatHistory.map(
-					(message, i) =>
-						(message.user === Users.SYSTEM && (
-							<div key={i} className={`system`}>
-								{message.content}
+				{chat.chatHistory.map((message, i) => (
+					<div key={i}>
+						{(i === 0 || message.user !== chat.chatHistory[i - 1].user) && (
+							<div>
+								<img className="userIcon" src={USERS_ICON_URL[message.user]} alt="userIcon" />
+								<span className="userName" key={`user-${i}`}>
+									{message.user}
+								</span>
 							</div>
-						)) || (
-							<div key={i}>
-								{(i === 0 || message.user !== chat.chatHistory[i - 1].user) && (
-									<span className="userName" key={`user-${i}`}>
-										{message.user}
-									</span>
-								)}
-								<div key={i} className={`message`}>
-									{message.content}
-								</div>
-							</div>
-						)
-				)}
+						)}
+						<div key={i} className={`message${message.user === Users.SYSTEM ? ' system' : ''}`}>
+							{message.content}
+						</div>
+					</div>
+				))}
 			</div>
 
 			{availableUsers.length >= 1 && (
@@ -173,6 +167,7 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 					<div className="buttons">
 						<div className="mainButtons">
 							<button
+								className={availableUsers.length !== 1 ? 'realisticButton' : 'alone'}
 								onClick={() => {
 									setUser(
 										availableUsers[
@@ -187,6 +182,7 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 								type="text"
 								className={disable ? 'disable' : ''}
 								disabled={disable}
+								placeholder="writing here..."
 								onKeyDown={(e) => {
 									if (e.key === 'Enter') {
 										const message = e.currentTarget.value;
@@ -203,18 +199,18 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 						{gameMode === GameMode.NEBULA && (
 							<button
 								className={
-									'generate' +
+									'realisticButton generate' +
 									(disable ||
 									(chat.chatHistory.some(
 										(message) =>
-											message.user === Users.SYSTEM && message.content === systemMessage.PLACEMENT
+											message.user === Users.SYSTEM && message.content === SystemMessage.PLACEMENT
 									)
 										? chat.chatHistory.slice(
 												chat.chatHistory.reduceRight(
 													(acc, message, index) =>
 														acc === -1 &&
 														message.user === Users.SYSTEM &&
-														message.content === systemMessage.PLACEMENT
+														message.content === SystemMessage.PLACEMENT
 															? index
 															: acc,
 													-1

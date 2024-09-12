@@ -2,16 +2,17 @@
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
 import { EnvironmentMode } from '../../enum/EnvironmentMode';
 import { GameMode } from '../../enum/GameMode';
-import { ShapeInPlaceProps, useShapeInPlace } from '../../classes/shapeInPlace';
+import { ShapeInPlaceProps, useShapeInPlace } from '../../classes/ShapeInPlace';
 import { inventoryProps, useInventory } from '../../classes/Inventory';
 import {
+	defaultActionByGameMode,
 	defaultCameraByEnvironment,
 	ENVIRONMENT_COLORS,
 	ENVIRONMENT_SHAPES,
 } from '../../constants/ENVIRONMENT_CONSTANTS';
 import { Action } from '../../enum/Action';
 import { chatProps, useChat } from '../../classes/Chat';
-import { GameLog, worldStateProps } from '../../classes/gameLog';
+import { GameLog, WorldStateProps } from '../../classes/GameLog';
 import { Pointer } from '../../interfaces/Pointer';
 import { CameraMode } from '../../enum/CameraMode';
 
@@ -43,6 +44,7 @@ export interface GlobalState {
 	shapeInPlace: ShapeInPlaceProps;
 	inventory: inventoryProps;
 	chat: chatProps;
+	clear: () => void;
 }
 
 interface GlobalStateProviderProps {
@@ -60,7 +62,7 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
 }) => {
 	const [environmentMode, setEnvironmentMode] = useState<EnvironmentMode>(initialEnvironmentMode);
 	const [gameMode, setGameMode] = useState<GameMode>(initialGameMode);
-	const [action, setAction] = useState<Action>(Action.PLACE);
+	const [action, setAction] = useState<Action>(defaultActionByGameMode[initialGameMode]);
 	const [gameLog, setGameLog] = useState<GameLog>(new GameLog());
 	const [camera, setCamera] = useState<CameraMode>(defaultCameraByEnvironment[initialEnvironmentMode]);
 	const shapeInPlace = useShapeInPlace();
@@ -72,7 +74,7 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
 	const [pointer, setPointer] = useState<Pointer | undefined>(undefined);
 
 	const clearAll = () => {
-		setAction(Action.PLACE);
+		setAction(defaultActionByGameMode[gameMode]);
 		setGameLog(new GameLog());
 		shapeInPlace.clear();
 		chat.setChatHistory([]);
@@ -97,7 +99,7 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
 					timestamp: new Date(),
 					chatHistory: [...chat.chatHistory],
 					shapeInPlace: [...shapeInPlace.objects],
-				} as worldStateProps);
+				} as WorldStateProps);
 				setGameLog(gameLog);
 			}
 		} else {
@@ -106,7 +108,7 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
 					timestamp: new Date(),
 					chatHistory: [...chat.chatHistory],
 					shapeInPlace: [...shapeInPlace.objects],
-				} as worldStateProps);
+				} as WorldStateProps);
 				setGameLog(gameLog);
 			}
 		}
@@ -122,6 +124,7 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
 		shapeInPlace,
 		inventory,
 		chat,
+		clear: clearAll,
 	};
 
 	return <GlobalStateContext.Provider value={value}>{children}</GlobalStateContext.Provider>;

@@ -11,7 +11,7 @@ const ActionSelector: React.FC = () => {
 				{Object.values(Action).map((action) => (
 					<button
 						key={action}
-						className={`${action}${current === action ? ' selected' : ''}`}
+						className={`realisticButton ${action}${current === action ? ' selected' : ''}`}
 						onClick={() => setAction(action)}
 					>
 						{action[0] + action.slice(1).toLowerCase()}

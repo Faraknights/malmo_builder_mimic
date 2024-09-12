@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { parseCSV } from '../../../../scripts/csvReader';
-import { parseJSON } from '../../../../scripts/jsonReaded';
-import { GameLog } from '../../../../classes/gameLog';
-import { JsonlEvent } from '../../../../interfaces/jsonlDataStructure';
+import { GameLog } from '../../../../classes/GameLog';
 import { useGlobalState } from '../../GlobalStateProvider';
+import { Users } from '../../../../enum/Chat';
+import { SystemMessage } from '../../../../enum/SystemMessage';
+import { VISUALIZER_MATCHER } from '../../../../constants/VISUALIZER_MATCHER';
+import { isFileExtension } from '../../../../enum/FileExtensions';
 
 // Memoized GameComponent to optimize rendering
 const GameComponent: React.FC<{
@@ -72,6 +73,20 @@ const FileManager: React.FC = () => {
 		if (file) {
 			const fileExtension = file.name.split('.').pop()?.toLowerCase();
 
+			const processorFunction = isFileExtension(fileExtension)
+				? VISUALIZER_MATCHER[environmentMode][fileExtension]
+				: undefined;
+
+			if (processorFunction) {
+				processorFunction(file, gameLogs);
+			} else {
+				chat.addMessage({
+					user: Users.SYSTEM,
+					content: SystemMessage.WRONG_FILE_EXTENSION,
+				});
+			}
+			event.target.value = '';
+			/*
 			try {
 				console.log(fileExtension);
 				if (fileExtension === 'csv') {
@@ -111,7 +126,7 @@ const FileManager: React.FC = () => {
 				event.target.value = '';
 			} catch (error) {
 				console.error('Error processing file:', error);
-			}
+			}*/
 		}
 	};
 

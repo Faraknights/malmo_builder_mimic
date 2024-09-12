@@ -235,7 +235,7 @@ const Game: React.FC = () => {
 			}
 		},
 		onPointerUp: (e: ThreeEvent<PointerEvent>) => {
-			if (mouseDownPosition) {
+			if (mouseDownPosition && gameMode === GameMode.SIMULATION) {
 				const deltaX = Math.abs(e.clientX - mouseDownPosition.x);
 				const deltaY = Math.abs(e.clientY - mouseDownPosition.y);
 				if (deltaX < 5 && deltaY < 5) {

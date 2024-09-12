@@ -11,12 +11,17 @@ import CameraSelector from '../side/general/CameraPicker';
 import { useGlobalState } from '../GlobalStateProvider';
 import { Users } from '../../../enum/Chat';
 
+//Assets
+import DownloadSVG from '../../../../public/assets/svg/download.svg';
+import ScreenshotSVG from '../../../../public/assets/svg/screenshot.svg';
+import ClearSVG from '../../../../public/assets/svg/clear.svg';
+
 const Simulation: React.FC = () => {
 	const {
 		shapeInPlace,
 		environmentMode: { environmentMode },
 		gameLog: { gameLog },
-		chat,
+		clear,
 	} = useGlobalState();
 
 	useEffect(() => {
@@ -40,7 +45,7 @@ const Simulation: React.FC = () => {
 				<ChatComponent availableUsers={[Users.ARCHITECT, Users.BUILDER]} />
 				<div id="gameButtons">
 					<button
-						id="download"
+						className="realisticButton"
 						onClick={() => {
 							const gameLogJson = JSON.stringify(EXPORT_GAME_LOG[environmentMode](gameLog));
 							const blob = new Blob([gameLogJson], {
@@ -56,10 +61,10 @@ const Simulation: React.FC = () => {
 							URL.revokeObjectURL(url);
 						}}
 					>
-						Download json
+						<DownloadSVG />
 					</button>
 					<button
-						id="download"
+						className="realisticButton"
 						onClick={() => {
 							const canvas = document.querySelector<HTMLCanvasElement>(
 								'canvas[data-engine="three.js r164"]'
@@ -78,16 +83,10 @@ const Simulation: React.FC = () => {
 							}
 						}}
 					>
-						Download png
+						<ScreenshotSVG />
 					</button>
-					<button
-						id="reset"
-						onClick={() => {
-							shapeInPlace.clear();
-							chat.clear();
-						}}
-					>
-						Clear Board
+					<button className="realisticButton warning" onClick={clear}>
+						<ClearSVG />
 					</button>
 				</div>
 			</Side>

@@ -125,11 +125,21 @@ html, body, #__next{
 			#environmentMode{
 				margin-right: 20px;
 				padding: 10px 20px;
-				background-color: rgba(255, 255, 255, 0.206);
-				border: solid 1px white;
-				color: white;
+				background-color: rgba(255, 255, 255, 0.657);
+				border: solid 2px white;
+				color: #1f2b36;
 				border-radius: 5px;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+				font-size: large;
+
 				cursor: pointer;
+				display: flex;
+				align-items: center;
+
+				img{
+					height: 30px;
+					margin-right: 10px;
+				}
 			}
 		}
 		
@@ -218,6 +228,7 @@ html, body, #__next{
 						font-weight: 400;
 						font-size: x-large;
 						margin: 5px 0;
+						font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 					}
 				}
 
@@ -441,14 +452,6 @@ html, body, #__next{
 
 					color: rgb(255, 248, 229);
 
-					
-					.system{
-						color: rgb(255, 248, 229);
-						text-align: center;
-						font-size: 20px;
-						margin: 10px 0;
-					}
-
 					hr{
 						width: calc(100% - 20px);
 						border-top: 1px solid rgba(255, 208, 0, 0.7);
@@ -470,6 +473,7 @@ html, body, #__next{
 						&.buttons{
 							display: flex;
 							flex-direction: column;
+							transform: translate(-5px);
 
 							.mainButtons{
 								display: flex;
@@ -482,26 +486,35 @@ html, body, #__next{
 									height: 25px;
 									border: 0;
 									margin-top: 3px;
-									margin-right: 10px;
+									margin-right: 15px;
 									border-radius: 5px;
 									display: flex;
 									align-items: center;
 									justify-content: center;
 									font-size: x-small;
 									cursor: pointer;
+
+									&.alone{
+										transform: translateX(5px);
+									}
 								}
 	
 								& > input[type="text"]{
 									background-color: rgba(255, 244, 42, 0.361);
 									margin-top: 4px;
 									width: 100%;
-									border: 00;
+									border: 0;
+									box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.228);
 									border-radius: 5px;
 									height: 25px;
-									padding: 010px;
+									padding: 15px 10px;
 									color: white;
 									font-weight: 100;
 									outline: none;
+									
+									&::placeholder{
+										color: rgb(229, 229, 229);
+									}
 	
 									&.disable{
 										background-color: rgba(116, 114, 71, 0.595);
@@ -515,7 +528,7 @@ html, body, #__next{
 								flex-direction: row;
 								height: 35px;
 								align-items: center;
-								width: 95%;
+								width: 90%;
 								margin-top: 10px;
 								border: none;
 								border-radius: 8px;
@@ -564,17 +577,37 @@ html, body, #__next{
 								width: 95%;
 								background-color: rgba(255, 225, 0, 0.201);
 								border-radius: 7px;
+
+								&.system{
+									border-radius: 0;
+									padding-left: 15px;
+									background-color:rgba(65, 181, 253, 0.483);
+									clip-path: polygon(15px 0%, 0% 50%, 15px 100%, calc(100% - 15px) 100%, 100% 50%, calc(100% - 15px) 0%)
+								}
 							}
 
-							.userName{
-								display: block;
-								width: 95%;
-								color: rgb(254, 254, 240);
-								font-size: large;
-								margin-top: 5px;
-	
-								&:not(:first-child){
+							& > div{
+
+								display: flex;
+								align-items: flex-end;
+								margin-top: 10px;
+
+								.userIcon{
+									height: 30px;
+									margin-right: 5px;
+								}
+
+								.userName{
+									display: block;
+									width: 95%;
+									color: rgb(254, 254, 240);
+									font-size: large;
 									margin-top: 5px;
+									font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		
+									&:not(:first-child){
+										margin-top: 5px;
+									}
 								}
 							}
 						}
@@ -605,35 +638,34 @@ html, body, #__next{
 							align-items: center;
 							width: 100%;
 							margin: 0 10px;
-							
+							transform: translate(-5px);
 							.color{
 								display: flex;
-								align-items: center;
+								align-items: flex-end;
 								margin: 5px;
-								padding: 8px;
+								margin-bottom: 10px;
 								background-color: #20eaff30;
 								border-radius: 5px;
+								aspect-ratio: 1 / 1;
+								border: solid 1px white;
+								width: 50px;
 
-								& > div{
-									width: 30px;
-									height: 30px;
-									border-radius: 5px;
-									margin-right: 10px;
+								&.selected{
+									background-image: url('/assets/icons/generals/check_white.png');
+									background-size: 20px; 
+									background-position: center 5px;
+									background-repeat: no-repeat; 
+									box-shadow: 0 0 10px white;
 								}
 
 								& > span{
 									display: flex;
 									align-items: center;
 									justify-content: center;
-									font-size: small;
-								}
-
-								&.selected{
-									background-color: #20eaff99;;
-									
-									& > span{
-										color: white;
-									}
+									font-size: x-small;
+									color: white;
+									font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+									margin: 2px;
 								}
 
 								&:not(.selected){
@@ -665,19 +697,20 @@ html, body, #__next{
 					.buttonsWrapper{
 						width: 100%;
 						display: flex;
-						margin-left: 10px;
 						align-items: center;
 						justify-content: space-evenly;
+						transform: translate(-4px);
 
 						button{
-							width: 100%;
+							width: 40%;
 							color: #fdc7c7;
 							display: flex;
 							align-items: center;
 							justify-content: center;
-							margin: 5px;
 							padding: 8px;
-							background-color: #ff666658;
+							margin: 8px 0;
+							box-sizing: border-box;
+							background-color: #ff666677;
 							border-radius: 5px;
 							border: none;
 							cursor: pointer;
@@ -686,6 +719,7 @@ html, body, #__next{
 								background-color: #ff6666c4;
 								color: white;
 								cursor: auto;
+								box-shadow: 0px 0px 5px white;
 							}
 						}
 					}
@@ -763,24 +797,57 @@ html, body, #__next{
 					margin-bottom: 10px;
 
 					button{
-						padding: 7px 0;
-						width: 40%;
-						border: 0;
+						height: 45px;
+						aspect-ratio: 1 / 1;
 						border-radius: 5px;
 						cursor: pointer;
-						font-size: medium;
-						background-color: rgba(255, 255, 255, 0.105);
-						color: white;
-						border: 1px solid white;
+						background-color: rgb(255, 255, 255);
+						border: none;
+						display: flex;
+						align-items: center;
+						justify-content: center;
 
-						&:hover{
-							transition: .5s;
-							background-color: white;
-							color: black;
+						svg{
+							height: 20px;
+							width: 20px;
+							path{
+								stroke: rgb(27, 27, 27);
+								fill: rgb(27, 27, 27);
+								stroke-width: 1px;
+							}
+						}
+
+						&.warning{
+							background-color: rgba(237, 81, 67, 0.961);
+
+							path{
+								stroke: white;
+								stroke-width: 2px;
+								fill: none;
+							}
 						}
 					}
 				}
 			}
 		}
+	}
+
+	.realisticButton{
+		box-shadow: 8px 0 0 rgb(154, 154, 154);
+
+		transition: box-shadow 0.2s, transform 0.2s;
+
+		transform-origin: center; /* Adjust the transform origin */
+		will-change: box-shadow, transform; /* Hint for smoother animation */
+		&:hover{
+			box-shadow: 6px 0 0 rgb(154, 154, 154);
+			transform: translate(2px);
+		}
+
+		&:active, &.selected{
+			box-shadow: 0px 0 0 rgb(154, 154, 154);
+			transform: translate(8px);
+		}
+
 	}
 }

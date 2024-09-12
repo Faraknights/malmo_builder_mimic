@@ -4,11 +4,13 @@ import Side from '../side/Side';
 import ChatComponent from '../side/general/Chat';
 import CameraSelector from '../side/general/CameraPicker';
 import { Users } from '../../../enum/Chat';
+import PointerIndicator from '../side/visualization/PointerIndicator';
 
 const Nebula: React.FC = () => {
 	return (
 		<main>
 			<div id="mainView">
+				<PointerIndicator />
 				<CameraSelector />
 				<Environment />
 			</div>
