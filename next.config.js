@@ -6,7 +6,6 @@ export default {
 	},
 	basePath: '/malmo_builder_mimic',
 	assetPrefix: '/malmo_builder_mimic/',
-	output: 'export',
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/,
