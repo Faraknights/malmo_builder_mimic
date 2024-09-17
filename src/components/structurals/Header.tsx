@@ -48,7 +48,7 @@ const Header: React.FC = () => {
 				})}
 			</nav>
 			<button onClick={handleEnvironmentModeChange} id="environmentMode">
-				<img src={ENVIRONMENT_MODE_ICON_URL[environmentMode]} alt="enviromentModeIcon" />
+				<img src={`${router.basePath}${ENVIRONMENT_MODE_ICON_URL[environmentMode]}`} alt="enviromentModeIcon" />
 				<span>{environmentMode}</span>
 			</button>
 		</header>

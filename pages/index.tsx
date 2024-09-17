@@ -17,10 +17,10 @@ const Home: React.FC = () => {
 				Welcome on our simulator for the <br />
 				<span>project COCOBOTS</span>
 			</h1>
-			<img src="/assets/images/logo_cocobots.png" alt="Logo of Cocobots" />
+			<img src={`${router.basePath}/assets/images/logo_cocobots.png`} alt="Logo of Cocobots" />
 			<button onClick={navigateToSimulator}>
 				{clicked ? (
-					<img src="/assets/images/loading_horizontal.gif" alt="loading" />
+					<img src={`${router.basePath}/assets/images/loading_horizontal.gif`} alt="loading" />
 				) : (
 					<span>Try it out !</span>
 				)}

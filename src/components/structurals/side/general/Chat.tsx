@@ -10,6 +10,7 @@ import { Users } from '../../../../enum/Chat';
 import { USERS_ICON_URL } from '../../../../constants/ICONS';
 import { SystemMessage } from '../../../../enum/SystemMessage';
 import { parseInstruction } from '../../../../scripts/csvReader';
+import { useRouter } from 'next/router';
 
 interface chatComponentProps {
 	availableUsers: Users[];
@@ -17,6 +18,7 @@ interface chatComponentProps {
 
 const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 	const chatRef = useRef<HTMLDivElement>(null);
+	const router = useRouter();
 	const {
 		chat,
 		gameMode: { gameMode },
@@ -148,7 +150,11 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 					<div key={i}>
 						{(i === 0 || message.user !== chat.chatHistory[i - 1].user) && (
 							<div>
-								<img className="userIcon" src={USERS_ICON_URL[message.user]} alt="userIcon" />
+								<img
+									className="userIcon"
+									src={`${router.basePath}${USERS_ICON_URL[message.user]}`}
+									alt="userIcon"
+								/>
 								<span className="userName" key={`user-${i}`}>
 									{message.user}
 								</span>
@@ -224,7 +230,10 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 								onClick={pythonCall}
 							>
 								{clicked ? (
-									<img src="/assets/images/loading_colorful.gif" alt="loading image" />
+									<img
+										src={`${router.basePath}/assets/images/loading_colorful.gif`}
+										alt="loading image"
+									/>
 								) : (
 									<>
 										<span>Generate</span>
