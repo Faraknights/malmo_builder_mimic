@@ -25,7 +25,7 @@
 	},
 	"plugins": ["react", "prettier", "@typescript-eslint"],
 	"rules": {
-		"prettier/prettier": ["error", { "endOfLine": "auto" }],
+		"prettier/prettier": ["error"],
 		"react/no-unknown-property": "off",
 		"react/prop-types": "off",
 		"@typescript-eslint/no-explicit-any": "off",
