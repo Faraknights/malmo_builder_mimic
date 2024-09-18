@@ -1,29 +1,32 @@
 import { GameLog } from '../classes/GameLog';
 import { EnvironmentMode } from '../enum/EnvironmentMode';
 import { FileExtension } from '../enum/FileExtensions';
+import minecraftCSVReader from '../scripts/Readers/minecraft/minecraftCSVReader';
 
-type FileProcessorFunction = (file: File, gameLog: GameLog[]) => void;
+export type FileProcessorFunction = (data: string, gameLogs: GameLog[]) => GameLog[];
 
 export const VISUALIZER_MATCHER: {
 	[key in EnvironmentMode]: Partial<Record<FileExtension, FileProcessorFunction>>;
 } = {
 	[EnvironmentMode.MINECRAFT]: {
-		[FileExtension.CSV]: (file: File, gameLog: GameLog[]) => {
-			console.log(file, gameLog);
-		},
-		[FileExtension.JSON]: (file: File, gameLog: GameLog[]) => {
-			console.log(file, gameLog);
+		[FileExtension.CSV]: minecraftCSVReader,
+		[FileExtension.JSON]: (data: string, gameLog: GameLog[]) => {
+			console.log(data, gameLog);
+			return gameLog;
 		},
 	},
 	[EnvironmentMode.COCOBOTS]: {
-		[FileExtension.CSV]: (file: File, gameLog: GameLog[]) => {
-			console.log(file, gameLog);
+		[FileExtension.CSV]: (data: string, gameLog: GameLog[]) => {
+			console.log(data, gameLog);
+			return gameLog;
 		},
-		[FileExtension.JSON]: (file: File, gameLog: GameLog[]) => {
-			console.log(file, gameLog);
+		[FileExtension.JSON]: (data: string, gameLog: GameLog[]) => {
+			console.log(data, gameLog);
+			return gameLog;
 		},
-		[FileExtension.JSONL]: (file: File, gameLog: GameLog[]) => {
-			console.log(file, gameLog);
+		[FileExtension.JSONL]: (data: string, gameLog: GameLog[]) => {
+			console.log(data, gameLog);
+			return gameLog;
 		},
 	},
 };

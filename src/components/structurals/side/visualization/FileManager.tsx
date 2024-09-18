@@ -6,23 +6,18 @@ import { SystemMessage } from '../../../../enum/SystemMessage';
 import { VISUALIZER_MATCHER } from '../../../../constants/VISUALIZER_MATCHER';
 import { isFileExtension } from '../../../../enum/FileExtensions';
 
-// Memoized GameComponent to optimize rendering
 const GameComponent: React.FC<{
-	gameLog: GameLog;
 	currentIndex: number;
 	currentgameId: number;
 	onClick: () => void;
 	searched: boolean;
-}> = React.memo(({ gameLog, currentIndex, currentgameId, onClick, searched }) => {
+}> = React.memo(({ currentIndex, currentgameId, onClick, searched }) => {
 	return (
 		<div
 			className={`game ${currentIndex === currentgameId ? 'selected' : ''} ${searched ? 'searched' : ''}`}
 			onClick={onClick}
 		>
-			{(!gameLog.getWorldStateById(0)?.chatHistory.length &&
-				!gameLog.getWorldStateById(0)?.shapeInPlace.length && <div className="new"></div>) || (
-				<div className="old"></div>
-			)}
+			<div className="new"></div>
 			<span>Game {currentIndex}</span>
 		</div>
 	);
@@ -78,7 +73,12 @@ const FileManager: React.FC = () => {
 				: undefined;
 
 			if (processorFunction) {
-				processorFunction(file, gameLogs);
+				const reader = new FileReader();
+				reader.onload = (event) => {
+					const data = event.target?.result as string;
+					setGameLogs([...processorFunction(data, gameLogs)]);
+				};
+				reader.readAsText(file);
 			} else {
 				chat.addMessage({
 					user: Users.SYSTEM,
@@ -139,7 +139,6 @@ const FileManager: React.FC = () => {
 				{gameLogs.map((gameLog, i) => (
 					<GameComponent
 						key={i}
-						gameLog={gameLog}
 						currentIndex={i}
 						currentgameId={currentgameId}
 						onClick={() => {
