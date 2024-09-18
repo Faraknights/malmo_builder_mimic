@@ -62,7 +62,7 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 			const runPythonScript = async () => {
 				const link =
 					environmentMode === EnvironmentMode.MINECRAFT ? '/api/nebula_minecraft' : '/api/nebula_cocobots';
-				await fetchEventSource(link, {
+				await fetchEventSource(router.basePath + link, {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
