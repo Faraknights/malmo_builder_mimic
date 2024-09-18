@@ -12,7 +12,7 @@ const ActionSelector: React.FC = () => {
 					<button
 						key={action}
 						className={`realisticButton ${action}${current === action ? ' selected' : ''}`}
-						onClick={() => setAction(action)}
+						onMouseDown={() => setAction(action)}
 					>
 						{action[0] + action.slice(1).toLowerCase()}
 					</button>

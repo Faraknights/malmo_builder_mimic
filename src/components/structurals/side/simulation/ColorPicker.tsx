@@ -20,7 +20,7 @@ const ColorPicker: React.FC = () => {
 								key={color.id}
 								className={`realisticButton color${currentColor.id === color.id ? ' selected' : ''}`}
 								style={{ backgroundColor: color.hex }}
-								onClick={() => changeColor(color.id)}
+								onMouseDown={() => changeColor(color.id)}
 							>
 								<span>{color.id[0] + color.id.slice(1).toLowerCase()}</span>
 							</div>
