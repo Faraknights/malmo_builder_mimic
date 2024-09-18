@@ -14,7 +14,7 @@ const Home: React.FC = () => {
 	return (
 		<div id="homepage">
 			<h1>
-				Welcome on our simulator for the <br />
+				Welcome to the simulator for the <br />
 				<span>project COCOBOTS</span>
 			</h1>
 			<img src={`${router.basePath}/assets/images/logo_cocobots.png`} alt="Logo of Cocobots" />

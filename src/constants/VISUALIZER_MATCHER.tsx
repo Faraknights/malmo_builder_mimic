@@ -16,10 +16,6 @@ export const VISUALIZER_MATCHER: {
 		},
 	},
 	[EnvironmentMode.COCOBOTS]: {
-		[FileExtension.CSV]: (data: string, gameLog: GameLog[]) => {
-			console.log(data, gameLog);
-			return gameLog;
-		},
 		[FileExtension.JSON]: (data: string, gameLog: GameLog[]) => {
 			console.log(data, gameLog);
 			return gameLog;

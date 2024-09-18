@@ -1,4 +1,4 @@
-import { GameLog, WorldStateProps } from '../../../classes/GameLog';
+import { GameLog } from '../../../classes/GameLog';
 import { FileProcessorFunction } from '../../../constants/VISUALIZER_MATCHER';
 import { parseMinecraftInstruction } from './parseMinecraftInstruction';
 
@@ -11,14 +11,7 @@ const minecraftCSVReader: FileProcessorFunction = (data, gameLogs) => {
 
 		const instructions = dialWithActions.split('\n').map((string) => string.trim());
 
-		const worldState: WorldStateProps = {
-			timestamp: new Date(),
-			chatHistory: [],
-			shapeInPlace: [],
-		};
-
 		const gameLog = new GameLog();
-		gameLog.addWorldState(worldState);
 
 		[...instructions, ...actionSeq].forEach((instruction) => {
 			gameLog.addWorldState(parseMinecraftInstruction(instruction.trim(), gameLog.getLastWorldState()!));

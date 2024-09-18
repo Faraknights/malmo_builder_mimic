@@ -167,8 +167,9 @@ const FileManager: React.FC = () => {
 				/>
 			)}
 			<hr />
-			<div id="gameManager" className={!gameLogs[currentgameId] ? 'disabled' : ''}>
+			<div id="gameManager">
 				<input
+					className={`${!gameLogs[currentgameId] ? ' disabled' : ''}`}
 					type="range"
 					min={0}
 					step={1}
@@ -180,26 +181,26 @@ const FileManager: React.FC = () => {
 				/>
 				<div className="buttonWrapper">
 					<div
-						className={`previousGame${!!gameLogs[currentgameId] && currentgameId === 0 ? ' disabled' : ''}`}
-						onClick={() => {
+						className={`realisticButton previousGame${!gameLogs[currentgameId] || currentgameId === 0 ? ' disabled' : ''}`}
+						onMouseDown={() => {
 							setcurrentgameId((prevId) => prevId - 1);
 						}}
 					></div>
 					<div
-						className={`previousStep${!!gameLogs[currentgameId] && step === 0 ? ' disabled' : ''}`}
-						onClick={() => {
+						className={`realisticButton previousStep${!gameLogs[currentgameId] || step === 0 ? ' disabled' : ''}`}
+						onMouseDown={() => {
 							setStep((prevStep) => prevStep - 1);
 						}}
 					></div>
 					<div
-						className={`nextStep${!!gameLogs[currentgameId] && step === gameLogs[currentgameId].getLength() - 1 ? ' disabled' : ''}`}
-						onClick={() => {
+						className={`realisticButton nextStep${!gameLogs[currentgameId] || step === gameLogs[currentgameId].getLength() - 1 ? ' disabled' : ''}`}
+						onMouseDown={() => {
 							setStep((prevStep) => prevStep + 1);
 						}}
 					></div>
 					<div
-						className={`nextGame${!!gameLogs[currentgameId] && currentgameId === gameLogs.length - 1 ? ' disabled' : ''}`}
-						onClick={() => {
+						className={`realisticButton nextGame${!gameLogs[currentgameId] || currentgameId === gameLogs.length - 1 ? ' disabled' : ''}`}
+						onMouseDown={() => {
 							setcurrentgameId((prevId) => prevId + 1);
 						}}
 					></div>
