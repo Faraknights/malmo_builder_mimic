@@ -46,7 +46,7 @@ const Simulation: React.FC = () => {
 				<div id="gameButtons">
 					<button
 						className="realisticButton"
-						onClick={() => {
+						onMouseDown={() => {
 							const gameLogJson = JSON.stringify(EXPORT_GAME_LOG[environmentMode](gameLog));
 							const blob = new Blob([gameLogJson], {
 								type: 'application/json',
@@ -65,7 +65,7 @@ const Simulation: React.FC = () => {
 					</button>
 					<button
 						className="realisticButton"
-						onClick={() => {
+						onMouseDown={() => {
 							const canvas = document.querySelector<HTMLCanvasElement>(
 								'canvas[data-engine="three.js r164"]'
 							);
@@ -85,7 +85,7 @@ const Simulation: React.FC = () => {
 					>
 						<ScreenshotSVG />
 					</button>
-					<button className="realisticButton warning" onClick={clear}>
+					<button className="realisticButton warning" onMouseDown={clear}>
 						<ClearSVG />
 					</button>
 				</div>

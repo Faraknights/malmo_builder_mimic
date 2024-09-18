@@ -80,14 +80,13 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 							}
 							try {
 								const message = JSON.parse(full_message) as ServerMessage;
-								console.log(message);
+								setClicked(false);
 								if (message.type === 'WAIT') {
 									chat.addMessage({
 										content: message.content,
 										user: Users.SYSTEM,
 									});
 									setDisable(true);
-									setClicked(false);
 								} else if (message.type === 'MESSAGE') {
 									console.log(
 										/^(place .*|pick) -?[0-9]+ -?[0-9]+ -?[0-9]+\n?$/gm.test(message.content)
@@ -174,7 +173,7 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 						<div className="mainButtons">
 							<button
 								className={availableUsers.length !== 1 ? 'realisticButton' : 'alone'}
-								onClick={() => {
+								onMouseDown={() => {
 									setUser(
 										availableUsers[
 											(availableUsers.findIndex((x) => x === user) + 1) % availableUsers.length
@@ -227,7 +226,7 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 										? ' disabled'
 										: '')
 								}
-								onClick={pythonCall}
+								onMouseDown={pythonCall}
 							>
 								{clicked ? (
 									<img
