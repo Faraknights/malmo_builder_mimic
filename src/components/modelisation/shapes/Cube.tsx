@@ -2,37 +2,38 @@ import React from 'react';
 import * as THREE from 'three';
 import { shapeComponentProps } from './Shape';
 import { Edges } from '@react-three/drei';
-import { OPACITY_PENDING_OBJECT } from '../../../constants/environment';
-import { ShapeFaceUserData, MeshType } from '../../../constants/meshType';
-import { DIRECTION } from '../../../constants/direction';
+import { OPACITY_PENDING_OBJECT } from '../../../constants/ENVIRONMENT_CONSTANTS';
+import { ShapeFaceUserData } from '../../../interfaces/userDatas';
+import { MeshDirections, MeshTypes } from '../../../enum/Mesh';
 
+//
 interface CubeFaceDirectionProperties {
 	translation: THREE.Vector3;
 	rotation: THREE.Euler;
 }
 
-const CubeFaceDirection: Record<DIRECTION, CubeFaceDirectionProperties> = {
-	[DIRECTION.FRONT]: {
+const CubeFaceDirection: Record<MeshDirections, CubeFaceDirectionProperties> = {
+	[MeshDirections.FRONT]: {
 		translation: new THREE.Vector3(0, 0, 1 / 2),
 		rotation: new THREE.Euler(0, 0, 0),
 	},
-	[DIRECTION.BACK]: {
+	[MeshDirections.BACK]: {
 		translation: new THREE.Vector3(0, 0, -1 / 2),
 		rotation: new THREE.Euler(0, Math.PI, 0),
 	},
-	[DIRECTION.TOP]: {
+	[MeshDirections.TOP]: {
 		translation: new THREE.Vector3(0, 1 / 2, 0),
 		rotation: new THREE.Euler(-Math.PI / 2, 0, 0),
 	},
-	[DIRECTION.BOTTOM]: {
+	[MeshDirections.BOTTOM]: {
 		translation: new THREE.Vector3(0, -1 / 2, 0),
 		rotation: new THREE.Euler(Math.PI / 2, 0, 0),
 	},
-	[DIRECTION.LEFT]: {
+	[MeshDirections.LEFT]: {
 		translation: new THREE.Vector3(1 / 2, 0, 0),
 		rotation: new THREE.Euler(0, Math.PI / 2, 0),
 	},
-	[DIRECTION.RIGHT]: {
+	[MeshDirections.RIGHT]: {
 		translation: new THREE.Vector3(-1 / 2, 0, 0),
 		rotation: new THREE.Euler(0, -Math.PI / 2, 0),
 	},
@@ -41,7 +42,7 @@ const CubeFaceDirection: Record<DIRECTION, CubeFaceDirectionProperties> = {
 interface CubeFaceProps {
 	color: THREE.Color;
 	opacity: number;
-	facingDirection: DIRECTION;
+	facingDirection: MeshDirections;
 }
 
 const CubeFace = (props: CubeFaceProps) => {
@@ -52,7 +53,7 @@ const CubeFace = (props: CubeFaceProps) => {
 			rotation={properties.rotation}
 			userData={
 				{
-					type: MeshType.SHAPE_FACE,
+					type: MeshTypes.SHAPE_FACE,
 					faceDirection: props.facingDirection,
 				} as ShapeFaceUserData
 			}
@@ -73,7 +74,7 @@ const Cube = ({ pending, color }: shapeComponentProps) => {
 	const cubeColor = new THREE.Color(color.hex);
 	return (
 		<>
-			{Object.entries(DIRECTION).map(([key, properties]) => (
+			{Object.entries(MeshDirections).map(([key, properties]) => (
 				<CubeFace
 					key={key}
 					color={cubeColor}

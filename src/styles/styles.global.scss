@@ -1,39 +1,114 @@
 $header_height: 80px;
 
-*{
+* {
 	box-sizing: border-box;
 }
 
-html, body, #__next{	
+html,
+body,
+#__next {
 	height: 100%;
 	margin: 0;
 
-	canvas{
+	canvas {
 		user-select: none;
 	}
 
-	#root{
+	#homepage {
+		background: linear-gradient(to bottom, rgb(226, 151, 229), rgb(152, 107, 29));
+		color: #e0e0e0; // Light text color
+		font-family: Arial, sans-serif;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		padding: 20px;
+		min-height: 100vh;
+
+		h1 {
+			text-align: center;
+			font-size: 2rem; // Larger font size for prominence
+			margin-bottom: 20px;
+			color: white; // Bright color for the title
+			font-weight: bold; // Make the text bold
+			text-shadow: 2px 3px 8px rgba(224, 224, 224, 0.7); // Add a subtle shadow for depth
+			transition: color 0.3s ease; // Smooth transition for color change
+
+			span {
+				font-size: 4rem;
+			}
+		}
+
+		& > img {
+			max-width: 100%;
+			height: 200px;
+			margin: 20px 0;
+			background-color: white;
+			padding: 15px;
+			border-radius: 15px;
+		}
+
+		button {
+			background-image: linear-gradient(225deg, #ff3c56, #c5992b);
+			border: none;
+			border-radius: 15px;
+			padding: 20px 70px;
+			margin-top: 30px;
+			border: solid white 3px;
+			height: 75px;
+			width: 300px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			box-shadow: 0px 15px 0px #d5d5d5; // Add a subtle shadow for depth
+			transition:
+				box-shadow 0.3s ease,
+				transform 0.3s ease;
+
+			&:hover {
+				box-shadow: 0px 12px 0px #d5d5d5;
+				transform: translateY(3px);
+			}
+
+			&:active {
+				box-shadow: 0px 5px 0px #d5d5d5;
+				transform: translateY(10px);
+			}
+
+			span {
+				color: white;
+				font-size: 1.5rem;
+			}
+
+			img {
+				height: 60px;
+			}
+		}
+	}
+
+	#root {
 		height: 100%;
 		display: flex;
 		flex-direction: column;
 
-		header{
+		header {
 			height: $header_height;
-			grid-column	: span 2;
+			grid-column: span 2;
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 			justify-content: space-between;
 			background: linear-gradient(to bottom, rgb(33, 35, 37), rgb(48, 52, 56));
 
-			#modeSelector{
+			#modeSelector {
 				color: white;
 				display: flex;
 				align-items: center;
 				margin: 0 20px;
 				height: 70%;
 
-				& > *{
+				& > * {
 					margin: 0 20px;
 					cursor: pointer;
 					height: 100%;
@@ -41,37 +116,49 @@ html, body, #__next{
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					font-family: "Gill Sans", sans-serif;
+					font-family: 'Gill Sans', sans-serif;
 					font-size: 21px;
 					border-bottom: 2px solid rgba(255, 255, 255, 0);
 
-					&.selected{
+					&.selected {
 						border-bottom: 2px solid rgba(255, 255, 255, 1) !important;
 					}
 				}
 			}
- 
-			#environmentMode{
+
+			#environmentMode {
 				margin-right: 20px;
 				padding: 10px 20px;
-				background-color: rgba(255, 255, 255, 0.206);
-				border: solid 1px white;
-				color: white;
+				background-color: rgba(255, 255, 255, 0.657);
+				border: solid 2px white;
+				color: #1f2b36;
 				border-radius: 5px;
+				font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+				font-size: large;
+
 				cursor: pointer;
+				display: flex;
+				align-items: center;
+
+				img {
+					height: 30px;
+					margin-right: 10px;
+				}
 			}
 		}
-		
-		main{
+
+		main {
 			display: flex;
 			height: calc(100% - #{$header_height});
+			width: 100%;
+			flex-direction: row;
 
-			#mainView{
-				width: 100%;
+			#mainView {
 				position: relative;
-				background-color: #1a1b1e;	
+				width: 100%;
+				background-color: #1a1b1e;
 
-				.pointerIndicator{
+				.pointerIndicator {
 					display: flex;
 					position: absolute;
 					top: 5px;
@@ -84,13 +171,13 @@ html, body, #__next{
 					padding: 10px 5px;
 					padding-bottom: 5px;
 
-					span{
+					span {
 						margin: 5px;
 						margin-top: 0;
 					}
 				}
 
-				#cameraSelector{
+				#cameraSelector {
 					display: flex;
 					position: absolute;
 					top: 5px;
@@ -105,9 +192,9 @@ html, body, #__next{
 						margin-left: 5px;
 						cursor: pointer;
 
-						&.selected{
+						&.selected {
 							background-color: rgba(255, 255, 255, 0.405);
-							transition: .3s;
+							transition: 0.3s;
 							cursor: auto;
 						}
 
@@ -116,7 +203,7 @@ html, body, #__next{
 				}
 			}
 
-			#side{
+			#side {
 				height: 100%;
 				width: 400px;
 				background-color: rgb(48, 52, 56);
@@ -124,7 +211,7 @@ html, body, #__next{
 				flex-direction: column;
 				align-items: center;
 
-				.module{
+				.module {
 					width: 95%;
 					border-style: solid;
 					border-width: 1px;
@@ -137,7 +224,7 @@ html, body, #__next{
 					align-items: center;
 					flex-direction: column;
 
-					&:not(:first-child){
+					&:not(:first-child) {
 						margin-top: 0;
 					}
 
@@ -145,25 +232,26 @@ html, body, #__next{
 						font-weight: 400;
 						font-size: x-large;
 						margin: 5px 0;
+						font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 					}
 				}
 
-				#fileManager{
+				#fileManager {
 					height: 50%;
 					background-color: rgba(0, 200, 255, 0.153);
 					border-color: rgb(0, 225, 255);
 
 					scrollbar-color: rgba(0, 225, 255, 0.7) rgba(255, 255, 255, 0);
 
-					& *{
+					& * {
 						user-select: none;
 					}
 
-					#gameFileInput{
+					#gameFileInput {
 						display: none;
 					}
 
-					.inputFinder{
+					.inputFinder {
 						outline: none;
 						margin-top: 10px;
 						width: 90%;
@@ -172,13 +260,13 @@ html, body, #__next{
 						padding: 5px 5px;
 						background-color: #20eaff30;
 						color: white;
-						
-						&::placeholder{
+
+						&::placeholder {
 							color: rgb(164, 193, 210);
 						}
 					}
 
-					label{
+					label {
 						display: flex;
 						width: 80%;
 						padding: 10px;
@@ -192,22 +280,22 @@ html, body, #__next{
 						justify-content: center;
 					}
 
-					hr{
+					hr {
 						width: calc(100% - 20px);
 						margin: 10px;
 						border-top: 1px solid rgba(0, 200, 255, 0.7);
 						border-bottom: 0;
 					}
-					
-					#games{
+
+					#games {
 						width: 100%;
 						display: flex;
 						flex-direction: column;
 						align-items: center;
 						overflow-y: auto;
 						height: 100%;
-						
-						.game{
+
+						.game {
 							display: flex;
 							justify-content: flex-start;
 							align-items: center;
@@ -219,20 +307,20 @@ html, body, #__next{
 							color: #c7f5fd;
 							cursor: pointer;
 
-							&.searched{
+							&.searched {
 								background-color: #00ff3c51;
 							}
 
-							&.selected{
+							&.selected {
 								cursor: auto;
 								background-color: #00e1ff85;
 							}
 
-							& > *{
+							& > * {
 								pointer-events: none;
 							}
 
-							.new{
+							.new {
 								height: 14px;
 								width: 14px;
 								border-radius: 50%;
@@ -240,7 +328,7 @@ html, body, #__next{
 								margin-right: 8px;
 							}
 
-							.old{
+							.old {
 								height: 4px;
 								width: 14px;
 								background-color: #00e1ffb7;
@@ -249,24 +337,24 @@ html, body, #__next{
 						}
 					}
 
-					#gameManager{
+					#gameManager {
 						width: 100%;
 						display: flex;
 						flex-direction: column;
 						align-items: center;
 
-						&.disabled{
+						&.disabled {
 							pointer-events: none;
 							opacity: 30%;
 						}
 
-						input[type="range"]{
+						input[type='range'] {
 							width: 90%;
 							-webkit-appearance: none;
 							appearance: none;
 							background-color: rgba(255, 255, 255, 0);
 
-							&::-webkit-slider-runnable-track{
+							&::-webkit-slider-runnable-track {
 								-webkit-appearance: none;
 								appearance: none;
 								background: #00e1ff5f;
@@ -274,7 +362,7 @@ html, body, #__next{
 								border-radius: 5px;
 								cursor: pointer;
 							}
-							
+
 							&::-moz-range-track {
 								-webkit-appearance: none;
 								appearance: none;
@@ -284,7 +372,7 @@ html, body, #__next{
 								cursor: pointer;
 							}
 
-							&::-webkit-slider-thumb{
+							&::-webkit-slider-thumb {
 								-webkit-appearance: none;
 								appearance: none;
 								margin-top: -4.5px;
@@ -295,7 +383,7 @@ html, body, #__next{
 								cursor: pointer;
 							}
 
-							&::-moz-range-thumb{
+							&::-moz-range-thumb {
 								-webkit-appearance: none;
 								appearance: none;
 								margin-top: -4.5px;
@@ -308,27 +396,27 @@ html, body, #__next{
 						}
 					}
 
-					.buttonWrapper{
+					.buttonWrapper {
 						display: flex;
 						width: 100%;
 						justify-content: space-evenly;
 						margin: 10px 0;
 
-						> *{
+						> * {
 							position: relative;
 							width: 35px;
 							height: 35px;
 							cursor: pointer;
 							background-color: #00e1ff2f;
 							border-radius: 8px;
-							
-							&.disabled{
+
+							&.disabled {
 								pointer-events: none;
 								opacity: 30%;
 							}
 
-							&::after{
-								content: "";
+							&::after {
+								content: '';
 								position: absolute;
 								left: 50%;
 								top: 50%;
@@ -339,26 +427,26 @@ html, body, #__next{
 								background: #00e1ff;
 							}
 
-							&.previousGame::after{
+							&.previousGame::after {
 								clip-path: polygon(100% 0, 100% 100%, 50% 50%, 50% 100%, 0 50%, 50% 0, 50% 50%);
 							}
 
-							&.previousStep::after{
+							&.previousStep::after {
 								clip-path: polygon(75% 0, 75% 100%, 25% 50%);
 							}
 
-							&.nextStep::after{
+							&.nextStep::after {
 								clip-path: polygon(25% 0, 25% 100%, 75% 50%);
 							}
 
-							&.nextGame::after{
+							&.nextGame::after {
 								clip-path: polygon(0% 0, 0% 100%, 50% 50%, 50% 100%, 100% 50%, 50% 0, 50% 50%);
 							}
 						}
 					}
 				}
 
-				#chat{
+				#chat {
 					height: 100%;
 					background-color: rgba(255, 179, 0, 0.153);
 					border-color: rgb(255, 208, 0);
@@ -368,69 +456,71 @@ html, body, #__next{
 
 					color: rgb(255, 248, 229);
 
-					
-					.system{
-						color: rgb(255, 248, 229);
-						text-align: center;
-						font-size: 20px;
-						margin: 10px 0;
-					}
-
-					hr{
+					hr {
 						width: calc(100% - 20px);
 						border-top: 1px solid rgba(255, 208, 0, 0.7);
 						border-bottom: 0;
 					}
 
-					& > div{
+					& > div {
 						display: flex;
 						flex-direction: column;
 						align-items: center;
 						width: 100%;
 						margin-bottom: 15px;
 
-						&.historyMessages{
+						&.historyMessages {
 							height: 100%;
 							overflow-y: auto;
 						}
 
-						&.buttons{
+						&.buttons {
 							display: flex;
 							flex-direction: column;
+							transform: translate(-5px);
 
-							.mainButtons{
+							.mainButtons {
 								display: flex;
 								flex-direction: row;
 								align-items: center;
 								width: 100%;
 								padding: 0 10px;
-	
-								button{
+
+								button {
 									height: 25px;
 									border: 0;
 									margin-top: 3px;
-									margin-right: 10px;
+									margin-right: 15px;
 									border-radius: 5px;
 									display: flex;
 									align-items: center;
 									justify-content: center;
 									font-size: x-small;
 									cursor: pointer;
+
+									&.alone {
+										transform: translateX(5px);
+									}
 								}
-	
-								& > input[type="text"]{
+
+								& > input[type='text'] {
 									background-color: rgba(255, 244, 42, 0.361);
 									margin-top: 4px;
 									width: 100%;
-									border: 00;
+									border: 0;
+									box-shadow: 2px 4px 8px rgba(255, 255, 255, 0.228);
 									border-radius: 5px;
 									height: 25px;
-									padding: 010px;
+									padding: 15px 10px;
 									color: white;
 									font-weight: 100;
 									outline: none;
-	
-									&.disable{
+
+									&::placeholder {
+										color: rgb(229, 229, 229);
+									}
+
+									&.disable {
 										background-color: rgba(116, 114, 71, 0.595);
 										pointer-events: none;
 									}
@@ -442,124 +532,159 @@ html, body, #__next{
 								flex-direction: row;
 								height: 35px;
 								align-items: center;
-								width: 95%;
+								width: 90%;
 								margin-top: 10px;
 								border: none;
 								border-radius: 8px;
 								justify-content: center;
 								cursor: pointer;
 
-								&.disabled{
+								img {
+									height: 150%;
+								}
+
+								&.disabled {
 									opacity: 0.3;
 									pointer-events: none;
 								}
 
-								*{
+								* {
 									pointer-events: none;
 								}
 
-								span{
+								span {
 									font-size: 18px;
-									background: -webkit-linear-gradient(30deg, rgb(0, 89, 167) 0%, rgb(255, 35, 35) 57%, rgb(21, 210, 0) 100%);
+									background: -webkit-linear-gradient(
+										30deg,
+										rgb(0, 89, 167) 0%,
+										rgb(255, 35, 35) 57%,
+										rgb(21, 210, 0) 100%
+									);
 									-webkit-background-clip: text;
+									background-clip: text;
 									-webkit-text-fill-color: transparent;
 									font-weight: 700;
 								}
 
 								svg {
-									height: 17px; 
+									height: 17px;
 									width: 17px;
 									margin-left: 5px;
 
-									path{
+									path {
 										fill: rgb(250, 150, 36);
 									}
 								}
 							}
 						}
 
-						& > div{
+						& > div {
 							width: 95%;
-						
-							.message{
+
+							.message {
 								margin: 1px 0;
 								padding: 4px;
 								width: 95%;
 								background-color: rgba(255, 225, 0, 0.201);
 								border-radius: 7px;
+
+								&.system {
+									border-radius: 0;
+									padding-left: 15px;
+									background-color: rgba(65, 181, 253, 0.483);
+									clip-path: polygon(
+										15px 0%,
+										0% 50%,
+										15px 100%,
+										calc(100% - 15px) 100%,
+										100% 50%,
+										calc(100% - 15px) 0%
+									);
+								}
 							}
 
-							.userName{
-								display: block;
-								width: 95%;
-								color: rgb(254, 254, 240);
-								font-size: large;
-								margin-top: 5px;
-	
-								&:not(:first-child){
+							& > div {
+								display: flex;
+								align-items: flex-end;
+								margin-top: 10px;
+
+								.userIcon {
+									height: 30px;
+									margin-right: 5px;
+								}
+
+								.userName {
+									display: block;
+									width: 95%;
+									color: rgb(254, 254, 240);
+									font-size: large;
 									margin-top: 5px;
+									font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+									&:not(:first-child) {
+										margin-top: 5px;
+									}
 								}
 							}
 						}
 					}
 				}
 
-				#colorPicker{
+				#colorPicker {
 					background-color: rgba(0, 200, 255, 0.153);
 					border-color: rgb(0, 225, 255);
 
 					scrollbar-color: rgba(0, 225, 255, 0.7) rgba(255, 255, 255, 0);
 					color: #c7f5fd;
-					
-					& *{
+
+					& * {
 						user-select: none;
 					}
 
-					#colorList{
+					#colorList {
 						display: flex;
 						flex-direction: column;
 						align-items: center;
 						width: 100%;
 						margin: 10px 0;
 
-						& > div{
+						& > div {
 							display: flex;
 							justify-content: space-evenly;
 							align-items: center;
 							width: 100%;
 							margin: 0 10px;
-							
-							.color{
+							transform: translate(-5px);
+							.color {
 								display: flex;
-								align-items: center;
+								align-items: flex-end;
 								margin: 5px;
-								padding: 8px;
+								margin-bottom: 10px;
 								background-color: #20eaff30;
 								border-radius: 5px;
+								aspect-ratio: 1 / 1;
+								border: solid 1px white;
+								width: 50px;
 
-								& > div{
-									width: 30px;
-									height: 30px;
-									border-radius: 5px;
-									margin-right: 10px;
+								&.selected {
+									background-image: url('/assets/icons/generals/check_white.png');
+									background-size: 20px;
+									background-position: center 5px;
+									background-repeat: no-repeat;
+									box-shadow: 0 0 10px white;
 								}
 
-								& > span{
+								& > span {
 									display: flex;
 									align-items: center;
 									justify-content: center;
-									font-size: small;
+									font-size: x-small;
+									color: white;
+									font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+									margin: 2px;
 								}
 
-								&.selected{
-									background-color: #20eaff99;;
-									
-									& > span{
-										color: white;
-									}
-								}
-
-								&:not(.selected){
+								&:not(.selected) {
 									cursor: pointer;
 								}
 							}
@@ -567,78 +692,80 @@ html, body, #__next{
 					}
 				}
 
-				#actionSelector{
+				#actionSelector {
 					background-color: rgba(255, 0, 0, 0.153);
 					border-color: rgba(255, 91, 91, 0.905);
-					
+
 					color: #fdc7c7;
 
 					flex-direction: row;
 					align-items: center;
-					
-					& *{
+
+					& * {
 						user-select: none;
 					}
 
-					h3{
+					h3 {
 						font-size: large;
 						margin-left: 10px;
 					}
 
-					.buttonsWrapper{
+					.buttonsWrapper {
 						width: 100%;
 						display: flex;
-						margin-left: 10px;
 						align-items: center;
 						justify-content: space-evenly;
+						transform: translate(-4px);
 
-						button{
-							width: 100%;
+						button {
+							width: 40%;
 							color: #fdc7c7;
 							display: flex;
 							align-items: center;
 							justify-content: center;
-							margin: 5px;
 							padding: 8px;
-							background-color: #ff666658;
+							margin: 8px 0;
+							box-sizing: border-box;
+							background-color: #ff666677;
 							border-radius: 5px;
 							border: none;
 							cursor: pointer;
 
-							&.selected{
+							&.selected {
 								background-color: #ff6666c4;
 								color: white;
 								cursor: auto;
+								box-shadow: 0px 0px 5px white;
 							}
 						}
 					}
 				}
-				
-				#shapePicker{
+
+				#shapePicker {
 					background-color: rgba(255, 242, 0, 0.153);
 					border-color: rgb(255, 247, 0);
 
 					scrollbar-color: rgba(246, 255, 0, 0.7) rgba(255, 255, 255, 0);
 					color: #fdf6c7;
-					
-					& *{
+
+					& * {
 						user-select: none;
 					}
 
-					#colorList{
+					#colorList {
 						display: flex;
 						flex-direction: column;
 						align-items: center;
 						width: 100%;
 						margin: 10px 0;
 
-						& > div{
+						& > div {
 							display: flex;
 							justify-content: space-evenly;
 							align-items: center;
 							margin: 0 10px;
-							
-							.color{
+
+							.color {
 								display: flex;
 								align-items: center;
 								margin: 5px;
@@ -646,7 +773,7 @@ html, body, #__next{
 								background-color: #ffe12030;
 								border-radius: 5px;
 
-								& > div{
+								& > div {
 									width: 40px !important;
 									height: 40px !important;
 									border-radius: 5px;
@@ -654,7 +781,7 @@ html, body, #__next{
 									border: 1px solid #fff3a5;
 								}
 
-								& > span{
+								& > span {
 									display: flex;
 									align-items: center;
 									justify-content: center;
@@ -662,15 +789,15 @@ html, body, #__next{
 									width: 80px;
 								}
 
-								&.selected{
-									background-color: #ffe520af;;
-									
-									& > span{
+								&.selected {
+									background-color: #ffe520af;
+
+									& > span {
 										color: white;
 									}
 								}
 
-								&:not(.selected){
+								&:not(.selected) {
 									cursor: pointer;
 								}
 							}
@@ -678,32 +805,67 @@ html, body, #__next{
 					}
 				}
 
-				#gameButtons{
+				#gameButtons {
 					display: flex;
 					align-items: center;
 					width: 100%;
 					justify-content: space-evenly;
 					margin-bottom: 10px;
 
-					button{
-						padding: 7px 0;
-						width: 40%;
-						border: 0;
+					button {
+						height: 45px;
+						aspect-ratio: 1 / 1;
 						border-radius: 5px;
 						cursor: pointer;
-						font-size: medium;
-						background-color: rgba(255, 255, 255, 0.105);
-						color: white;
-						border: 1px solid white;
+						background-color: rgb(255, 255, 255);
+						border: none;
+						display: flex;
+						align-items: center;
+						justify-content: center;
 
-						&:hover{
-							transition: .5s;
-							background-color: white;
-							color: black;
+						svg {
+							height: 20px;
+							width: 20px;
+							path {
+								stroke: rgb(27, 27, 27);
+								fill: rgb(27, 27, 27);
+								stroke-width: 1px;
+							}
+						}
+
+						&.warning {
+							background-color: rgba(237, 81, 67, 0.961);
+
+							path {
+								stroke: white;
+								stroke-width: 2px;
+								fill: none;
+							}
 						}
 					}
 				}
 			}
+		}
+	}
+
+	.realisticButton {
+		box-shadow: 8px 0 0 rgb(154, 154, 154);
+
+		transition:
+			box-shadow 0.2s,
+			transform 0.2s;
+
+		transform-origin: center; /* Adjust the transform origin */
+		will-change: box-shadow, transform; /* Hint for smoother animation */
+		&:hover {
+			box-shadow: 6px 0 0 rgb(154, 154, 154);
+			transform: translate(2px);
+		}
+
+		&:active,
+		&.selected {
+			box-shadow: 0px 0 0 rgb(154, 154, 154);
+			transform: translate(8px);
 		}
 	}
 }

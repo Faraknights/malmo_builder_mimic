@@ -1,18 +1,16 @@
 import React, { useEffect } from 'react';
-import { GameMode } from '../../classes/gameMode';
-import { EnvironmentMode } from '../../classes/EnvironmentMode';
-import { gameModesAvailable } from '../../constants/environment';
+import { EnvironmentMode } from '../../enum/EnvironmentMode';
+import { gameModesAvailable } from '../../constants/ENVIRONMENT_CONSTANTS';
 import { useRouter } from 'next/router';
+import { useGlobalState } from './GlobalStateProvider';
+import { GameMode } from '../../enum/GameMode';
+import { ENVIRONMENT_MODE_ICON_URL } from '../../constants/ICONS';
 
-interface HeaderProps {
-	currentGameMode: GameMode;
-	setGameMode: React.Dispatch<React.SetStateAction<GameMode>>;
-	environmentMode: EnvironmentMode;
-	setEnvironmentMode: React.Dispatch<React.SetStateAction<EnvironmentMode>>;
-}
-
-const Header: React.FC<HeaderProps> = (props) => {
-	const { currentGameMode, setGameMode, environmentMode, setEnvironmentMode } = props;
+const Header: React.FC = () => {
+	const {
+		environmentMode: { environmentMode, setEnvironmentMode },
+		gameMode: { gameMode: currentGameMode, setGameMode },
+	} = useGlobalState();
 	const router = useRouter();
 
 	useEffect(() => {
@@ -50,7 +48,8 @@ const Header: React.FC<HeaderProps> = (props) => {
 				})}
 			</nav>
 			<button onClick={handleEnvironmentModeChange} id="environmentMode">
-				{environmentMode}
+				<img src={`${router.basePath}${ENVIRONMENT_MODE_ICON_URL[environmentMode]}`} alt="enviromentModeIcon" />
+				<span>{environmentMode}</span>
 			</button>
 		</header>
 	);

@@ -1,47 +1,43 @@
 {
-  "env": {
-    "browser": true,
-    "node": true,
-    "es2021": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:prettier/recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
-  },
-  "globals": {
-    "importScripts": "readonly",
-    "setImmediate": "readonly",
-    "__dirname": "readonly",
-    "module": "readonly"
-  },
-  "plugins": [
-    "react",
-    "prettier",
-    "@typescript-eslint"
-  ],
-  "rules": {
-    "prettier/prettier": "error",
-    "react/no-unknown-property": "off",
-    "react/prop-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "no-inner-declarations": "off"
-  },
-  "parser": "@typescript-eslint/parser",
-  "overrides": [
-    {
-      "files": ["src/**/*.ts", "src/**/*.tsx"],
-      "rules": {
-        // Add any TypeScript-specific rules here if needed
-      }
-    }
-  ]
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2021": true
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:prettier/recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 12,
+		"sourceType": "module"
+	},
+	"globals": {
+		"importScripts": "readonly",
+		"setImmediate": "readonly",
+		"__dirname": "readonly",
+		"module": "readonly"
+	},
+	"plugins": ["react", "prettier", "@typescript-eslint"],
+	"rules": {
+		"prettier/prettier": ["error"],
+		"react/no-unknown-property": "off",
+		"react/prop-types": "off",
+		"@typescript-eslint/no-explicit-any": "off",
+		"no-inner-declarations": "off"
+	},
+	"parser": "@typescript-eslint/parser",
+	"overrides": [
+		{
+			"files": ["src/**/*.ts", "src/**/*.tsx"],
+			"rules": {
+				// Add any TypeScript-specific rules here if needed
+			}
+		}
+	]
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import reportWebVitals from '../../src/reportWebVitals';
-import { GameMode } from '../../src/classes/gameMode';
-import { EnvironmentMode } from '../../src/classes/EnvironmentMode';
-import { gameModesAvailable } from '../../src/constants/environment';
+import { EnvironmentMode } from '../../src/enum/EnvironmentMode';
+import { gameModesAvailable } from '../../src/constants/ENVIRONMENT_CONSTANTS';
 import App from '../../src/App';
+import { GameMode } from '../../src/enum/GameMode';
 
 interface PageProps {
 	initialGameMode: GameMode;
@@ -51,7 +51,6 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: { params: { gameMode: string; environmentMode: string } }) {
 	const { gameMode, environmentMode } = params;
 
-	// Convert the string parameters back to the appropriate enum values
 	const initialGameMode = gameMode.toUpperCase() as GameMode;
 	const initialEnvironmentMode = environmentMode.toUpperCase() as EnvironmentMode;
 

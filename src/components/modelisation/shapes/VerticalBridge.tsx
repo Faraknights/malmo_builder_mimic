@@ -1,9 +1,10 @@
 import React from 'react';
-import { shapeList } from '../../../constants/shapeList';
+import { ShapeList } from '../../../enum/ShapeList';
 import Group, { ShapeGroup } from './group';
 import { shapeComponentProps, shapeProps } from './Shape';
 import { v4 as uuidv4 } from 'uuid';
 
+//
 export const VerticalBridge = ({ color, pending, position, breakable }: shapeComponentProps) => {
 	const group = new ShapeGroup(
 		position,
@@ -16,7 +17,7 @@ export const VerticalBridge = ({ color, pending, position, breakable }: shapeCom
 					y: 0,
 					z: 0,
 				},
-				shape: shapeList.VERTICAL_BRIDGE_COMPONENT,
+				shape: ShapeList.VERTICAL_BRIDGE_COMPONENT,
 				uuid: uuidv4(),
 			} as shapeProps,
 			{
@@ -27,7 +28,7 @@ export const VerticalBridge = ({ color, pending, position, breakable }: shapeCom
 					y: 0,
 					z: 1,
 				},
-				shape: shapeList.VERTICAL_BRIDGE_COMPONENT,
+				shape: ShapeList.VERTICAL_BRIDGE_COMPONENT,
 				uuid: uuidv4(),
 			} as shapeProps,
 		],

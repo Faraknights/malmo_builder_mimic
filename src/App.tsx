@@ -1,10 +1,11 @@
 import React from 'react';
-import { GameMode } from './classes/gameMode';
 import Header from './components/structurals/Header';
-import { EnvironmentMode } from './classes/EnvironmentMode';
-import { gameModeComponent } from './constants/environment';
-import { useState } from 'react';
+import { EnvironmentMode } from './enum/EnvironmentMode';
+import { GlobalStateProvider } from './components/structurals/GlobalStateProvider';
+import GameCompSelector from './components/structurals/GameCompSelector';
+import { GameMode } from './enum/GameMode';
 
+//
 const App = ({
 	initialEnvironmentMode,
 	initialGameMode,
@@ -12,21 +13,11 @@ const App = ({
 	initialEnvironmentMode: EnvironmentMode;
 	initialGameMode: GameMode;
 }) => {
-	const [environmentMode, setEnvironmentMode] = useState<EnvironmentMode>(initialEnvironmentMode);
-	const [gameMode, setGameMode] = useState<GameMode>(initialGameMode);
-
-	const GameModeComp = gameModeComponent[gameMode];
-
 	return (
-		<>
-			<Header
-				currentGameMode={gameMode}
-				setGameMode={setGameMode}
-				environmentMode={environmentMode}
-				setEnvironmentMode={setEnvironmentMode}
-			/>
-			<GameModeComp environmentMode={environmentMode} />
-		</>
+		<GlobalStateProvider initialEnvironmentMode={initialEnvironmentMode} initialGameMode={initialGameMode}>
+			<Header />
+			<GameCompSelector />
+		</GlobalStateProvider>
 	);
 };
 

@@ -1,80 +1,99 @@
 {
-  "name": "malmo_builder_mimic",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://faraknights.github.io/malmo_builder_mimic/",
-  "dependencies": {
-    "@microsoft/fetch-event-source": "^2.0.1",
-    "@npmcli/fs": "^3.1.1",
-    "@react-three/drei": "^9.105.5",
-    "@react-three/fiber": "^8.16.2",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@tweenjs/tween.js": "^23.1.2",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.96",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.0",
-    "axios": "^1.7.2",
-    "eslint-config-next": "^14.2.5",
-    "gh-pages": "^6.1.1",
-    "glob": "^11.0.0",
-    "next": "^14.2.5",
-    "pyscript": "^1.0.6",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "sass-loader": "^14.2.1",
-    "three": "^0.164.1",
-    "tween.js": "^16.6.0",
-    "typescript": "^4.9.5",
-    "uuid": "^9.0.1",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "next start",
-    "build": "next build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dev": "next dev",
-    "format": "prettier --write ."
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "@types/three": "^0.164.0",
-    "@types/uuid": "^9.0.8",
-    "@typescript-eslint/eslint-plugin": "^7.17.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.2.1",
-    "globals": "^15.8.0",
-    "prettier": "^3.3.3",
-    "react-scripts": "^5.0.1",
-    "sass": "^1.77.8",
-    "sass-loader": "^14.2.1",
-    "typescript-eslint": "^7.17.0"
-  },
-  "overrides": {
-    "nth-check": "2.1.1"
-  }
+	"name": "malmo_builder_mimic",
+	"version": "0.1.0",
+	"private": true,
+	"homepage": "https://faraknights.github.io/malmo_builder_mimic/",
+	"type": "module",
+	"dependencies": {
+		"@microsoft/fetch-event-source": "^2.0.1",
+		"@npmcli/fs": "^3.1.1",
+		"@react-three/drei": "^9.105.5",
+		"@react-three/fiber": "^8.16.2",
+		"@svgr/webpack": "^8.1.0",
+		"@testing-library/jest-dom": "^5.17.0",
+		"@testing-library/react": "^13.4.0",
+		"@testing-library/user-event": "^13.5.0",
+		"@tweenjs/tween.js": "^23.1.2",
+		"@types/jest": "^27.5.2",
+		"@types/node": "^16.18.96",
+		"@types/react": "^18.3.1",
+		"@types/react-dom": "^18.3.0",
+		"axios": "^1.7.2",
+		"child_process": "^1.0.2",
+		"eslint-config-next": "^14.2.5",
+		"gh-pages": "^6.1.1",
+		"glob": "^11.0.0",
+		"next": "^14.2.5",
+		"pyscript": "^1.0.6",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"resolve-url-loader": "^5.0.0",
+		"sass-loader": "^14.2.1",
+		"three": "^0.164.1",
+		"tween.js": "^16.6.0",
+		"typescript": "^4.9.5",
+		"uuid": "^9.0.1",
+		"web-vitals": "^2.1.4"
+	},
+	"scripts": {
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
+		"start": "next start",
+		"build": "next build",
+		"next": "next",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"dev": "next dev",
+		"format": "prettier --write .",
+		"electron": "electron ."
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"react-scripts": "^5.0.1",
+		"@types/three": "^0.164.0",
+		"@types/uuid": "^9.0.8",
+		"@typescript-eslint/eslint-plugin": "^7.17.0",
+		"electron": "^32.0.2",
+		"electron-builder": "^25.0.5",
+		"electron-is-dev": "^2.0.0",
+		"eslint": "^8.57.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-import": "^2.29.1",
+		"eslint-plugin-prettier": "^5.2.1",
+		"globals": "^15.8.0",
+		"prettier": "^3.3.3",
+		"sass": "^1.78.0",
+		"sass-loader": "^14.2.1",
+		"typescript-eslint": "^7.17.0"
+	},
+	"overrides": {
+		"nth-check": "2.1.1"
+	},
+	"electron": "electron .",
+	"dist": "electron-builder",
+	"main": "electron.mjs",
+	"build": {
+		"appId": "com.example.myapp",
+		"productName": "My Electron App",
+		"directories": {
+			"output": "dist"
+		}
+	}
 }

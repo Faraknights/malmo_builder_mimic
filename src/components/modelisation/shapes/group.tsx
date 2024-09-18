@@ -1,9 +1,11 @@
 import React from 'react';
-import { GroupUserData, MeshType } from '../../../constants/meshType';
-import { CartesianCoordinate, coordinateAddition } from '../../../interfaces/cartesianCoordinate';
+import { GroupUserData } from '../../../interfaces/userDatas';
+import { CartesianCoordinate, coordinateAddition } from '../../../interfaces/CartesianCoordinate';
 import { shapeHitbox, shapeProps, Shapes } from './Shape';
 import { v4 as uuidv4 } from 'uuid';
+import { MeshTypes } from '../../../enum/Mesh';
 
+//
 export class ShapeGroup {
 	public uuid: string;
 	public pending: boolean;
@@ -95,7 +97,7 @@ export const Group = ({ shapeGroup }: { shapeGroup: ShapeGroup }) => {
 		<mesh
 			userData={
 				{
-					type: MeshType.GROUP,
+					type: MeshTypes.GROUP,
 					position: shapeGroup.startingPoint,
 					pending: shapeGroup.pending,
 				} as GroupUserData

@@ -1,11 +1,12 @@
 import React from 'react';
 import * as THREE from 'three';
 import { shapeComponentProps } from './Shape';
-import { MeshType, NonClickableFaceUserData, ShapeFaceUserData } from '../../../constants/meshType';
-import { DIRECTION } from '../../../constants/direction';
-import { OPACITY_PENDING_OBJECT } from '../../../constants/environment';
+import { NonClickableFaceUserData, ShapeFaceUserData } from '../../../interfaces/userDatas';
+import { OPACITY_PENDING_OBJECT } from '../../../constants/ENVIRONMENT_CONSTANTS';
 import { Edges } from '@react-three/drei';
+import { MeshDirections, MeshTypes } from '../../../enum/Mesh';
 
+//
 function Washer({ pending, color }: shapeComponentProps) {
 	const path = new THREE.LineCurve3(
 		new THREE.Vector3(0, -0.5, 0), // Start point
@@ -27,7 +28,7 @@ function Washer({ pending, color }: shapeComponentProps) {
 		<mesh
 			userData={
 				{
-					type: MeshType.NON_CLICKABLE_FACE,
+					type: MeshTypes.NON_CLICKABLE_FACE,
 				} as NonClickableFaceUserData
 			}
 			scale={[0.95, 1, 0.95]}
@@ -37,8 +38,8 @@ function Washer({ pending, color }: shapeComponentProps) {
 				rotation={[-Math.PI / 2, 0, 0]}
 				userData={
 					{
-						type: MeshType.SHAPE_FACE,
-						faceDirection: DIRECTION.TOP,
+						type: MeshTypes.SHAPE_FACE,
+						faceDirection: MeshDirections.TOP,
 					} as ShapeFaceUserData
 				}
 			>
@@ -51,8 +52,8 @@ function Washer({ pending, color }: shapeComponentProps) {
 				rotation={[Math.PI / 2, 0, 0]}
 				userData={
 					{
-						type: MeshType.SHAPE_FACE,
-						faceDirection: DIRECTION.BOTTOM,
+						type: MeshTypes.SHAPE_FACE,
+						faceDirection: MeshDirections.BOTTOM,
 					} as ShapeFaceUserData
 				}
 			>
@@ -63,7 +64,7 @@ function Washer({ pending, color }: shapeComponentProps) {
 			<mesh
 				userData={
 					{
-						type: MeshType.NON_CLICKABLE_FACE,
+						type: MeshTypes.NON_CLICKABLE_FACE,
 					} as NonClickableFaceUserData
 				}
 			>

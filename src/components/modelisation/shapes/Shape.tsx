@@ -1,18 +1,19 @@
 import React from 'react';
-import { CartesianCoordinate } from '../../../interfaces/cartesianCoordinate';
+import { CartesianCoordinate } from '../../../interfaces/CartesianCoordinate';
 import Color from '../../../interfaces/Color';
 import Cube from './Cube';
 import Nut from './Nut';
 import Screw from './Screw';
 import { HorizontalBridge } from './HorizontalBridge';
 import Washer from './Washer';
-import { MeshType, ShapeUserData } from '../../../constants/meshType';
+import { ShapeUserData } from '../../../interfaces/userDatas';
 import BridgeComponent from './BridgeComponent';
 import { VerticalBridge } from './VerticalBridge';
-import { shapeList } from '../../../constants/shapeList';
-import { COLORS, definedColors } from '../../../constants/colors';
-//import Diamond from "./Diamond";
+import { COLORS } from '../../../constants/COLORS';
+import { MeshTypes } from '../../../enum/Mesh';
+import { ShapeList } from '../../../enum/ShapeList';
 
+//
 export interface shapeComponentProps {
 	pending: boolean;
 	breakable: boolean;
@@ -22,41 +23,41 @@ export interface shapeComponentProps {
 }
 
 const shapeComponents: {
-	[key in shapeList]: React.ComponentType<shapeComponentProps>;
+	[key in ShapeList]: React.ComponentType<shapeComponentProps>;
 } = {
-	[shapeList.CUBE]: Cube,
-	[shapeList.SCREW]: Screw,
-	[shapeList.NUT]: Nut,
-	[shapeList.HORIZONTAL_BRIDGE]: HorizontalBridge,
-	[shapeList.VERTICAL_BRIDGE]: VerticalBridge,
-	[shapeList.WASHER]: Washer,
-	[shapeList.HORIZONTAL_BRIDGE_COMPONENT]: (props: shapeComponentProps) => (
+	[ShapeList.CUBE]: Cube,
+	[ShapeList.SCREW]: Screw,
+	[ShapeList.NUT]: Nut,
+	[ShapeList.HORIZONTAL_BRIDGE]: HorizontalBridge,
+	[ShapeList.VERTICAL_BRIDGE]: VerticalBridge,
+	[ShapeList.WASHER]: Washer,
+	[ShapeList.HORIZONTAL_BRIDGE_COMPONENT]: (props: shapeComponentProps) => (
 		<BridgeComponent {...props} rotation={'HORIZONTAL'} />
 	),
-	[shapeList.VERTICAL_BRIDGE_COMPONENT]: (props: shapeComponentProps) => (
+	[ShapeList.VERTICAL_BRIDGE_COMPONENT]: (props: shapeComponentProps) => (
 		<BridgeComponent {...props} rotation={'VERTICAL'} />
 	),
 };
 
-export const shapeHitbox: { [key in shapeList]: CartesianCoordinate[] } = {
-	[shapeList.CUBE]: [{ x: 0, y: 0, z: 0 }],
-	[shapeList.SCREW]: [{ x: 0, y: 0, z: 0 }],
-	[shapeList.NUT]: [{ x: 0, y: 0, z: 0 }],
-	[shapeList.HORIZONTAL_BRIDGE]: [
+export const shapeHitbox: { [key in ShapeList]: CartesianCoordinate[] } = {
+	[ShapeList.CUBE]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.SCREW]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.NUT]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.HORIZONTAL_BRIDGE]: [
 		{ x: 0, y: 0, z: 0 },
 		{ x: 1, y: 0, z: 0 },
 	],
-	[shapeList.VERTICAL_BRIDGE]: [
+	[ShapeList.VERTICAL_BRIDGE]: [
 		{ x: 0, y: 0, z: 0 },
 		{ x: 0, y: 0, z: 1 },
 	],
-	[shapeList.WASHER]: [{ x: 0, y: 0, z: 0 }],
-	[shapeList.HORIZONTAL_BRIDGE_COMPONENT]: [{ x: 0, y: 0, z: 0 }],
-	[shapeList.VERTICAL_BRIDGE_COMPONENT]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.WASHER]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.HORIZONTAL_BRIDGE_COMPONENT]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.VERTICAL_BRIDGE_COMPONENT]: [{ x: 0, y: 0, z: 0 }],
 };
 
 export interface shapeProps extends shapeComponentProps {
-	shape: shapeList;
+	shape: ShapeList;
 }
 
 const interpolateColor = (initial: string, final: string, percent: number): string => {
@@ -85,7 +86,7 @@ export const Shapes = (props: shapeProps) => {
 		<mesh
 			userData={
 				{
-					type: MeshType.SHAPE,
+					type: MeshTypes.SHAPE,
 					position: props.position,
 					pending: props.pending,
 					shape: props.shape,
@@ -99,7 +100,7 @@ export const Shapes = (props: shapeProps) => {
 					color={
 						{
 							hex: interpolateColor(props.color.hex, COLORS.WHITE.hex, 40),
-							id: definedColors.WHITE,
+							id: COLORS.WHITE.id,
 						} as Color
 					}
 				/>

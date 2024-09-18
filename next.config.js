@@ -1,7 +1,17 @@
-const path = require('path');
+import path from 'path';
 
-module.exports = {
+export default {
 	sassOptions: {
-		includePaths: [path.join(__dirname, 'src/styles')],
+		includePaths: [path.join(process.cwd(), 'src/styles')],
+	},
+	basePath: '/malmo_builder_mimic',
+	assetPrefix: '/malmo_builder_mimic/',
+	webpack(config) {
+		config.module.rules.push({
+			test: /\.svg$/,
+			use: ['@svgr/webpack'],
+		});
+
+		return config;
 	},
 };
