@@ -18,7 +18,7 @@ const Home: React.FC = () => {
 				<span>project COCOBOTS</span>
 			</h1>
 			<img src={`${router.basePath}/assets/images/logo_cocobots.png`} alt="Logo of Cocobots" />
-			<button onClick={navigateToSimulator}>
+			<button onMouseDown={navigateToSimulator}>
 				{clicked ? (
 					<img src={`${router.basePath}/assets/images/loading_horizontal.gif`} alt="loading" />
 				) : (
