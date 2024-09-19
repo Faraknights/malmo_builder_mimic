@@ -518,52 +518,74 @@ body,
 								}
 							}
 
-							.generate {
+							.nebulaWrapperButtons{
 								display: flex;
-								flex-direction: row;
-								height: 35px;
 								align-items: center;
-								width: 90%;
-								margin-top: 10px;
-								border: none;
-								border-radius: 8px;
 								justify-content: center;
-								cursor: pointer;
+								margin-top: 10px;
 
-								img {
-									height: 150%;
+								.generate {
+									display: flex;
+									flex-direction: row;
+									height: 35px;
+									align-items: center;
+									width: 75%;
+									border: none;
+									border-radius: 8px;
+									justify-content: center;
+									cursor: pointer;
+									background-color: white;
+	
+									img {
+										height: 150%;
+									}
+	
+									&.disabled {
+										opacity: 0.3;
+										pointer-events: none;
+									}
+	
+									* {
+										pointer-events: none;
+									}
+	
+									span {
+										font-size: 18px;
+										background: -webkit-linear-gradient(
+											30deg,
+											rgb(0, 89, 167) 0%,
+											rgb(255, 35, 35) 57%,
+											rgb(21, 210, 0) 100%
+										);
+										-webkit-background-clip: text;
+										background-clip: text;
+										-webkit-text-fill-color: transparent;
+										font-weight: 700;
+									}
+	
+									svg {
+										height: 17px;
+										width: 17px;
+										margin-left: 5px;
+	
+										path {
+											fill: rgb(250, 150, 36);
+										}
+									}
 								}
 
-								&.disabled {
-									opacity: 0.3;
-									pointer-events: none;
-								}
+								.download{
+									height: 35px;
+									width: 35px;
+									border: none;
+									margin: 0;
+									border-radius: 8px;
+									margin: 0 10px;
+									cursor: pointer;
 
-								* {
-									pointer-events: none;
-								}
-
-								span {
-									font-size: 18px;
-									background: -webkit-linear-gradient(
-										30deg,
-										rgb(0, 89, 167) 0%,
-										rgb(255, 35, 35) 57%,
-										rgb(21, 210, 0) 100%
-									);
-									-webkit-background-clip: text;
-									background-clip: text;
-									-webkit-text-fill-color: transparent;
-									font-weight: 700;
-								}
-
-								svg {
-									height: 17px;
-									width: 17px;
-									margin-left: 5px;
-
-									path {
-										fill: rgb(250, 150, 36);
+									svg{
+										width: 100%;
+										height: 100%;
 									}
 								}
 							}
@@ -581,7 +603,8 @@ body,
 
 								&.system {
 									border-radius: 0;
-									padding-left: 15px;
+									padding: 5px 15px;
+									text-align: justify;
 									background-color: rgba(65, 181, 253, 0.483);
 									clip-path: polygon(
 										15px 0%,

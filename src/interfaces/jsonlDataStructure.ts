@@ -23,6 +23,7 @@ export enum EventCommand {
 	confirm_next_episode = 'confirm_next_episode',
 	survey = 'survey',
 	submit_survey = 'submit_survey',
+	clear_board = 'clear_board',
 }
 
 interface JsonlEventDefault {
@@ -94,10 +95,14 @@ export type JsonlEvent =
 							event: EventCommand.show_progress;
 					  }
 					| {
+							event: EventCommand.clear_board;
+					  }
+					| {
 							event: EventCommand.next_state;
 					  }
 					| {
 							event: EventCommand.confirm_next_episode;
+							answer: 'yes' | 'no';
 					  }
 					| {
 							event: EventCommand.survey;

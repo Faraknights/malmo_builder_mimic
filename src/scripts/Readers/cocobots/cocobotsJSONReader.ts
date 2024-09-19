@@ -4,13 +4,13 @@ import { COLORS } from '../../../constants/COLORS';
 import { FileProcessorFunction } from '../../../constants/VISUALIZER_MATCHER';
 import { Message } from '../../../enum/Chat';
 import { ShapeList } from '../../../enum/ShapeList';
-import { GameLogsProps, MinecraftBlocksInGridLog, MinecraftLogStructure } from '../../../interfaces/ExportLogStructure';
+import { GameLogsProps, CocobotsBlocksInGridLog, CocobotsLogStructure } from '../../../interfaces/ExportLogStructure';
 import { v4 as uuidv4 } from 'uuid';
 
 const chatParser = /^<([^>]+)> (.+)$/;
 
-const minecraftJSONReader: FileProcessorFunction = (data, gameLogs) => {
-	const json: GameLogsProps<MinecraftLogStructure> | MinecraftBlocksInGridLog[] = JSON.parse(data);
+const cocobotsJSONReader: FileProcessorFunction = (data, gameLogs) => {
+	const json: GameLogsProps<CocobotsLogStructure> | CocobotsBlocksInGridLog[] = JSON.parse(data);
 	if ('WorldStates' in json) {
 		return gameLogReader(json, gameLogs);
 	} else {
@@ -18,7 +18,7 @@ const minecraftJSONReader: FileProcessorFunction = (data, gameLogs) => {
 	}
 };
 
-export type worldStateProcessorFunction = (json: MinecraftBlocksInGridLog[], gameLogs: GameLog[]) => GameLog[];
+export type worldStateProcessorFunction = (json: CocobotsBlocksInGridLog[], gameLogs: GameLog[]) => GameLog[];
 
 const worldStateReader: worldStateProcessorFunction = (json, gameLogs) => {
 	const gameLog = new GameLog();
@@ -32,15 +32,15 @@ const worldStateReader: worldStateProcessorFunction = (json, gameLogs) => {
 
 	json.forEach((block) => {
 		worldState.shapeInPlace.push({
-			color: COLORS[block.Colour.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
+			color: COLORS[block.Color.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
 			breakable: false,
 			pending: false,
 			position: {
-				x: block.X,
-				y: block.Y,
-				z: block.Z,
+				x: block.Position.X,
+				y: block.Position.Y,
+				z: block.Position.Z,
 			},
-			shape: ShapeList.CUBE,
+			shape: ShapeList[block.Shape.toUpperCase() as keyof typeof ShapeList] || ShapeList.CUBE,
 			uuid: uuidv4(),
 		});
 
@@ -52,7 +52,7 @@ const worldStateReader: worldStateProcessorFunction = (json, gameLogs) => {
 	return gameLogs;
 };
 
-export type gameLogProcessorFunction = (json: GameLogsProps<MinecraftLogStructure>, gameLogs: GameLog[]) => GameLog[];
+export type gameLogProcessorFunction = (json: GameLogsProps<CocobotsLogStructure>, gameLogs: GameLog[]) => GameLog[];
 
 const gameLogReader: gameLogProcessorFunction = (json, gameLogs) => {
 	const gameLog = new GameLog();
@@ -71,13 +71,13 @@ const gameLogReader: gameLogProcessorFunction = (json, gameLogs) => {
 				return {
 					breakable: false,
 					pending: false,
-					color: COLORS[block.Colour.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
+					color: COLORS[block.Color.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
 					position: {
-						x: block.X,
-						y: block.Y,
-						z: block.Z,
+						x: block.Position.X,
+						y: block.Position.Y,
+						z: block.Position.Z,
 					},
-					shape: ShapeList.CUBE,
+					shape: ShapeList[block.Shape.toUpperCase() as keyof typeof ShapeList] || ShapeList.CUBE,
 					uuid: uuidv4(),
 				} as shapeProps;
 			}),
@@ -90,4 +90,4 @@ const gameLogReader: gameLogProcessorFunction = (json, gameLogs) => {
 	return gameLogs;
 };
 
-export default minecraftJSONReader;
+export default cocobotsJSONReader;

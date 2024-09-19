@@ -30,6 +30,8 @@ const shapeComponents: {
 	[ShapeList.NUT]: Nut,
 	[ShapeList.HORIZONTAL_BRIDGE]: HorizontalBridge,
 	[ShapeList.VERTICAL_BRIDGE]: VerticalBridge,
+	[ShapeList.HBRIDGE]: HorizontalBridge,
+	[ShapeList.VBRIDGE]: VerticalBridge,
 	[ShapeList.WASHER]: Washer,
 	[ShapeList.HORIZONTAL_BRIDGE_COMPONENT]: (props: shapeComponentProps) => (
 		<BridgeComponent {...props} rotation={'HORIZONTAL'} />
@@ -48,6 +50,14 @@ export const shapeHitbox: { [key in ShapeList]: CartesianCoordinate[] } = {
 		{ x: 1, y: 0, z: 0 },
 	],
 	[ShapeList.VERTICAL_BRIDGE]: [
+		{ x: 0, y: 0, z: 0 },
+		{ x: 0, y: 0, z: 1 },
+	],
+	[ShapeList.HBRIDGE]: [
+		{ x: 0, y: 0, z: 0 },
+		{ x: 1, y: 0, z: 0 },
+	],
+	[ShapeList.VBRIDGE]: [
 		{ x: 0, y: 0, z: 0 },
 		{ x: 0, y: 0, z: 1 },
 	],

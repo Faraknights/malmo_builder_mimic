@@ -255,9 +255,9 @@ const Game: React.FC = () => {
 	const renderedObjects = useMemo(() => {
 		return objects.map((object) =>
 			object instanceof ShapeGroup ? (
-				<Group key={object.uuid} shapeGroup={{ ...object }} />
+				<Group key={`${object.uuid}-${object.breakable}-${object.pending}`} shapeGroup={{ ...object }} />
 			) : (
-				<Shapes key={object.uuid} {...object} />
+				<Shapes key={`${object.uuid}-${object.breakable}-${object.pending}`} {...object} />
 			)
 		);
 	}, [objects]);

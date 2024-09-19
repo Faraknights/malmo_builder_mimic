@@ -13,6 +13,7 @@ import { Colors } from '../enum/Colors';
 import { ShapeList } from '../enum/ShapeList';
 import { CameraMode } from '../enum/CameraMode';
 import { Action } from '../enum/Action';
+import { CocobotsLogStructure, GameLogsProps, MinecraftLogStructure } from '../interfaces/ExportLogStructure';
 
 export const BLOCK_SIZE: { [key in EnvironmentMode]: CartesianCoordinate } = {
 	[EnvironmentMode.MINECRAFT]: { x: 1, y: 1, z: 1 },
@@ -115,7 +116,7 @@ export const GAME_RULE: {
 };
 
 export const EXPORT_GAME_LOG: {
-	[key in EnvironmentMode]: (gameLog: GameLog) => object;
+	[key in EnvironmentMode]: (gameLog: GameLog) => GameLogsProps<CocobotsLogStructure | MinecraftLogStructure>;
 } = {
 	[EnvironmentMode.MINECRAFT]: (gameLog: GameLog) => ({
 		WorldStates: gameLog.gameLog.map((worldState) => ({
@@ -133,19 +134,19 @@ export const EXPORT_GAME_LOG: {
 		})),
 	}),
 	[EnvironmentMode.COCOBOTS]: (gameLog: GameLog) => ({
-		worldStates: gameLog.gameLog.map((worldState) => ({
-			timestamp: worldState.timestamp,
-			chatHistory: worldState.chatHistory.map(
+		WorldStates: gameLog.gameLog.map((worldState) => ({
+			Timestamp: worldState.timestamp,
+			ChatHistory: worldState.chatHistory.map(
 				(message) => `<${message.user[0]}${message.user.slice(1).toLowerCase()}> ${message.content}`
 			),
-			blocksInGrid: worldState.shapeInPlace.map((shape) => ({
-				shape: `${(Object.values(ShapeList)[shape.shape] as string)[0]}${(Object.values(ShapeList)[shape.shape] as string).slice(1).toLowerCase()}`,
-				position: {
-					x: shape.position.x,
-					y: shape.position.y,
-					z: shape.position.z,
+			BlocksInGrid: worldState.shapeInPlace.map((shape) => ({
+				Shape: `${(Object.values(ShapeList)[shape.shape] as string)[0]}${(Object.values(ShapeList)[shape.shape] as string).slice(1).toLowerCase()}`,
+				Position: {
+					X: shape.position.x,
+					Y: shape.position.y,
+					Z: shape.position.z,
 				},
-				color: `${shape.color.id[0]}${shape.color.id.slice(1).toLowerCase()}`,
+				Color: `${shape.color.id[0]}${shape.color.id.slice(1).toLowerCase()}`,
 			})),
 		})),
 	}),
