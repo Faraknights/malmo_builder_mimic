@@ -11,7 +11,7 @@ const chatParser = /^<([^>]+)> (.+)$/;
 
 const cocobotsJSONReader: FileProcessorFunction = (data, gameLogs) => {
 	const json: GameLogsProps<CocobotsLogStructure> | CocobotsBlocksInGridLog[] = JSON.parse(data);
-	if ('WorldStates' in json) {
+	if ('worldStates' in json) {
 		return gameLogReader(json, gameLogs);
 	} else {
 		return worldStateReader(json, gameLogs);
@@ -32,15 +32,15 @@ const worldStateReader: worldStateProcessorFunction = (json, gameLogs) => {
 
 	json.forEach((block) => {
 		worldState.shapeInPlace.push({
-			color: COLORS[block.Color.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
+			color: COLORS[block.color.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
 			breakable: false,
 			pending: false,
 			position: {
-				x: block.Position.X,
-				y: block.Position.Y,
-				z: block.Position.Z,
+				x: block.position.x,
+				y: block.position.y,
+				z: block.position.z,
 			},
-			shape: ShapeList[block.Shape.toUpperCase() as keyof typeof ShapeList] || ShapeList.CUBE,
+			shape: ShapeList[block.shape.toUpperCase() as keyof typeof ShapeList] || ShapeList.CUBE,
 			uuid: uuidv4(),
 		});
 
@@ -58,26 +58,26 @@ const gameLogReader: gameLogProcessorFunction = (json, gameLogs) => {
 	const gameLog = new GameLog();
 	gameLog.clear();
 
-	json.WorldStates.forEach((logStructure) => {
+	json.worldStates.forEach((logStructure) => {
 		gameLog.addWorldState({
-			chatHistory: logStructure.ChatHistory.map((message) => {
+			chatHistory: logStructure.chatHistory.map((message) => {
 				const messageSplit = message.match(chatParser);
 				return {
 					user: messageSplit![1],
 					content: messageSplit![2],
 				} as Message;
 			}),
-			shapeInPlace: logStructure.BlocksInGrid.map((block) => {
+			shapeInPlace: logStructure.blocksInGrid.map((block) => {
 				return {
 					breakable: false,
 					pending: false,
-					color: COLORS[block.Color.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
+					color: COLORS[block.color.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
 					position: {
-						x: block.Position.X,
-						y: block.Position.Y,
-						z: block.Position.Z,
+						x: block.position.z,
+						y: block.position.z,
+						z: block.position.z,
 					},
-					shape: ShapeList[block.Shape.toUpperCase() as keyof typeof ShapeList] || ShapeList.CUBE,
+					shape: ShapeList[block.shape.toUpperCase() as keyof typeof ShapeList] || ShapeList.CUBE,
 					uuid: uuidv4(),
 				} as shapeProps;
 			}),

@@ -1,35 +1,35 @@
 import { Colors } from '../enum/Colors';
 
 export interface GameLogsProps<T> {
-	WorldStates: T[];
+	worldStates: T[];
 }
 
 export interface CocobotsBlocksInGridLog {
-	Shape: string;
-	Position: {
-		X: number;
-		Y: number;
-		Z: number;
+	shape: string;
+	position: {
+		x: number;
+		y: number;
+		z: number;
 	};
-	Color: string;
+	color: string;
 }
 
 export interface CocobotsLogStructure {
-	Timestamp: Date | undefined;
-	ChatHistory: string[];
-	BlocksInGrid: CocobotsBlocksInGridLog[];
+	timestamp: Date | undefined;
+	chatHistory: string[];
+	blocksInGrid: CocobotsBlocksInGridLog[];
 }
 
 export interface MinecraftBlocksInGridLog {
-	X: number;
-	Y: number;
-	Z: number;
-	Type: string;
-	Colour: Colors;
+	x: number;
+	y: number;
+	z: number;
+	type: string;
+	colour: Colors;
 }
 
 export interface MinecraftLogStructure {
-	Timestamp: Date | undefined;
-	ChatHistory: string[];
-	BlocksInGrid: MinecraftBlocksInGridLog[];
+	timestamp: Date | undefined;
+	chatHistory: string[];
+	blocksInGrid: MinecraftBlocksInGridLog[];
 }

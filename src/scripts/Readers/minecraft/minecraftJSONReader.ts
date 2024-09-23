@@ -11,7 +11,7 @@ const chatParser = /^<([^>]+)> (.+)$/;
 
 const minecraftJSONReader: FileProcessorFunction = (data, gameLogs) => {
 	const json: GameLogsProps<MinecraftLogStructure> | MinecraftBlocksInGridLog[] = JSON.parse(data);
-	if ('WorldStates' in json) {
+	if ('worldStates' in json) {
 		return gameLogReader(json, gameLogs);
 	} else {
 		return worldStateReader(json, gameLogs);
@@ -32,13 +32,13 @@ const worldStateReader: worldStateProcessorFunction = (json, gameLogs) => {
 
 	json.forEach((block) => {
 		worldState.shapeInPlace.push({
-			color: COLORS[block.Colour.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
+			color: COLORS[block.colour.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
 			breakable: false,
 			pending: false,
 			position: {
-				x: block.X,
-				y: block.Y,
-				z: block.Z,
+				x: block.x,
+				y: block.y,
+				z: block.z,
 			},
 			shape: ShapeList.CUBE,
 			uuid: uuidv4(),
@@ -58,24 +58,24 @@ const gameLogReader: gameLogProcessorFunction = (json, gameLogs) => {
 	const gameLog = new GameLog();
 	gameLog.clear();
 
-	json.WorldStates.forEach((logStructure) => {
+	json.worldStates.forEach((logStructure) => {
 		gameLog.addWorldState({
-			chatHistory: logStructure.ChatHistory.map((message) => {
+			chatHistory: logStructure.chatHistory.map((message) => {
 				const messageSplit = message.match(chatParser);
 				return {
 					user: messageSplit![1],
 					content: messageSplit![2],
 				} as Message;
 			}),
-			shapeInPlace: logStructure.BlocksInGrid.map((block) => {
+			shapeInPlace: logStructure.blocksInGrid.map((block) => {
 				return {
 					breakable: false,
 					pending: false,
-					color: COLORS[block.Colour.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
+					color: COLORS[block.colour.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
 					position: {
-						x: block.X,
-						y: block.Y,
-						z: block.Z,
+						x: block.x,
+						y: block.y,
+						z: block.z,
 					},
 					shape: ShapeList.CUBE,
 					uuid: uuidv4(),
