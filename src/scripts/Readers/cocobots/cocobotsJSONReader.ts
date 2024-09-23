@@ -73,8 +73,8 @@ const gameLogReader: gameLogProcessorFunction = (json, gameLogs) => {
 					pending: false,
 					color: COLORS[block.color.toUpperCase() as keyof typeof COLORS] || COLORS.WHITE,
 					position: {
-						x: block.position.z,
-						y: block.position.z,
+						x: block.position.x,
+						y: block.position.y,
 						z: block.position.z,
 					},
 					shape: ShapeList[block.shape.toUpperCase() as keyof typeof ShapeList] || ShapeList.CUBE,

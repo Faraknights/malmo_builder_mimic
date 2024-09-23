@@ -119,34 +119,34 @@ export const EXPORT_GAME_LOG: {
 	[key in EnvironmentMode]: (gameLog: GameLog) => GameLogsProps<CocobotsLogStructure | MinecraftLogStructure>;
 } = {
 	[EnvironmentMode.MINECRAFT]: (gameLog: GameLog) => ({
-		WorldStates: gameLog.gameLog.map((worldState) => ({
-			Timestamp: worldState.timestamp,
-			ChatHistory: worldState.chatHistory.map(
+		worldStates: gameLog.gameLog.map((worldState) => ({
+			timestamp: worldState.timestamp,
+			chatHistory: worldState.chatHistory.map(
 				(message) => `<${message.user[0]}${message.user.slice(1).toLowerCase()}> ${message.content}`
 			),
-			BlocksInGrid: worldState.shapeInPlace.map((block) => ({
-				X: block.position.x,
-				Y: block.position.y,
-				Z: block.position.z,
-				Type: 'wool',
-				Colour: block.color.id,
+			blocksInGrid: worldState.shapeInPlace.map((block) => ({
+				x: block.position.x,
+				y: block.position.y,
+				z: block.position.z,
+				type: 'wool',
+				colour: block.color.id,
 			})),
 		})),
 	}),
 	[EnvironmentMode.COCOBOTS]: (gameLog: GameLog) => ({
-		WorldStates: gameLog.gameLog.map((worldState) => ({
-			Timestamp: worldState.timestamp,
-			ChatHistory: worldState.chatHistory.map(
+		worldStates: gameLog.gameLog.map((worldState) => ({
+			timestamp: worldState.timestamp,
+			chatHistory: worldState.chatHistory.map(
 				(message) => `<${message.user[0]}${message.user.slice(1).toLowerCase()}> ${message.content}`
 			),
-			BlocksInGrid: worldState.shapeInPlace.map((shape) => ({
-				Shape: `${(Object.values(ShapeList)[shape.shape] as string)[0]}${(Object.values(ShapeList)[shape.shape] as string).slice(1).toLowerCase()}`,
-				Position: {
-					X: shape.position.x,
-					Y: shape.position.y,
-					Z: shape.position.z,
+			blocksInGrid: worldState.shapeInPlace.map((shape) => ({
+				shape: `${(Object.values(ShapeList)[shape.shape] as string)[0]}${(Object.values(ShapeList)[shape.shape] as string).slice(1).toLowerCase()}`,
+				position: {
+					x: shape.position.x,
+					y: shape.position.y,
+					z: shape.position.z,
 				},
-				Color: `${shape.color.id[0]}${shape.color.id.slice(1).toLowerCase()}`,
+				color: `${shape.color.id[0]}${shape.color.id.slice(1).toLowerCase()}`,
 			})),
 		})),
 	}),
