@@ -13,7 +13,7 @@ const minecraftCSVReader: FileProcessorFunction = (data, gameLogs) => {
 
 		const gameLog = new GameLog();
 
-		[...instructions, ...actionSeq].forEach((instruction) => {
+		[...instructions, ...actionSeq.split('\n').map((placement) => placement.trim())].forEach((instruction) => {
 			gameLog.addWorldState(parseMinecraftInstruction(instruction.trim(), gameLog.getLastWorldState()!));
 		});
 
