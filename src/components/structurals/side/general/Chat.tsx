@@ -149,52 +149,7 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 
 	return (
 		<div id="chat" className="module">
-			<h3
-				onClick={() => {
-					shapeInPlace.addObject({
-						breakable: false,
-						color: COLORS.BLUE,
-						pending: false,
-						position: { x: -3, y: 1, z: 5 },
-						shape: ShapeList.SCREW,
-						uuid: '1',
-					});
-					shapeInPlace.addObject({
-						breakable: false,
-						color: COLORS.BLUE,
-						pending: false,
-						position: { x: -2, y: 2, z: 4 },
-						shape: ShapeList.SCREW,
-						uuid: '1',
-					});
-					shapeInPlace.addObject({
-						breakable: false,
-						color: COLORS.BLUE,
-						pending: false,
-						position: { x: -2, y: 3, z: 3 },
-						shape: ShapeList.SCREW,
-						uuid: '1',
-					});
-					shapeInPlace.addObject({
-						breakable: false,
-						color: COLORS.BLUE,
-						pending: false,
-						position: { x: -2, y: 4, z: 2 },
-						shape: ShapeList.SCREW,
-						uuid: '1',
-					});
-					shapeInPlace.addObject({
-						breakable: false,
-						color: COLORS.BLUE,
-						pending: false,
-						position: { x: -2, y: 5, z: 1 },
-						shape: ShapeList.SCREW,
-						uuid: '1',
-					});
-				}}
-			>
-				Chat
-			</h3>
+			<h3>Chat</h3>
 			<hr />
 			<div className="historyMessages" ref={chatRef}>
 				{chat.chatHistory.map((message, i) => (
@@ -251,8 +206,13 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 										e.currentTarget.value = '';
 										if (gameMode === GameMode.DIRECT_INSTRUCTIONS) {
 											//place("washer", "blue", 0, 3, 2)
-											if (/^place\(".+", ".+", [0-9]+, [0-9]+, [0-9]+\)(\s)?$/gm.test(message)) {
-												const regex = /\("([^"]+)", "([^"]+)", (\d+), (\d+), (\d+)\)/;
+											if (
+												/^place\(['"].+['"], ['"].+['"], [0-9]+, [0-9]+, [0-9]+\)(\s)?$/gm.test(
+													message
+												)
+											) {
+												const regex =
+													/\(['"]([^'"]+)['"], ['"]([^'"]+)['"], (\d+), (\d+), (\d+)\)/;
 												message
 													.split('place')
 													.slice(1)
@@ -279,7 +239,6 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 														});
 													});
 											} else {
-												console.log(message);
 												chat.addMessage({
 													user: Users.SYSTEM,
 													content: 'Not a right placement structure',
