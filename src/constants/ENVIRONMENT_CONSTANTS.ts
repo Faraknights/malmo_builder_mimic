@@ -14,6 +14,7 @@ import { ShapeList } from '../enum/ShapeList';
 import { CameraMode } from '../enum/CameraMode';
 import { Action } from '../enum/Action';
 import { CocobotsLogStructure, GameLogsProps, MinecraftLogStructure } from '../interfaces/ExportLogStructure';
+import DirectInstructions from '../components/structurals/environmentGames/directInstructions';
 
 export const BLOCK_SIZE: { [key in EnvironmentMode]: CartesianCoordinate } = {
 	[EnvironmentMode.MINECRAFT]: { x: 1, y: 1, z: 1 },
@@ -154,7 +155,12 @@ export const EXPORT_GAME_LOG: {
 
 export const gameModesAvailable: { [key in EnvironmentMode]: GameMode[] } = {
 	[EnvironmentMode.MINECRAFT]: [GameMode.SIMULATION, GameMode.VISUALIZATION, GameMode.NEBULA],
-	[EnvironmentMode.COCOBOTS]: [GameMode.SIMULATION, GameMode.VISUALIZATION, GameMode.NEBULA],
+	[EnvironmentMode.COCOBOTS]: [
+		GameMode.SIMULATION,
+		GameMode.VISUALIZATION,
+		GameMode.NEBULA,
+		GameMode.DIRECT_INSTRUCTIONS,
+	],
 };
 
 export const defaultCameraByEnvironment: { [key in EnvironmentMode]: CameraMode } = {
@@ -166,6 +172,7 @@ export const defaultActionByGameMode: { [key in GameMode]: Action } = {
 	[GameMode.SIMULATION]: Action.PLACE,
 	[GameMode.VISUALIZATION]: Action.BREAK,
 	[GameMode.NEBULA]: Action.BREAK,
+	[GameMode.DIRECT_INSTRUCTIONS]: Action.BREAK,
 };
 
 export const gameModeComponent: {
@@ -174,6 +181,7 @@ export const gameModeComponent: {
 	[GameMode.SIMULATION]: Simulation,
 	[GameMode.VISUALIZATION]: Visualization,
 	[GameMode.NEBULA]: Nebula,
+	[GameMode.DIRECT_INSTRUCTIONS]: DirectInstructions,
 };
 
 export const OPACITY_PENDING_OBJECT = 0.4;
