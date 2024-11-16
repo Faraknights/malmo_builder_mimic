@@ -57,9 +57,9 @@ export const GRID_SIZE: { [key in EnvironmentMode]: gridSizeProps } = {
 		z: { min: -5, max: 5 },
 	},
 	[EnvironmentMode.COCOBOTS]: {
-		x: { min: 0, max: 7 },
-		y: { min: 1, max: 8 },
-		z: { min: 0, max: 7 },
+		x: { min: 1, max: 16 },
+		y: { min: 1, max: 16 },
+		z: { min: 1, max: 16 },
 	},
 };
 
