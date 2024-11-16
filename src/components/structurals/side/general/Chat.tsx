@@ -232,8 +232,8 @@ const ChatComponent: React.FC<chatComponentProps> = ({ availableUsers }) => {
 															pending: false,
 															position: {
 																x: parseInt(matches![3]),
-																y: parseInt(matches![4]),
-																z: parseInt(matches![5]),
+																y: parseInt(matches![5]),
+																z: parseInt(matches![4]),
 															},
 															uuid: 'test',
 														});
