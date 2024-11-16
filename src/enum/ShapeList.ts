@@ -9,4 +9,8 @@ export enum ShapeList {
 	VERTICAL_BRIDGE_COMPONENT,
 	HBRIDGE,
 	VBRIDGE,
+	BOLT,
+	GASKET,
+	HEX_NUT,
+	SQUARE_NUT
 }

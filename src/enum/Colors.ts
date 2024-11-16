@@ -7,5 +7,6 @@ export enum Colors {
 	YELLOW = 'YELLOW',
 	WHITE = 'WHITE',
 	BLACK = 'BLACK',
-	NEW = 'NEW',
+	BROWN = 'BROWN',
+	MAGENTA = 'MAGENTA'
 }

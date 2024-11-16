@@ -7,8 +7,8 @@ import { Edges } from '@react-three/drei';
 import { MeshDirections, MeshTypes } from '../../../enum/Mesh';
 
 //
-function Washer({ pending, position, color }: shapeComponentProps) {
-	const washerColor = new THREE.Color(color.hex);
+function Bolt({ pending, position, color }: shapeComponentProps) {
+	const boltColor = new THREE.Color(color.hex);
 	const opacity = pending ? OPACITY_PENDING_OBJECT : 1;
   
 	// Hexagon with a hole
@@ -17,8 +17,8 @@ function Washer({ pending, position, color }: shapeComponentProps) {
 	  const radius = 0.5;
   
 	  // Hexagon shape
-	  for (let i = 0; i < 32; i++) {
-		const angle = (i / 32) * Math.PI * 2;
+	  for (let i = 0; i < 6; i++) {
+		const angle = (i / 6) * Math.PI * 2;
 		const x = Math.cos(angle) * radius;
 		const y = Math.sin(angle) * radius;
 		if (i === 0) outerShape.moveTo(x, y);
@@ -26,18 +26,13 @@ function Washer({ pending, position, color }: shapeComponentProps) {
 	  }
 	  outerShape.closePath();
   
-	  // Inner circular hole
-	  const holePath = new THREE.Path();
-	  holePath.absarc(0, 0, 0.2, 0, Math.PI * 2, false);
-	  outerShape.holes.push(holePath);
-  
 	  return new THREE.ShapeGeometry(outerShape);
 	}, []);
   
 	const material = (
 	  <meshStandardMaterial
 		attach="material"
-		color={washerColor}
+		color={boltColor}
 		side={THREE.DoubleSide}
 		transparent={opacity !== 1}
 		opacity={opacity}
@@ -59,9 +54,9 @@ function Washer({ pending, position, color }: shapeComponentProps) {
 		  position={[0, 0.5, 0]}
 		  rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
 		  userData={{
-			type: MeshTypes.SHAPE_FACE,
-			faceDirection: MeshDirections.TOP,
-		  } as ShapeFaceUserData}
+			type: MeshTypes.NON_CLICKABLE_FACE,
+			position: position,
+		  } as NonClickableFaceUserData}
 		  geometry={faceGeometry}
 		>
 		  {material}
@@ -89,27 +84,14 @@ function Washer({ pending, position, color }: shapeComponentProps) {
 		  } as NonClickableFaceUserData}
 		>
 		  <tubeGeometry
-			args={[new THREE.LineCurve3(new THREE.Vector3(0, -0.5, 0), new THREE.Vector3(0, 0.5, 0)), 1, 0.5, 32, false]}
+			args={[new THREE.LineCurve3(new THREE.Vector3(0, -0.5, 0), new THREE.Vector3(0, 0.5, 0)), 1, 0.5, 6, false]}
 		  />
-		  {opacity === 1 && <Edges linewidth={1} color={washerColor.clone().addScalar(0.2)} />}
-		  {material}
-		</mesh>
-  
-		{/* Inner Tube */}
-		<mesh
-		  userData={{
-			type: MeshTypes.NON_CLICKABLE_FACE,
-			position: position,
-			pending: pending,
-		  } as NonClickableFaceUserData}
-		>
-		  <tubeGeometry
-			args={[new THREE.LineCurve3(new THREE.Vector3(0, -0.5, 0), new THREE.Vector3(0, 0.5, 0)), 1, 0.2, 20, false]}
-		  />
+		  {opacity === 1 && <Edges linewidth={1} color={boltColor.clone().addScalar(0.2)} />}
 		  {material}
 		</mesh>
 	  </mesh>
 	);
   }
-
-export default Washer;
+  
+  export default Bolt;
+  

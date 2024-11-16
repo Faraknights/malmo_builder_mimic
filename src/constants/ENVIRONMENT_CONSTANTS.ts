@@ -30,17 +30,32 @@ export const ENVIRONMENT_COLORS: { [key in EnvironmentMode]: Color[] } = {
 		COLORS[Colors.ORANGE],
 		COLORS[Colors.YELLOW],
 	],
-	[EnvironmentMode.COCOBOTS]: [COLORS[Colors.GREEN], COLORS[Colors.BLUE], COLORS[Colors.RED], COLORS[Colors.YELLOW]],
+	[EnvironmentMode.COCOBOTS]: [
+		COLORS[Colors.BLUE],
+		COLORS[Colors.ORANGE],
+		COLORS[Colors.RED],
+		COLORS[Colors.GREEN],
+		COLORS[Colors.YELLOW],
+		COLORS[Colors.PURPLE],
+		COLORS[Colors.BLACK],
+		COLORS[Colors.WHITE],
+		COLORS[Colors.BROWN],
+		COLORS[Colors.MAGENTA],
+	],
 };
 
 export const ENVIRONMENT_SHAPES: { [key in EnvironmentMode]: ShapeList[] } = {
-	[EnvironmentMode.MINECRAFT]: [ShapeList.CUBE],
+	[EnvironmentMode.MINECRAFT]: [ShapeList.NUT],
 	[EnvironmentMode.COCOBOTS]: [
 		ShapeList.NUT,
 		ShapeList.WASHER,
 		ShapeList.SCREW,
 		ShapeList.HORIZONTAL_BRIDGE,
 		ShapeList.VERTICAL_BRIDGE,
+		ShapeList.BOLT,
+		ShapeList.GASKET,
+		ShapeList.HEX_NUT,
+		ShapeList.SQUARE_NUT
 	],
 };
 

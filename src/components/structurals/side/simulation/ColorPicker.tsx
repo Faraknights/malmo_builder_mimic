@@ -1,10 +1,20 @@
 import React from 'react';
 import { useGlobalState } from '../../GlobalStateProvider';
+import { EnvironmentMode } from '../../../../enum/EnvironmentMode';
 
 const ColorPicker: React.FC = () => {
-	const { currentColor, colors, changeColor } = useGlobalState().inventory;
+	const {
+		inventory: {
+			currentColor, 
+			colors, 
+			changeColor
+		},
+		environmentMode : {
+			environmentMode
+		}
+	} = useGlobalState();
 
-	const nbColorByRow = 4;
+	const nbColorByRow = environmentMode === EnvironmentMode.COCOBOTS ? 5 : 3;
 	const ColorsByRow = [];
 	for (let i = 0; i < colors.length; i += nbColorByRow) {
 		ColorsByRow.push(colors.slice(i, i + nbColorByRow));

@@ -13,7 +13,7 @@ const ShapePicker: React.FC = () => {
 		environmentMode: { environmentMode },
 	} = useGlobalState();
 
-	const nbShapeByRow = 2;
+	const nbShapeByRow = 3;
 	const ShapesByRow = [];
 	for (let i = 0; i < shapes.length; i += nbShapeByRow) {
 		ShapesByRow.push(shapes.slice(i, i + nbShapeByRow));
@@ -56,6 +56,7 @@ const ShapePicker: React.FC = () => {
 													BLOCK_SIZE[environmentMode].z,
 												]}
 												position={[-((maxX - minX) / 2), 0, -((maxZ - minZ) / 2)]}
+												rotation={[0,0,0]}
 											>
 												<Shapes
 													breakable={false}

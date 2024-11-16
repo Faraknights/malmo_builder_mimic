@@ -34,8 +34,12 @@ export const COLORS: { [key in Colors]: Color } = {
 		hex: '#000000',
 		id: Colors.BLACK,
 	},
-	[Colors.NEW]: {
-		hex: '#deefe1',
-		id: Colors.NEW,
+	[Colors.BROWN]: {
+		hex: '#553B32',
+		id: Colors.BROWN,
+	},
+	[Colors.MAGENTA]: {
+		hex: '#e60088',
+		id: Colors.MAGENTA,
 	},
 };

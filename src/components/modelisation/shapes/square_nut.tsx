@@ -7,8 +7,8 @@ import { Edges } from '@react-three/drei';
 import { MeshDirections, MeshTypes } from '../../../enum/Mesh';
 
 //
-function Washer({ pending, position, color }: shapeComponentProps) {
-	const washerColor = new THREE.Color(color.hex);
+function SquareNut({ pending, position, color }: shapeComponentProps) {
+	const squareNutColor = new THREE.Color(color.hex);
 	const opacity = pending ? OPACITY_PENDING_OBJECT : 1;
   
 	// Hexagon with a hole
@@ -17,8 +17,8 @@ function Washer({ pending, position, color }: shapeComponentProps) {
 	  const radius = 0.5;
   
 	  // Hexagon shape
-	  for (let i = 0; i < 32; i++) {
-		const angle = (i / 32) * Math.PI * 2;
+	  for (let i = 0; i < 4; i++) {
+		const angle = (i / 4) * Math.PI * 2;
 		const x = Math.cos(angle) * radius;
 		const y = Math.sin(angle) * radius;
 		if (i === 0) outerShape.moveTo(x, y);
@@ -37,7 +37,7 @@ function Washer({ pending, position, color }: shapeComponentProps) {
 	const material = (
 	  <meshStandardMaterial
 		attach="material"
-		color={washerColor}
+		color={squareNutColor}
 		side={THREE.DoubleSide}
 		transparent={opacity !== 1}
 		opacity={opacity}
@@ -89,9 +89,9 @@ function Washer({ pending, position, color }: shapeComponentProps) {
 		  } as NonClickableFaceUserData}
 		>
 		  <tubeGeometry
-			args={[new THREE.LineCurve3(new THREE.Vector3(0, -0.5, 0), new THREE.Vector3(0, 0.5, 0)), 1, 0.5, 32, false]}
+			args={[new THREE.LineCurve3(new THREE.Vector3(0, -0.5, 0), new THREE.Vector3(0, 0.5, 0)), 1, 0.5, 4, false]}
 		  />
-		  {opacity === 1 && <Edges linewidth={1} color={washerColor.clone().addScalar(0.2)} />}
+		  {opacity === 1 && <Edges linewidth={1} color={squareNutColor.clone().addScalar(0.2)} />}
 		  {material}
 		</mesh>
   
@@ -111,5 +111,6 @@ function Washer({ pending, position, color }: shapeComponentProps) {
 	  </mesh>
 	);
   }
-
-export default Washer;
+  
+  export default SquareNut;
+  

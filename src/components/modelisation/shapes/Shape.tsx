@@ -12,6 +12,10 @@ import { VerticalBridge } from './VerticalBridge';
 import { COLORS } from '../../../constants/COLORS';
 import { MeshTypes } from '../../../enum/Mesh';
 import { ShapeList } from '../../../enum/ShapeList';
+import Bolt from './bolt';
+import Gasket from './gasket';
+import HexNut from './hex_nut';
+import SquareNut from './square_nut';
 
 //
 export interface shapeComponentProps {
@@ -39,6 +43,10 @@ const shapeComponents: {
 	[ShapeList.VERTICAL_BRIDGE_COMPONENT]: (props: shapeComponentProps) => (
 		<BridgeComponent {...props} rotation={'VERTICAL'} />
 	),
+	[ShapeList.BOLT] : Bolt,
+	[ShapeList.GASKET] : Gasket,
+	[ShapeList.HEX_NUT] : HexNut,
+	[ShapeList.SQUARE_NUT] : SquareNut
 };
 
 export const shapeHitbox: { [key in ShapeList]: CartesianCoordinate[] } = {
@@ -64,6 +72,10 @@ export const shapeHitbox: { [key in ShapeList]: CartesianCoordinate[] } = {
 	[ShapeList.WASHER]: [{ x: 0, y: 0, z: 0 }],
 	[ShapeList.HORIZONTAL_BRIDGE_COMPONENT]: [{ x: 0, y: 0, z: 0 }],
 	[ShapeList.VERTICAL_BRIDGE_COMPONENT]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.BOLT]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.GASKET]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.HEX_NUT] : [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.SQUARE_NUT] : [{ x: 0, y: 0, z: 0 }]
 };
 
 export interface shapeProps extends shapeComponentProps {
