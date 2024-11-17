@@ -6,7 +6,7 @@ export default {
 	basePath: isProd ? '/malmo_builder_mimic' : '',
 	assetPrefix: isProd ? '/malmo_builder_mimic/' : '',
 
-	//output: 'export',
+	output: 'export',
 
 	sassOptions: {
 		includePaths: [path.join(process.cwd(), 'src/styles')],
