@@ -56,7 +56,7 @@ const ShapePicker: React.FC = () => {
 													BLOCK_SIZE[environmentMode].z,
 												]}
 												position={[-((maxX - minX) / 2), 0, -((maxZ - minZ) / 2)]}
-												rotation={[0,0,0]}
+												rotation={[0, 0, 0]}
 											>
 												<Shapes
 													breakable={false}

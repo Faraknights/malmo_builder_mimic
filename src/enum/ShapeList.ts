@@ -12,5 +12,5 @@ export enum ShapeList {
 	BOLT,
 	GASKET,
 	HEX_NUT,
-	SQUARE_NUT
+	SQUARE_NUT,
 }

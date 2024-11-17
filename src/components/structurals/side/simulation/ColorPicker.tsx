@@ -4,14 +4,8 @@ import { EnvironmentMode } from '../../../../enum/EnvironmentMode';
 
 const ColorPicker: React.FC = () => {
 	const {
-		inventory: {
-			currentColor, 
-			colors, 
-			changeColor
-		},
-		environmentMode : {
-			environmentMode
-		}
+		inventory: { currentColor, colors, changeColor },
+		environmentMode: { environmentMode },
 	} = useGlobalState();
 
 	const nbColorByRow = environmentMode === EnvironmentMode.COCOBOTS ? 5 : 3;

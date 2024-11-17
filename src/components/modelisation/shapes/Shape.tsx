@@ -43,10 +43,10 @@ const shapeComponents: {
 	[ShapeList.VERTICAL_BRIDGE_COMPONENT]: (props: shapeComponentProps) => (
 		<BridgeComponent {...props} rotation={'VERTICAL'} />
 	),
-	[ShapeList.BOLT] : Bolt,
-	[ShapeList.GASKET] : Gasket,
-	[ShapeList.HEX_NUT] : HexNut,
-	[ShapeList.SQUARE_NUT] : SquareNut
+	[ShapeList.BOLT]: Bolt,
+	[ShapeList.GASKET]: Gasket,
+	[ShapeList.HEX_NUT]: HexNut,
+	[ShapeList.SQUARE_NUT]: SquareNut,
 };
 
 export const shapeHitbox: { [key in ShapeList]: CartesianCoordinate[] } = {
@@ -74,8 +74,8 @@ export const shapeHitbox: { [key in ShapeList]: CartesianCoordinate[] } = {
 	[ShapeList.VERTICAL_BRIDGE_COMPONENT]: [{ x: 0, y: 0, z: 0 }],
 	[ShapeList.BOLT]: [{ x: 0, y: 0, z: 0 }],
 	[ShapeList.GASKET]: [{ x: 0, y: 0, z: 0 }],
-	[ShapeList.HEX_NUT] : [{ x: 0, y: 0, z: 0 }],
-	[ShapeList.SQUARE_NUT] : [{ x: 0, y: 0, z: 0 }]
+	[ShapeList.HEX_NUT]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.SQUARE_NUT]: [{ x: 0, y: 0, z: 0 }],
 };
 
 export interface shapeProps extends shapeComponentProps {
