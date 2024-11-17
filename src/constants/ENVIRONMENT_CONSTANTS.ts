@@ -45,7 +45,7 @@ export const ENVIRONMENT_COLORS: { [key in EnvironmentMode]: Color[] } = {
 };
 
 export const ENVIRONMENT_SHAPES: { [key in EnvironmentMode]: ShapeList[] } = {
-	[EnvironmentMode.MINECRAFT]: [ShapeList.NUT],
+	[EnvironmentMode.MINECRAFT]: [ShapeList.CUBE],
 	[EnvironmentMode.COCOBOTS]: [
 		ShapeList.NUT,
 		ShapeList.WASHER,
