@@ -13,4 +13,6 @@ export enum ShapeList {
 	GASKET,
 	HEX_NUT,
 	SQUARE_NUT,
+	HOUSE,
+	CAR,
 }

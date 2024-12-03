@@ -12,10 +12,13 @@ import { VerticalBridge } from './VerticalBridge';
 import { COLORS } from '../../../constants/COLORS';
 import { MeshTypes } from '../../../enum/Mesh';
 import { ShapeList } from '../../../enum/ShapeList';
-import Bolt from './bolt';
+//import Bolt from './bolt';
 import Gasket from './gasket';
 import HexNut from './hex_nut';
 import SquareNut from './square_nut';
+import House from './house';
+import Bolt from './bolt';
+import Car from './car';
 
 //
 export interface shapeComponentProps {
@@ -47,6 +50,8 @@ const shapeComponents: {
 	[ShapeList.GASKET]: Gasket,
 	[ShapeList.HEX_NUT]: HexNut,
 	[ShapeList.SQUARE_NUT]: SquareNut,
+	[ShapeList.HOUSE]: House,
+	[ShapeList.CAR]: Car,
 };
 
 export const shapeHitbox: { [key in ShapeList]: CartesianCoordinate[] } = {
@@ -76,6 +81,18 @@ export const shapeHitbox: { [key in ShapeList]: CartesianCoordinate[] } = {
 	[ShapeList.GASKET]: [{ x: 0, y: 0, z: 0 }],
 	[ShapeList.HEX_NUT]: [{ x: 0, y: 0, z: 0 }],
 	[ShapeList.SQUARE_NUT]: [{ x: 0, y: 0, z: 0 }],
+	[ShapeList.HOUSE]: [
+		{ x: 0, y: 0, z: 0 },
+		{ x: -1, y: 0, z: 0 },
+		{ x: 1, y: 0, z: 0 },
+		{ x: -1, y: 0, z: -1 },
+		{ x: 0, y: 0, z: -1 },
+		{ x: 1, y: 0, z: -1 },
+	],
+	[ShapeList.CAR]: [
+		{ x: 0, y: 0, z: 0 },
+		{ x: 1, y: 0, z: 0 },
+	],
 };
 
 export interface shapeProps extends shapeComponentProps {
@@ -104,6 +121,7 @@ const interpolateColor = (initial: string, final: string, percent: number): stri
 
 export const Shapes = (props: shapeProps) => {
 	const ShapeComponent = shapeComponents[props.shape];
+	if (props.pending) console.log(props);
 	return (
 		<mesh
 			userData={

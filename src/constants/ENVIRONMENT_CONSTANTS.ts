@@ -56,6 +56,8 @@ export const ENVIRONMENT_SHAPES: { [key in EnvironmentMode]: ShapeList[] } = {
 		ShapeList.GASKET,
 		ShapeList.HEX_NUT,
 		ShapeList.SQUARE_NUT,
+		ShapeList.HOUSE,
+		ShapeList.CAR,
 	],
 };
 

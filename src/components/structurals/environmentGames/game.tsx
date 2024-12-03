@@ -110,6 +110,7 @@ const Game: React.FC = () => {
 		} else {
 			shapeInPlace.confirmPending();
 		}
+		console.log(shapeInPlace.objects);
 		e.stopPropagation();
 	};
 
