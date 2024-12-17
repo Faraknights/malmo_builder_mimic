@@ -72,6 +72,30 @@ export class ShapeGroup {
 			}
 		});
 	};
+
+	getObjectAtPosition = (x: number, y: number, z: number): shapeProps | undefined => {
+		for (const shape of this.shapes) {
+			if (shape instanceof ShapeGroup) {
+				const foundObject = shape.getObjectAtPosition(
+					x - this.startingPoint.x,
+					y - this.startingPoint.y,
+					z - this.startingPoint.z
+				);
+				if (foundObject) {
+					return foundObject;
+				}
+			} else {
+				if (
+					x === shape.position.x + this.startingPoint.x &&
+					y === shape.position.y + this.startingPoint.y &&
+					z === shape.position.z + this.startingPoint.z
+				) {
+					return shape;
+				}
+			}
+		}
+		return undefined;
+	};
 }
 
 export const Group = ({ shapeGroup }: { shapeGroup: ShapeGroup }) => {

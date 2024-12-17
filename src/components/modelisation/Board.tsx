@@ -1,55 +1,51 @@
 import { CartesianCoordinate } from '../../interfaces/CartesianCoordinate';
-import { Edges, Text } from '@react-three/drei';
+import { Text } from '@react-three/drei';
 import { CELL_COLOR, GRID_SIZE } from '../../constants/ENVIRONMENT_CONSTANTS';
+import React from 'react';
+import { EnvironmentMode } from '../../enum/EnvironmentMode';
+import { Instances, Instance } from '@react-three/drei';
 import * as THREE from 'three';
 import { CellBoardUserData } from '../../interfaces/userDatas';
-import { EnvironmentMode } from '../../enum/EnvironmentMode';
-import React from 'react';
 import { MeshTypes } from '../../enum/Mesh';
 
-//
-interface cellBoardProps {
-	position: CartesianCoordinate;
+interface BoardProps {
+	environmentMode: EnvironmentMode;
 }
 
-const CellBoard = ({ position }: cellBoardProps) => (
-	<mesh
-		userData={
-			{
-				type: MeshTypes.CELL_BOARD,
-				position: position,
-			} as CellBoardUserData
-		}
-		rotation={[-Math.PI / 2, 0, 0]}
-		position={[position.x, 1 / 2, position.z]}
-	>
-		<planeGeometry args={[1, 1]} />
-		<Edges linewidth={1} threshold={15} color={'black'} />
-		<meshStandardMaterial color={[CELL_COLOR.r, CELL_COLOR.g, CELL_COLOR.b]} side={THREE.FrontSide} />
-	</mesh>
-);
-
-const Board = ({ environmentMode }: { environmentMode: EnvironmentMode }) => {
+const Board = ({ environmentMode }: BoardProps) => {
 	const gridSize = GRID_SIZE[environmentMode];
+	const positions: CartesianCoordinate[] = [];
+
+	for (let x = gridSize.x.min; x <= gridSize.x.max; x++) {
+		for (let z = gridSize.z.min; z <= gridSize.z.max; z++) {
+			positions.push({ x, y: 0, z });
+		}
+	}
 
 	return (
 		<>
-			{Array.from({ length: gridSize.x.max - gridSize.x.min + 1 }, (_, i) => gridSize.x.min + i).map((x) => (
-				<React.Fragment key={x}>
-					{Array.from({ length: gridSize.z.max - gridSize.z.min + 1 }, (_, j) => gridSize.z.min + j).map(
-						(z) => (
-							<CellBoard
-								key={`${x},${z}`}
-								position={{
-									x: x,
-									y: 0,
-									z: z,
-								}}
-							/>
-						)
-					)}
-				</React.Fragment>
-			))}
+			<Instances rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.5, 0]} limit={positions.length}>
+				<planeGeometry args={[1, 1]} />
+				<meshStandardMaterial color={[CELL_COLOR.r, CELL_COLOR.g, CELL_COLOR.b]} />
+				{positions.map(({ x, z }, index) => (
+					<Instance
+						userData={
+							{
+								type: MeshTypes.CELL_BOARD,
+								position: { x: x, y: 0, z: z }, // You can include position or other custom data
+							} as CellBoardUserData
+						}
+						key={index}
+						position={[x, -z, 0]}
+					>
+						{/* Set the userData on the instance, not the geometry */}
+						<lineSegments raycast={() => null}>
+							<edgesGeometry attach="geometry" args={[new THREE.PlaneGeometry(1, 1)]} />
+							<lineBasicMaterial color="black" />
+						</lineSegments>
+					</Instance>
+				))}
+			</Instances>
 			<Text
 				scale={[1, 1, 1]}
 				rotation={[Math.PI / 2, Math.PI, 0]}

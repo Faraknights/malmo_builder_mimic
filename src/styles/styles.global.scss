@@ -789,11 +789,12 @@ body,
 								border-radius: 5px;
 								width: 30%;
 
-								& > div {
-									width: 55px !important;
-									height: 55px !important;
+								& > img {
+									width: 50px !important;
+									height: 50px !important;
 									border-radius: 5px;
 									background-color: rgba(252, 255, 75, 0.315);
+									padding: 3px;
 								}
 
 								& > span {
@@ -803,6 +804,7 @@ body,
 									font-size: small;
 									width: 65px;
 									text-align: center;
+									font-family: Tahoma, Geneva, Verdana, sans-serif;
 								}
 
 								&.selected {

@@ -44,19 +44,16 @@ const BridgeComponent = ({ pending, color, rotation }: BridgeComponentProps) => 
 		return new THREE.ShapeGeometry(outerShape, 64); // Augmentation des segments
 	}, []);
 
-	// Géométrie des faces avant/arriere
-	const sideGeometryX = React.useMemo(() => {
-		const width = RECTANGLE_DIMENSIONS.width;
-		const depth = RECTANGLE_DIMENSIONS.depth;
-		return new THREE.PlaneGeometry(width, depth);
-	}, []);
-
+	// Géométrie des faces avant/arrière
+	const sideGeometryX = React.useMemo(
+		() => new THREE.PlaneGeometry(RECTANGLE_DIMENSIONS.width, RECTANGLE_DIMENSIONS.depth),
+		[]
+	);
 	// Géométrie des faces latérales
-	const sideGeometryY = React.useMemo(() => {
-		const height = RECTANGLE_DIMENSIONS.height;
-		const depth = RECTANGLE_DIMENSIONS.depth;
-		return new THREE.PlaneGeometry(height, depth);
-	}, []);
+	const sideGeometryY = React.useMemo(
+		() => new THREE.PlaneGeometry(RECTANGLE_DIMENSIONS.height, RECTANGLE_DIMENSIONS.depth),
+		[]
+	);
 
 	const material = (
 		<meshStandardMaterial
@@ -68,48 +65,63 @@ const BridgeComponent = ({ pending, color, rotation }: BridgeComponentProps) => 
 		/>
 	);
 
+	// Définir un userData commun de base
+	const baseUserData: NonClickableFaceUserData = {
+		type: MeshTypes.NON_CLICKABLE_FACE,
+	};
+
+	// Composant pour une face réutilisable
+	const Face = ({
+		position,
+		rotation,
+		geometry,
+		userData,
+	}: {
+		position: [number, number, number];
+		rotation: [number, number, number];
+		geometry: any;
+		userData: any;
+	}) => (
+		<mesh position={position} rotation={rotation} userData={userData} geometry={geometry}>
+			{material}
+		</mesh>
+	);
+	const faceDetails: {
+		position: [number, number, number];
+		rotation: [number, number, number];
+		geometry: THREE.PlaneGeometry;
+	}[] = [
+		{ position: [0, 0, RECTANGLE_DIMENSIONS.depth / 2], rotation: [0, 0, 0], geometry: sideGeometryX },
+		{ position: [0, 0, -RECTANGLE_DIMENSIONS.depth / 2], rotation: [0, Math.PI, 0], geometry: sideGeometryX },
+		{ position: [-RECTANGLE_DIMENSIONS.width / 2, 0, 0], rotation: [0, -Math.PI / 2, 0], geometry: sideGeometryY },
+		{ position: [RECTANGLE_DIMENSIONS.width / 2, 0, 0], rotation: [0, Math.PI / 2, 0], geometry: sideGeometryY },
+	];
 	return (
 		<mesh
-			userData={{ type: MeshTypes.NON_CLICKABLE_FACE, pending }}
+			userData={{ ...baseUserData }}
 			scale={[1, 1, 1]}
 			rotation={rotation === 'VERTICAL' ? [0, 0, 0] : [0, Math.PI / 2, 0]}
 		>
 			{/* Faces du rectangle */}
-			<mesh
+			<Face
 				position={[0, RECTANGLE_DIMENSIONS.height / 2, 0]}
 				rotation={[-Math.PI / 2, 0, 0]}
+				geometry={faceGeometry}
 				userData={
 					{
+						...baseUserData,
 						type: MeshTypes.SHAPE_FACE,
 						faceDirection: MeshDirections.TOP,
 					} as ShapeFaceUserData
 				}
-				geometry={faceGeometry}
-			>
-				{material}
-			</mesh>
-			<mesh
+			/>
+			<Face
 				position={[0, -RECTANGLE_DIMENSIONS.height / 2, 0]}
 				rotation={[Math.PI / 2, 0, 0]}
-				userData={
-					{
-						type: MeshTypes.SHAPE_FACE,
-						faceDirection: MeshDirections.BOTTOM,
-					} as ShapeFaceUserData
-				}
 				geometry={faceGeometry}
-			>
-				{material}
-			</mesh>
-			{/* Tube (corps) du rectangle */}
-			<mesh
-				userData={
-					{
-						type: MeshTypes.NON_CLICKABLE_FACE,
-						pending: pending,
-					} as NonClickableFaceUserData
-				}
-			>
+				userData={{ ...baseUserData }}
+			/>
+			<mesh userData={{ ...baseUserData }}>
 				<tubeGeometry
 					args={[
 						new THREE.LineCurve3(
@@ -125,39 +137,15 @@ const BridgeComponent = ({ pending, color, rotation }: BridgeComponentProps) => 
 				{opacity === 1 && <Edges linewidth={1} color={cubeColor.clone().addScalar(0.2)} />}
 				{material}
 			</mesh>
-			{/* Faces latérales */}
-			{/* Avant */}
-			<mesh
-				position={[0, 0, RECTANGLE_DIMENSIONS.depth / 2]}
-				rotation={[0, 0, 0]} // Face orientée vers l'avant
-				geometry={sideGeometryX}
-			>
-				{material}
-			</mesh>
-			{/* Arrière */}
-			<mesh
-				position={[0, 0, -RECTANGLE_DIMENSIONS.depth / 2]}
-				rotation={[0, Math.PI, 0]} // Face orientée vers l'arrière
-				geometry={sideGeometryX}
-			>
-				{material}
-			</mesh>
-			{/* Gauche */}
-			<mesh
-				position={[-RECTANGLE_DIMENSIONS.width / 2, 0, 0]}
-				rotation={[0, -Math.PI / 2, 0]} // Face orientée vers la gauche
-				geometry={sideGeometryY}
-			>
-				{material}
-			</mesh>
-			{/* Droite */}
-			<mesh
-				position={[RECTANGLE_DIMENSIONS.width / 2, 0, 0]}
-				rotation={[0, Math.PI / 2, 0]} // Face orientée vers la droite
-				geometry={sideGeometryY}
-			>
-				{material}
-			</mesh>
+			{faceDetails.map((face, index) => (
+				<Face
+					key={index}
+					position={face.position}
+					rotation={face.rotation}
+					geometry={face.geometry}
+					userData={{ ...baseUserData }}
+				/>
+			))}
 		</mesh>
 	);
 };

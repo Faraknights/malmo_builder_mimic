@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useRef } from 'react';
 import { shapeHitbox, Shapes } from '../../modelisation/shapes/Shape';
 import { GameMode } from '../../../enum/GameMode';
 import Board from '../../modelisation/Board';
@@ -110,7 +110,6 @@ const Game: React.FC = () => {
 		} else {
 			shapeInPlace.confirmPending();
 		}
-		console.log(shapeInPlace.objects);
 		e.stopPropagation();
 	};
 
@@ -129,6 +128,8 @@ const Game: React.FC = () => {
 		e.stopPropagation();
 	};
 
+	const lastIntersectionsRef = useRef<string[]>([]);
+
 	const handlePointerMove = (e: ThreeEvent<PointerEvent>) => {
 		const intersectionWithoutPending = e.intersections.filter((intersection) => {
 			const shape = findParentShape(intersection.object as Object3DWithUserData<Object3DEventMap>);
@@ -139,11 +140,20 @@ const Game: React.FC = () => {
 				return true;
 			}
 		});
+		console.log(intersectionWithoutPending[0]);
+		const currentIntersectionUuids = intersectionWithoutPending.map((elem) => elem.object.uuid).sort();
+
+		if (JSON.stringify(currentIntersectionUuids) === JSON.stringify(lastIntersectionsRef.current)) {
+			return;
+		}
+		lastIntersectionsRef.current = currentIntersectionUuids;
+
 		if (action.action === Action.PLACE) {
 			handlePendingBlock(intersectionWithoutPending);
 		} else {
 			handleBreakingBlock(intersectionWithoutPending);
 		}
+		e.stopPropagation();
 	};
 
 	const handlePendingBlock = (intersections: Intersection[]) => {
@@ -196,21 +206,27 @@ const Game: React.FC = () => {
 	};
 
 	const handleBreakingBlock = (intersections: Intersection[]) => {
+		console.log('change');
 		if (intersections[0]) {
-			shapeInPlace.removeBreaking();
 			let pointedMesh = findParentShape(intersections[0].object as Object3DWithUserData<Object3DEventMap>);
 			if (pointedMesh.userData.type === MeshTypes.SHAPE) {
 				while (pointedMesh.parent?.userData.type === MeshTypes.GROUP) {
 					pointedMesh = pointedMesh.parent as Object3DWithUserData<Object3DEventMap>;
 				}
 				const position = getPosition(pointedMesh);
+				const currentShape = shapeInPlace.getObjectAtPosition(position.x, position.y, position.z);
+				if (currentShape?.position != position) {
+					shapeInPlace.removeBreaking();
+					shapeInPlace.setBreaking(position);
+				} else {
+					return;
+				}
 				if (setPointer) {
 					setPointer({
 						cartesianCoordinate: position,
 						type: MeshTypes.SHAPE,
 					});
 				}
-				shapeInPlace.setBreaking(position);
 			} else if (pointedMesh.userData.type === MeshTypes.CELL_BOARD) {
 				const cell = pointedMesh.userData as CellBoardUserData;
 				if (setPointer) {
@@ -268,15 +284,9 @@ const Game: React.FC = () => {
 			pending &&
 			gameMode === GameMode.SIMULATION &&
 			(pending instanceof ShapeGroup ? (
-				<Group
-					key={pending.uuid} // Ajout de la clé ici
-					shapeGroup={pending}
-				/>
+				<Group key={pending.uuid} shapeGroup={pending} />
 			) : (
-				<Shapes
-					key={pending.uuid} // Ajout de la clé ici
-					{...pending}
-				/>
+				<Shapes key={pending.uuid} {...pending} />
 			)),
 		[pending, gameMode]
 	);

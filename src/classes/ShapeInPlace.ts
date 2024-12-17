@@ -11,6 +11,7 @@ export interface ShapeInPlaceProps {
 	setPending: React.Dispatch<React.SetStateAction<shapeProps | undefined>>;
 	nbObjects: () => number;
 	objectExists: (x: number, y: number, z: number) => boolean;
+	getObjectAtPosition: (x: number, y: number, z: number) => shapeProps | undefined;
 	addObject: (object: shapeProps) => void;
 	removeObject: (x: number, y: number, z: number) => void;
 	clear: () => void;
@@ -49,6 +50,22 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 			}
 		}
 		return false;
+	};
+
+	const getObjectAtPosition = (x: number, y: number, z: number): shapeProps | undefined => {
+		for (const shape of objects) {
+			if (shape instanceof ShapeGroup) {
+				const foundObject = shape.getObjectAtPosition(x, y, z);
+				if (foundObject) {
+					return foundObject;
+				}
+			} else {
+				if (x === shape.position.x && y === shape.position.y && z === shape.position.z) {
+					return shape;
+				}
+			}
+		}
+		return undefined;
 	};
 
 	const addObject = (object: shapeProps): void => {
@@ -135,6 +152,7 @@ export const useShapeInPlace = (): ShapeInPlaceProps => {
 		setPending,
 		nbObjects,
 		objectExists,
+		getObjectAtPosition,
 		addObject,
 		removeObject,
 		clear,

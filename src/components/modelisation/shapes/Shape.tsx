@@ -121,7 +121,7 @@ const interpolateColor = (initial: string, final: string, percent: number): stri
 
 export const Shapes = (props: shapeProps) => {
 	const ShapeComponent = shapeComponents[props.shape];
-	if (props.pending) console.log(props);
+
 	return (
 		<mesh
 			userData={
@@ -138,10 +138,12 @@ export const Shapes = (props: shapeProps) => {
 				<ShapeComponent
 					{...props}
 					color={
-						{
-							hex: interpolateColor(props.color.hex, COLORS.WHITE.hex, 40),
-							id: COLORS.WHITE.id,
-						} as Color
+						props.breakable
+							? {
+									hex: interpolateColor(props.color.hex, COLORS.WHITE.hex, 40),
+									id: COLORS.WHITE.id,
+								}
+							: props.color
 					}
 				/>
 			)) || <ShapeComponent {...props} />}
