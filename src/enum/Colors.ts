@@ -9,4 +9,5 @@ export enum Colors {
 	BLACK = 'BLACK',
 	BROWN = 'BROWN',
 	MAGENTA = 'MAGENTA',
+	GREY = 'GREY',
 }

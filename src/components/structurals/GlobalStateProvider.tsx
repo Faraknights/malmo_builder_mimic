@@ -15,6 +15,8 @@ import { chatProps, useChat } from '../../classes/Chat';
 import { GameLog, WorldStateProps } from '../../classes/GameLog';
 import { Pointer } from '../../interfaces/Pointer';
 import { CameraMode } from '../../enum/CameraMode';
+import { COLORS } from '../../constants/COLORS';
+import { ShapeList } from '../../enum/ShapeList';
 
 //
 export interface GlobalState {
@@ -79,10 +81,15 @@ export const GlobalStateProvider: React.FC<GlobalStateProviderProps> = ({
 		setGameLog(new GameLog());
 		shapeInPlace.clear();
 		chat.setChatHistory([]);
+		if (gameMode === GameMode.MULTIMODAL) {
+			inventory.setCurrentColor(COLORS.GREY);
+			inventory.setCurrentShape(ShapeList.CUBE);
+		} else {
+			inventory.setCurrentColor(ENVIRONMENT_COLORS[environmentMode][0]);
+			inventory.setCurrentShape(ENVIRONMENT_SHAPES[environmentMode][0]);
+		}
 		inventory.setColors(ENVIRONMENT_COLORS[environmentMode]);
-		inventory.setCurrentColor(ENVIRONMENT_COLORS[environmentMode][0]);
 		inventory.setShapes(ENVIRONMENT_SHAPES[environmentMode]);
-		inventory.setCurrentShape(ENVIRONMENT_SHAPES[environmentMode][0]);
 		setCamera(defaultCameraByEnvironment[environmentMode]);
 		setPointer(undefined);
 	};

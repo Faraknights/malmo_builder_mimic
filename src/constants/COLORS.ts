@@ -42,4 +42,8 @@ export const COLORS: { [key in Colors]: Color } = {
 		hex: '#e60088',
 		id: Colors.MAGENTA,
 	},
+	[Colors.GREY]: {
+		hex: '#636363',
+		id: Colors.GREY,
+	},
 };

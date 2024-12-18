@@ -15,6 +15,7 @@ import { CameraMode } from '../enum/CameraMode';
 import { Action } from '../enum/Action';
 import { CocobotsLogStructure, GameLogsProps, MinecraftLogStructure } from '../interfaces/ExportLogStructure';
 import DirectInstructions from '../components/structurals/environmentGames/directInstructions';
+import Multimodal from '../components/structurals/environmentGames/multimodal';
 
 export const BLOCK_SIZE: { [key in EnvironmentMode]: CartesianCoordinate } = {
 	[EnvironmentMode.MINECRAFT]: { x: 1, y: 1, z: 1 },
@@ -175,12 +176,13 @@ export const gameModesAvailable: { [key in EnvironmentMode]: GameMode[] } = {
 		GameMode.VISUALIZATION,
 		GameMode.NEBULA,
 		GameMode.DIRECT_INSTRUCTIONS,
+		GameMode.MULTIMODAL,
 	],
 };
 
 export const defaultCameraByEnvironment: { [key in EnvironmentMode]: CameraMode } = {
 	[EnvironmentMode.MINECRAFT]: CameraMode.FREE,
-	[EnvironmentMode.COCOBOTS]: CameraMode.UPPER_VIEW,
+	[EnvironmentMode.COCOBOTS]: CameraMode.FREE,
 };
 
 export const defaultActionByGameMode: { [key in GameMode]: Action } = {
@@ -188,6 +190,7 @@ export const defaultActionByGameMode: { [key in GameMode]: Action } = {
 	[GameMode.VISUALIZATION]: Action.BREAK,
 	[GameMode.NEBULA]: Action.BREAK,
 	[GameMode.DIRECT_INSTRUCTIONS]: Action.BREAK,
+	[GameMode.MULTIMODAL]: Action.PLACE,
 };
 
 export const gameModeComponent: {
@@ -197,6 +200,7 @@ export const gameModeComponent: {
 	[GameMode.VISUALIZATION]: Visualization,
 	[GameMode.NEBULA]: Nebula,
 	[GameMode.DIRECT_INSTRUCTIONS]: DirectInstructions,
+	[GameMode.MULTIMODAL]: Multimodal,
 };
 
 export const OPACITY_PENDING_OBJECT = 0.4;

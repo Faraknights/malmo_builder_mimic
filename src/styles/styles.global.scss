@@ -862,6 +862,26 @@ body,
 						}
 					}
 				}
+				
+				#multimodalSetup {
+					background-color: rgba(0, 119, 255, 0.153);
+					border-color: rgba(91, 162, 255, 0.905);
+
+					height: 100%;
+					overflow-y: auto;
+					color: #c7e5fd;
+
+
+
+					.galery {
+						overflow-y: auto;
+
+						img{
+							width: 100%;
+							margin: 10px
+						}
+					}
+				}
 			}
 		}
 	}

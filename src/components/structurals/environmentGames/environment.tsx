@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Color } from 'three';
 import Game from './game';
 import { GRID_SIZE } from '../../../constants/ENVIRONMENT_CONSTANTS';
-import { CanvasCameraSettings } from '../../../interfaces/Camera';
+import { CanvasCameraSettings, CanvasCameraSettingsProps } from '../../../interfaces/Camera';
 import { useGlobalState } from '../GlobalStateProvider';
 
 const Scene: React.FC = () => {
@@ -24,23 +24,27 @@ const App: React.FC = () => {
 	const bgColor = new Color(0x1a1b1e);
 	const { camera } = useGlobalState().camera;
 
-	const scene = useMemo(() => <Scene />, []);
+	// Get the camera settings, either by invoking the function or directly accessing the object
+	const cameraSettings =
+		typeof CanvasCameraSettings[camera] === 'function'
+			? (CanvasCameraSettings[camera] as () => CanvasCameraSettingsProps)()
+			: CanvasCameraSettings[camera];
 
 	return (
 		<Canvas
 			key={camera}
 			gl={{ preserveDrawingBuffer: true }}
 			frameloop="demand"
-			orthographic={CanvasCameraSettings[camera].orthographic}
-			camera={CanvasCameraSettings[camera].cameraSettings}
+			orthographic={cameraSettings.orthographic}
+			camera={cameraSettings.cameraSettings}
 		>
-			{scene}
+			<Scene />
 			<OrbitControls
 				enablePan={false}
-				minPolarAngle={CanvasCameraSettings[camera].polarAngle.min}
-				maxPolarAngle={CanvasCameraSettings[camera].polarAngle.max}
-				minAzimuthAngle={CanvasCameraSettings[camera].azimuthAngle?.min}
-				maxAzimuthAngle={CanvasCameraSettings[camera].azimuthAngle?.max}
+				minPolarAngle={cameraSettings.polarAngle.min}
+				maxPolarAngle={cameraSettings.polarAngle.max}
+				minAzimuthAngle={cameraSettings.azimuthAngle?.min}
+				maxAzimuthAngle={cameraSettings.azimuthAngle?.max}
 			/>
 			<fog attach="fog" args={['white', 20, 1000]} />
 			<ambientLight intensity={1} />

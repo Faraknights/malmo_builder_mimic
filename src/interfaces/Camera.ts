@@ -1,6 +1,6 @@
 import { CameraMode } from '../enum/CameraMode';
 
-interface CanvasCameraSettingsProps {
+export interface CanvasCameraSettingsProps {
 	orthographic: boolean;
 	polarAngle: {
 		min: number;
@@ -13,7 +13,7 @@ interface CanvasCameraSettingsProps {
 	};
 }
 
-export const getDefaultCameraSettings = (): CanvasCameraSettingsProps => {
+export const getDefaultCameraSettings = (position: [number, number, number]): CanvasCameraSettingsProps => {
 	const aspect = typeof window !== 'undefined' ? window.innerWidth / window.innerHeight : 1;
 	return {
 		orthographic: false,
@@ -26,15 +26,15 @@ export const getDefaultCameraSettings = (): CanvasCameraSettingsProps => {
 			aspect: aspect,
 			near: 0.1,
 			far: 1000,
-			position: [0, 5, 10],
+			position: position,
 		},
 	};
 };
 
 export const CanvasCameraSettings: {
-	[key in CameraMode]: CanvasCameraSettingsProps;
+	[key in CameraMode]: CanvasCameraSettingsProps | (() => CanvasCameraSettingsProps);
 } = {
-	[CameraMode.FREE]: getDefaultCameraSettings(),
+	[CameraMode.FREE]: getDefaultCameraSettings([0, 5, 10]),
 	[CameraMode.SIDE_VIEW]: {
 		orthographic: true,
 		polarAngle: {
@@ -61,4 +61,8 @@ export const CanvasCameraSettings: {
 			min: 0,
 		},
 	},
+	[CameraMode.RANDOM]: () =>
+		getDefaultCameraSettings([Math.random() * 30 - 15, Math.random() * 15 + 2, Math.random() * 30 - 15]),
+	[CameraMode.RANDOM2]: () =>
+		getDefaultCameraSettings([Math.random() * 30 - 15, Math.random() * 15 + 2, Math.random() * 30 - 15]),
 };

@@ -252,7 +252,7 @@ const Game: React.FC = () => {
 			}
 		},
 		onPointerUp: (e: ThreeEvent<PointerEvent>) => {
-			if (mouseDownPosition && gameMode === GameMode.SIMULATION) {
+			if (mouseDownPosition && (gameMode === GameMode.SIMULATION || gameMode === GameMode.MULTIMODAL)) {
 				const deltaX = Math.abs(e.clientX - mouseDownPosition.x);
 				const deltaY = Math.abs(e.clientY - mouseDownPosition.y);
 				if (deltaX < 5 && deltaY < 5) {
@@ -282,7 +282,7 @@ const Game: React.FC = () => {
 	const pendingObject = useMemo(
 		() =>
 			pending &&
-			gameMode === GameMode.SIMULATION &&
+			(gameMode === GameMode.SIMULATION || gameMode === GameMode.MULTIMODAL) &&
 			(pending instanceof ShapeGroup ? (
 				<Group key={pending.uuid} shapeGroup={pending} />
 			) : (
