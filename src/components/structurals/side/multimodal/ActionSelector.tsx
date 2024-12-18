@@ -51,7 +51,7 @@ const MultimodalSetup: React.FC = () => {
 			// Generate the title based on the shape and color
 			const title = `${imageTitle
 				.replace('[color]', color.id.toLowerCase())
-				.replace('[shape]', ShapeList[shape].toLowerCase())} (${iteration})`;
+				.replace('[shape]', ShapeList[shape].toLowerCase())} (${iteration}).png`;
 
 			// Update shape and color in place
 			shapeInPlace.setObjects((prevObjects) => {

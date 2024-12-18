@@ -30,28 +30,32 @@ const App: React.FC = () => {
 			? (CanvasCameraSettings[camera] as () => CanvasCameraSettingsProps)()
 			: CanvasCameraSettings[camera];
 
-	return (
-		<Canvas
-			key={camera}
-			gl={{ preserveDrawingBuffer: true }}
-			frameloop="demand"
-			orthographic={cameraSettings.orthographic}
-			camera={cameraSettings.cameraSettings}
-		>
-			<Scene />
-			<OrbitControls
-				enablePan={false}
-				minPolarAngle={cameraSettings.polarAngle.min}
-				maxPolarAngle={cameraSettings.polarAngle.max}
-				minAzimuthAngle={cameraSettings.azimuthAngle?.min}
-				maxAzimuthAngle={cameraSettings.azimuthAngle?.max}
-			/>
-			<fog attach="fog" args={['white', 20, 1000]} />
-			<ambientLight intensity={1} />
-			<pointLight color="white" position={[3, 10, 3]} intensity={200} />
-			<color attach="background" args={[bgColor.r, bgColor.g, bgColor.b]} />
-		</Canvas>
-	);
+	if (cameraSettings && 'orthographic' in cameraSettings) {
+		return (
+			<Canvas
+				key={camera}
+				gl={{ preserveDrawingBuffer: true }}
+				frameloop="demand"
+				orthographic={cameraSettings.orthographic}
+				camera={cameraSettings.cameraSettings}
+			>
+				<Scene />
+				<OrbitControls
+					enablePan={false}
+					minPolarAngle={cameraSettings.polarAngle.min}
+					maxPolarAngle={cameraSettings.polarAngle.max}
+					minAzimuthAngle={cameraSettings.azimuthAngle?.min}
+					maxAzimuthAngle={cameraSettings.azimuthAngle?.max}
+				/>
+				<fog attach="fog" args={['white', 20, 1000]} />
+				<ambientLight intensity={1} />
+				<pointLight color="white" position={[3, 10, 3]} intensity={200} />
+				<color attach="background" args={[bgColor.r, bgColor.g, bgColor.b]} />
+			</Canvas>
+		);
+	} else {
+		return null;
+	}
 };
 
 export default App;
