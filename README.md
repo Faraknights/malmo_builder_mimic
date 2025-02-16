@@ -4,14 +4,13 @@ Welcome to Cocoreli simulator
 
 ## Installation
 
-
 Install the required dependencies:
 
 ```bash
 npm install
 ```
 
-> **Note:** Make sure there are no warnings during installation for a smooth setup.
+> **Note:** You may see some warnings due to deprecated libraries in React, but they are harmless.
 
 ## Development
 
@@ -21,7 +20,7 @@ To start the development server and use the simulator, run:
 npm run dev
 ```
 
-Your application should now be running on [http://localhost:3000](http://localhost:3000).
+The simulator should now be running on [http://localhost:3000](http://localhost:3000).
 
 ## Usage
 
@@ -42,7 +41,6 @@ In the header, you can select the mode you want. Here are the available modes:
     place("nut", "red", 1, 1, 2)
     place("nut", "red", 1, 1, 3)
     ```
-
 
 - **Multimodal** : Generates synthetic image data. Build a structure, and it will produce multiple images of it with different elements in the environment.
 
