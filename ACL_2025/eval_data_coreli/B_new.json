@@ -1,0 +1,14 @@
+[
+  {
+    "instruction": "<Architect> Starting in the second row and second column, place a magenta washer."
+  },
+  {
+    "instruction": "<Architect> Below it a column of four more magenta washers. All in the second column."
+  },
+  {
+    "instruction": "<Architect> In the second column, place a magenta washer on each in the second, fourth and sixth rows."
+  },
+  {
+    "instruction": "<Architect> Finally, place a magenta washer on the third and fifth row in the fourth column."
+  }
+]

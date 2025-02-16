@@ -1,0 +1,866 @@
+[
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 1,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 1,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 1,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 1,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 2,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 2,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 2,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 2,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 3,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 3,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 3,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 3,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 4,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 4,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 4,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 1,
+            "y": 4,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 1,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 1,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 1,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 1,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 2,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 2,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 2,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 2,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 3,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 3,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 3,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 3,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 4,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 4,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 4,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 2,
+            "y": 4,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 1,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 1,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 1,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 1,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 2,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 2,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 2,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 2,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 3,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 3,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 3,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 3,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 4,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 4,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 4,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 3,
+            "y": 4,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 1,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 1,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 1,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 1,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 2,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 2,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 2,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 2,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 3,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 3,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 3,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 3,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 4,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 4,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 4,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 4,
+            "y": 4,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 1,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 1,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 1,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 1,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 2,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 2,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 2,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 2,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 3,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 3,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 3,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 3,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 4,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 4,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 4,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 5,
+            "y": 4,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 1,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 1,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 1,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 1,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 2,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 2,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 2,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 2,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 3,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 3,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 3,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 3,
+            "z": 4
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 4,
+            "z": 1
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 4,
+            "z": 2
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 4,
+            "z": 3
+        },
+        "shape": "Washer"
+    },
+    {
+        "color": "Blue",
+        "position": {
+            "x": 6,
+            "y": 4,
+            "z": 4
+        },
+        "shape": "Washer"
+    }
+]

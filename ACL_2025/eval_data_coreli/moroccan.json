@@ -1,0 +1,33 @@
+[
+    {
+      "instruction": "<Architect> Start by placing two horizontal blue bridges in the fourth row and from the fourth to the seventh column."
+      
+    },
+    {
+      "instruction": "<Architect> Place a horizontal red bridge on the of the blue bridges starting from the fifth to the sixth columns."
+      
+    },
+    {
+      "instruction": "<Architect> Place two green screws on the top the red bridge you just have placed. This is what we call a morrocan bridge."
+      
+    },
+    {
+      "instruction": "<Architect> Place a green vertical bridge just below the moroccan bridge, in the seventh column and in the fifth and sixth rows."
+      
+    },
+    {
+      "instruction": "<Architect> Place a yellow vertical bridge on top of the moroccan bridge and the green bridge, in the seventh column and in the fourth and fifth rows."
+      
+    },
+    {
+      "instruction": "<Architect> Place another moroccan bridge in the seventh row starting in the fourth column."
+      
+    },
+    {
+      "instruction": "<Architect> Place a yellow vertical bridge on top of the second moroccan bridge and the green bridge, in the seventh column and in the sixth and seventh rows."
+      
+    },
+    {
+      "instruction": "<Architect> Place two green screws, the first in the fourth column and the seventh row, and the second in the seventh column and the seventh row. Both, on the top of the two yellow vertical bridges."
+    }
+  ]

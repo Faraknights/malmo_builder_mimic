@@ -1,0 +1,17 @@
+[
+  {
+    "instruction": "<Architect> Start by placing one purple gasket on rows 1 through 6 all in the first column."
+  },
+  {
+    "instruction": "<Architect> In the first row, starting from the second column, place a horizontal row of four yellow washers. All on the same row."
+  },
+  {
+    "instruction": "<Architect> In the sixth row, starting from the second column, place a horizontal row of four purple gaskets. All on the same row."
+  },
+  {
+    "instruction": "<Architect> Above the last washer of the row you just built, put a yellow screw."
+  },
+  {
+    "instruction": "<Architect> Finally, put a green washer on either sides of the screw you just placed. "
+  }
+]

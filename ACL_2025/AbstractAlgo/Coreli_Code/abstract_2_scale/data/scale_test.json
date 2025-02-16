@@ -1,0 +1,1020 @@
+{
+    "worldStates": [
+        {
+            "timestamp": "2025-02-13T23:45:28.606Z",
+            "chatHistory": [],
+            "blocksInGrid": []
+        },
+        {
+            "timestamp": "2025-02-13T23:45:32.017Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:33.006Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:33.576Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:34.641Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:35.163Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:35.632Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:36.969Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:37.836Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:39.145Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:40.229Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:41.212Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 10
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:42.307Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 10
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:43.427Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 10
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                }
+            ]
+        },
+        {
+            "timestamp": "2025-02-13T23:45:49.262Z",
+            "chatHistory": [],
+            "blocksInGrid": [
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 1,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 12
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 7,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 9,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                },
+                {
+                    "shape": "Washer",
+                    "position": {
+                        "x": 8,
+                        "y": 2,
+                        "z": 11
+                    },
+                    "color": "Blue"
+                }
+            ]
+        }
+    ]
+}

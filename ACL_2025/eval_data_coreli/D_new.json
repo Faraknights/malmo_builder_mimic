@@ -1,0 +1,14 @@
+[
+  {
+    "instruction": "<Architect> Put a vertical column of four blue screws starting at the second row and second column on the ground."
+  },
+  {
+    "instruction": "<Architect> Now add a row of two horizontal red hex nuts extending from the first part of the column to the right. All in the second row."
+  },
+  {
+    "instruction": "<Architect> Repeat the previous step to add a row of two horizontal red hex nuts extending from the last part of the column to the right. All in the 5th row."
+  },
+  {
+    "instruction": "<Architect> Diagonally above to the hex nut placed in the 5th column and 6th row, place two red washers. The two washers should be in the 4th and 5th rows and the 6th column."
+  }
+]

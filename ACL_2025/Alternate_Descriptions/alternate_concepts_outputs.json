@@ -1,0 +1,29 @@
+{
+    "column": [
+        "[Column 98%, Vertical row 99%]",
+        "[Column 98%, Vertical row 99%]",
+        "[Column 100%, Vertical row 0%]",
+        "[Column 98%, Horizontal row 2%]",
+        "[Vertical row 100%, Column 0%]",
+        "[Vertical row 98%, Column 97%]",
+        "[Vertical row 100%, Column 0%]"
+    ],
+    "vertical row": [
+        "[Column 98%, Vertical row 99%]",
+        "[Column 98%, Vertical row 99%]",
+        "[Column 100%, Vertical row 0%]",
+        "[Column 98%, Horizontal row 2%]",
+        "[Vertical row 100%, Column 0%]",
+        "[Vertical row 98%, Column 97%]",
+        "[Column 100%]"
+    ],
+    "horizontal row": [
+        "[Horizontal row 100%]",
+        "[Horizontal row 100%]",
+        "[Horizontal row 100%]",
+        "[Horizontal row 100%]",
+        "[Horizontal row 100%]",
+        "[Horizontal row 100%]",
+        "[Horizontal row 100%]"
+    ]
+}

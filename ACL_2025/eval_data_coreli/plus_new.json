@@ -1,0 +1,11 @@
+[
+  {
+    "instruction": "<Architect> Start by placing a vertical row of five magenta bolts in third column."
+  },
+  {
+    "instruction": "<Architect> Extend the middle bolt of the vertical row by placing two magenta bolts to the left horizontally."
+  },
+  {
+    "instruction": "<Architect> Extend the middle bolt of the vertical row by placing two magenta bolts to the right horizontally."
+  }
+]

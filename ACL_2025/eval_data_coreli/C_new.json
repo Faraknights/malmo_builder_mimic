@@ -1,0 +1,11 @@
+[
+  {
+    "instruction": "<Architect> Starting from the up-left corner, place horizontally three green screws. All in the first row."
+  },
+  {
+    "instruction": "<Architect> Now place three green screws in the second third and forth rows. All in the first column."
+  },
+  {
+    "instruction": "<Architect> Now starting in the fourth row and second column, place a row of two green screws. All in the fourth row."
+  }
+]

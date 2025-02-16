@@ -1,0 +1,1602 @@
+{
+    "0": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with purple washer",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "washer",
+        "color": "purple",
+        "output": "place(\"washer\", \"purple\", 3, 1, 1)\nplace(\"washer\", \"purple\", 3, 2, 1)\nplace(\"washer\", \"purple\", 3, 3, 1)\nplace(\"washer\", \"purple\", 3, 4, 1)\nplace(\"washer\", \"purple\", 3, 5, 1)\nplace(\"washer\", \"purple\", 3, 6, 1)\nplace(\"washer\", \"purple\", 3, 7, 1)\nplace(\"washer\", \"purple\", 3, 8, 1)\nplace(\"washer\", \"purple\", 4, 8, 1)\nplace(\"washer\", \"purple\", 5, 8, 1)\nplace(\"washer\", \"purple\", 6, 8, 1)\nplace(\"washer\", \"purple\", 7, 8, 1)\nplace(\"washer\", \"purple\", 8, 8, 1)\nplace(\"washer\", \"purple\", 9, 8, 1)"
+    },
+    "1": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with orange screw",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "screw",
+        "color": "orange",
+        "output": "place(\"screw\", \"orange\", 3, 1, 1)\nplace(\"screw\", \"orange\", 3, 2, 1)\nplace(\"screw\", \"orange\", 3, 3, 1)\nplace(\"screw\", \"orange\", 3, 4, 1)\nplace(\"screw\", \"orange\", 3, 5, 1)\nplace(\"screw\", \"orange\", 4, 5, 1)\nplace(\"screw\", \"orange\", 5, 5, 1)\nplace(\"screw\", \"orange\", 6, 5, 1)"
+    },
+    "2": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with red nut",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "nut",
+        "color": "red",
+        "output": "place(\"nut\", \"red\", 3, 1, 1)\nplace(\"nut\", \"red\", 3, 2, 1)\nplace(\"nut\", \"red\", 3, 3, 1)\nplace(\"nut\", \"red\", 3, 4, 1)\nplace(\"nut\", \"red\", 3, 5, 1)\nplace(\"nut\", \"red\", 4, 5, 1)\nplace(\"nut\", \"red\", 5, 5, 1)"
+    },
+    "3": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with black square_nut",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "square_nut",
+        "color": "black",
+        "output": "place(\"square_nut\", \"black\", 3, 1, 1)\nplace(\"square_nut\", \"black\", 3, 2, 1)\nplace(\"square_nut\", \"black\", 3, 3, 1)\nplace(\"square_nut\", \"black\", 3, 4, 1)\nplace(\"square_nut\", \"black\", 4, 4, 1)\nplace(\"square_nut\", \"black\", 5, 4, 1)\nplace(\"square_nut\", \"black\", 6, 4, 1)"
+    },
+    "4": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with yellow gasket",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "gasket",
+        "color": "yellow",
+        "output": "place(\"gasket\", \"yellow\", 3, 1, 1)\nplace(\"gasket\", \"yellow\", 3, 2, 1)\nplace(\"gasket\", \"yellow\", 3, 3, 1)\nplace(\"gasket\", \"yellow\", 3, 4, 1)\nplace(\"gasket\", \"yellow\", 3, 5, 1)\nplace(\"gasket\", \"yellow\", 3, 6, 1)\nplace(\"gasket\", \"yellow\", 3, 7, 1)\nplace(\"gasket\", \"yellow\", 3, 8, 1)\nplace(\"gasket\", \"yellow\", 4, 8, 1)\nplace(\"gasket\", \"yellow\", 5, 8, 1)\nplace(\"gasket\", \"yellow\", 6, 8, 1)\nplace(\"gasket\", \"yellow\", 7, 8, 1)\nplace(\"gasket\", \"yellow\", 8, 8, 1)"
+    },
+    "5": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with purple gasket",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "gasket",
+        "color": "purple",
+        "output": "place(\"gasket\", \"purple\", 3, 1, 1)\nplace(\"gasket\", \"purple\", 3, 2, 1)\nplace(\"gasket\", \"purple\", 3, 3, 1)\nplace(\"gasket\", \"purple\", 3, 4, 1)\nplace(\"gasket\", \"purple\", 3, 5, 1)\nplace(\"gasket\", \"purple\", 3, 6, 1)\nplace(\"gasket\", \"purple\", 3, 7, 1)\nplace(\"gasket\", \"purple\", 3, 8, 1)\nplace(\"gasket\", \"purple\", 4, 8, 1)\nplace(\"gasket\", \"purple\", 5, 8, 1)\nplace(\"gasket\", \"purple\", 6, 8, 1)\nplace(\"gasket\", \"purple\", 7, 8, 1)\nplace(\"gasket\", \"purple\", 8, 8, 1)"
+    },
+    "6": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with blue cap",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "cap",
+        "color": "blue",
+        "output": "place(\"cap\", \"blue\", 3, 1, 1)\nplace(\"cap\", \"blue\", 3, 2, 1)\nplace(\"cap\", \"blue\", 3, 3, 1)\nplace(\"cap\", \"blue\", 3, 4, 1)\nplace(\"cap\", \"blue\", 3, 5, 1)\nplace(\"cap\", \"blue\", 3, 6, 1)\nplace(\"cap\", \"blue\", 3, 7, 1)\nplace(\"cap\", \"blue\", 4, 7, 1)\nplace(\"cap\", \"blue\", 5, 7, 1)\nplace(\"cap\", \"blue\", 6, 7, 1)\nplace(\"cap\", \"blue\", 7, 7, 1)\nplace(\"cap\", \"blue\", 8, 7, 1)"
+    },
+    "7": {
+        "sentence": "Make me a 15 unit tall and 15 unit wide L shape with green nut",
+        "structure": "flat_L",
+        "length": "30",
+        "shape": "nut",
+        "color": "green",
+        "output": "place(\"nut\", \"green\", 8, 1, 1)\nplace(\"nut\", \"green\", 8, 2, 1)\nplace(\"nut\", \"green\", 8, 3, 1)\nplace(\"nut\", \"green\", 8, 4, 1)\nplace(\"nut\", \"green\", 8, 5, 1)\nplace(\"nut\", \"green\", 8, 6, 1)\nplace(\"nut\", \"green\", 8, 7, 1)\nplace(\"nut\", \"green\", 8, 8, 1)\nplace(\"nut\", \"green\", 8, 9, 1)\nplace(\"nut\", \"green\", 8, 10, 1)\nplace(\"nut\", \"green\", 8, 11, 1)\nplace(\"nut\", \"green\", 8, 12, 1)\nplace(\"nut\", \"green\", 8, 13, 1)\nplace(\"nut\", \"green\", 8, 14, 1)\nplace(\"nut\", \"green\", 8, 15, 1)\nplace(\"nut\", \"green\", 9, 15, 1)\nplace(\"nut\", \"green\", 10, 15, 1)\nplace(\"nut\", \"green\", 11, 15, 1)\nplace(\"nut\", \"green\", 12, 15, 1)\nplace(\"nut\", \"green\", 13, 15, 1)\nplace(\"nut\", \"green\", 14, 15, 1)"
+    },
+    "8": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with blue vbridge",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "vbridge",
+        "color": "blue",
+        "output": "place(\"v_bridge\", \"blue\", 3, 1, 1)\nplace(\"v_bridge\", \"blue\", 3, 2, 1)\nplace(\"v_bridge\", \"blue\", 3, 3, 1)\nplace(\"v_bridge\", \"blue\", 3, 4, 1)\nplace(\"v_bridge\", \"blue\", 3, 5, 1)\nplace(\"v_bridge\", \"blue\", 3, 6, 1)\nplace(\"v_bridge\", \"blue\", 3, 7, 1)\nplace(\"v_bridge\", \"blue\", 4, 7, 1)\nplace(\"v_bridge\", \"blue\", 5, 7, 1)\nplace(\"v_bridge\", \"blue\", 6, 7, 1)\nplace(\"v_bridge\", \"blue\", 7, 7, 1)\nplace(\"v_bridge\", \"blue\", 8, 7, 1)"
+    },
+    "9": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with green square_nut",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "square_nut",
+        "color": "green",
+        "output": "place(\"square_nut\", \"green\", 8, 1, 1)\nplace(\"square_nut\", \"green\", 8, 2, 1)\nplace(\"square_nut\", \"green\", 8, 3, 1)\nplace(\"square_nut\", \"green\", 8, 4, 1)\nplace(\"square_nut\", \"green\", 8, 5, 1)\nplace(\"square_nut\", \"green\", 8, 6, 1)\nplace(\"square_nut\", \"green\", 8, 7, 1)\nplace(\"square_nut\", \"green\", 8, 8, 1)\nplace(\"square_nut\", \"green\", 8, 9, 1)\nplace(\"square_nut\", \"green\", 8, 10, 1)\nplace(\"square_nut\", \"green\", 8, 11, 1)\nplace(\"square_nut\", \"green\", 8, 12, 1)\nplace(\"square_nut\", \"green\", 8, 13, 1)\nplace(\"square_nut\", \"green\", 8, 14, 1)\nplace(\"square_nut\", \"green\", 8, 15, 1)\nplace(\"square_nut\", \"green\", 8, 16, 1)\nplace(\"square_nut\", \"green\", 9, 16, 1)\nplace(\"square_nut\", \"green\", 10, 16, 1)\nplace(\"square_nut\", \"green\", 11, 16, 1)\nplace(\"square_nut\", \"green\", 12, 16, 1)\nplace(\"square_nut\", \"green\", 13, 16, 1)\nplace(\"square_nut\", \"green\", 14, 16, 1)\nplace(\"square_nut\", \"green\", 15, 16, 1)"
+    },
+    "10": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with yellow vbridge",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "vbridge",
+        "color": "yellow",
+        "output": "place(\"v_bridge\", \"yellow\", 3, 1, 1)\nplace(\"v_bridge\", \"yellow\", 3, 2, 1)\nplace(\"v_bridge\", \"yellow\", 3, 3, 1)\nplace(\"v_bridge\", \"yellow\", 3, 4, 1)\nplace(\"v_bridge\", \"yellow\", 3, 5, 1)\nplace(\"v_bridge\", \"yellow\", 3, 6, 1)\nplace(\"v_bridge\", \"yellow\", 3, 7, 1)\nplace(\"v_bridge\", \"yellow\", 3, 8, 1)\nplace(\"v_bridge\", \"yellow\", 4, 8, 1)\nplace(\"v_bridge\", \"yellow\", 5, 8, 1)\nplace(\"v_bridge\", \"yellow\", 6, 8, 1)\nplace(\"v_bridge\", \"yellow\", 7, 8, 1)\nplace(\"v_bridge\", \"yellow\", 8, 8, 1)"
+    },
+    "11": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with blue cap",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "cap",
+        "color": "blue",
+        "output": "place(\"cap\", \"blue\", 8, 1, 1)\nplace(\"cap\", \"blue\", 8, 2, 1)\nplace(\"cap\", \"blue\", 8, 3, 1)\nplace(\"cap\", \"blue\", 8, 4, 1)\nplace(\"cap\", \"blue\", 8, 5, 1)\nplace(\"cap\", \"blue\", 8, 6, 1)\nplace(\"cap\", \"blue\", 8, 7, 1)\nplace(\"cap\", \"blue\", 8, 8, 1)\nplace(\"cap\", \"blue\", 8, 9, 1)\nplace(\"cap\", \"blue\", 8, 10, 1)\nplace(\"cap\", \"blue\", 8, 11, 1)\nplace(\"cap\", \"blue\", 8, 12, 1)\nplace(\"cap\", \"blue\", 8, 13, 1)\nplace(\"cap\", \"blue\", 8, 14, 1)\nplace(\"cap\", \"blue\", 8, 15, 1)\nplace(\"cap\", \"blue\", 8, 16, 1)\nplace(\"cap\", \"blue\", 9, 16, 1)\nplace(\"cap\", \"blue\", 10, 16, 1)\nplace(\"cap\", \"blue\", 11, 16, 1)\nplace(\"cap\", \"blue\", 12, 16, 1)\nplace(\"cap\", \"blue\", 13, 16, 1)\nplace(\"cap\", \"blue\", 14, 16, 1)\nplace(\"cap\", \"blue\", 15, 16, 1)"
+    },
+    "12": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with magenta bolt",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "bolt",
+        "color": "magenta",
+        "output": "place(\"bolt\", \"magenta\", 3, 1, 1)\nplace(\"bolt\", \"magenta\", 3, 2, 1)\nplace(\"bolt\", \"magenta\", 3, 3, 1)\nplace(\"bolt\", \"magenta\", 3, 4, 1)\nplace(\"bolt\", \"magenta\", 3, 5, 1)\nplace(\"bolt\", \"magenta\", 3, 6, 1)\nplace(\"bolt\", \"magenta\", 3, 7, 1)\nplace(\"bolt\", \"magenta\", 3, 8, 1)\nplace(\"bolt\", \"magenta\", 4, 8, 1)\nplace(\"bolt\", \"magenta\", 5, 8, 1)\nplace(\"bolt\", \"magenta\", 6, 8, 1)\nplace(\"bolt\", \"magenta\", 7, 8, 1)\nplace(\"bolt\", \"magenta\", 8, 8, 1)"
+    },
+    "13": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with magenta cap",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "cap",
+        "color": "magenta",
+        "output": "place(\"cap\", \"magenta\", 8, 1, 1)\nplace(\"cap\", \"magenta\", 8, 2, 1)\nplace(\"cap\", \"magenta\", 8, 3, 1)\nplace(\"cap\", \"magenta\", 8, 4, 1)\nplace(\"cap\", \"magenta\", 8, 5, 1)\nplace(\"cap\", \"magenta\", 8, 6, 1)\nplace(\"cap\", \"magenta\", 8, 7, 1)\nplace(\"cap\", \"magenta\", 8, 8, 1)\nplace(\"cap\", \"magenta\", 8, 9, 1)\nplace(\"cap\", \"magenta\", 8, 10, 1)\nplace(\"cap\", \"magenta\", 8, 11, 1)\nplace(\"cap\", \"magenta\", 8, 12, 1)\nplace(\"cap\", \"magenta\", 8, 13, 1)\nplace(\"cap\", \"magenta\", 8, 14, 1)\nplace(\"cap\", \"magenta\", 8, 15, 1)\nplace(\"cap\", \"magenta\", 8, 16, 1)\nplace(\"cap\", \"magenta\", 9, 16, 1)\nplace(\"cap\", \"magenta\", 10, 16, 1)\nplace(\"cap\", \"magenta\", 11, 16, 1)\nplace(\"cap\", \"magenta\", 12, 16, 1)\nplace(\"cap\", \"magenta\", 13, 16, 1)\nplace(\"cap\", \"magenta\", 14, 16, 1)\nplace(\"cap\", \"magenta\", 15, 16, 1)"
+    },
+    "14": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with green square_nut",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "square_nut",
+        "color": "green",
+        "output": "place(\"square_nut\", \"green\", 3, 1, 1)\nplace(\"square_nut\", \"green\", 3, 2, 1)\nplace(\"square_nut\", \"green\", 3, 3, 1)\nplace(\"square_nut\", \"green\", 3, 4, 1)\nplace(\"square_nut\", \"green\", 3, 5, 1)\nplace(\"square_nut\", \"green\", 3, 6, 1)\nplace(\"square_nut\", \"green\", 3, 7, 1)\nplace(\"square_nut\", \"green\", 4, 7, 1)\nplace(\"square_nut\", \"green\", 5, 7, 1)\nplace(\"square_nut\", \"green\", 6, 7, 1)\nplace(\"square_nut\", \"green\", 7, 7, 1)\nplace(\"square_nut\", \"green\", 8, 7, 1)"
+    },
+    "15": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with orange nut",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "nut",
+        "color": "orange",
+        "output": "place(\"nut\", \"orange\", 3, 1, 1)\nplace(\"nut\", \"orange\", 3, 2, 1)\nplace(\"nut\", \"orange\", 3, 3, 1)\nplace(\"nut\", \"orange\", 3, 4, 1)\nplace(\"nut\", \"orange\", 3, 5, 1)\nplace(\"nut\", \"orange\", 3, 6, 1)\nplace(\"nut\", \"orange\", 3, 7, 1)\nplace(\"nut\", \"orange\", 4, 7, 1)\nplace(\"nut\", \"orange\", 5, 7, 1)\nplace(\"nut\", \"orange\", 6, 7, 1)\nplace(\"nut\", \"orange\", 7, 7, 1)\nplace(\"nut\", \"orange\", 8, 7, 1)"
+    },
+    "16": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with green washer",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "washer",
+        "color": "green",
+        "output": "place(\"washer\", \"green\", 3, 1, 1)\nplace(\"washer\", \"green\", 3, 2, 1)\nplace(\"washer\", \"green\", 3, 3, 1)\nplace(\"washer\", \"green\", 3, 4, 1)\nplace(\"washer\", \"green\", 3, 5, 1)\nplace(\"washer\", \"green\", 3, 6, 1)\nplace(\"washer\", \"green\", 3, 7, 1)\nplace(\"washer\", \"green\", 3, 8, 1)\nplace(\"washer\", \"green\", 3, 9, 1)\nplace(\"washer\", \"green\", 3, 10, 1)\nplace(\"washer\", \"green\", 3, 11, 1)\nplace(\"washer\", \"green\", 3, 12, 1)\nplace(\"washer\", \"green\", 3, 13, 1)\nplace(\"washer\", \"green\", 4, 13, 1)\nplace(\"washer\", \"green\", 5, 13, 1)\nplace(\"washer\", \"green\", 6, 13, 1)\nplace(\"washer\", \"green\", 7, 13, 1)\nplace(\"washer\", \"green\", 8, 13, 1)\nplace(\"washer\", \"green\", 9, 13, 1)\nplace(\"washer\", \"green\", 10, 13, 1)\nplace(\"washer\", \"green\", 11, 13, 1)\nplace(\"washer\", \"green\", 12, 13, 1)\nplace(\"washer\", \"green\", 13, 13, 1)"
+    },
+    "17": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with brown nut",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "nut",
+        "color": "brown",
+        "output": "place(\"nut\", \"brown\", 3, 1, 1)\nplace(\"nut\", \"brown\", 3, 2, 1)\nplace(\"nut\", \"brown\", 3, 3, 1)\nplace(\"nut\", \"brown\", 3, 4, 1)\nplace(\"nut\", \"brown\", 3, 5, 1)\nplace(\"nut\", \"brown\", 3, 6, 1)\nplace(\"nut\", \"brown\", 3, 7, 1)\nplace(\"nut\", \"brown\", 3, 8, 1)\nplace(\"nut\", \"brown\", 4, 8, 1)\nplace(\"nut\", \"brown\", 5, 8, 1)\nplace(\"nut\", \"brown\", 6, 8, 1)\nplace(\"nut\", \"brown\", 7, 8, 1)\nplace(\"nut\", \"brown\", 8, 8, 1)\nplace(\"nut\", \"brown\", 9, 8, 1)"
+    },
+    "18": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with red hbridge",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "hbridge",
+        "color": "red",
+        "output": "place(\"h_bridge\", \"red\", 3, 1, 1)\nplace(\"h_bridge\", \"red\", 3, 2, 1)\nplace(\"h_bridge\", \"red\", 3, 3, 1)\nplace(\"h_bridge\", \"red\", 3, 4, 1)\nplace(\"h_bridge\", \"red\", 3, 5, 1)\nplace(\"h_bridge\", \"red\", 3, 6, 1)\nplace(\"h_bridge\", \"red\", 3, 7, 1)\nplace(\"h_bridge\", \"red\", 3, 8, 1)\nplace(\"h_bridge\", \"red\", 3, 9, 1)\nplace(\"h_bridge\", \"red\", 3, 10, 1)\nplace(\"h_bridge\", \"red\", 3, 11, 1)\nplace(\"h_bridge\", \"red\", 3, 12, 1)\nplace(\"h_bridge\", \"red\", 3, 13, 1)\nplace(\"h_bridge\", \"red\", 3, 14, 1)\nplace(\"h_bridge\", \"red\", 4, 14, 1)\nplace(\"h_bridge\", \"red\", 5, 14, 1)\nplace(\"h_bridge\", \"red\", 6, 14, 1)\nplace(\"h_bridge\", \"red\", 7, 14, 1)\nplace(\"h_bridge\", \"red\", 8, 14, 1)\nplace(\"h_bridge\", \"red\", 9, 14, 1)\nplace(\"h_bridge\", \"red\", 10, 14, 1)\nplace(\"h_bridge\", \"red\", 11, 14, 1)\nplace(\"h_bridge\", \"red\", 12, 14, 1)\nplace(\"h_bridge\", \"red\", 13, 14, 1)\nplace(\"h_bridge\", \"red\", 14, 14, 1)"
+    },
+    "19": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with yellow cap",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "cap",
+        "color": "yellow",
+        "output": "place(\"cap\", \"yellow\", 3, 1, 1)\nplace(\"cap\", \"yellow\", 3, 2, 1)\nplace(\"cap\", \"yellow\", 3, 3, 1)\nplace(\"cap\", \"yellow\", 3, 4, 1)\nplace(\"cap\", \"yellow\", 3, 5, 1)\nplace(\"cap\", \"yellow\", 3, 6, 1)\nplace(\"cap\", \"yellow\", 4, 6, 1)\nplace(\"cap\", \"yellow\", 5, 6, 1)\nplace(\"cap\", \"yellow\", 6, 6, 1)"
+    },
+    "20": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with magenta vbridge",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "vbridge",
+        "color": "magenta",
+        "output": "place(\"v_bridge\", \"magenta\", 3, 1, 1)\nplace(\"v_bridge\", \"magenta\", 3, 2, 1)\nplace(\"v_bridge\", \"magenta\", 3, 3, 1)\nplace(\"v_bridge\", \"magenta\", 3, 4, 1)\nplace(\"v_bridge\", \"magenta\", 3, 5, 1)\nplace(\"v_bridge\", \"magenta\", 3, 6, 1)\nplace(\"v_bridge\", \"magenta\", 4, 6, 1)\nplace(\"v_bridge\", \"magenta\", 5, 6, 1)\nplace(\"v_bridge\", \"magenta\", 6, 6, 1)"
+    },
+    "21": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with blue screw",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "screw",
+        "color": "blue",
+        "output": "place(\"screw\", \"blue\", 3, 1, 1)\nplace(\"screw\", \"blue\", 3, 2, 1)\nplace(\"screw\", \"blue\", 3, 3, 1)\nplace(\"screw\", \"blue\", 3, 4, 1)\nplace(\"screw\", \"blue\", 3, 5, 1)\nplace(\"screw\", \"blue\", 3, 6, 1)\nplace(\"screw\", \"blue\", 3, 7, 1)\nplace(\"screw\", \"blue\", 3, 8, 1)\nplace(\"screw\", \"blue\", 3, 9, 1)\nplace(\"screw\", \"blue\", 3, 10, 1)\nplace(\"screw\", \"blue\", 3, 11, 1)\nplace(\"screw\", \"blue\", 3, 12, 1)\nplace(\"screw\", \"blue\", 3, 13, 1)\nplace(\"screw\", \"blue\", 4, 13, 1)\nplace(\"screw\", \"blue\", 5, 13, 1)\nplace(\"screw\", \"blue\", 6, 13, 1)\nplace(\"screw\", \"blue\", 7, 13, 1)\nplace(\"screw\", \"blue\", 8, 13, 1)\nplace(\"screw\", \"blue\", 9, 13, 1)\nplace(\"screw\", \"blue\", 10, 13, 1)\nplace(\"screw\", \"blue\", 11, 13, 1)\nplace(\"screw\", \"blue\", 12, 13, 1)\nplace(\"screw\", \"blue\", 13, 13, 1)"
+    },
+    "22": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with white square_nut",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "square_nut",
+        "color": "white",
+        "output": "place(\"square_nut\", \"white\", 3, 1, 1)\nplace(\"square_nut\", \"white\", 3, 2, 1)\nplace(\"square_nut\", \"white\", 3, 3, 1)\nplace(\"square_nut\", \"white\", 3, 4, 1)\nplace(\"square_nut\", \"white\", 3, 5, 1)\nplace(\"square_nut\", \"white\", 3, 6, 1)\nplace(\"square_nut\", \"white\", 3, 7, 1)\nplace(\"square_nut\", \"white\", 4, 7, 1)\nplace(\"square_nut\", \"white\", 5, 7, 1)\nplace(\"square_nut\", \"white\", 6, 7, 1)\nplace(\"square_nut\", \"white\", 7, 7, 1)\nplace(\"square_nut\", \"white\", 8, 7, 1)"
+    },
+    "23": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with magenta nut",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "nut",
+        "color": "magenta",
+        "output": "place(\"nut\", \"magenta\", 3, 1, 1)\nplace(\"nut\", \"magenta\", 3, 2, 1)\nplace(\"nut\", \"magenta\", 3, 3, 1)\nplace(\"nut\", \"magenta\", 3, 4, 1)\nplace(\"nut\", \"magenta\", 3, 5, 1)\nplace(\"nut\", \"magenta\", 3, 6, 1)\nplace(\"nut\", \"magenta\", 4, 6, 1)\nplace(\"nut\", \"magenta\", 5, 6, 1)\nplace(\"nut\", \"magenta\", 6, 6, 1)"
+    },
+    "24": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with blue washer",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "washer",
+        "color": "blue",
+        "output": "place(\"washer\", \"blue\", 5, 1, 1)\nplace(\"washer\", \"blue\", 5, 2, 1)\nplace(\"washer\", \"blue\", 5, 3, 1)\nplace(\"washer\", \"blue\", 5, 4, 1)\nplace(\"washer\", \"blue\", 5, 5, 1)\nplace(\"washer\", \"blue\", 5, 6, 1)\nplace(\"washer\", \"blue\", 5, 7, 1)\nplace(\"washer\", \"blue\", 5, 8, 1)\nplace(\"washer\", \"blue\", 5, 9, 1)\nplace(\"washer\", \"blue\", 5, 10, 1)\nplace(\"washer\", \"blue\", 6, 10, 1)\nplace(\"washer\", \"blue\", 7, 10, 1)\nplace(\"washer\", \"blue\", 8, 10, 1)\nplace(\"washer\", \"blue\", 9, 10, 1)\nplace(\"washer\", \"blue\", 10, 10, 1)"
+    },
+    "25": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with black vbridge",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "vbridge",
+        "color": "black",
+        "output": "place(\"v_bridge\", \"black\", 5, 1, 1)\nplace(\"v_bridge\", \"black\", 6, 2, 1)\nplace(\"v_bridge\", \"black\", 7, 3, 1)\nplace(\"v_bridge\", \"black\", 8, 4, 1)\nplace(\"v_bridge\", \"black\", 9, 5, 1)\nplace(\"v_bridge\", \"black\", 10, 6, 1)\nplace(\"v_bridge\", \"black\", 11, 7, 1)\nplace(\"v_bridge\", \"black\", 12, 8, 1)\nplace(\"v_bridge\", \"black\", 13, 9, 1)\nplace(\"v_bridge\", \"black\", 14, 10, 1)\n\nplace(\"v_bridge\", \"black\", 5, 10, 1)\nplace(\"v_bridge\", \"black\", 6, 11, 1)\nplace(\"v_bridge\", \"black\", 7, 12, 1)\nplace(\"v_bridge\", \"black\", 8, 13, 1)\nplace(\"v_bridge\", \"black\", 9, 14, 1)"
+    },
+    "26": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with yellow hbridge",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "hbridge",
+        "color": "yellow",
+        "output": "place(\"h_bridge\", \"yellow\", 3, 1, 1)\nplace(\"h_bridge\", \"yellow\", 3, 2, 1)\nplace(\"h_bridge\", \"yellow\", 3, 3, 1)\nplace(\"h_bridge\", \"yellow\", 3, 4, 1)\nplace(\"h_bridge\", \"yellow\", 3, 5, 1)\nplace(\"h_bridge\", \"yellow\", 3, 6, 1)\nplace(\"h_bridge\", \"yellow\", 3, 7, 1)\nplace(\"h_bridge\", \"yellow\", 4, 7, 1)\nplace(\"h_bridge\", \"yellow\", 5, 7, 1)\nplace(\"h_bridge\", \"yellow\", 6, 7, 1)\nplace(\"h_bridge\", \"yellow\", 7, 7, 1)\nplace(\"h_bridge\", \"yellow\", 8, 7, 1)"
+    },
+    "27": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with magenta bolt",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "bolt",
+        "color": "magenta",
+        "output": "place(\"bolt\", \"magenta\", 3, 1, 1)\nplace(\"bolt\", \"magenta\", 3, 2, 1)\nplace(\"bolt\", \"magenta\", 3, 3, 1)\nplace(\"bolt\", \"magenta\", 3, 4, 1)\nplace(\"bolt\", \"magenta\", 4, 4, 1)\nplace(\"bolt\", \"magenta\", 5, 4, 1)\nplace(\"bolt\", \"magenta\", 6, 4, 1)"
+    },
+    "28": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with brown nut",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "nut",
+        "color": "brown",
+        "output": "place(\"nut\", \"brown\", 3, 1, 1)\nplace(\"nut\", \"brown\", 3, 2, 1)\nplace(\"nut\", \"brown\", 3, 3, 1)\nplace(\"nut\", \"brown\", 3, 4, 1)\nplace(\"nut\", \"brown\", 3, 5, 1)\nplace(\"nut\", \"brown\", 3, 6, 1)\nplace(\"nut\", \"brown\", 3, 7, 1)\nplace(\"nut\", \"brown\", 3, 8, 1)\nplace(\"nut\", \"brown\", 3, 9, 1)\nplace(\"nut\", \"brown\", 3, 10, 1)\nplace(\"nut\", \"brown\", 3, 11, 1)\nplace(\"nut\", \"brown\", 3, 12, 1)\nplace(\"nut\", \"brown\", 4, 12, 1)\nplace(\"nut\", \"brown\", 5, 12, 1)\nplace(\"nut\", \"brown\", 6, 12, 1)\nplace(\"nut\", \"brown\", 7, 12, 1)\nplace(\"nut\", \"brown\", 8, 12, 1)\nplace(\"nut\", \"brown\", 9, 12, 1)\nplace(\"nut\", \"brown\", 10, 12, 1)\nplace(\"nut\", \"brown\", 11, 12, 1)\nplace(\"nut\", \"brown\", 12, 12, 1)"
+    },
+    "29": {
+        "sentence": "Make me a 11 unit tall and 11 unit wide L shape with blue vbridge",
+        "structure": "flat_L",
+        "length": "22",
+        "shape": "vbridge",
+        "color": "blue",
+        "output": "place(\"v_bridge\", \"blue\", 3, 1, 1)\nplace(\"v_bridge\", \"blue\", 3, 2, 1)\nplace(\"v_bridge\", \"blue\", 3, 3, 1)\nplace(\"v_bridge\", \"blue\", 3, 4, 1)\nplace(\"v_bridge\", \"blue\", 3, 5, 1)\nplace(\"v_bridge\", \"blue\", 3, 6, 1)\nplace(\"v_bridge\", \"blue\", 3, 7, 1)\nplace(\"v_bridge\", \"blue\", 3, 8, 1)\nplace(\"v_bridge\", \"blue\", 3, 9, 1)\nplace(\"v_bridge\", \"blue\", 3, 10, 1)\nplace(\"v_bridge\", \"blue\", 3, 11, 1)\nplace(\"v_bridge\", \"blue\", 4, 11, 1)\nplace(\"v_bridge\", \"blue\", 5, 11, 1)\nplace(\"v_bridge\", \"blue\", 6, 11, 1)\nplace(\"v_bridge\", \"blue\", 7, 11, 1)\nplace(\"v_bridge\", \"blue\", 8, 11, 1)\nplace(\"v_bridge\", \"blue\", 9, 11, 1)\nplace(\"v_bridge\", \"blue\", 10, 11, 1)\nplace(\"v_bridge\", \"blue\", 11, 11, 1)"
+    },
+    "30": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with purple gasket",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "gasket",
+        "color": "purple",
+        "output": "place(\"gasket\", \"purple\", 3, 1, 1)\nplace(\"gasket\", \"purple\", 3, 2, 1)\nplace(\"gasket\", \"purple\", 3, 3, 1)\nplace(\"gasket\", \"purple\", 3, 4, 1)\nplace(\"gasket\", \"purple\", 3, 5, 1)\nplace(\"gasket\", \"purple\", 3, 6, 1)\nplace(\"gasket\", \"purple\", 3, 7, 1)\nplace(\"gasket\", \"purple\", 3, 8, 1)\nplace(\"gasket\", \"purple\", 3, 9, 1)\nplace(\"gasket\", \"purple\", 3, 10, 1)\nplace(\"gasket\", \"purple\", 3, 11, 1)\nplace(\"gasket\", \"purple\", 3, 12, 1)\nplace(\"gasket\", \"purple\", 3, 13, 1)\nplace(\"gasket\", \"purple\", 4, 13, 1)\nplace(\"gasket\", \"purple\", 5, 13, 1)\nplace(\"gasket\", \"purple\", 6, 13, 1)\nplace(\"gasket\", \"purple\", 7, 13, 1)\nplace(\"gasket\", \"purple\", 8, 13, 1)\nplace(\"gasket\", \"purple\", 9, 13, 1)\nplace(\"gasket\", \"purple\", 10, 13, 1)\nplace(\"gasket\", \"purple\", 11, 13, 1)\nplace(\"gasket\", \"purple\", 12, 13, 1)\nplace(\"gasket\", \"purple\", 13, 13, 1)"
+    },
+    "31": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with yellow bolt",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "bolt",
+        "color": "yellow",
+        "output": "place(\"bolt\", \"yellow\", 3, 1, 1)\nplace(\"bolt\", \"yellow\", 3, 2, 1)\nplace(\"bolt\", \"yellow\", 3, 3, 1)\nplace(\"bolt\", \"yellow\", 3, 4, 1)\nplace(\"bolt\", \"yellow\", 4, 4, 1)\nplace(\"bolt\", \"yellow\", 5, 4, 1)"
+    },
+    "32": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with magenta nut",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "nut",
+        "color": "magenta",
+        "output": "place(\"nut\", \"magenta\", 3, 1, 1)\nplace(\"nut\", \"magenta\", 3, 2, 1)\nplace(\"nut\", \"magenta\", 3, 3, 1)\nplace(\"nut\", \"magenta\", 3, 4, 1)\nplace(\"nut\", \"magenta\", 3, 5, 1)\nplace(\"nut\", \"magenta\", 3, 6, 1)\nplace(\"nut\", \"magenta\", 3, 7, 1)\nplace(\"nut\", \"magenta\", 3, 8, 1)\nplace(\"nut\", \"magenta\", 3, 9, 1)\nplace(\"nut\", \"magenta\", 3, 10, 1)\nplace(\"nut\", \"magenta\", 3, 11, 1)\nplace(\"nut\", \"magenta\", 3, 12, 1)\nplace(\"nut\", \"magenta\", 4, 12, 1)\nplace(\"nut\", \"magenta\", 5, 12, 1)\nplace(\"nut\", \"magenta\", 6, 12, 1)\nplace(\"nut\", \"magenta\", 7, 12, 1)\nplace(\"nut\", \"magenta\", 8, 12, 1)\nplace(\"nut\", \"magenta\", 9, 12, 1)\nplace(\"nut\", \"magenta\", 10, 12, 1)\nplace(\"nut\", \"magenta\", 11, 12, 1)\nplace(\"nut\", \"magenta\", 12, 12, 1)"
+    },
+    "33": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with purple square_nut",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "square_nut",
+        "color": "purple",
+        "output": "place(\"square_nut\", \"purple\", 3, 1, 1)\nplace(\"square_nut\", \"purple\", 3, 2, 1)\nplace(\"square_nut\", \"purple\", 3, 3, 1)\nplace(\"square_nut\", \"purple\", 3, 4, 1)\nplace(\"square_nut\", \"purple\", 3, 5, 1)\nplace(\"square_nut\", \"purple\", 3, 6, 1)\nplace(\"square_nut\", \"purple\", 3, 7, 1)\nplace(\"square_nut\", \"purple\", 3, 8, 1)\nplace(\"square_nut\", \"purple\", 3, 9, 1)\nplace(\"square_nut\", \"purple\", 3, 10, 1)\nplace(\"square_nut\", \"purple\", 3, 11, 1)\nplace(\"square_nut\", \"purple\", 3, 12, 1)\nplace(\"square_nut\", \"purple\", 3, 13, 1)\nplace(\"square_nut\", \"purple\", 3, 14, 1)\nplace(\"square_nut\", \"purple\", 4, 14, 1)\nplace(\"square_nut\", \"purple\", 5, 14, 1)\nplace(\"square_nut\", \"purple\", 6, 14, 1)\nplace(\"square_nut\", \"purple\", 7, 14, 1)\nplace(\"square_nut\", \"purple\", 8, 14, 1)\nplace(\"square_nut\", \"purple\", 9, 14, 1)\nplace(\"square_nut\", \"purple\", 10, 14, 1)\nplace(\"square_nut\", \"purple\", 11, 14, 1)\nplace(\"square_nut\", \"purple\", 12, 14, 1)\nplace(\"square_nut\", \"purple\", 13, 14, 1)\nplace(\"square_nut\", \"purple\", 14, 14, 1)"
+    },
+    "34": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with white nut",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "nut",
+        "color": "white",
+        "output": "place(\"nut\", \"white\", 3, 1, 1)\nplace(\"nut\", \"white\", 3, 2, 1)\nplace(\"nut\", \"white\", 3, 3, 1)\nplace(\"nut\", \"white\", 3, 4, 1)\nplace(\"nut\", \"white\", 3, 5, 1)\nplace(\"nut\", \"white\", 3, 6, 1)\nplace(\"nut\", \"white\", 3, 7, 1)\nplace(\"nut\", \"white\", 3, 8, 1)\nplace(\"nut\", \"white\", 3, 9, 1)\nplace(\"nut\", \"white\", 3, 10, 1)\nplace(\"nut\", \"white\", 3, 11, 1)\nplace(\"nut\", \"white\", 3, 12, 1)\nplace(\"nut\", \"white\", 3, 13, 1)\nplace(\"nut\", \"white\", 3, 14, 1)\nplace(\"nut\", \"white\", 4, 14, 1)\nplace(\"nut\", \"white\", 5, 14, 1)\nplace(\"nut\", \"white\", 6, 14, 1)\nplace(\"nut\", \"white\", 7, 14, 1)\nplace(\"nut\", \"white\", 8, 14, 1)\nplace(\"nut\", \"white\", 9, 14, 1)\nplace(\"nut\", \"white\", 10, 14, 1)\nplace(\"nut\", \"white\", 11, 14, 1)\nplace(\"nut\", \"white\", 12, 14, 1)\nplace(\"nut\", \"white\", 13, 14, 1)\nplace(\"nut\", \"white\", 14, 14, 1)"
+    },
+    "35": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with blue gasket",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "gasket",
+        "color": "blue",
+        "output": "place(\"gasket\", \"blue\", 3, 1, 1)\nplace(\"gasket\", \"blue\", 3, 2, 1)\nplace(\"gasket\", \"blue\", 3, 3, 1)\nplace(\"gasket\", \"blue\", 3, 4, 1)\nplace(\"gasket\", \"blue\", 4, 4, 1)\nplace(\"gasket\", \"blue\", 5, 4, 1)\nplace(\"gasket\", \"blue\", 6, 4, 1)"
+    },
+    "36": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with black screw",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "screw",
+        "color": "black",
+        "output": "place(\"screw\", \"black\", 3, 1, 1)\nplace(\"screw\", \"black\", 3, 2, 1)\nplace(\"screw\", \"black\", 3, 3, 1)\nplace(\"screw\", \"black\", 3, 4, 1)\nplace(\"screw\", \"black\", 3, 5, 1)\nplace(\"screw\", \"black\", 3, 6, 1)\nplace(\"screw\", \"black\", 3, 7, 1)\nplace(\"screw\", \"black\", 3, 8, 1)\nplace(\"screw\", \"black\", 3, 9, 1)\nplace(\"screw\", \"black\", 3, 10, 1)\nplace(\"screw\", \"black\", 3, 11, 1)\nplace(\"screw\", \"black\", 3, 12, 1)\nplace(\"screw\", \"black\", 3, 13, 1)\nplace(\"screw\", \"black\", 4, 13, 1)\nplace(\"screw\", \"black\", 5, 13, 1)\nplace(\"screw\", \"black\", 6, 13, 1)\nplace(\"screw\", \"black\", 7, 13, 1)\nplace(\"screw\", \"black\", 8, 13, 1)\nplace(\"screw\", \"black\", 9, 13, 1)\nplace(\"screw\", \"black\", 10, 13, 1)\nplace(\"screw\", \"black\", 11, 13, 1)\nplace(\"screw\", \"black\", 12, 13, 1)\nplace(\"screw\", \"black\", 13, 13, 1)"
+    },
+    "37": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with brown bolt",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "bolt",
+        "color": "brown",
+        "output": "place(\"bolt\", \"brown\", 3, 1, 1)\nplace(\"bolt\", \"brown\", 3, 2, 1)\nplace(\"bolt\", \"brown\", 3, 3, 1)\nplace(\"bolt\", \"brown\", 3, 4, 1)\nplace(\"bolt\", \"brown\", 3, 5, 1)\nplace(\"bolt\", \"brown\", 3, 6, 1)\nplace(\"bolt\", \"brown\", 3, 7, 1)\nplace(\"bolt\", \"brown\", 3, 8, 1)\nplace(\"bolt\", \"brown\", 4, 8, 1)\nplace(\"bolt\", \"brown\", 5, 8, 1)\nplace(\"bolt\", \"brown\", 6, 8, 1)\nplace(\"bolt\", \"brown\", 7, 8, 1)\nplace(\"bolt\", \"brown\", 8, 8, 1)"
+    },
+    "38": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with yellow bolt",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "bolt",
+        "color": "yellow",
+        "output": "place(\"bolt\", \"yellow\", 3, 1, 1)\nplace(\"bolt\", \"yellow\", 3, 2, 1)\nplace(\"bolt\", \"yellow\", 3, 3, 1)\nplace(\"bolt\", \"yellow\", 3, 4, 1)\nplace(\"bolt\", \"yellow\", 3, 5, 1)\nplace(\"bolt\", \"yellow\", 3, 6, 1)\nplace(\"bolt\", \"yellow\", 3, 7, 1)\nplace(\"bolt\", \"yellow\", 3, 8, 1)\nplace(\"bolt\", \"yellow\", 4, 8, 1)\nplace(\"bolt\", \"yellow\", 5, 8, 1)\nplace(\"bolt\", \"yellow\", 6, 8, 1)\nplace(\"bolt\", \"yellow\", 7, 8, 1)\nplace(\"bolt\", \"yellow\", 8, 8, 1)\nplace(\"bolt\", \"yellow\", 9, 8, 1)"
+    },
+    "39": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with red gasket",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "gasket",
+        "color": "red",
+        "output": "place(\"gasket\", \"red\", 5, 1, 1)\nplace(\"gasket\", \"red\", 5, 2, 1)\nplace(\"gasket\", \"red\", 5, 3, 1)\nplace(\"gasket\", \"red\", 5, 4, 1)\nplace(\"gasket\", \"red\", 5, 5, 1)\nplace(\"gasket\", \"red\", 5, 6, 1)\nplace(\"gasket\", \"red\", 5, 7, 1)\nplace(\"gasket\", \"red\", 5, 8, 1)\nplace(\"gasket\", \"red\", 5, 9, 1)\nplace(\"gasket\", \"red\", 5, 10, 1)\nplace(\"gasket\", \"red\", 6, 10, 1)\nplace(\"gasket\", \"red\", 7, 10, 1)\nplace(\"gasket\", \"red\", 8, 10, 1)\nplace(\"gasket\", \"red\", 9, 10, 1)\nplace(\"gasket\", \"red\", 10, 10, 1)"
+    },
+    "40": {
+        "sentence": "Make me a 15 unit tall and 15 unit wide L shape with blue washer",
+        "structure": "flat_L",
+        "length": "30",
+        "shape": "washer",
+        "color": "blue",
+        "output": "place(\"washer\", \"blue\", 7, 1, 1)\nplace(\"washer\", \"blue\", 7, 2, 1)\nplace(\"washer\", \"blue\", 7, 3, 1)\nplace(\"washer\", \"blue\", 7, 4, 1)\nplace(\"washer\", \"blue\", 7, 5, 1)\nplace(\"washer\", \"blue\", 7, 6, 1)\nplace(\"washer\", \"blue\", 7, 7, 1)\nplace(\"washer\", \"blue\", 7, 8, 1)\nplace(\"washer\", \"blue\", 7, 9, 1)\nplace(\"washer\", \"blue\", 7, 10, 1)\nplace(\"washer\", \"blue\", 7, 11, 1)\nplace(\"washer\", \"blue\", 7, 12, 1)\nplace(\"washer\", \"blue\", 7, 13, 1)\nplace(\"washer\", \"blue\", 7, 14, 1)\nplace(\"washer\", \"blue\", 8, 15, 1)\nplace(\"washer\", \"blue\", 9, 15, 1)\nplace(\"washer\", \"blue\", 10, 15, 1)\nplace(\"washer\", \"blue\", 11, 15, 1)\nplace(\"washer\", \"blue\", 12, 15, 1)\nplace(\"washer\", \"blue\", 13, 15, 1)\nplace(\"washer\", \"blue\", 14, 15, 1)"
+    },
+    "41": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with magenta hex_nut",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "hex_nut",
+        "color": "magenta",
+        "output": "place(\"hex_nut\", \"magenta\", 3, 1, 1)\nplace(\"hex_nut\", \"magenta\", 3, 2, 1)\nplace(\"hex_nut\", \"magenta\", 3, 3, 1)\nplace(\"hex_nut\", \"magenta\", 3, 4, 1)\nplace(\"hex_nut\", \"magenta\", 3, 5, 1)\nplace(\"hex_nut\", \"magenta\", 3, 6, 1)\nplace(\"hex_nut\", \"magenta\", 3, 7, 1)\nplace(\"hex_nut\", \"magenta\", 3, 8, 1)\nplace(\"hex_nut\", \"magenta\", 3, 9, 1)\nplace(\"hex_nut\", \"magenta\", 4, 9, 1)\nplace(\"hex_nut\", \"magenta\", 5, 9, 1)\nplace(\"hex_nut\", \"magenta\", 6, 9, 1)\nplace(\"hex_nut\", \"magenta\", 7, 9, 1)\nplace(\"hex_nut\", \"magenta\", 8, 9, 1)\nplace(\"hex_nut\", \"magenta\", 9, 9, 1)"
+    },
+    "42": {
+        "sentence": "Make me a 2 unit tall and 2 unit wide L shape with red hex_nut",
+        "structure": "flat_L",
+        "length": "4",
+        "shape": "hex_nut",
+        "color": "red",
+        "output": "place(\"hex_nut\", \"red\", 3, 1, 1)\nplace(\"hex_nut\", \"red\", 3, 2, 1)\nplace(\"hex_nut\", \"red\", 4, 2, 1)"
+    },
+    "43": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with magenta washer",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "washer",
+        "color": "magenta",
+        "output": "place(\"washer\", \"magenta\", 3, 1, 1)\nplace(\"washer\", \"magenta\", 3, 2, 1)\nplace(\"washer\", \"magenta\", 3, 3, 1)\nplace(\"washer\", \"magenta\", 3, 4, 1)\nplace(\"washer\", \"magenta\", 3, 5, 1)\nplace(\"washer\", \"magenta\", 3, 6, 1)\nplace(\"washer\", \"magenta\", 4, 6, 1)\nplace(\"washer\", \"magenta\", 5, 6, 1)\nplace(\"washer\", \"magenta\", 6, 6, 1)"
+    },
+    "44": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with yellow vbridge",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "vbridge",
+        "color": "yellow",
+        "output": "place(\"v_bridge\", \"yellow\", 3, 1, 1)\nplace(\"v_bridge\", \"yellow\", 3, 2, 1)\nplace(\"v_bridge\", \"yellow\", 3, 3, 1)\nplace(\"v_bridge\", \"yellow\", 3, 4, 1)\nplace(\"v_bridge\", \"yellow\", 3, 5, 1)\nplace(\"v_bridge\", \"yellow\", 3, 6, 1)\nplace(\"v_bridge\", \"yellow\", 3, 7, 1)\nplace(\"v_bridge\", \"yellow\", 4, 7, 1)\nplace(\"v_bridge\", \"yellow\", 5, 7, 1)\nplace(\"v_bridge\", \"yellow\", 6, 7, 1)\nplace(\"v_bridge\", \"yellow\", 7, 7, 1)"
+    },
+    "45": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with red bolt",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "bolt",
+        "color": "red",
+        "output": "place(\"bolt\", \"red\", 2, 1, 1)\nplace(\"bolt\", \"red\", 2, 2, 1)\nplace(\"bolt\", \"red\", 2, 3, 1)\nplace(\"bolt\", \"red\", 3, 3, 1)"
+    },
+    "46": {
+        "sentence": "Make me a 15 unit tall and 15 unit wide L shape with green gasket",
+        "structure": "flat_L",
+        "length": "30",
+        "shape": "gasket",
+        "color": "green",
+        "output": "place(\"gasket\", \"green\", 3, 1, 1)\nplace(\"gasket\", \"green\", 3, 2, 1)\nplace(\"gasket\", \"green\", 3, 3, 1)\nplace(\"gasket\", \"green\", 3, 4, 1)\nplace(\"gasket\", \"green\", 3, 5, 1)\nplace(\"gasket\", \"green\", 3, 6, 1)\nplace(\"gasket\", \"green\", 3, 7, 1)\nplace(\"gasket\", \"green\", 3, 8, 1)\nplace(\"gasket\", \"green\", 3, 9, 1)\nplace(\"gasket\", \"green\", 3, 10, 1)\nplace(\"gasket\", \"green\", 3, 11, 1)\nplace(\"gasket\", \"green\", 3, 12, 1)\nplace(\"gasket\", \"green\", 3, 13, 1)\nplace(\"gasket\", \"green\", 3, 14, 1)\nplace(\"gasket\", \"green\", 3, 15, 1)\nplace(\"gasket\", \"green\", 4, 15, 1)\nplace(\"gasket\", \"green\", 5, 15, 1)\nplace(\"gasket\", \"green\", 6, 15, 1)\nplace(\"gasket\", \"green\", 7, 15, 1)\nplace(\"gasket\", \"green\", 8, 15, 1)\nplace(\"gasket\", \"green\", 9, 15, 1)\nplace(\"gasket\", \"green\", 10, 15, 1)\nplace(\"gasket\", \"green\", 11, 15, 1)\nplace(\"gasket\", 12, 15, 1)\nplace(\"gasket\", \"green\", 13, 15, 1)\nplace(\"gasket\", \"green\", 14, 15, 1)\nplace(\"gasket\", \"green\", 15, 15, 1)"
+    },
+    "47": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with red gasket",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "gasket",
+        "color": "red",
+        "output": "place(\"gasket\", \"red\", 3, 1, 1)\nplace(\"gasket\", \"red\", 3, 2, 1)\nplace(\"gasket\", \"red\", 3, 3, 1)\nplace(\"gasket\", \"red\", 3, 4, 1)\nplace(\"gasket\", \"red\", 3, 5, 1)\nplace(\"gasket\", \"red\", 3, 6, 1)\nplace(\"gasket\", \"red\", 3, 7, 1)\nplace(\"gasket\", \"red\", 3, 8, 1)\nplace(\"gasket\", \"red\", 3, 9, 1)\nplace(\"gasket\", \"red\", 3, 10, 1)\nplace(\"gasket\", \"red\", 3, 11, 1)\nplace(\"gasket\", \"red\", 3, 12, 1)\nplace(\"gasket\", \"red\", 3, 13, 1)\nplace(\"gasket\", \"red\", 4, 13, 1)\nplace(\"gasket\", \"red\", 5, 13, 1)\nplace(\"gasket\", \"red\", 6, 13, 1)\nplace(\"gasket\", \"red\", 7, 13, 1)\nplace(\"gasket\", \"red\", 8, 13, 1)\nplace(\"gasket\", \"red\", 9, 13, 1)\nplace(\"gasket\", \"red\", 10, 13, 1)\nplace(\"gasket\", \"red\", 11, 13, 1)\nplace(\"gasket\", \"red\", 12, 13, 1)\nplace(\"gasket\", \"red\", 13, 13, 1)"
+    },
+    "48": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with blue nut",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "nut",
+        "color": "blue",
+        "output": "place(\"nut\", \"blue\", 3, 1, 1)\nplace(\"nut\", \"blue\", 3, 2, 1)\nplace(\"nut\", \"blue\", 3, 3, 1)\nplace(\"nut\", \"blue\", 3, 4, 1)\nplace(\"nut\", \"blue\", 3, 5, 1)\nplace(\"nut\", \"blue\", 3, 6, 1)\nplace(\"nut\", \"blue\", 3, 7, 1)\nplace(\"nut\", \"blue\", 3, 8, 1)\nplace(\"nut\", \"blue\", 4, 8, 1)\nplace(\"nut\", \"blue\", 5, 8, 1)\nplace(\"nut\", \"blue\", 6, 8, 1)\nplace(\"nut\", \"blue\", 7, 8, 1)\nplace(\"nut\", \"blue\", 8, 8, 1)"
+    },
+    "49": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with yellow bolt",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "bolt",
+        "color": "yellow",
+        "output": "place(\"bolt\", \"yellow\", 2, 1, 1)\nplace(\"bolt\", \"yellow\", 2, 2, 1)\nplace(\"bolt\", \"yellow\", 2, 3, 1)\nplace(\"bolt\", \"yellow\", 3, 3, 1)"
+    },
+    "50": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with magenta cap",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "cap",
+        "color": "magenta",
+        "output": "place(\"cap\", \"magenta\", 3, 1, 1)\nplace(\"cap\", \"magenta\", 3, 2, 1)\nplace(\"cap\", \"magenta\", 3, 3, 1)\nplace(\"cap\", \"magenta\", 3, 4, 1)\nplace(\"cap\", \"magenta\", 3, 5, 1)\nplace(\"cap\", \"magenta\", 3, 6, 1)\nplace(\"cap\", \"magenta\", 4, 6, 1)\nplace(\"cap\", \"magenta\", 5, 6, 1)\nplace(\"cap\", \"magenta\", 6, 6, 1)"
+    },
+    "51": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with magenta hbridge",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "hbridge",
+        "color": "magenta",
+        "output": "place(\"h_bridge\", \"magenta\", 3, 1, 1)\nplace(\"h_bridge\", \"magenta\", 3, 2, 1)\nplace(\"h_bridge\", \"magenta\", 3, 3, 1)\nplace(\"h_bridge\", \"magenta\", 3, 4, 1)\nplace(\"h_bridge\", \"magenta\", 3, 5, 1)\nplace(\"h_bridge\", \"magenta\", 4, 5, 1)\nplace(\"h_bridge\", \"magenta\", 5, 5, 1)"
+    },
+    "52": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with magenta screw",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "screw",
+        "color": "magenta",
+        "output": "place(\"screw\", \"magenta\", 8, 1, 1)\nplace(\"screw\", \"magenta\", 8, 2, 1)\nplace(\"screw\", \"magenta\", 8, 3, 1)\nplace(\"screw\", \"magenta\", 8, 4, 1)\nplace(\"screw\", \"magenta\", 8, 5, 1)\nplace(\"screw\", \"magenta\", 8, 6, 1)\nplace(\"screw\", \"magenta\", 8, 7, 1)\nplace(\"screw\", \"magenta\", 8, 8, 1)\nplace(\"screw\", \"magenta\", 8, 9, 1)\nplace(\"screw\", \"magenta\", 8, 10, 1)\nplace(\"screw\", \"magenta\", 8, 11, 1)\nplace(\"screw\", \"magenta\", 8, 12, 1)\nplace(\"screw\", \"magenta\", 8, 13, 1)\nplace(\"screw\", \"magenta\", 8, 14, 1)\nplace(\"screw\", \"magenta\", 8, 15, 1)\nplace(\"screw\", \"magenta\", 8, 16, 1)\nplace(\"screw\", \"magenta\", 9, 16, 1)\nplace(\"screw\", \"magenta\", 10, 16, 1)\nplace(\"screw\", \"magenta\", 11, 16, 1)\nplace(\"screw\", \"magenta\", 12, 16, 1)\nplace(\"screw\", \"magenta\", 13, 16, 1)\nplace(\"screw\", \"magenta\", 14, 16, 1)\nplace(\"screw\", \"magenta\", 15, 16, 1)"
+    },
+    "53": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with white gasket",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "gasket",
+        "color": "white",
+        "output": "place(\"gasket\", \"white\", 3, 1, 1)\nplace(\"gasket\", \"white\", 3, 2, 1)\nplace(\"gasket\", \"white\", 3, 3, 1)\nplace(\"gasket\", \"white\", 3, 4, 1)\nplace(\"gasket\", \"white\", 3, 5, 1)\nplace(\"gasket\", \"white\", 3, 6, 1)\nplace(\"gasket\", \"white\", 3, 7, 1)\nplace(\"gasket\", \"white\", 3, 8, 1)\nplace(\"gasket\", \"white\", 3, 9, 1)\nplace(\"gasket\", \"white\", 3, 10, 1)\nplace(\"gasket\", \"white\", 3, 11, 1)\nplace(\"gasket\", \"white\", 3, 12, 1)\nplace(\"gasket\", \"white\", 3, 13, 1)\nplace(\"gasket\", \"white\", 4, 13, 1)\nplace(\"gasket\", \"white\", 5, 13, 1)\nplace(\"gasket\", \"white\", 6, 13, 1)\nplace(\"gasket\", \"white\", 7, 13, 1)\nplace(\"gasket\", \"white\", 8, 13, 1)\nplace(\"gasket\", \"white\", 9, 13, 1)\nplace(\"gasket\", \"white\", 10, 13, 1)\nplace(\"gasket\", \"white\", 11, 13, 1)\nplace(\"gasket\", \"white\", 12, 13, 1)\nplace(\"gasket\", \"white\", 13, 13, 1)"
+    },
+    "54": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with blue washer",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "washer",
+        "color": "blue",
+        "output": "place(\"washer\", \"blue\", 3, 1, 1)\nplace(\"washer\", \"blue\", 3, 2, 1)\nplace(\"washer\", \"blue\", 3, 3, 1)\nplace(\"washer\", \"blue\", 3, 4, 1)\nplace(\"washer\", \"blue\", 3, 5, 1)\nplace(\"washer\", \"blue\", 4, 5, 1)\nplace(\"washer\", \"blue\", 5, 5, 1)"
+    },
+    "55": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with magenta vbridge",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "vbridge",
+        "color": "magenta",
+        "output": "place(\"v_bridge\", \"magenta\", 3, 1, 1)\nplace(\"v_bridge\", \"magenta\", 3, 2, 1)\nplace(\"v_bridge\", \"magenta\", 3, 3, 1)\nplace(\"v_bridge\", \"magenta\", 3, 4, 1)\nplace(\"v_bridge\", \"magenta\", 3, 5, 1)\nplace(\"v_bridge\", \"magenta\", 3, 6, 1)\nplace(\"v_bridge\", \"magenta\", 3, 7, 1)\nplace(\"v_bridge\", \"magenta\", 4, 7, 1)\nplace(\"v_bridge\", \"magenta\", 5, 7, 1)\nplace(\"v_bridge\", \"magenta\", 6, 7, 1)\nplace(\"v_bridge\", \"magenta\", 7, 7, 1)\nplace(\"v_bridge\", \"magenta\", 8, 7, 1)"
+    },
+    "56": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with blue square_nut",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "square_nut",
+        "color": "blue",
+        "output": "place(\"square_nut\", \"blue\", 5, 1, 1)\nplace(\"square_nut\", \"blue\", 5, 2, 1)\nplace(\"square_nut\", \"blue\", 5, 3, 1)\nplace(\"square_nut\", \"blue\", 5, 4, 1)\nplace(\"square_nut\", \"blue\", 5, 5, 1)\nplace(\"square_nut\", \"blue\", 5, 6, 1)\nplace(\"square_nut\", \"blue\", 5, 7, 1)\nplace(\"square_nut\", \"blue\", 5, 8, 1)\nplace(\"square_nut\", \"blue\", 5, 9, 1)\nplace(\"square_nut\", \"blue\", 5, 10, 1)\nplace(\"square_nut\", \"blue\", 6, 10, 1)\nplace(\"square_nut\", \"blue\", 7, 10, 1)\nplace(\"square_nut\", \"blue\", 8, 10, 1)\nplace(\"square_nut\", \"blue\", 9, 10, 1)\nplace(\"square_nut\", \"blue\", 10, 10, 1)"
+    },
+    "57": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with green vbridge",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "vbridge",
+        "color": "green",
+        "output": "place(\"v_bridge\", \"green\", 3, 1, 1)\nplace(\"v_bridge\", \"green\", 3, 2, 1)\nplace(\"v_bridge\", \"green\", 3, 3, 1)\nplace(\"v_bridge\", \"green\", 3, 4, 1)\nplace(\"v_bridge\", \"green\", 3, 5, 1)\nplace(\"v_bridge\", \"green\", 4, 5, 1)\nplace(\"v_bridge\", \"green\", 5, 5, 1)"
+    },
+    "58": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with white bolt",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "bolt",
+        "color": "white",
+        "output": "place(\"bolt\", \"white\", 2, 1, 1)\nplace(\"bolt\", \"white\", 2, 2, 1)\nplace(\"bolt\", \"white\", 2, 3, 1)\nplace(\"bolt\", \"white\", 3, 3, 1)"
+    },
+    "59": {
+        "sentence": "Make me a 11 unit tall and 11 unit wide L shape with black hex_nut",
+        "structure": "flat_L",
+        "length": "22",
+        "shape": "hex_nut",
+        "color": "black",
+        "output": "place(\"hex_nut\", \"black\", 3, 1, 1)\nplace(\"hex_nut\", \"black\", 3, 2, 1)\nplace(\"hex_nut\", \"black\", 3, 3, 1)\nplace(\"hex_nut\", \"black\", 3, 4, 1)\nplace(\"hex_nut\", \"black\", 3, 5, 1)\nplace(\"hex_nut\", \"black\", 3, 6, 1)\nplace(\"hex_nut\", \"black\", 3, 7, 1)\nplace(\"hex_nut\", \"black\", 3, 8, 1)\nplace(\"hex_nut\", \"black\", 3, 9, 1)\nplace(\"hex_nut\", \"black\", 3, 10, 1)\nplace(\"hex_nut\", \"black\", 3, 11, 1)\nplace(\"hex_nut\", \"black\", 4, 11, 1)\nplace(\"hex_nut\", \"black\", 5, 11, 1)\nplace(\"hex_nut\", \"black\", 6, 11, 1)\nplace(\"hex_nut\", \"black\", 7, 11, 1)\nplace(\"hex_nut\", \"black\", 8, 11, 1)\nplace(\"hex_nut\", \"black\", 9, 11, 1)\nplace(\"hex_nut\", \"black\", 10, 11, 1)\nplace(\"hex_nut\", \"black\", 11, 11, 1)"
+    },
+    "60": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with blue square_nut",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "square_nut",
+        "color": "blue",
+        "output": "place(\"square_nut\", \"blue\", 3, 1, 1)\nplace(\"square_nut\", \"blue\", 3, 2, 1)\nplace(\"square_nut\", \"blue\", 3, 3, 1)\nplace(\"square_nut\", \"blue\", 3, 4, 1)\nplace(\"square_nut\", \"blue\", 3, 5, 1)\nplace(\"square_nut\", \"blue\", 3, 6, 1)\nplace(\"square_nut\", \"blue\", 3, 7, 1)\nplace(\"square_nut\", \"blue\", 3, 8, 1)\nplace(\"square_nut\", \"blue\", 3, 9, 1)\nplace(\"square_nut\", \"blue\", 3, 10, 1)\nplace(\"square_nut\", \"blue\", 3, 11, 1)\nplace(\"square_nut\", \"blue\", 3, 12, 1)\nplace(\"square_nut\", \"blue\", 4, 12, 1)\nplace(\"square_nut\", \"blue\", 5, 12, 1)\nplace(\"square_nut\", \"blue\", 6, 12, 1)\nplace(\"square_nut\", \"blue\", 7, 12, 1)\nplace(\"square_nut\", \"blue\", 8, 12, 1)\nplace(\"square_nut\", \"blue\", 9, 12, 1)\nplace(\"square_nut\", \"blue\", 10, 12, 1)\nplace(\"square_nut\", \"blue\", 11, 12, 1)\nplace(\"square_nut\", \"blue\", 12, 12, 1)"
+    },
+    "61": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with purple bolt",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "bolt",
+        "color": "purple",
+        "output": "place(\"bolt\", \"purple\", 3, 1, 1)\nplace(\"bolt\", \"purple\", 3, 2, 1)\nplace(\"bolt\", \"purple\", 3, 3, 1)\nplace(\"bolt\", \"purple\", 3, 4, 1)\nplace(\"bolt\", \"purple\", 3, 5, 1)\nplace(\"bolt\", \"purple\", 3, 6, 1)\nplace(\"bolt\", \"purple\", 3, 7, 1)\nplace(\"bolt\", \"purple\", 3, 8, 1)\nplace(\"bolt\", \"purple\", 3, 9, 1)\nplace(\"bolt\", \"purple\", 3, 10, 1)\nplace(\"bolt\", \"purple\", 3, 11, 1)\nplace(\"bolt\", \"purple\", 3, 12, 1)\nplace(\"bolt\", \"purple\", 3, 13, 1)\nplace(\"bolt\", \"purple\", 4, 13, 1)\nplace(\"bolt\", \"purple\", 5, 13, 1)\nplace(\"bolt\", \"purple\", 6, 13, 1)\nplace(\"bolt\", \"purple\", 7, 13, 1)\nplace(\"bolt\", \"purple\", 8, 13, 1)\nplace(\"bolt\", \"purple\", 9, 13, 1)\nplace(\"bolt\", \"purple\", 10, 13, 1)\nplace(\"bolt\", \"purple\", 11, 13, 1)\nplace(\"bolt\", \"purple\", 12, 13, 1)\nplace(\"bolt\", \"purple\", 13, 13, 1)"
+    },
+    "62": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with black bolt",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "bolt",
+        "color": "black",
+        "output": "place(\"bolt\", \"black\", 8, 1, 1)\nplace(\"bolt\", \"black\", 8, 2, 1)\nplace(\"bolt\", \"black\", 8, 3, 1)\nplace(\"bolt\", \"black\", 8, 4, 1)\nplace(\"bolt\", \"black\", 8, 5, 1)\nplace(\"bolt\", \"black\", 8, 6, 1)\nplace(\"bolt\", \"black\", 8, 7, 1)\nplace(\"bolt\", \"black\", 8, 8, 1)\nplace(\"bolt\", \"black\", 8, 9, 1)\nplace(\"bolt\", \"black\", 8, 10, 1)\nplace(\"bolt\", \"black\", 8, 11, 1)\nplace(\"bolt\", \"black\", 8, 12, 1)\nplace(\"bolt\", \"black\", 8, 13, 1)\nplace(\"bolt\", \"black\", 8, 14, 1)\nplace(\"bolt\", \"black\", 8, 15, 1)\nplace(\"bolt\", \"black\", 8, 16, 1)\nplace(\"bolt\", \"black\", 9, 16, 1)\nplace(\"bolt\", \"black\", 10, 16, 1)\nplace(\"bolt\", \"black\", 11, 16, 1)\nplace(\"bolt\", \"black\", 12, 16, 1)\nplace(\"bolt\", \"black\", 13, 16, 1)\nplace(\"bolt\", \"black\", 14, 16, 1)\nplace(\"bolt\", \"black\", 15, 16, 1)"
+    },
+    "63": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with green screw",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "screw",
+        "color": "green",
+        "output": "place(\"screw\", \"green\", 3, 1, 1)\nplace(\"screw\", \"green\", 3, 2, 1)\nplace(\"screw\", \"green\", 3, 3, 1)\nplace(\"screw\", \"green\", 3, 4, 1)\nplace(\"screw\", \"green\", 3, 5, 1)\nplace(\"screw\", \"green\", 3, 6, 1)\nplace(\"screw\", \"green\", 3, 7, 1)\nplace(\"screw\", \"green\", 3, 8, 1)\nplace(\"screw\", \"green\", 3, 9, 1)\nplace(\"screw\", \"green\", 3, 10, 1)\nplace(\"screw\", \"green\", 3, 11, 1)\nplace(\"screw\", \"green\", 3, 12, 1)\nplace(\"screw\", \"green\", 3, 13, 1)\nplace(\"screw\", \"green\", 4, 13, 1)\nplace(\"screw\", \"green\", 5, 13, 1)\nplace(\"screw\", \"green\", 6, 13, 1)\nplace(\"screw\", \"green\", 7, 13, 1)\nplace(\"screw\", \"green\", 8, 13, 1)\nplace(\"screw\", \"green\", 9, 13, 1)\nplace(\"screw\", \"green\", 10, 13, 1)\nplace(\"screw\", \"green\", 11, 13, 1)\nplace(\"screw\", \"green\", 12, 13, 1)\nplace(\"screw\", \"green\", 13, 13, 1)"
+    },
+    "64": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with purple nut",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "nut",
+        "color": "purple",
+        "output": "place(\"nut\", \"purple\", 3, 1, 1)\nplace(\"nut\", \"purple\", 3, 2, 1)\nplace(\"nut\", \"purple\", 3, 3, 1)\nplace(\"nut\", \"purple\", 3, 4, 1)\nplace(\"nut\", \"purple\", 3, 5, 1)\nplace(\"nut\", \"purple\", 3, 6, 1)\nplace(\"nut\", \"purple\", 3, 7, 1)\nplace(\"nut\", \"purple\", 3, 8, 1)\nplace(\"nut\", \"purple\", 4, 8, 1)\nplace(\"nut\", \"purple\", 5, 8, 1)\nplace(\"nut\", \"purple\", 6, 8, 1)\nplace(\"nut\", \"purple\", 7, 8, 1)\nplace(\"nut\", \"purple\", 8, 8, 1)"
+    },
+    "65": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with orange gasket",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "gasket",
+        "color": "orange",
+        "output": "place(\"gasket\", \"orange\", 8, 1, 1)\nplace(\"gasket\", \"orange\", 8, 2, 1)\nplace(\"gasket\", \"orange\", 8, 3, 1)\nplace(\"gasket\", \"orange\", 8, 4, 1)\nplace(\"gasket\", \"orange\", 8, 5, 1)\nplace(\"gasket\", \"orange\", 8, 6, 1)\nplace(\"gasket\", \"orange\", 8, 7, 1)\nplace(\"gasket\", \"orange\", 8, 8, 1)\nplace(\"gasket\", \"orange\", 8, 9, 1)\nplace(\"gasket\", \"orange\", 8, 10, 1)\nplace(\"gasket\", \"orange\", 8, 11, 1)\nplace(\"gasket\", \"orange\", 8, 12, 1)\nplace(\"gasket\", \"orange\", 8, 13, 1)\nplace(\"gasket\", \"orange\", 8, 14, 1)\nplace(\"gasket\", \"orange\", 8, 15, 1)\nplace(\"gasket\", \"orange\", 8, 16, 1)\nplace(\"gasket\", \"orange\", 9, 16, 1)\nplace(\"gasket\", \"orange\", 10, 16, 1)\nplace(\"gasket\", \"orange\", 11, 16, 1)\nplace(\"gasket\", \"orange\", 12, 16, 1)\nplace(\"gasket\", \"orange\", 13, 16, 1)\nplace(\"gasket\", \"orange\", 14, 16, 1)\nplace(\"gasket\", \"orange\", 15, 16, 1)"
+    },
+    "66": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with green square_nut",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "square_nut",
+        "color": "green",
+        "output": "place(\"square_nut\", \"green\", 5, 1, 1)\nplace(\"square_nut\", \"green\", 5, 2, 1)\nplace(\"square_nut\", \"green\", 5, 3, 1)\nplace(\"square_nut\", \"green\", 5, 4, 1)\nplace(\"square_nut\", \"green\", 5, 5, 1)\nplace(\"square_nut\", \"green\", 5, 6, 1)\nplace(\"square_nut\", \"green\", 5, 7, 1)\nplace(\"square_nut\", \"green\", 5, 8, 1)\nplace(\"square_nut\", \"green\", 5, 9, 1)\nplace(\"square_nut\", \"green\", 5, 10, 1)\nplace(\"square_nut\", \"green\", 6, 10, 1)\nplace(\"square_nut\", \"green\", 7, 10, 1)\nplace(\"square_nut\", \"green\", 8, 10, 1)\nplace(\"square_nut\", \"green\", 9, 10, 1)\nplace(\"square_nut\", \"green\", 10, 10, 1)"
+    },
+    "67": {
+        "sentence": "Make me a 15 unit tall and 15 unit wide L shape with blue square_nut",
+        "structure": "flat_L",
+        "length": "30",
+        "shape": "square_nut",
+        "color": "blue",
+        "output": "place(\"square_nut\", \"blue\", 8, 8, 1)\nplace(\"square_nut\", \"blue\", 7, 9, 1)\nplace(\"square_nut\", \"blue\", 6, 10, 1)\nplace(\"square_nut\", \"blue\", 5, 11, 1)\nplace(\"square_nut\", \"blue\", 4, 12, 1)\nplace(\"square_nut\", \"blue\", 3, 13, 1)\nplace(\"square_nut\", \"blue\", 2, 14, 1)\nplace(\"square_nut\", \"blue\", 1, 15, 1)\nplace(\"square_nut\", \"blue\", 8, 16, 1)\nplace(\"square_nut\", \"blue\", 9, 17, 1)\nplace(\"square_nut\", \"blue\", 10, 18, 1)\nplace(\"square_nut\", \"blue\", 11, 19, 1)\nplace(\"square_nut\", \"blue\", 12, 20, 1)\nplace(\"square_nut\", \"blue\", 13, 21, 1)\nplace(\"square_nut\", \"blue\", 14, 22, 1)\nplace(\"square_nut\", \"blue\", 15, 23, 1)"
+    },
+    "68": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with white screw",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "screw",
+        "color": "white",
+        "output": "place(\"screw\", \"white\", 3, 1, 1)\nplace(\"screw\", \"white\", 3, 2, 1)\nplace(\"screw\", \"white\", 3, 3, 1)\nplace(\"screw\", \"white\", 3, 4, 1)\nplace(\"screw\", \"white\", 3, 5, 1)\nplace(\"screw\", \"white\", 3, 6, 1)\nplace(\"screw\", \"white\", 4, 6, 1)\nplace(\"screw\", \"white\", 5, 6, 1)\nplace(\"screw\", \"white\", 6, 6, 1)"
+    },
+    "69": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with yellow vbridge",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "vbridge",
+        "color": "yellow",
+        "output": "place(\"v_bridge\", \"yellow\", 3, 1, 1)\nplace(\"v_bridge\", \"yellow\", 3, 2, 1)\nplace(\"v_bridge\", \"yellow\", 3, 3, 1)\nplace(\"v_bridge\", \"yellow\", 3, 4, 1)\nplace(\"v_bridge\", \"yellow\", 3, 5, 1)\nplace(\"v_bridge\", \"yellow\", 3, 6, 1)\nplace(\"v_bridge\", \"yellow\", 3, 7, 1)\nplace(\"v_bridge\", \"yellow\", 3, 8, 1)\nplace(\"v_bridge\", \"yellow\", 3, 9, 1)\nplace(\"v_bridge\", \"yellow\", 3, 10, 1)\nplace(\"v_bridge\", \"yellow\", 3, 11, 1)\nplace(\"v_bridge\", \"yellow\", 3, 12, 1)\nplace(\"v_bridge\", \"yellow\", 3, 13, 1)\nplace(\"v_bridge\", \"yellow\", 3, 14, 1)\nplace(\"v_bridge\", \"yellow\", 4, 14, 1)\nplace(\"v_bridge\", \"yellow\", 5, 14, 1)\nplace(\"v_bridge\", \"yellow\", 6, 14, 1)\nplace(\"v_bridge\", \"yellow\", 7, 14, 1)\nplace(\"v_bridge\", \"yellow\", 8, 14, 1)\nplace(\"v_bridge\", \"yellow\", 9, 14, 1)\nplace(\"v_bridge\", \"yellow\", 10, 14, 1)\nplace(\"v_bridge\", \"yellow\", 11, 14, 1)\nplace(\"v_bridge\", \"yellow\", 12, 14, 1)\nplace(\"v_bridge\", \"yellow\", 13, 14, 1)\nplace(\"v_bridge\", \"yellow\", 14, 14, 1)"
+    },
+    "70": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with white nut",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "nut",
+        "color": "white",
+        "output": "place(\"nut\", \"white\", 5, 1, 1)\nplace(\"nut\", \"white\", 5, 2, 1)\nplace(\"nut\", \"white\", 5, 3, 1)\nplace(\"nut\", \"white\", 5, 4, 1)\nplace(\"nut\", \"white\", 5, 5, 1)\nplace(\"nut\", \"white\", 5, 6, 1)\nplace(\"nut\", \"white\", 5, 7, 1)\nplace(\"nut\", \"white\", 5, 8, 1)\nplace(\"nut\", \"white\", 5, 9, 1)\nplace(\"nut\", \"white\", 5, 10, 1)\nplace(\"nut\", \"white\", 6, 10, 1)\nplace(\"nut\", \"white\", 7, 10, 1)\nplace(\"nut\", \"white\", 8, 10, 1)\nplace(\"nut\", \"white\", 9, 10, 1)\nplace(\"nut\", \"white\", 10, 10, 1)"
+    },
+    "71": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with green gasket",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "gasket",
+        "color": "green",
+        "output": "place(\"gasket\", \"green\", 3, 1, 1)\nplace(\"gasket\", \"green\", 3, 2, 1)\nplace(\"gasket\", \"green\", 3, 3, 1)\nplace(\"gasket\", \"green\", 3, 4, 1)\nplace(\"gasket\", \"green\", 4, 4, 1)\nplace(\"gasket\", \"green\", 5, 4, 1)\nplace(\"gasket\", \"green\", 6, 4, 1)"
+    },
+    "72": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with magenta bolt",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "bolt",
+        "color": "magenta",
+        "output": "place(\"bolt\", \"magenta\", 3, 1, 1)\nplace(\"bolt\", \"magenta\", 3, 2, 1)\nplace(\"bolt\", \"magenta\", 3, 3, 1)\nplace(\"bolt\", \"magenta\", 3, 4, 1)\nplace(\"bolt\", \"magenta\", 3, 5, 1)\nplace(\"bolt\", \"magenta\", 3, 6, 1)\nplace(\"bolt\", \"magenta\", 3, 7, 1)\nplace(\"bolt\", \"magenta\", 3, 8, 1)\nplace(\"bolt\", \"magenta\", 3, 9, 1)\nplace(\"bolt\", \"magenta\", 3, 10, 1)\nplace(\"bolt\", \"magenta\", 3, 11, 1)\nplace(\"bolt\", \"magenta\", 3, 12, 1)\nplace(\"bolt\", \"magenta\", 3, 13, 1)\nplace(\"bolt\", \"magenta\", 4, 13, 1)\nplace(\"bolt\", \"magenta\", 5, 13, 1)\nplace(\"bolt\", \"magenta\", 6, 13, 1)\nplace(\"bolt\", \"magenta\", 7, 13, 1)\nplace(\"bolt\", \"magenta\", 8, 13, 1)\nplace(\"bolt\", \"magenta\", 9, 13, 1)\nplace(\"bolt\", \"magenta\", 10, 13, 1)\nplace(\"bolt\", \"magenta\", 11, 13, 1)\nplace(\"bolt\", \"magenta\", 12, 13, 1)\nplace(\"bolt\", \"magenta\", 13, 13, 1)"
+    },
+    "73": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with black square_nut",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "square_nut",
+        "color": "black",
+        "output": "place(\"square_nut\", \"black\", 3, 1, 1)\nplace(\"square_nut\", \"black\", 3, 2, 1)\nplace(\"square_nut\", \"black\", 3, 3, 1)\nplace(\"square_nut\", \"black\", 3, 4, 1)\nplace(\"square_nut\", \"black\", 3, 5, 1)\nplace(\"square_nut\", \"black\", 3, 6, 1)\nplace(\"square_nut\", \"black\", 3, 7, 1)\nplace(\"square_nut\", \"black\", 3, 8, 1)\nplace(\"square_nut\", \"black\", 3, 9, 1)\nplace(\"square_nut\", \"black\", 3, 10, 1)\nplace(\"square_nut\", \"black\", 3, 11, 1)\nplace(\"square_nut\", \"black\", 3, 12, 1)\nplace(\"square_nut\", \"black\", 3, 13, 1)\nplace(\"square_nut\", \"black\", 4, 13, 1)\nplace(\"square_nut\", \"black\", 5, 13, 1)\nplace(\"square_nut\", \"black\", 6, 13, 1)\nplace(\"square_nut\", \"black\", 7, 13, 1)\nplace(\"square_nut\", \"black\", 8, 13, 1)\nplace(\"square_nut\", \"black\", 9, 13, 1)\nplace(\"square_nut\", \"black\", 10, 13, 1)\nplace(\"square_nut\", \"black\", 11, 13, 1)\nplace(\"square_nut\", \"black\", 12, 13, 1)\nplace(\"square_nut\", \"black\", 13, 13, 1)"
+    },
+    "74": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with black washer",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "washer",
+        "color": "black",
+        "output": "place(\"washer\", \"black\", 2, 1, 1)\nplace(\"washer\", \"black\", 2, 2, 1)\nplace(\"washer\", \"black\", 2, 3, 1)\nplace(\"washer\", \"black\", 3, 3, 1)"
+    },
+    "75": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with black hex_nut",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "hex_nut",
+        "color": "black",
+        "output": "place(\"hex_nut\", \"black\", 3, 1, 1)\nplace(\"hex_nut\", \"black\", 3, 2, 1)\nplace(\"hex_nut\", \"black\", 3, 3, 1)\nplace(\"hex_nut\", \"black\", 3, 4, 1)\nplace(\"hex_nut\", \"black\", 3, 5, 1)\nplace(\"hex_nut\", \"black\", 3, 6, 1)\nplace(\"hex_nut\", \"black\", 3, 7, 1)\nplace(\"hex_nut\", \"black\", 3, 8, 1)\nplace(\"hex_nut\", \"black\", 3, 9, 1)\nplace(\"hex_nut\", \"black\", 4, 9, 1)\nplace(\"hex_nut\", \"black\", 5, 9, 1)\nplace(\"hex_nut\", \"black\", 6, 9, 1)\nplace(\"hex_nut\", \"black\", 7, 9, 1)\nplace(\"hex_nut\", \"black\", 8, 9, 1)\nplace(\"hex_nut\", \"black\", 9, 9, 1)"
+    },
+    "76": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with magenta square_nut",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "square_nut",
+        "color": "magenta",
+        "output": "place(\"square_nut\", \"magenta\", 3, 1, 1)\nplace(\"square_nut\", \"magenta\", 3, 2, 1)\nplace(\"square_nut\", \"magenta\", 3, 3, 1)\nplace(\"square_nut\", \"magenta\", 3, 4, 1)\nplace(\"square_nut\", \"magenta\", 3, 5, 1)\nplace(\"square_nut\", \"magenta\", 4, 5, 1)\nplace(\"square_nut\", \"magenta\", 5, 5, 1)"
+    },
+    "77": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with yellow hbridge",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "hbridge",
+        "color": "yellow",
+        "output": "place(\"h_bridge\", \"yellow\", 8, 1, 1)\nplace(\"h_bridge\", \"yellow\", 8, 2, 1)\nplace(\"h_bridge\", \"yellow\", 8, 3, 1)\nplace(\"h_bridge\", \"yellow\", 8, 4, 1)\nplace(\"h_bridge\", \"yellow\", 8, 5, 1)\nplace(\"h_bridge\", \"yellow\", 8, 6, 1)\nplace(\"h_bridge\", \"yellow\", 8, 7, 1)\nplace(\"h_bridge\", \"yellow\", 8, 8, 1)\nplace(\"h_bridge\", \"yellow\", 8, 9, 1)\nplace(\"h_bridge\", \"yellow\", 8, 10, 1)\nplace(\"h_bridge\", \"yellow\", 8, 11, 1)\nplace(\"h_bridge\", \"yellow\", 8, 12, 1)\nplace(\"h_bridge\", \"yellow\", 8, 13, 1)\nplace(\"h_bridge\", \"yellow\", 8, 14, 1)\nplace(\"h_bridge\", \"yellow\", 8, 15, 1)\nplace(\"h_bridge\", \"yellow\", 8, 16, 1)\nplace(\"h_bridge\", \"yellow\", 9, 16, 1)\nplace(\"h_bridge\", \"yellow\", 10, 16, 1)\nplace(\"h_bridge\", \"yellow\", 11, 16, 1)\nplace(\"h_bridge\", \"yellow\", 12, 16, 1)\nplace(\"h_bridge\", \"yellow\", 13, 16, 1)\nplace(\"h_bridge\", \"yellow\", 14, 16, 1)\nplace(\"h_bridge\", \"yellow\", 15, 16, 1)"
+    },
+    "78": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with orange square_nut",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "square_nut",
+        "color": "orange",
+        "output": "place(\"square_nut\", \"orange\", 3, 1, 1)\nplace(\"square_nut\", \"orange\", 3, 2, 1)\nplace(\"square_nut\", \"orange\", 3, 3, 1)\nplace(\"square_nut\", \"orange\", 3, 4, 1)\nplace(\"square_nut\", \"orange\", 4, 4, 1)\nplace(\"square_nut\", \"orange\", 5, 4, 1)"
+    },
+    "79": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with yellow bolt",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "bolt",
+        "color": "yellow",
+        "output": "place(\"bolt\", \"yellow\", 8, 1, 1)\nplace(\"bolt\", \"yellow\", 8, 2, 1)\nplace(\"bolt\", \"yellow\", 8, 3, 1)\nplace(\"bolt\", \"yellow\", 8, 4, 1)\nplace(\"bolt\", \"yellow\", 8, 5, 1)\nplace(\"bolt\", \"yellow\", 8, 6, 1)\nplace(\"bolt\", \"yellow\", 8, 7, 1)\nplace(\"bolt\", \"yellow\", 8, 8, 1)\nplace(\"bolt\", \"yellow\", 8, 9, 1)\nplace(\"bolt\", \"yellow\", 8, 10, 1)\nplace(\"bolt\", \"yellow\", 8, 11, 1)\nplace(\"bolt\", \"yellow\", 8, 12, 1)\nplace(\"bolt\", \"yellow\", 8, 13, 1)\nplace(\"bolt\", \"yellow\", 8, 14, 1)\nplace(\"bolt\", \"yellow\", 8, 15, 1)\nplace(\"bolt\", \"yellow\", 8, 16, 1)\nplace(\"bolt\", \"yellow\", 9, 16, 1)\nplace(\"bolt\", \"yellow\", 10, 16, 1)\nplace(\"bolt\", \"yellow\", 11, 16, 1)\nplace(\"bolt\", \"yellow\", 12, 16, 1)\nplace(\"bolt\", \"yellow\", 13, 16, 1)\nplace(\"bolt\", \"yellow\", 14, 16, 1)\nplace(\"bolt\", \"yellow\", 15, 16, 1)"
+    },
+    "80": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with magenta square_nut",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "square_nut",
+        "color": "magenta",
+        "output": "place(\"square_nut\", \"magenta\", 3, 1, 1)\nplace(\"square_nut\", \"magenta\", 3, 2, 1)\nplace(\"square_nut\", \"magenta\", 3, 3, 1)\nplace(\"square_nut\", \"magenta\", 3, 4, 1)\nplace(\"square_nut\", \"magenta\", 3, 5, 1)\nplace(\"square_nut\", \"magenta\", 3, 6, 1)\nplace(\"square_nut\", \"magenta\", 3, 7, 1)\nplace(\"square_nut\", \"magenta\", 3, 8, 1)\nplace(\"square_nut\", \"magenta\", 4, 8, 1)\nplace(\"square_nut\", \"magenta\", 5, 8, 1)\nplace(\"square_nut\", \"magenta\", 6, 8, 1)\nplace(\"square_nut\", \"magenta\", 7, 8, 1)\nplace(\"square_nut\", \"magenta\", 8, 8, 1)"
+    },
+    "81": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with white bolt",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "bolt",
+        "color": "white",
+        "output": "place(\"bolt\", \"white\", 3, 1, 1)\nplace(\"bolt\", \"white\", 3, 2, 1)\nplace(\"bolt\", \"white\", 3, 3, 1)\nplace(\"bolt\", \"white\", 3, 4, 1)\nplace(\"bolt\", \"white\", 3, 5, 1)\nplace(\"bolt\", \"white\", 3, 6, 1)\nplace(\"bolt\", \"white\", 3, 7, 1)\nplace(\"bolt\", \"white\", 3, 8, 1)\nplace(\"bolt\", \"white\", 4, 8, 1)\nplace(\"bolt\", \"white\", 5, 8, 1)\nplace(\"bolt\", \"white\", 6, 8, 1)\nplace(\"bolt\", \"white\", 7, 8, 1)\nplace(\"bolt\", \"white\", 8, 8, 1)\nplace(\"bolt\", \"white\", 9, 8, 1)"
+    },
+    "82": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with black hex_nut",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "hex_nut",
+        "color": "black",
+        "output": "place(\"hex_nut\", \"black\", 3, 1, 1)\nplace(\"hex_nut\", \"black\", 3, 2, 1)\nplace(\"hex_nut\", \"black\", 3, 3, 1)\nplace(\"hex_nut\", \"black\", 3, 4, 1)\nplace(\"hex_nut\", \"black\", 3, 5, 1)\nplace(\"hex_nut\", \"black\", 3, 6, 1)\nplace(\"hex_nut\", \"black\", 3, 7, 1)\nplace(\"hex_nut\", \"black\", 3, 8, 1)\nplace(\"hex_nut\", \"black\", 3, 9, 1)\nplace(\"hex_nut\", \"black\", 3, 10, 1)\nplace(\"hex_nut\", \"black\", 3, 11, 1)\nplace(\"hex_nut\", \"black\", 3, 12, 1)\nplace(\"hex_nut\", \"black\", 4, 12, 1)\nplace(\"hex_nut\", \"black\", 5, 12, 1)\nplace(\"hex_nut\", \"black\", 6, 12, 1)\nplace(\"hex_nut\", \"black\", 7, 12, 1)\nplace(\"hex_nut\", \"black\", 8, 12, 1)\nplace(\"hex_nut\", \"black\", 9, 12, 1)\nplace(\"hex_nut\", \"black\", 10, 12, 1)\nplace(\"hex_nut\", \"black\", 11, 12, 1)\nplace(\"hex_nut\", \"black\", 12, 12, 1)"
+    },
+    "83": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with yellow hbridge",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "hbridge",
+        "color": "yellow",
+        "output": "place(\"h_bridge\", \"yellow\", 3, 1, 1)\nplace(\"h_bridge\", \"yellow\", 3, 2, 1)\nplace(\"h_bridge\", \"yellow\", 3, 3, 1)\nplace(\"h_bridge\", \"yellow\", 3, 4, 1)\nplace(\"h_bridge\", \"yellow\", 3, 5, 1)\nplace(\"h_bridge\", \"yellow\", 3, 6, 1)\nplace(\"h_bridge\", \"yellow\", 3, 7, 1)\nplace(\"h_bridge\", \"yellow\", 3, 8, 1)\nplace(\"h_bridge\", \"yellow\", 3, 9, 1)\nplace(\"h_bridge\", \"yellow\", 3, 10, 1)\nplace(\"h_bridge\", \"yellow\", 3, 11, 1)\nplace(\"h_bridge\", \"yellow\", 3, 12, 1)\nplace(\"h_bridge\", \"yellow\", 3, 13, 1)\nplace(\"h_bridge\", \"yellow\", 4, 13, 1)\nplace(\"h_bridge\", \"yellow\", 5, 13, 1)\nplace(\"h_bridge\", \"yellow\", 6, 13, 1)\nplace(\"h_bridge\", \"yellow\", 7, 13, 1)\nplace(\"h_bridge\", \"yellow\", 8, 13, 1)\nplace(\"h_bridge\", \"yellow\", 9, 13, 1)\nplace(\"h_bridge\", \"yellow\", 10, 13, 1)\nplace(\"h_bridge\", \"yellow\", 11, 13, 1)\nplace(\"h_bridge\", \"yellow\", 12, 13, 1)\nplace(\"h_bridge\", \"yellow\", 13, 13, 1)"
+    },
+    "84": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with magenta washer",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "washer",
+        "color": "magenta",
+        "output": "place(\"washer\", \"magenta\", 2, 1, 1)\nplace(\"washer\", \"magenta\", 2, 2, 1)\nplace(\"washer\", \"magenta\", 2, 3, 1)\nplace(\"washer\", \"magenta\", 3, 3, 1)"
+    },
+    "85": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with red washer",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "washer",
+        "color": "red",
+        "output": "place(\"washer\", \"red\", 2, 1, 1)\nplace(\"washer\", \"red\", 2, 2, 1)\nplace(\"washer\", \"red\", 2, 3, 1)\nplace(\"washer\", \"red\", 3, 3, 1)"
+    },
+    "86": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with orange screw",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "screw",
+        "color": "orange",
+        "output": "place(\"screw\", \"orange\", 3, 1, 1)\nplace(\"screw\", \"orange\", 3, 2, 1)\nplace(\"screw\", \"orange\", 3, 3, 1)\nplace(\"screw\", \"orange\", 3, 4, 1)\nplace(\"screw\", \"orange\", 3, 5, 1)\nplace(\"screw\", \"orange\", 3, 6, 1)\nplace(\"screw\", \"orange\", 4, 6, 1)\nplace(\"screw\", \"orange\", 5, 6, 1)\nplace(\"screw\", \"orange\", 6, 6, 1)"
+    },
+    "87": {
+        "sentence": "Make me a 2 unit tall and 2 unit wide L shape with yellow cap",
+        "structure": "flat_L",
+        "length": "4",
+        "shape": "cap",
+        "color": "yellow",
+        "output": "place(\"cap\", \"yellow\", 3, 1, 1)\nplace(\"cap\", \"yellow\", 3, 2, 1)\nplace(\"cap\", \"yellow\", 4, 2, 1)"
+    },
+    "88": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with white screw",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "screw",
+        "color": "white",
+        "output": "place(\"screw\", \"white\", 3, 1, 1)\nplace(\"screw\", \"white\", 3, 2, 1)\nplace(\"screw\", \"white\", 3, 3, 1)\nplace(\"screw\", \"white\", 3, 4, 1)\nplace(\"screw\", \"white\", 3, 5, 1)\nplace(\"screw\", \"white\", 3, 6, 1)\nplace(\"screw\", \"white\", 3, 7, 1)\nplace(\"screw\", \"white\", 3, 8, 1)\nplace(\"screw\", \"white\", 3, 9, 1)\nplace(\"screw\", \"white\", 3, 10, 1)\nplace(\"screw\", \"white\", 3, 11, 1)\nplace(\"screw\", \"white\", 3, 12, 1)\nplace(\"screw\", \"white\", 3, 13, 1)\nplace(\"screw\", \"white\", 3, 14, 1)\nplace(\"screw\", \"white\", 4, 14, 1)\nplace(\"screw\", \"white\", 5, 14, 1)\nplace(\"screw\", \"white\", 6, 14, 1)\nplace(\"screw\", \"white\", 7, 14, 1)\nplace(\"screw\", \"white\", 8, 14, 1)\nplace(\"screw\", \"white\", 9, 14, 1)\nplace(\"screw\", \"white\", 10, 14, 1)\nplace(\"screw\", \"white\", 11, 14, 1)\nplace(\"screw\", \"white\", 12, 14, 1)\nplace(\"screw\", \"white\", 13, 14, 1)\nplace(\"screw\", \"white\", 14, 14, 1)"
+    },
+    "89": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with yellow gasket",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "gasket",
+        "color": "yellow",
+        "output": "place(\"gasket\", \"yellow\", 3, 1, 1)\nplace(\"gasket\", \"yellow\", 3, 2, 1)\nplace(\"gasket\", \"yellow\", 3, 3, 1)\nplace(\"gasket\", \"yellow\", 3, 4, 1)\nplace(\"gasket\", \"yellow\", 3, 5, 1)\nplace(\"gasket\", \"yellow\", 3, 6, 1)\nplace(\"gasket\", \"yellow\", 3, 7, 1)\nplace(\"gasket\", \"yellow\", 3, 8, 1)\nplace(\"gasket\", \"yellow\", 4, 8, 1)\nplace(\"gasket\", \"yellow\", 5, 8, 1)\nplace(\"gasket\", \"yellow\", 6, 8, 1)\nplace(\"gasket\", \"yellow\", 7, 8, 1)\nplace(\"gasket\", \"yellow\", 8, 8, 1)\nplace(\"gasket\", \"yellow\", 9, 8, 1)"
+    },
+    "90": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with red bolt",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "bolt",
+        "color": "red",
+        "output": "place(\"bolt\", \"red\", 3, 1, 1)\nplace(\"bolt\", \"red\", 3, 2, 1)\nplace(\"bolt\", \"red\", 3, 3, 1)\nplace(\"bolt\", \"red\", 3, 4, 1)\nplace(\"bolt\", \"red\", 3, 5, 1)\nplace(\"bolt\", \"red\", 3, 6, 1)\nplace(\"bolt\", \"red\", 3, 7, 1)\nplace(\"bolt\", \"red\", 4, 7, 1)\nplace(\"bolt\", \"red\", 5, 7, 1)\nplace(\"bolt\", \"red\", 6, 7, 1)\nplace(\"bolt\", \"red\", 7, 7, 1)\nplace(\"bolt\", \"red\", 8, 7, 1)"
+    },
+    "91": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with green gasket",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "gasket",
+        "color": "green",
+        "output": "place(\"gasket\", \"green\", 3, 1, 1)\nplace(\"gasket\", \"green\", 3, 2, 1)\nplace(\"gasket\", \"green\", 3, 3, 1)\nplace(\"gasket\", \"green\", 3, 4, 1)\nplace(\"gasket\", \"green\", 3, 5, 1)\nplace(\"gasket\", \"green\", 3, 6, 1)\nplace(\"gasket\", \"green\", 3, 7, 1)\nplace(\"gasket\", \"green\", 3, 8, 1)\nplace(\"gasket\", \"green\", 4, 8, 1)\nplace(\"gasket\", \"green\", 5, 8, 1)\nplace(\"gasket\", \"green\", 6, 8, 1)\nplace(\"gasket\", \"green\", 7, 8, 1)\nplace(\"gasket\", \"green\", 8, 8, 1)"
+    },
+    "92": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with orange vbridge",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "vbridge",
+        "color": "orange",
+        "output": "place(\"v_bridge\", \"orange\", 5, 1, 1)\nplace(\"v_bridge\", \"orange\", 6, 2, 1)\nplace(\"v_bridge\", \"orange\", 7, 3, 1)\nplace(\"v_bridge\", \"orange\", 8, 4, 1)\nplace(\"v_bridge\", \"orange\", 9, 5, 1)\nplace(\"v_bridge\", \"orange\", 10, 6, 1)\nplace(\"v_bridge\", \"orange\", 11, 7, 1)\nplace(\"v_bridge\", \"orange\", 12, 8, 1)\nplace(\"v_bridge\", \"orange\", 13, 9, 1)\nplace(\"v_bridge\", \"orange\", 14, 10, 1)\n\nplace(\"v_bridge\", \"orange\", 5, 10, 1)\nplace(\"v_bridge\", \"orange\", 6, 11, 1)\nplace(\"v_bridge\", \"orange\", 7, 12, 1)\nplace(\"v_bridge\", \"orange\", 8, 13, 1)\nplace(\"v_bridge\", \"orange\", 9, 14, 1)"
+    },
+    "93": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with red screw",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "screw",
+        "color": "red",
+        "output": "place(\"screw\", \"red\", 3, 1, 1)\nplace(\"screw\", \"red\", 3, 2, 1)\nplace(\"screw\", \"red\", 3, 3, 1)\nplace(\"screw\", \"red\", 3, 4, 1)\nplace(\"screw\", \"red\", 3, 5, 1)\nplace(\"screw\", \"red\", 3, 6, 1)\nplace(\"screw\", \"red\", 4, 6, 1)\nplace(\"screw\", \"red\", 5, 6, 1)\nplace(\"screw\", \"red\", 6, 6, 1)"
+    },
+    "94": {
+        "sentence": "Make me a 2 unit tall and 2 unit wide L shape with red square_nut",
+        "structure": "flat_L",
+        "length": "4",
+        "shape": "square_nut",
+        "color": "red",
+        "output": "place(\"square_nut\", \"red\", 3, 1, 1)\nplace(\"square_nut\", \"red\", 3, 2, 1)\nplace(\"square_nut\", \"red\", 4, 2, 1)"
+    },
+    "95": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with orange nut",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "nut",
+        "color": "orange",
+        "output": "place(\"nut\", \"orange\", 3, 1, 1)\nplace(\"nut\", \"orange\", 3, 2, 1)\nplace(\"nut\", \"orange\", 3, 3, 1)\nplace(\"nut\", \"orange\", 3, 4, 1)\nplace(\"nut\", \"orange\", 3, 5, 1)\nplace(\"nut\", \"orange\", 4, 5, 1)\nplace(\"nut\", \"orange\", 5, 5, 1)"
+    },
+    "96": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with blue washer",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "washer",
+        "color": "blue",
+        "output": "place(\"washer\", \"blue\", 2, 1, 1)\nplace(\"washer\", \"blue\", 2, 2, 1)\nplace(\"washer\", \"blue\", 2, 3, 1)\nplace(\"washer\", \"blue\", 3, 3, 1)"
+    },
+    "97": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with black cap",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "cap",
+        "color": "black",
+        "output": "place(\"cap\", \"black\", 3, 1, 1)\nplace(\"cap\", \"black\", 3, 2, 1)\nplace(\"cap\", \"black\", 3, 3, 1)\nplace(\"cap\", \"black\", 3, 4, 1)\nplace(\"cap\", \"black\", 3, 5, 1)\nplace(\"cap\", \"black\", 3, 6, 1)\nplace(\"cap\", \"black\", 4, 6, 1)\nplace(\"cap\", \"black\", 5, 6, 1)\nplace(\"cap\", \"black\", 6, 6, 1)"
+    },
+    "98": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with brown vbridge",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "vbridge",
+        "color": "brown",
+        "output": "place(\"v_bridge\", \"brown\", 3, 1, 1)\nplace(\"v_bridge\", \"brown\", 3, 2, 1)\nplace(\"v_bridge\", \"brown\", 3, 3, 1)\nplace(\"v_bridge\", \"brown\", 3, 4, 1)\nplace(\"v_bridge\", \"brown\", 3, 5, 1)\nplace(\"v_bridge\", \"brown\", 4, 5, 1)\nplace(\"v_bridge\", \"brown\", 5, 5, 1)"
+    },
+    "99": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with white bolt",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "bolt",
+        "color": "white",
+        "output": "place(\"bolt\", \"white\", 3, 1, 1)\nplace(\"bolt\", \"white\", 3, 2, 1)\nplace(\"bolt\", \"white\", 3, 3, 1)\nplace(\"bolt\", \"white\", 3, 4, 1)\nplace(\"bolt\", \"white\", 4, 4, 1)\nplace(\"bolt\", \"white\", 5, 4, 1)"
+    },
+    "100": {
+        "sentence": "Make me a 2 unit tall and 2 unit wide L shape with purple hbridge",
+        "structure": "flat_L",
+        "length": "4",
+        "shape": "hbridge",
+        "color": "purple",
+        "output": "place(\"h_bridge\", \"purple\", 3, 1, 1)\nplace(\"h_bridge\", \"purple\", 3, 2, 1)\nplace(\"h_bridge\", \"purple\", 4, 2, 1)"
+    },
+    "101": {
+        "sentence": "Make me a 15 unit tall and 15 unit wide L shape with magenta vbridge",
+        "structure": "flat_L",
+        "length": "30",
+        "shape": "vbridge",
+        "color": "magenta",
+        "output": "place(\"v_bridge\", \"magenta\", 8, 1, 1)\nplace(\"v_bridge\", \"magenta\", 8, 2, 1)\nplace(\"v_bridge\", \"magenta\", 8, 3, 1)\nplace(\"v_bridge\", \"magenta\", 8, 4, 1)\nplace(\"v_bridge\", \"magenta\", 8, 5, 1)\nplace(\"v_bridge\", \"magenta\", 8, 6, 1)\nplace(\"v_bridge\", \"magenta\", 8, 7, 1)\nplace(\"v_bridge\", \"magenta\", 8, 8, 1)\nplace(\"v_bridge\", \"magenta\", 8, 9, 1)\nplace(\"v_bridge\", \"magenta\", 8, 10, 1)\nplace(\"v_bridge\", \"magenta\", 8, 11, 1)\nplace(\"v_bridge\", \"magenta\", 8, 12, 1)\nplace(\"v_bridge\", \"magenta\", 8, 13, 1)\nplace(\"v_bridge\", \"magenta\", 8, 14, 1)\nplace(\"v_bridge\", \"magenta\", 8, 15, 1)\nplace(\"v_bridge\", \"magenta\", 7, 15, 1)\nplace(\"v_bridge\", \"magenta\", 6, 15, 1)\nplace(\"v_bridge\", \"magenta\", 5, 15, 1)\nplace(\"v_bridge\", \"magenta\", 4, 15, 1)\nplace(\"v_bridge\", \"magenta\", 3, 15, 1)\nplace(\"v_bridge\", \"magenta\", 2, 15, 1)"
+    },
+    "102": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with green screw",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "screw",
+        "color": "green",
+        "output": "place(\"screw\", \"green\", 8, 1, 1)\nplace(\"screw\", \"green\", 8, 2, 1)\nplace(\"screw\", \"green\", 8, 3, 1)\nplace(\"screw\", \"green\", 8, 4, 1)\nplace(\"screw\", \"green\", 8, 5, 1)\nplace(\"screw\", \"green\", 8, 6, 1)\nplace(\"screw\", \"green\", 8, 7, 1)\nplace(\"screw\", \"green\", 8, 8, 1)\nplace(\"screw\", \"green\", 8, 9, 1)\nplace(\"screw\", \"green\", 8, 10, 1)\nplace(\"screw\", \"green\", 8, 11, 1)\nplace(\"screw\", \"green\", 8, 12, 1)\nplace(\"screw\", \"green\", 8, 13, 1)\nplace(\"screw\", \"green\", 8, 14, 1)\nplace(\"screw\", \"green\", 8, 15, 1)\nplace(\"screw\", \"green\", 8, 16, 1)\nplace(\"screw\", \"green\", 9, 16, 1)\nplace(\"screw\", \"green\", 10, 16, 1)\nplace(\"screw\", \"green\", 11, 16, 1)\nplace(\"screw\", \"green\", 12, 16, 1)\nplace(\"screw\", \"green\", 13, 16, 1)\nplace(\"screw\", \"green\", 14, 16, 1)\nplace(\"screw\", \"green\", 15, 16, 1)"
+    },
+    "103": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with white hex_nut",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "hex_nut",
+        "color": "white",
+        "output": "place(\"hex_nut\", \"white\", 3, 1, 1)\nplace(\"hex_nut\", \"white\", 3, 2, 1)\nplace(\"hex_nut\", \"white\", 3, 3, 1)\nplace(\"hex_nut\", \"white\", 3, 4, 1)\nplace(\"hex_nut\", \"white\", 3, 5, 1)\nplace(\"hex_nut\", \"white\", 3, 6, 1)\nplace(\"hex_nut\", \"white\", 3, 7, 1)\nplace(\"hex_nut\", \"white\", 3, 8, 1)\nplace(\"hex_nut\", \"white\", 3, 9, 1)\nplace(\"hex_nut\", \"white\", 3, 10, 1)\nplace(\"hex_nut\", \"white\", 3, 11, 1)\nplace(\"hex_nut\", \"white\", 3, 12, 1)\nplace(\"hex_nut\", \"white\", 3, 13, 1)\nplace(\"hex_nut\", \"white\", 4, 13, 1)\nplace(\"hex_nut\", \"white\", 5, 13, 1)\nplace(\"hex_nut\", \"white\", 6, 13, 1)\nplace(\"hex_nut\", \"white\", 7, 13, 1)\nplace(\"hex_nut\", \"white\", 8, 13, 1)\nplace(\"hex_nut\", \"white\", 9, 13, 1)\nplace(\"hex_nut\", \"white\", 10, 13, 1)\nplace(\"hex_nut\", \"white\", 11, 13, 1)\nplace(\"hex_nut\", \"white\", 12, 13, 1)\nplace(\"hex_nut\", \"white\", 13, 13, 1)"
+    },
+    "104": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with orange gasket",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "gasket",
+        "color": "orange",
+        "output": "place(\"gasket\", \"orange\", 3, 1, 1)\nplace(\"gasket\", \"orange\", 3, 2, 1)\nplace(\"gasket\", \"orange\", 3, 3, 1)\nplace(\"gasket\", \"orange\", 3, 4, 1)\nplace(\"gasket\", \"orange\", 3, 5, 1)\nplace(\"gasket\", \"orange\", 3, 6, 1)\nplace(\"gasket\", \"orange\", 3, 7, 1)\nplace(\"gasket\", \"orange\", 3, 8, 1)\nplace(\"gasket\", \"orange\", 3, 9, 1)\nplace(\"gasket\", \"orange\", 3, 10, 1)\nplace(\"gasket\", \"orange\", 3, 11, 1)\nplace(\"gasket\", \"orange\", 3, 12, 1)\nplace(\"gasket\", \"orange\", 3, 13, 1)\nplace(\"gasket\", \"orange\", 4, 13, 1)\nplace(\"gasket\", \"orange\", 5, 13, 1)\nplace(\"gasket\", \"orange\", 6, 13, 1)\nplace(\"gasket\", \"orange\", 7, 13, 1)\nplace(\"gasket\", \"orange\", 8, 13, 1)\nplace(\"gasket\", \"orange\", 9, 13, 1)\nplace(\"gasket\", \"orange\", 10, 13, 1)\nplace(\"gasket\", \"orange\", 11, 13, 1)\nplace(\"gasket\", \"orange\", 12, 13, 1)\nplace(\"gasket\", \"orange\", 13, 13, 1)"
+    },
+    "105": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with red hex_nut",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "hex_nut",
+        "color": "red",
+        "output": "place(\"hex_nut\", \"red\", 3, 1, 1)\nplace(\"hex_nut\", \"red\", 3, 2, 1)\nplace(\"hex_nut\", \"red\", 3, 3, 1)\nplace(\"hex_nut\", \"red\", 3, 4, 1)\nplace(\"hex_nut\", \"red\", 3, 5, 1)\nplace(\"hex_nut\", \"red\", 3, 6, 1)\nplace(\"hex_nut\", \"red\", 3, 7, 1)\nplace(\"hex_nut\", \"red\", 3, 8, 1)\nplace(\"hex_nut\", \"red\", 3, 9, 1)\nplace(\"hex_nut\", \"red\", 3, 10, 1)\nplace(\"hex_nut\", \"red\", 3, 11, 1)\nplace(\"hex_nut\", \"red\", 3, 12, 1)\nplace(\"hex_nut\", \"red\", 3, 13, 1)\nplace(\"hex_nut\", \"red\", 4, 13, 1)\nplace(\"hex_nut\", \"red\", 5, 13, 1)\nplace(\"hex_nut\", \"red\", 6, 13, 1)\nplace(\"hex_nut\", \"red\", 7, 13, 1)\nplace(\"hex_nut\", \"red\", 8, 13, 1)\nplace(\"hex_nut\", \"red\", 9, 13, 1)\nplace(\"hex_nut\", \"red\", 10, 13, 1)\nplace(\"hex_nut\", \"red\", 11, 13, 1)\nplace(\"hex_nut\", \"red\", 12, 13, 1)\nplace(\"hex_nut\", \"red\", 13, 13, 1)"
+    },
+    "106": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with purple vbridge",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "vbridge",
+        "color": "purple",
+        "output": "place(\"v_bridge\", \"purple\", 3, 1, 1)\nplace(\"v_bridge\", \"purple\", 3, 2, 1)\nplace(\"v_bridge\", \"purple\", 3, 3, 1)\nplace(\"v_bridge\", \"purple\", 3, 4, 1)\nplace(\"v_bridge\", \"purple\", 3, 5, 1)\nplace(\"v_bridge\", \"purple\", 3, 6, 1)\nplace(\"v_bridge\", \"purple\", 3, 7, 1)\nplace(\"v_bridge\", \"purple\", 3, 8, 1)\nplace(\"v_bridge\", \"purple\", 4, 8, 1)\nplace(\"v_bridge\", \"purple\", 5, 8, 1)\nplace(\"v_bridge\", \"purple\", 6, 8, 1)\nplace(\"v_bridge\", \"purple\", 7, 8, 1)\nplace(\"v_bridge\", \"purple\", 8, 8, 1)"
+    },
+    "107": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with white hex_nut",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "hex_nut",
+        "color": "white",
+        "output": "place(\"hex_nut\", \"white\", 3, 1, 1)\nplace(\"hex_nut\", \"white\", 3, 2, 1)\nplace(\"hex_nut\", \"white\", 3, 3, 1)\nplace(\"hex_nut\", \"white\", 3, 4, 1)\nplace(\"hex_nut\", \"white\", 3, 5, 1)\nplace(\"hex_nut\", \"white\", 3, 6, 1)\nplace(\"hex_nut\", \"white\", 4, 6, 1)\nplace(\"hex_nut\", \"white\", 5, 6, 1)\nplace(\"hex_nut\", \"white\", 6, 6, 1)"
+    },
+    "108": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with orange vbridge",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "vbridge",
+        "color": "orange",
+        "output": "place(\"v_bridge\", \"orange\", 3, 1, 1)\nplace(\"v_bridge\", \"orange\", 3, 2, 1)\nplace(\"v_bridge\", \"orange\", 3, 3, 1)\nplace(\"v_bridge\", \"orange\", 3, 4, 1)\nplace(\"v_bridge\", \"orange\", 3, 5, 1)\nplace(\"v_bridge\", \"orange\", 3, 6, 1)\nplace(\"v_bridge\", \"orange\", 3, 7, 1)\nplace(\"v_bridge\", \"orange\", 4, 7, 1)\nplace(\"v_bridge\", \"orange\", 5, 7, 1)\nplace(\"v_bridge\", \"orange\", 6, 7, 1)\nplace(\"v_bridge\", \"orange\", 7, 7, 1)"
+    },
+    "109": {
+        "sentence": "Make me a 15 unit tall and 15 unit wide L shape with orange gasket",
+        "structure": "flat_L",
+        "length": "30",
+        "shape": "gasket",
+        "color": "orange",
+        "output": "place(\"gasket\", \"orange\", 3, 1, 1)\nplace(\"gasket\", \"orange\", 3, 2, 1)\nplace(\"gasket\", \"orange\", 3, 3, 1)\nplace(\"gasket\", \"orange\", 3, 4, 1)\nplace(\"gasket\", \"orange\", 3, 5, 1)\nplace(\"gasket\", \"orange\", 3, 6, 1)\nplace(\"gasket\", \"orange\", 3, 7, 1)\nplace(\"gasket\", \"orange\", 3, 8, 1)\nplace(\"gasket\", \"orange\", 3, 9, 1)\nplace(\"gasket\", \"orange\", 3, 10, 1)\nplace(\"gasket\", \"orange\", 3, 11, 1)\nplace(\"gasket\", \"orange\", 3, 12, 1)\nplace(\"gasket\", \"orange\", 3, 13, 1)\nplace(\"gasket\", \"orange\", 3, 14, 1)\nplace(\"gasket\", \"orange\", 3, 15, 1)\nplace(\"gasket\", \"orange\", 4, 15, 1)\nplace(\"gasket\", \"orange\", 5, 15, 1)\nplace(\"gasket\", \"orange\", 6, 15, 1)\nplace(\"gasket\", \"orange\", 7, 15, 1)\nplace(\"gasket\", \"orange\", 8, 15, 1)\nplace(\"gasket\", \"orange\", 9, 15, 1)\nplace(\"gasket\", \"orange\", 10, 15, 1)\nplace(\"gasket\", \"orange\", 11, 15, 1)\nplace(\"gasket\", 12, 15, 1)\nplace(\"gasket\", \"orange\", 13, 15, 1)\nplace(\"gasket\", \"orange\", 14, 15, 1)\nplace(\"gasket\", \"orange\", 15, 15, 1)"
+    },
+    "110": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with purple nut",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "nut",
+        "color": "purple",
+        "output": "place(\"nut\", \"purple\", 3, 1, 1)\nplace(\"nut\", \"purple\", 3, 2, 1)\nplace(\"nut\", \"purple\", 3, 3, 1)\nplace(\"nut\", \"purple\", 3, 4, 1)\nplace(\"nut\", \"purple\", 3, 5, 1)\nplace(\"nut\", \"purple\", 3, 6, 1)\nplace(\"nut\", \"purple\", 4, 6, 1)\nplace(\"nut\", \"purple\", 5, 6, 1)\nplace(\"nut\", \"purple\", 6, 6, 1)"
+    },
+    "111": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with black hbridge",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "hbridge",
+        "color": "black",
+        "output": "place(\"h_bridge\", \"black\", 2, 1, 1)\nplace(\"h_bridge\", \"black\", 2, 2, 1)\nplace(\"h_bridge\", \"black\", 2, 3, 1)\nplace(\"h_bridge\", \"black\", 3, 3, 1)"
+    },
+    "112": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with green bolt",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "bolt",
+        "color": "green",
+        "output": "place(\"bolt\", \"green\", 3, 1, 1)\nplace(\"bolt\", \"green\", 3, 2, 1)\nplace(\"bolt\", \"green\", 3, 3, 1)\nplace(\"bolt\", \"green\", 3, 4, 1)\nplace(\"bolt\", \"green\", 3, 5, 1)\nplace(\"bolt\", \"green\", 3, 6, 1)\nplace(\"bolt\", \"green\", 3, 7, 1)\nplace(\"bolt\", \"green\", 4, 7, 1)\nplace(\"bolt\", \"green\", 5, 7, 1)\nplace(\"bolt\", \"green\", 6, 7, 1)\nplace(\"bolt\", \"green\", 7, 7, 1)\nplace(\"bolt\", \"green\", 8, 7, 1)"
+    },
+    "113": {
+        "sentence": "Make me a 2 unit tall and 2 unit wide L shape with green vbridge",
+        "structure": "flat_L",
+        "length": "4",
+        "shape": "vbridge",
+        "color": "green",
+        "output": "place(\"v_bridge\", \"green\", 3, 1, 1)\nplace(\"v_bridge\", \"green\", 3, 2, 1)\nplace(\"v_bridge\", \"green\", 4, 2, 1)"
+    },
+    "114": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with red hbridge",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "hbridge",
+        "color": "red",
+        "output": "place(\"h_bridge\", \"red\", 2, 1, 1)\nplace(\"h_bridge\", \"red\", 2, 2, 1)\nplace(\"h_bridge\", \"red\", 2, 3, 1)\nplace(\"h_bridge\", \"red\", 3, 3, 1)"
+    },
+    "115": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with brown washer",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "washer",
+        "color": "brown",
+        "output": "place(\"washer\", \"brown\", 8, 1, 1)\nplace(\"washer\", \"brown\", 8, 2, 1)\nplace(\"washer\", \"brown\", 8, 3, 1)\nplace(\"washer\", \"brown\", 8, 4, 1)\nplace(\"washer\", \"brown\", 8, 5, 1)\nplace(\"washer\", \"brown\", 8, 6, 1)\nplace(\"washer\", \"brown\", 8, 7, 1)\nplace(\"washer\", \"brown\", 8, 8, 1)\nplace(\"washer\", \"brown\", 8, 9, 1)\nplace(\"washer\", \"brown\", 8, 10, 1)\nplace(\"washer\", \"brown\", 8, 11, 1)\nplace(\"washer\", \"brown\", 8, 12, 1)\nplace(\"washer\", \"brown\", 8, 13, 1)\nplace(\"washer\", \"brown\", 8, 14, 1)\nplace(\"washer\", \"brown\", 8, 15, 1)\nplace(\"washer\", \"brown\", 8, 16, 1)\nplace(\"washer\", \"brown\", 9, 16, 1)\nplace(\"washer\", \"brown\", 10, 16, 1)\nplace(\"washer\", \"brown\", 11, 16, 1)\nplace(\"washer\", \"brown\", 12, 16, 1)\nplace(\"washer\", \"brown\", 13, 16, 1)\nplace(\"washer\", \"brown\", 14, 16, 1)\nplace(\"washer\", \"brown\", 15, 16, 1)"
+    },
+    "116": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with yellow square_nut",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "square_nut",
+        "color": "yellow",
+        "output": "place(\"square_nut\", \"yellow\", 3, 1, 1)\nplace(\"square_nut\", \"yellow\", 3, 2, 1)\nplace(\"square_nut\", \"yellow\", 3, 3, 1)\nplace(\"square_nut\", \"yellow\", 3, 4, 1)\nplace(\"square_nut\", \"yellow\", 3, 5, 1)\nplace(\"square_nut\", \"yellow\", 3, 6, 1)\nplace(\"square_nut\", \"yellow\", 3, 7, 1)\nplace(\"square_nut\", \"yellow\", 4, 7, 1)\nplace(\"square_nut\", \"yellow\", 5, 7, 1)\nplace(\"square_nut\", \"yellow\", 6, 7, 1)\nplace(\"square_nut\", \"yellow\", 7, 7, 1)\nplace(\"square_nut\", \"yellow\", 8, 7, 1)"
+    },
+    "117": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with blue bolt",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "bolt",
+        "color": "blue",
+        "output": "place(\"bolt\", \"blue\", 3, 1, 1)\nplace(\"bolt\", \"blue\", 3, 2, 1)\nplace(\"bolt\", \"blue\", 3, 3, 1)\nplace(\"bolt\", \"blue\", 3, 4, 1)\nplace(\"bolt\", \"blue\", 4, 4, 1)\nplace(\"bolt\", \"blue\", 5, 4, 1)\nplace(\"bolt\", \"blue\", 6, 4, 1)"
+    },
+    "118": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with white nut",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "nut",
+        "color": "white",
+        "output": "place(\"nut\", \"white\", 3, 1, 1)\nplace(\"nut\", \"white\", 3, 2, 1)\nplace(\"nut\", \"white\", 3, 3, 1)\nplace(\"nut\", \"white\", 3, 4, 1)\nplace(\"nut\", \"white\", 3, 5, 1)\nplace(\"nut\", \"white\", 3, 6, 1)\nplace(\"nut\", \"white\", 3, 7, 1)\nplace(\"nut\", \"white\", 3, 8, 1)\nplace(\"nut\", \"white\", 3, 9, 1)\nplace(\"nut\", \"white\", 3, 10, 1)\nplace(\"nut\", \"white\", 3, 11, 1)\nplace(\"nut\", \"white\", 3, 12, 1)\nplace(\"nut\", \"white\", 4, 12, 1)\nplace(\"nut\", \"white\", 5, 12, 1)\nplace(\"nut\", \"white\", 6, 12, 1)\nplace(\"nut\", \"white\", 7, 12, 1)\nplace(\"nut\", \"white\", 8, 12, 1)\nplace(\"nut\", \"white\", 9, 12, 1)\nplace(\"nut\", \"white\", 10, 12, 1)\nplace(\"nut\", \"white\", 11, 12, 1)\nplace(\"nut\", \"white\", 12, 12, 1)"
+    },
+    "119": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with yellow screw",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "screw",
+        "color": "yellow",
+        "output": "place(\"screw\", \"yellow\", 2, 1, 1)\nplace(\"screw\", \"yellow\", 2, 2, 1)\nplace(\"screw\", \"yellow\", 2, 3, 1)\nplace(\"screw\", \"yellow\", 3, 3, 1)"
+    },
+    "120": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with red hbridge",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "hbridge",
+        "color": "red",
+        "output": "place(\"h_bridge\", \"red\", 3, 1, 1)\nplace(\"h_bridge\", \"red\", 3, 2, 1)\nplace(\"h_bridge\", \"red\", 3, 3, 1)\nplace(\"h_bridge\", \"red\", 3, 4, 1)\nplace(\"h_bridge\", \"red\", 3, 5, 1)\nplace(\"h_bridge\", \"red\", 3, 6, 1)\nplace(\"h_bridge\", \"red\", 3, 7, 1)\nplace(\"h_bridge\", \"red\", 3, 8, 1)\nplace(\"h_bridge\", \"red\", 3, 9, 1)\nplace(\"h_bridge\", \"red\", 3, 10, 1)\nplace(\"h_bridge\", \"red\", 3, 11, 1)\nplace(\"h_bridge\", \"red\", 3, 12, 1)\nplace(\"h_bridge\", \"red\", 3, 13, 1)\nplace(\"h_bridge\", \"red\", 4, 13, 1)\nplace(\"h_bridge\", \"red\", 5, 13, 1)\nplace(\"h_bridge\", \"red\", 6, 13, 1)\nplace(\"h_bridge\", \"red\", 7, 13, 1)\nplace(\"h_bridge\", \"red\", 8, 13, 1)\nplace(\"h_bridge\", \"red\", 9, 13, 1)\nplace(\"h_bridge\", \"red\", 10, 13, 1)\nplace(\"h_bridge\", \"red\", 11, 13, 1)\nplace(\"h_bridge\", \"red\", 12, 13, 1)\nplace(\"h_bridge\", \"red\", 13, 13, 1)"
+    },
+    "121": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with magenta screw",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "screw",
+        "color": "magenta",
+        "output": "place(\"screw\", \"magenta\", 3, 1, 1)\nplace(\"screw\", \"magenta\", 3, 2, 1)\nplace(\"screw\", \"magenta\", 3, 3, 1)\nplace(\"screw\", \"magenta\", 3, 4, 1)\nplace(\"screw\", \"magenta\", 4, 4, 1)\nplace(\"screw\", \"magenta\", 5, 4, 1)\nplace(\"screw\", \"magenta\", 6, 4, 1)"
+    },
+    "122": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with white hex_nut",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "hex_nut",
+        "color": "white",
+        "output": "place(\"hex_nut\", \"white\", 2, 1, 1)\nplace(\"hex_nut\", \"white\", 2, 2, 1)\nplace(\"hex_nut\", \"white\", 2, 3, 1)\nplace(\"hex_nut\", \"white\", 3, 3, 1)"
+    },
+    "123": {
+        "sentence": "Make me a 11 unit tall and 11 unit wide L shape with orange screw",
+        "structure": "flat_L",
+        "length": "22",
+        "shape": "screw",
+        "color": "orange",
+        "output": "place(\"screw\", \"orange\", 3, 1, 1)\nplace(\"screw\", \"orange\", 3, 2, 1)\nplace(\"screw\", \"orange\", 3, 3, 1)\nplace(\"screw\", \"orange\", 3, 4, 1)\nplace(\"screw\", \"orange\", 3, 5, 1)\nplace(\"screw\", \"orange\", 3, 6, 1)\nplace(\"screw\", \"orange\", 3, 7, 1)\nplace(\"screw\", \"orange\", 3, 8, 1)\nplace(\"screw\", \"orange\", 3, 9, 1)\nplace(\"screw\", \"orange\", 3, 10, 1)\nplace(\"screw\", \"orange\", 3, 11, 1)\nplace(\"screw\", \"orange\", 4, 11, 1)\nplace(\"screw\", \"orange\", 5, 11, 1)\nplace(\"screw\", \"orange\", 6, 11, 1)\nplace(\"screw\", \"orange\", 7, 11, 1)\nplace(\"screw\", \"orange\", 8, 11, 1)\nplace(\"screw\", \"orange\", 9, 11, 1)\nplace(\"screw\", \"orange\", 10, 11, 1)\nplace(\"screw\", \"orange\", 11, 11, 1)"
+    },
+    "124": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with yellow bolt",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "bolt",
+        "color": "yellow",
+        "output": "place(\"bolt\", \"yellow\", 3, 1, 1)\nplace(\"bolt\", \"yellow\", 3, 2, 1)\nplace(\"bolt\", \"yellow\", 3, 3, 1)\nplace(\"bolt\", \"yellow\", 3, 4, 1)\nplace(\"bolt\", \"yellow\", 3, 5, 1)\nplace(\"bolt\", \"yellow\", 3, 6, 1)\nplace(\"bolt\", \"yellow\", 3, 7, 1)\nplace(\"bolt\", \"yellow\", 3, 8, 1)\nplace(\"bolt\", \"yellow\", 3, 9, 1)\nplace(\"bolt\", \"yellow\", 3, 10, 1)\nplace(\"bolt\", \"yellow\", 3, 11, 1)\nplace(\"bolt\", \"yellow\", 3, 12, 1)\nplace(\"bolt\", \"yellow\", 3, 13, 1)\nplace(\"bolt\", \"yellow\", 4, 13, 1)\nplace(\"bolt\", \"yellow\", 5, 13, 1)\nplace(\"bolt\", \"yellow\", 6, 13, 1)\nplace(\"bolt\", \"yellow\", 7, 13, 1)\nplace(\"bolt\", \"yellow\", 8, 13, 1)\nplace(\"bolt\", \"yellow\", 9, 13, 1)\nplace(\"bolt\", \"yellow\", 10, 13, 1)\nplace(\"bolt\", \"yellow\", 11, 13, 1)\nplace(\"bolt\", \"yellow\", 12, 13, 1)\nplace(\"bolt\", \"yellow\", 13, 13, 1)"
+    },
+    "125": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with orange hbridge",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "hbridge",
+        "color": "orange",
+        "output": "place(\"h_bridge\", \"orange\", 3, 1, 1)\nplace(\"h_bridge\", \"orange\", 3, 2, 1)\nplace(\"h_bridge\", \"orange\", 3, 3, 1)\nplace(\"h_bridge\", \"orange\", 3, 4, 1)\nplace(\"h_bridge\", \"orange\", 3, 5, 1)\nplace(\"h_bridge\", \"orange\", 3, 6, 1)\nplace(\"h_bridge\", \"orange\", 3, 7, 1)\nplace(\"h_bridge\", \"orange\", 4, 7, 1)\nplace(\"h_bridge\", \"orange\", 5, 7, 1)\nplace(\"h_bridge\", \"orange\", 6, 7, 1)\nplace(\"h_bridge\", \"orange\", 7, 7, 1)\nplace(\"h_bridge\", \"orange\", 8, 7, 1)"
+    },
+    "126": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with blue hbridge",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "hbridge",
+        "color": "blue",
+        "output": "place(\"h_bridge\", \"blue\", 3, 1, 1)\nplace(\"h_bridge\", \"blue\", 3, 2, 1)\nplace(\"h_bridge\", \"blue\", 3, 3, 1)\nplace(\"h_bridge\", \"blue\", 3, 4, 1)\nplace(\"h_bridge\", \"blue\", 3, 5, 1)\nplace(\"h_bridge\", \"blue\", 3, 6, 1)\nplace(\"h_bridge\", \"blue\", 3, 7, 1)\nplace(\"h_bridge\", \"blue\", 4, 7, 1)\nplace(\"h_bridge\", \"blue\", 5, 7, 1)\nplace(\"h_bridge\", \"blue\", 6, 7, 1)\nplace(\"h_bridge\", \"blue\", 7, 7, 1)\nplace(\"h_bridge\", \"blue\", 8, 7, 1)"
+    },
+    "127": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with green cap",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "cap",
+        "color": "green",
+        "output": "place(\"cap\", \"green\", 3, 1, 1)\nplace(\"cap\", \"green\", 3, 2, 1)\nplace(\"cap\", \"green\", 3, 3, 1)\nplace(\"cap\", \"green\", 3, 4, 1)\nplace(\"cap\", \"green\", 3, 5, 1)\nplace(\"cap\", \"green\", 3, 6, 1)\nplace(\"cap\", \"green\", 3, 7, 1)\nplace(\"cap\", \"green\", 3, 8, 1)\nplace(\"cap\", \"green\", 3, 9, 1)\nplace(\"cap\", \"green\", 3, 10, 1)\nplace(\"cap\", \"green\", 3, 11, 1)\nplace(\"cap\", \"green\", 3, 12, 1)\nplace(\"cap\", \"green\", 4, 12, 1)\nplace(\"cap\", \"green\", 5, 12, 1)\nplace(\"cap\", \"green\", 6, 12, 1)\nplace(\"cap\", \"green\", 7, 12, 1)\nplace(\"cap\", \"green\", 8, 12, 1)\nplace(\"cap\", \"green\", 9, 12, 1)\nplace(\"cap\", \"green\", 10, 12, 1)\nplace(\"cap\", \"green\", 11, 12, 1)\nplace(\"cap\", \"green\", 12, 12, 1)"
+    },
+    "128": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with orange washer",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "washer",
+        "color": "orange",
+        "output": "place(\"washer\", \"orange\", 3, 1, 1)\nplace(\"washer\", \"orange\", 3, 2, 1)\nplace(\"washer\", \"orange\", 3, 3, 1)\nplace(\"washer\", \"orange\", 3, 4, 1)\nplace(\"washer\", \"orange\", 3, 5, 1)\nplace(\"washer\", \"orange\", 3, 6, 1)\nplace(\"washer\", \"orange\", 3, 7, 1)\nplace(\"washer\", \"orange\", 3, 8, 1)\nplace(\"washer\", \"orange\", 3, 9, 1)\nplace(\"washer\", \"orange\", 3, 10, 1)\nplace(\"washer\", \"orange\", 3, 11, 1)\nplace(\"washer\", \"orange\", 3, 12, 1)\nplace(\"washer\", \"orange\", 3, 13, 1)\nplace(\"washer\", \"orange\", 3, 14, 1)\nplace(\"washer\", \"orange\", 4, 14, 1)\nplace(\"washer\", \"orange\", 5, 14, 1)\nplace(\"washer\", \"orange\", 6, 14, 1)\nplace(\"washer\", \"orange\", 7, 14, 1)\nplace(\"washer\", \"orange\", 8, 14, 1)\nplace(\"washer\", \"orange\", 9, 14, 1)\nplace(\"washer\", \"orange\", 10, 14, 1)\nplace(\"washer\", \"orange\", 11, 14, 1)\nplace(\"washer\", \"orange\", 12, 14, 1)\nplace(\"washer\", \"orange\", 13, 14, 1)\nplace(\"washer\", \"orange\", 14, 14, 1)"
+    },
+    "129": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with brown washer",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "washer",
+        "color": "brown",
+        "output": "place(\"washer\", \"brown\", 3, 1, 1)\nplace(\"washer\", \"brown\", 3, 2, 1)\nplace(\"washer\", \"brown\", 3, 3, 1)\nplace(\"washer\", \"brown\", 3, 4, 1)\nplace(\"washer\", \"brown\", 3, 5, 1)\nplace(\"washer\", \"brown\", 3, 6, 1)\nplace(\"washer\", \"brown\", 3, 7, 1)\nplace(\"washer\", \"brown\", 4, 7, 1)\nplace(\"washer\", \"brown\", 5, 7, 1)\nplace(\"washer\", \"brown\", 6, 7, 1)\nplace(\"washer\", \"brown\", 7, 7, 1)\nplace(\"washer\", \"brown\", 8, 7, 1)"
+    },
+    "130": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with black washer",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "washer",
+        "color": "black",
+        "output": "place(\"washer\", \"black\", 3, 1, 1)\nplace(\"washer\", \"black\", 3, 2, 1)\nplace(\"washer\", \"black\", 3, 3, 1)\nplace(\"washer\", \"black\", 3, 4, 1)\nplace(\"washer\", \"black\", 4, 4, 1)\nplace(\"washer\", \"black\", 5, 4, 1)\nplace(\"washer\", \"black\", 6, 4, 1)"
+    },
+    "131": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with white nut",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "nut",
+        "color": "white",
+        "output": "place(\"nut\", \"white\", 3, 1, 1)\nplace(\"nut\", \"white\", 3, 2, 1)\nplace(\"nut\", \"white\", 3, 3, 1)\nplace(\"nut\", \"white\", 3, 4, 1)\nplace(\"nut\", \"white\", 3, 5, 1)\nplace(\"nut\", \"white\", 3, 6, 1)\nplace(\"nut\", \"white\", 3, 7, 1)\nplace(\"nut\", \"white\", 4, 7, 1)\nplace(\"nut\", \"white\", 5, 7, 1)\nplace(\"nut\", \"white\", 6, 7, 1)\nplace(\"nut\", \"white\", 7, 7, 1)\nplace(\"nut\", \"white\", 8, 7, 1)"
+    },
+    "132": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with purple square_nut",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "square_nut",
+        "color": "purple",
+        "output": "place(\"square_nut\", \"purple\", 3, 1, 1)\nplace(\"square_nut\", \"purple\", 3, 2, 1)\nplace(\"square_nut\", \"purple\", 3, 3, 1)\nplace(\"square_nut\", \"purple\", 3, 4, 1)\nplace(\"square_nut\", \"purple\", 4, 4, 1)\nplace(\"square_nut\", \"purple\", 5, 4, 1)\nplace(\"square_nut\", \"purple\", 6, 4, 1)"
+    },
+    "133": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with blue hbridge",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "hbridge",
+        "color": "blue",
+        "output": "place(\"h_bridge\", \"blue\", 3, 1, 1)\nplace(\"h_bridge\", \"blue\", 3, 2, 1)\nplace(\"h_bridge\", \"blue\", 3, 3, 1)\nplace(\"h_bridge\", \"blue\", 3, 4, 1)\nplace(\"h_bridge\", \"blue\", 3, 5, 1)\nplace(\"h_bridge\", \"blue\", 3, 6, 1)\nplace(\"h_bridge\", \"blue\", 3, 7, 1)\nplace(\"h_bridge\", \"blue\", 3, 8, 1)\nplace(\"h_bridge\", \"blue\", 4, 8, 1)\nplace(\"h_bridge\", \"blue\", 5, 8, 1)\nplace(\"h_bridge\", \"blue\", 6, 8, 1)\nplace(\"h_bridge\", \"blue\", 7, 8, 1)\nplace(\"h_bridge\", \"blue\", 8, 8, 1)\nplace(\"h_bridge\", \"blue\", 9, 8, 1)"
+    },
+    "134": {
+        "sentence": "Make me a 15 unit tall and 15 unit wide L shape with white washer",
+        "structure": "flat_L",
+        "length": "30",
+        "shape": "washer",
+        "color": "white",
+        "output": "place(\"washer\", \"white\", 8, 1, 1)\nplace(\"washer\", \"white\", 8, 2, 1)\nplace(\"washer\", \"white\", 8, 3, 1)\nplace(\"washer\", \"white\", 8, 4, 1)\nplace(\"washer\", \"white\", 8, 5, 1)\nplace(\"washer\", \"white\", 8, 6, 1)\nplace(\"washer\", \"white\", 8, 7, 1)\nplace(\"washer\", \"white\", 8, 8, 1)\nplace(\"washer\", \"white\", 8, 9, 1)\nplace(\"washer\", \"white\", 8, 10, 1)\nplace(\"washer\", \"white\", 8, 11, 1)\nplace(\"washer\", \"white\", 8, 12, 1)\nplace(\"washer\", \"white\", 8, 13, 1)\nplace(\"washer\", \"white\", 8, 14, 1)\nplace(\"washer\", \"white\", 8, 15, 1)\nplace(\"washer\", \"white\", 9, 15, 1)\nplace(\"washer\", \"white\", 10, 15, 1)\nplace(\"washer\", \"white\", 11, 15, 1)\nplace(\"washer\", \"white\", 12, 15, 1)\nplace(\"washer\", \"white\", 13, 15, 1)\nplace(\"washer\", \"white\", 14, 15, 1)\nplace(\"washer\", \"white\", 15, 15, 1)"
+    },
+    "135": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with white gasket",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "gasket",
+        "color": "white",
+        "output": "place(\"gasket\", \"white\", 8, 1, 1)\nplace(\"gasket\", \"white\", 8, 2, 1)\nplace(\"gasket\", \"white\", 8, 3, 1)\nplace(\"gasket\", \"white\", 8, 4, 1)\nplace(\"gasket\", \"white\", 8, 5, 1)\nplace(\"gasket\", \"white\", 8, 6, 1)\nplace(\"gasket\", \"white\", 8, 7, 1)\nplace(\"gasket\", \"white\", 8, 8, 1)\nplace(\"gasket\", \"white\", 8, 9, 1)\nplace(\"gasket\", \"white\", 8, 10, 1)\nplace(\"gasket\", \"white\", 8, 11, 1)\nplace(\"gasket\", \"white\", 8, 12, 1)\nplace(\"gasket\", \"white\", 8, 13, 1)\nplace(\"gasket\", \"white\", 8, 14, 1)\nplace(\"gasket\", \"white\", 8, 15, 1)\nplace(\"gasket\", \"white\", 8, 16, 1)\nplace(\"gasket\", \"white\", 9, 16, 1)\nplace(\"gasket\", \"white\", 10, 16, 1)\nplace(\"gasket\", \"white\", 11, 16, 1)\nplace(\"gasket\", \"white\", 12, 16, 1)\nplace(\"gasket\", \"white\", 13, 16, 1)\nplace(\"gasket\", \"white\", 14, 16, 1)\nplace(\"gasket\", \"white\", 15, 16, 1)"
+    },
+    "136": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with orange square_nut",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "square_nut",
+        "color": "orange",
+        "output": "place(\"square_nut\", \"orange\", 3, 1, 1)\nplace(\"square_nut\", \"orange\", 3, 2, 1)\nplace(\"square_nut\", \"orange\", 3, 3, 1)\nplace(\"square_nut\", \"orange\", 3, 4, 1)\nplace(\"square_nut\", \"orange\", 3, 5, 1)\nplace(\"square_nut\", \"orange\", 3, 6, 1)\nplace(\"square_nut\", \"orange\", 3, 7, 1)\nplace(\"square_nut\", \"orange\", 3, 8, 1)\nplace(\"square_nut\", \"orange\", 3, 9, 1)\nplace(\"square_nut\", \"orange\", 3, 10, 1)\nplace(\"square_nut\", \"orange\", 3, 11, 1)\nplace(\"square_nut\", \"orange\", 3, 12, 1)\nplace(\"square_nut\", \"orange\", 4, 12, 1)\nplace(\"square_nut\", \"orange\", 5, 12, 1)\nplace(\"square_nut\", \"orange\", 6, 12, 1)\nplace(\"square_nut\", \"orange\", 7, 12, 1)\nplace(\"square_nut\", \"orange\", 8, 12, 1)\nplace(\"square_nut\", \"orange\", 9, 12, 1)\nplace(\"square_nut\", \"orange\", 10, 12, 1)\nplace(\"square_nut\", \"orange\", 11, 12, 1)\nplace(\"square_nut\", \"orange\", 12, 12, 1)"
+    },
+    "137": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with red screw",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "screw",
+        "color": "red",
+        "output": "place(\"screw\", \"red\", 3, 1, 1)\nplace(\"screw\", \"red\", 3, 2, 1)\nplace(\"screw\", \"red\", 3, 3, 1)\nplace(\"screw\", \"red\", 3, 4, 1)\nplace(\"screw\", \"red\", 3, 5, 1)\nplace(\"screw\", \"red\", 3, 6, 1)\nplace(\"screw\", \"red\", 3, 7, 1)\nplace(\"screw\", \"red\", 3, 8, 1)\nplace(\"screw\", \"red\", 3, 9, 1)\nplace(\"screw\", \"red\", 3, 10, 1)\nplace(\"screw\", \"red\", 3, 11, 1)\nplace(\"screw\", \"red\", 3, 12, 1)\nplace(\"screw\", \"red\", 3, 13, 1)\nplace(\"screw\", \"red\", 4, 13, 1)\nplace(\"screw\", \"red\", 5, 13, 1)\nplace(\"screw\", \"red\", 6, 13, 1)\nplace(\"screw\", \"red\", 7, 13, 1)\nplace(\"screw\", \"red\", 8, 13, 1)\nplace(\"screw\", \"red\", 9, 13, 1)\nplace(\"screw\", \"red\", 10, 13, 1)\nplace(\"screw\", \"red\", 11, 13, 1)\nplace(\"screw\", \"red\", 12, 13, 1)\nplace(\"screw\", \"red\", 13, 13, 1)"
+    },
+    "138": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with white screw",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "screw",
+        "color": "white",
+        "output": "place(\"screw\", \"white\", 3, 1, 1)\nplace(\"screw\", \"white\", 3, 2, 1)\nplace(\"screw\", \"white\", 3, 3, 1)\nplace(\"screw\", \"white\", 3, 4, 1)\nplace(\"screw\", \"white\", 3, 5, 1)\nplace(\"screw\", \"white\", 3, 6, 1)\nplace(\"screw\", \"white\", 3, 7, 1)\nplace(\"screw\", \"white\", 3, 8, 1)\nplace(\"screw\", \"white\", 4, 8, 1)\nplace(\"screw\", \"white\", 5, 8, 1)\nplace(\"screw\", \"white\", 6, 8, 1)\nplace(\"screw\", \"white\", 7, 8, 1)\nplace(\"screw\", \"white\", 8, 8, 1)"
+    },
+    "139": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with blue cap",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "cap",
+        "color": "blue",
+        "output": "place(\"cap\", \"blue\", 5, 1, 1)\nplace(\"cap\", \"blue\", 5, 2, 1)\nplace(\"cap\", \"blue\", 5, 3, 1)\nplace(\"cap\", \"blue\", 5, 4, 1)\nplace(\"cap\", \"blue\", 5, 5, 1)\nplace(\"cap\", \"blue\", 5, 6, 1)\nplace(\"cap\", \"blue\", 5, 7, 1)\nplace(\"cap\", \"blue\", 5, 8, 1)\nplace(\"cap\", \"blue\", 5, 9, 1)\nplace(\"cap\", \"blue\", 5, 10, 1)\nplace(\"cap\", \"blue\", 6, 10, 1)\nplace(\"cap\", \"blue\", 7, 10, 1)\nplace(\"cap\", \"blue\", 8, 10, 1)\nplace(\"cap\", \"blue\", 9, 10, 1)\nplace(\"cap\", \"blue\", 10, 10, 1)"
+    },
+    "140": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with purple square_nut",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "square_nut",
+        "color": "purple",
+        "output": "place(\"square_nut\", \"purple\", 2, 1, 1)\nplace(\"square_nut\", \"purple\", 2, 2, 1)\nplace(\"square_nut\", \"purple\", 2, 3, 1)\nplace(\"square_nut\", \"purple\", 3, 3, 1)"
+    },
+    "141": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with green washer",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "washer",
+        "color": "green",
+        "output": "place(\"washer\", \"green\", 3, 1, 1)\nplace(\"washer\", \"green\", 3, 2, 1)\nplace(\"washer\", \"green\", 3, 3, 1)\nplace(\"washer\", \"green\", 3, 4, 1)\nplace(\"washer\", \"green\", 3, 5, 1)\nplace(\"washer\", \"green\", 3, 6, 1)\nplace(\"washer\", \"green\", 3, 7, 1)\nplace(\"washer\", \"green\", 4, 7, 1)\nplace(\"washer\", \"green\", 5, 7, 1)\nplace(\"washer\", \"green\", 6, 7, 1)\nplace(\"washer\", \"green\", 7, 7, 1)\nplace(\"washer\", \"green\", 8, 7, 1)"
+    },
+    "142": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with blue hex_nut",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "hex_nut",
+        "color": "blue",
+        "output": "place(\"hex_nut\", \"blue\", 8, 1, 1)\nplace(\"hex_nut\", \"blue\", 8, 2, 1)\nplace(\"hex_nut\", \"blue\", 8, 3, 1)\nplace(\"hex_nut\", \"blue\", 8, 4, 1)\nplace(\"hex_nut\", \"blue\", 8, 5, 1)\nplace(\"hex_nut\", \"blue\", 8, 6, 1)\nplace(\"hex_nut\", \"blue\", 8, 7, 1)\nplace(\"hex_nut\", \"blue\", 8, 8, 1)\nplace(\"hex_nut\", \"blue\", 8, 9, 1)\nplace(\"hex_nut\", \"blue\", 8, 10, 1)\nplace(\"hex_nut\", \"blue\", 8, 11, 1)\nplace(\"hex_nut\", \"blue\", 8, 12, 1)\nplace(\"hex_nut\", \"blue\", 8, 13, 1)\nplace(\"hex_nut\", \"blue\", 8, 14, 1)\nplace(\"hex_nut\", \"blue\", 8, 15, 1)\nplace(\"hex_nut\", \"blue\", 8, 16, 1)\nplace(\"hex_nut\", \"blue\", 9, 16, 1)\nplace(\"hex_nut\", \"blue\", 10, 16, 1)\nplace(\"hex_nut\", \"blue\", 11, 16, 1)\nplace(\"hex_nut\", \"blue\", 12, 16, 1)\nplace(\"hex_nut\", \"blue\", 13, 16, 1)\nplace(\"hex_nut\", \"blue\", 14, 16, 1)\nplace(\"hex_nut\", \"blue\", 15, 16, 1)"
+    },
+    "143": {
+        "sentence": "Make me a 11 unit tall and 11 unit wide L shape with magenta cap",
+        "structure": "flat_L",
+        "length": "22",
+        "shape": "cap",
+        "color": "magenta",
+        "output": "place(\"cap\", \"magenta\", 3, 1, 1)\nplace(\"cap\", \"magenta\", 3, 2, 1)\nplace(\"cap\", \"magenta\", 3, 3, 1)\nplace(\"cap\", \"magenta\", 3, 4, 1)\nplace(\"cap\", \"magenta\", 3, 5, 1)\nplace(\"cap\", \"magenta\", 3, 6, 1)\nplace(\"cap\", \"magenta\", 3, 7, 1)\nplace(\"cap\", \"magenta\", 3, 8, 1)\nplace(\"cap\", \"magenta\", 3, 9, 1)\nplace(\"cap\", \"magenta\", 3, 10, 1)\nplace(\"cap\", \"magenta\", 3, 11, 1)\nplace(\"cap\", \"magenta\", 4, 11, 1)\nplace(\"cap\", \"magenta\", 5, 11, 1)\nplace(\"cap\", \"magenta\", 6, 11, 1)\nplace(\"cap\", \"magenta\", 7, 11, 1)\nplace(\"cap\", \"magenta\", 8, 11, 1)\nplace(\"cap\", \"magenta\", 9, 11, 1)\nplace(\"cap\", \"magenta\", 10, 11, 1)\nplace(\"cap\", \"magenta\", 11, 11, 1)"
+    },
+    "144": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with brown cap",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "cap",
+        "color": "brown",
+        "output": "place(\"cap\", \"brown\", 3, 1, 1)\nplace(\"cap\", \"brown\", 3, 2, 1)\nplace(\"cap\", \"brown\", 3, 3, 1)\nplace(\"cap\", \"brown\", 3, 4, 1)\nplace(\"cap\", \"brown\", 4, 4, 1)\nplace(\"cap\", \"brown\", 5, 4, 1)"
+    },
+    "145": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with green hbridge",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "hbridge",
+        "color": "green",
+        "output": "place(\"h_bridge\", \"green\", 3, 1, 1)\nplace(\"h_bridge\", \"green\", 3, 2, 1)\nplace(\"h_bridge\", \"green\", 3, 3, 1)\nplace(\"h_bridge\", \"green\", 3, 4, 1)\nplace(\"h_bridge\", \"green\", 3, 5, 1)\nplace(\"h_bridge\", \"green\", 3, 6, 1)\nplace(\"h_bridge\", \"green\", 3, 7, 1)\nplace(\"h_bridge\", \"green\", 3, 8, 1)\nplace(\"h_bridge\", \"green\", 4, 8, 1)\nplace(\"h_bridge\", \"green\", 5, 8, 1)\nplace(\"h_bridge\", \"green\", 6, 8, 1)\nplace(\"h_bridge\", \"green\", 7, 8, 1)\nplace(\"h_bridge\", \"green\", 8, 8, 1)\nplace(\"h_bridge\", \"green\", 9, 8, 1)"
+    },
+    "146": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with orange gasket",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "gasket",
+        "color": "orange",
+        "output": "place(\"gasket\", \"orange\", 3, 1, 1)\nplace(\"gasket\", \"orange\", 3, 2, 1)\nplace(\"gasket\", \"orange\", 3, 3, 1)\nplace(\"gasket\", \"orange\", 3, 4, 1)\nplace(\"gasket\", \"orange\", 3, 5, 1)\nplace(\"gasket\", \"orange\", 3, 6, 1)\nplace(\"gasket\", \"orange\", 3, 7, 1)\nplace(\"gasket\", \"orange\", 3, 8, 1)\nplace(\"gasket\", \"orange\", 4, 8, 1)\nplace(\"gasket\", \"orange\", 5, 8, 1)\nplace(\"gasket\", \"orange\", 6, 8, 1)\nplace(\"gasket\", \"orange\", 7, 8, 1)\nplace(\"gasket\", \"orange\", 8, 8, 1)"
+    },
+    "147": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with green hex_nut",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "hex_nut",
+        "color": "green",
+        "output": "place(\"hex_nut\", \"green\", 3, 1, 1)\nplace(\"hex_nut\", \"green\", 3, 2, 1)\nplace(\"hex_nut\", \"green\", 3, 3, 1)\nplace(\"hex_nut\", \"green\", 3, 4, 1)\nplace(\"hex_nut\", \"green\", 3, 5, 1)\nplace(\"hex_nut\", \"green\", 3, 6, 1)\nplace(\"hex_nut\", \"green\", 3, 7, 1)\nplace(\"hex_nut\", \"green\", 3, 8, 1)\nplace(\"hex_nut\", \"green\", 3, 9, 1)\nplace(\"hex_nut\", \"green\", 3, 10, 1)\nplace(\"hex_nut\", \"green\", 3, 11, 1)\nplace(\"hex_nut\", \"green\", 3, 12, 1)\nplace(\"hex_nut\", \"green\", 3, 13, 1)\nplace(\"hex_nut\", \"green\", 4, 13, 1)\nplace(\"hex_nut\", \"green\", 5, 13, 1)\nplace(\"hex_nut\", \"green\", 6, 13, 1)\nplace(\"hex_nut\", \"green\", 7, 13, 1)\nplace(\"hex_nut\", \"green\", 8, 13, 1)\nplace(\"hex_nut\", \"green\", 9, 13, 1)\nplace(\"hex_nut\", \"green\", 10, 13, 1)\nplace(\"hex_nut\", \"green\", 11, 13, 1)\nplace(\"hex_nut\", \"green\", 12, 13, 1)\nplace(\"hex_nut\", \"green\", 13, 13, 1)"
+    },
+    "148": {
+        "sentence": "Make me a 11 unit tall and 11 unit wide L shape with yellow cap",
+        "structure": "flat_L",
+        "length": "22",
+        "shape": "cap",
+        "color": "yellow",
+        "output": "place(\"cap\", \"yellow\", 3, 1, 1)\nplace(\"cap\", \"yellow\", 3, 2, 1)\nplace(\"cap\", \"yellow\", 3, 3, 1)\nplace(\"cap\", \"yellow\", 3, 4, 1)\nplace(\"cap\", \"yellow\", 3, 5, 1)\nplace(\"cap\", \"yellow\", 3, 6, 1)\nplace(\"cap\", \"yellow\", 3, 7, 1)\nplace(\"cap\", \"yellow\", 3, 8, 1)\nplace(\"cap\", \"yellow\", 3, 9, 1)\nplace(\"cap\", \"yellow\", 3, 10, 1)\nplace(\"cap\", \"yellow\", 3, 11, 1)\nplace(\"cap\", \"yellow\", 4, 11, 1)\nplace(\"cap\", \"yellow\", 5, 11, 1)\nplace(\"cap\", \"yellow\", 6, 11, 1)\nplace(\"cap\", \"yellow\", 7, 11, 1)\nplace(\"cap\", \"yellow\", 8, 11, 1)\nplace(\"cap\", \"yellow\", 9, 11, 1)\nplace(\"cap\", \"yellow\", 10, 11, 1)\nplace(\"cap\", \"yellow\", 11, 11, 1)"
+    },
+    "149": {
+        "sentence": "Make me a 2 unit tall and 2 unit wide L shape with brown hbridge",
+        "structure": "flat_L",
+        "length": "4",
+        "shape": "hbridge",
+        "color": "brown",
+        "output": "place(\"h_bridge\", \"brown\", 3, 1, 1)\nplace(\"h_bridge\", \"brown\", 3, 2, 1)\nplace(\"h_bridge\", \"brown\", 4, 2, 1)"
+    },
+    "150": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with brown cap",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "cap",
+        "color": "brown",
+        "output": "place(\"cap\", \"brown\", 3, 1, 1)\nplace(\"cap\", \"brown\", 3, 2, 1)\nplace(\"cap\", \"brown\", 3, 3, 1)\nplace(\"cap\", \"brown\", 3, 4, 1)\nplace(\"cap\", \"brown\", 3, 5, 1)\nplace(\"cap\", \"brown\", 3, 6, 1)\nplace(\"cap\", \"brown\", 3, 7, 1)\nplace(\"cap\", \"brown\", 3, 8, 1)\nplace(\"cap\", \"brown\", 3, 9, 1)\nplace(\"cap\", \"brown\", 3, 10, 1)\nplace(\"cap\", \"brown\", 3, 11, 1)\nplace(\"cap\", \"brown\", 3, 12, 1)\nplace(\"cap\", \"brown\", 4, 12, 1)\nplace(\"cap\", \"brown\", 5, 12, 1)\nplace(\"cap\", \"brown\", 6, 12, 1)\nplace(\"cap\", \"brown\", 7, 12, 1)\nplace(\"cap\", \"brown\", 8, 12, 1)\nplace(\"cap\", \"brown\", 9, 12, 1)\nplace(\"cap\", \"brown\", 10, 12, 1)\nplace(\"cap\", \"brown\", 11, 12, 1)\nplace(\"cap\", \"brown\", 12, 12, 1)"
+    },
+    "151": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with black nut",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "nut",
+        "color": "black",
+        "output": "place(\"nut\", \"black\", 3, 1, 1)\nplace(\"nut\", \"black\", 3, 2, 1)\nplace(\"nut\", \"black\", 3, 3, 1)\nplace(\"nut\", \"black\", 3, 4, 1)\nplace(\"nut\", \"black\", 3, 5, 1)\nplace(\"nut\", \"black\", 3, 6, 1)\nplace(\"nut\", \"black\", 3, 7, 1)\nplace(\"nut\", \"black\", 4, 7, 1)\nplace(\"nut\", \"black\", 5, 7, 1)\nplace(\"nut\", \"black\", 6, 7, 1)\nplace(\"nut\", \"black\", 7, 7, 1)\nplace(\"nut\", \"black\", 8, 7, 1)"
+    },
+    "152": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with yellow hex_nut",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "hex_nut",
+        "color": "yellow",
+        "output": "place(\"hex_nut\", \"yellow\", 3, 1, 1)\nplace(\"hex_nut\", \"yellow\", 3, 2, 1)\nplace(\"hex_nut\", \"yellow\", 3, 3, 1)\nplace(\"hex_nut\", \"yellow\", 3, 4, 1)\nplace(\"hex_nut\", \"yellow\", 3, 5, 1)\nplace(\"hex_nut\", \"yellow\", 3, 6, 1)\nplace(\"hex_nut\", \"yellow\", 3, 7, 1)\nplace(\"hex_nut\", \"yellow\", 3, 8, 1)\nplace(\"hex_nut\", \"yellow\", 4, 8, 1)\nplace(\"hex_nut\", \"yellow\", 5, 8, 1)\nplace(\"hex_nut\", \"yellow\", 6, 8, 1)\nplace(\"hex_nut\", \"yellow\", 7, 8, 1)\nplace(\"hex_nut\", \"yellow\", 8, 8, 1)"
+    },
+    "153": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with green nut",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "nut",
+        "color": "green",
+        "output": "place(\"nut\", \"green\", 2, 1, 1)\nplace(\"nut\", \"green\", 2, 2, 1)\nplace(\"nut\", \"green\", 2, 3, 1)\nplace(\"nut\", \"green\", 3, 3, 1)"
+    },
+    "154": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with blue hbridge",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "hbridge",
+        "color": "blue",
+        "output": "place(\"h_bridge\", \"blue\", 5, 1, 1)\nplace(\"h_bridge\", \"blue\", 6, 2, 1)\nplace(\"h_bridge\", \"blue\", 7, 3, 1)\nplace(\"h_bridge\", \"blue\", 8, 4, 1)\nplace(\"h_bridge\", \"blue\", 9, 5, 1)\nplace(\"h_bridge\", \"blue\", 10, 6, 1)\nplace(\"h_bridge\", \"blue\", 11, 7, 1)\nplace(\"h_bridge\", \"blue\", 12, 8, 1)\nplace(\"h_bridge\", \"blue\", 13, 9, 1)\nplace(\"h_bridge\", \"blue\", 14, 10, 1)\n\nplace(\"h_bridge\", \"blue\", 5, 10, 1)\nplace(\"h_bridge\", \"blue\", 6, 11, 1)\nplace(\"h_bridge\", \"blue\", 7, 12, 1)\nplace(\"h_bridge\", \"blue\", 8, 13, 1)\nplace(\"h_bridge\", \"blue\", 9, 14, 1)"
+    },
+    "155": {
+        "sentence": "Make me a 15 unit tall and 15 unit wide L shape with orange hbridge",
+        "structure": "flat_L",
+        "length": "30",
+        "shape": "hbridge",
+        "color": "orange",
+        "output": "place(\"h_bridge\", \"orange\", 8, 1, 1)\nplace(\"h_bridge\", \"orange\", 8, 2, 1)\nplace(\"h_bridge\", \"orange\", 8, 3, 1)\nplace(\"h_bridge\", \"orange\", 8, 4, 1)\nplace(\"h_bridge\", \"orange\", 8, 5, 1)\nplace(\"h_bridge\", \"orange\", 8, 6, 1)\nplace(\"h_bridge\", \"orange\", 8, 7, 1)\nplace(\"h_bridge\", \"orange\", 8, 8, 1)\nplace(\"h_bridge\", \"orange\", 8, 9, 1)\nplace(\"h_bridge\", \"orange\", 8, 10, 1)\nplace(\"h_bridge\", \"orange\", 8, 11, 1)\nplace(\"h_bridge\", \"orange\", 8, 12, 1)\nplace(\"h_bridge\", \"orange\", 8, 13, 1)\nplace(\"h_bridge\", \"orange\", 8, 14, 1)\nplace(\"h_bridge\", \"orange\", 8, 15, 1)\nplace(\"h_bridge\", \"orange\", 9, 15, 1)\nplace(\"h_bridge\", \"orange\", 10, 15, 1)\nplace(\"h_bridge\", \"orange\", 11, 15, 1)\nplace(\"h_bridge\", \"orange\", 12, 15, 1)\nplace(\"h_bridge\", \"orange\", 13, 15, 1)\nplace(\"h_bridge\", \"orange\", 14, 15, 1)"
+    },
+    "156": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with purple vbridge",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "vbridge",
+        "color": "purple",
+        "output": "place(\"v_bridge\", \"purple\", 3, 1, 1)\nplace(\"v_bridge\", \"purple\", 3, 2, 1)\nplace(\"v_bridge\", \"purple\", 3, 3, 1)\nplace(\"v_bridge\", \"purple\", 3, 4, 1)\nplace(\"v_bridge\", \"purple\", 3, 5, 1)\nplace(\"v_bridge\", \"purple\", 3, 6, 1)\nplace(\"v_bridge\", \"purple\", 3, 7, 1)\nplace(\"v_bridge\", \"purple\", 4, 7, 1)\nplace(\"v_bridge\", \"purple\", 5, 7, 1)\nplace(\"v_bridge\", \"purple\", 6, 7, 1)\nplace(\"v_bridge\", \"purple\", 7, 7, 1)"
+    },
+    "157": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with green gasket",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "gasket",
+        "color": "green",
+        "output": "place(\"gasket\", \"green\", 5, 1, 1)\nplace(\"gasket\", \"green\", 5, 2, 1)\nplace(\"gasket\", \"green\", 5, 3, 1)\nplace(\"gasket\", \"green\", 5, 4, 1)\nplace(\"gasket\", \"green\", 5, 5, 1)\nplace(\"gasket\", \"green\", 5, 6, 1)\nplace(\"gasket\", \"green\", 5, 7, 1)\nplace(\"gasket\", \"green\", 5, 8, 1)\nplace(\"gasket\", \"green\", 5, 9, 1)\nplace(\"gasket\", \"green\", 5, 10, 1)\nplace(\"gasket\", \"green\", 6, 10, 1)\nplace(\"gasket\", \"green\", 7, 10, 1)\nplace(\"gasket\", \"green\", 8, 10, 1)\nplace(\"gasket\", \"green\", 9, 10, 1)\nplace(\"gasket\", \"green\", 10, 10, 1)"
+    },
+    "158": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with red nut",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "nut",
+        "color": "red",
+        "output": "place(\"nut\", \"red\", 2, 1, 1)\nplace(\"nut\", \"red\", 2, 2, 1)\nplace(\"nut\", \"red\", 2, 3, 1)\nplace(\"nut\", \"red\", 3, 3, 1)"
+    },
+    "159": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with black gasket",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "gasket",
+        "color": "black",
+        "output": "place(\"gasket\", \"black\", 3, 1, 1)\nplace(\"gasket\", \"black\", 3, 2, 1)\nplace(\"gasket\", \"black\", 3, 3, 1)\nplace(\"gasket\", \"black\", 3, 4, 1)\nplace(\"gasket\", \"black\", 3, 5, 1)\nplace(\"gasket\", \"black\", 3, 6, 1)\nplace(\"gasket\", \"black\", 3, 7, 1)\nplace(\"gasket\", \"black\", 3, 8, 1)\nplace(\"gasket\", \"black\", 3, 9, 1)\nplace(\"gasket\", \"black\", 3, 10, 1)\nplace(\"gasket\", \"black\", 3, 11, 1)\nplace(\"gasket\", \"black\", 3, 12, 1)\nplace(\"gasket\", \"black\", 4, 12, 1)\nplace(\"gasket\", \"black\", 5, 12, 1)\nplace(\"gasket\", \"black\", 6, 12, 1)\nplace(\"gasket\", \"black\", 7, 12, 1)\nplace(\"gasket\", \"black\", 8, 12, 1)\nplace(\"gasket\", \"black\", 9, 12, 1)\nplace(\"gasket\", \"black\", 10, 12, 1)\nplace(\"gasket\", \"black\", 11, 12, 1)\nplace(\"gasket\", \"black\", 12, 12, 1)"
+    },
+    "160": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with magenta square_nut",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "square_nut",
+        "color": "magenta",
+        "output": "place(\"square_nut\", \"magenta\", 3, 1, 1)\nplace(\"square_nut\", \"magenta\", 3, 2, 1)\nplace(\"square_nut\", \"magenta\", 3, 3, 1)\nplace(\"square_nut\", \"magenta\", 3, 4, 1)\nplace(\"square_nut\", \"magenta\", 3, 5, 1)\nplace(\"square_nut\", \"magenta\", 3, 6, 1)\nplace(\"square_nut\", \"magenta\", 3, 7, 1)\nplace(\"square_nut\", \"magenta\", 3, 8, 1)\nplace(\"square_nut\", \"magenta\", 3, 9, 1)\nplace(\"square_nut\", \"magenta\", 3, 10, 1)\nplace(\"square_nut\", \"magenta\", 3, 11, 1)\nplace(\"square_nut\", \"magenta\", 3, 12, 1)\nplace(\"square_nut\", \"magenta\", 3, 13, 1)\nplace(\"square_nut\", \"magenta\", 3, 14, 1)\nplace(\"square_nut\", \"magenta\", 4, 14, 1)\nplace(\"square_nut\", \"magenta\", 5, 14, 1)\nplace(\"square_nut\", \"magenta\", 6, 14, 1)\nplace(\"square_nut\", \"magenta\", 7, 14, 1)\nplace(\"square_nut\", \"magenta\", 8, 14, 1)\nplace(\"square_nut\", \"magenta\", 9, 14, 1)\nplace(\"square_nut\", \"magenta\", 10, 14, 1)\nplace(\"square_nut\", \"magenta\", 11, 14, 1)\nplace(\"square_nut\", \"magenta\", 12, 14, 1)\nplace(\"square_nut\", \"magenta\", 13, 14, 1)\nplace(\"square_nut\", \"magenta\", 14, 14, 1)"
+    },
+    "161": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with orange screw",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "screw",
+        "color": "orange",
+        "output": "place(\"screw\", \"orange\", 3, 1, 1)\nplace(\"screw\", \"orange\", 3, 2, 1)\nplace(\"screw\", \"orange\", 3, 3, 1)\nplace(\"screw\", \"orange\", 3, 4, 1)\nplace(\"screw\", \"orange\", 3, 5, 1)\nplace(\"screw\", \"orange\", 3, 6, 1)\nplace(\"screw\", \"orange\", 3, 7, 1)\nplace(\"screw\", \"orange\", 3, 8, 1)\nplace(\"screw\", \"orange\", 4, 8, 1)\nplace(\"screw\", \"orange\", 5, 8, 1)\nplace(\"screw\", \"orange\", 6, 8, 1)\nplace(\"screw\", \"orange\", 7, 8, 1)\nplace(\"screw\", \"orange\", 8, 8, 1)\nplace(\"screw\", \"orange\", 9, 8, 1)"
+    },
+    "162": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with purple gasket",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "gasket",
+        "color": "purple",
+        "output": "place(\"gasket\", \"purple\", 3, 1, 1)\nplace(\"gasket\", \"purple\", 3, 2, 1)\nplace(\"gasket\", \"purple\", 3, 3, 1)\nplace(\"gasket\", \"purple\", 3, 4, 1)\nplace(\"gasket\", \"purple\", 4, 4, 1)\nplace(\"gasket\", \"purple\", 5, 4, 1)\nplace(\"gasket\", \"purple\", 6, 4, 1)"
+    },
+    "163": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with brown hex_nut",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "hex_nut",
+        "color": "brown",
+        "output": "place(\"hex_nut\", \"brown\", 3, 1, 1)\nplace(\"hex_nut\", \"brown\", 3, 2, 1)\nplace(\"hex_nut\", \"brown\", 3, 3, 1)\nplace(\"hex_nut\", \"brown\", 3, 4, 1)\nplace(\"hex_nut\", \"brown\", 3, 5, 1)\nplace(\"hex_nut\", \"brown\", 3, 6, 1)\nplace(\"hex_nut\", \"brown\", 4, 6, 1)\nplace(\"hex_nut\", \"brown\", 5, 6, 1)\nplace(\"hex_nut\", \"brown\", 6, 6, 1)"
+    },
+    "164": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with green screw",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "screw",
+        "color": "green",
+        "output": "place(\"screw\", \"green\", 3, 1, 1)\nplace(\"screw\", \"green\", 3, 2, 1)\nplace(\"screw\", \"green\", 3, 3, 1)\nplace(\"screw\", \"green\", 3, 4, 1)\nplace(\"screw\", \"green\", 3, 5, 1)\nplace(\"screw\", \"green\", 3, 6, 1)\nplace(\"screw\", \"green\", 3, 7, 1)\nplace(\"screw\", \"green\", 3, 8, 1)\nplace(\"screw\", \"green\", 3, 9, 1)\nplace(\"screw\", \"green\", 3, 10, 1)\nplace(\"screw\", \"green\", 4, 10, 1)\nplace(\"screw\", \"green\", 5, 10, 1)\nplace(\"screw\", \"green\", 6, 10, 1)\nplace(\"screw\", \"green\", 7, 10, 1)\nplace(\"screw\", \"green\", 8, 10, 1)\nplace(\"screw\", \"green\", 9, 10, 1)\nplace(\"screw\", \"green\", 10, 10, 1)"
+    },
+    "165": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with magenta screw",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "screw",
+        "color": "magenta",
+        "output": "place(\"screw\", \"magenta\", 3, 1, 1)\nplace(\"screw\", \"magenta\", 3, 2, 1)\nplace(\"screw\", \"magenta\", 3, 3, 1)\nplace(\"screw\", \"magenta\", 3, 4, 1)\nplace(\"screw\", \"magenta\", 3, 5, 1)\nplace(\"screw\", \"magenta\", 3, 6, 1)\nplace(\"screw\", \"magenta\", 3, 7, 1)\nplace(\"screw\", \"magenta\", 3, 8, 1)\nplace(\"screw\", \"magenta\", 4, 8, 1)\nplace(\"screw\", \"magenta\", 5, 8, 1)\nplace(\"screw\", \"magenta\", 6, 8, 1)\nplace(\"screw\", \"magenta\", 7, 8, 1)\nplace(\"screw\", \"magenta\", 8, 8, 1)\nplace(\"screw\", \"magenta\", 9, 8, 1)"
+    },
+    "166": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with yellow gasket",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "gasket",
+        "color": "yellow",
+        "output": "place(\"gasket\", \"yellow\", 3, 1, 1)\nplace(\"gasket\", \"yellow\", 3, 2, 1)\nplace(\"gasket\", \"yellow\", 3, 3, 1)\nplace(\"gasket\", \"yellow\", 3, 4, 1)\nplace(\"gasket\", \"yellow\", 3, 5, 1)\nplace(\"gasket\", \"yellow\", 3, 6, 1)\nplace(\"gasket\", \"yellow\", 3, 7, 1)\nplace(\"gasket\", \"yellow\", 3, 8, 1)\nplace(\"gasket\", \"yellow\", 3, 9, 1)\nplace(\"gasket\", \"yellow\", 3, 10, 1)\nplace(\"gasket\", \"yellow\", 3, 11, 1)\nplace(\"gasket\", \"yellow\", 3, 12, 1)\nplace(\"gasket\", \"yellow\", 3, 13, 1)\nplace(\"gasket\", \"yellow\", 3, 14, 1)\nplace(\"gasket\", \"yellow\", 4, 14, 1)\nplace(\"gasket\", \"yellow\", 5, 14, 1)\nplace(\"gasket\", \"yellow\", 6, 14, 1)\nplace(\"gasket\", \"yellow\", 7, 14, 1)\nplace(\"gasket\", \"yellow\", 8, 14, 1)\nplace(\"gasket\", \"yellow\", 9, 14, 1)\nplace(\"gasket\", \"yellow\", 10, 14, 1)\nplace(\"gasket\", \"yellow\", 11, 14, 1)\nplace(\"gasket\", \"yellow\", 12, 14, 1)\nplace(\"gasket\", \"yellow\", 13, 14, 1)\nplace(\"gasket\", \"yellow\", 14, 14, 1)"
+    },
+    "167": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with magenta gasket",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "gasket",
+        "color": "magenta",
+        "output": "place(\"gasket\", \"magenta\", 3, 1, 1)\nplace(\"gasket\", \"magenta\", 3, 2, 1)\nplace(\"gasket\", \"magenta\", 3, 3, 1)\nplace(\"gasket\", \"magenta\", 3, 4, 1)\nplace(\"gasket\", \"magenta\", 3, 5, 1)\nplace(\"gasket\", \"magenta\", 3, 6, 1)\nplace(\"gasket\", \"magenta\", 3, 7, 1)\nplace(\"gasket\", \"magenta\", 3, 8, 1)\nplace(\"gasket\", \"magenta\", 4, 8, 1)\nplace(\"gasket\", \"magenta\", 5, 8, 1)\nplace(\"gasket\", \"magenta\", 6, 8, 1)\nplace(\"gasket\", \"magenta\", 7, 8, 1)\nplace(\"gasket\", \"magenta\", 8, 8, 1)"
+    },
+    "168": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with green hex_nut",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "hex_nut",
+        "color": "green",
+        "output": "place(\"hex_nut\", \"green\", 3, 1, 1)\nplace(\"hex_nut\", \"green\", 3, 2, 1)\nplace(\"hex_nut\", \"green\", 3, 3, 1)\nplace(\"hex_nut\", \"green\", 3, 4, 1)\nplace(\"hex_nut\", \"green\", 4, 4, 1)\nplace(\"hex_nut\", \"green\", 5, 4, 1)\nplace(\"hex_nut\", \"green\", 6, 4, 1)"
+    },
+    "169": {
+        "sentence": "Make me a 11 unit tall and 11 unit wide L shape with yellow square_nut",
+        "structure": "flat_L",
+        "length": "22",
+        "shape": "square_nut",
+        "color": "yellow",
+        "output": "place(\"square_nut\", \"yellow\", 3, 1, 1)\nplace(\"square_nut\", \"yellow\", 3, 2, 1)\nplace(\"square_nut\", \"yellow\", 3, 3, 1)\nplace(\"square_nut\", \"yellow\", 3, 4, 1)\nplace(\"square_nut\", \"yellow\", 3, 5, 1)\nplace(\"square_nut\", \"yellow\", 3, 6, 1)\nplace(\"square_nut\", \"yellow\", 3, 7, 1)\nplace(\"square_nut\", \"yellow\", 3, 8, 1)\nplace(\"square_nut\", \"yellow\", 3, 9, 1)\nplace(\"square_nut\", \"yellow\", 3, 10, 1)\nplace(\"square_nut\", \"yellow\", 3, 11, 1)\nplace(\"square_nut\", \"yellow\", 4, 11, 1)\nplace(\"square_nut\", \"yellow\", 5, 11, 1)\nplace(\"square_nut\", \"yellow\", 6, 11, 1)\nplace(\"square_nut\", \"yellow\", 7, 11, 1)\nplace(\"square_nut\", \"yellow\", 8, 11, 1)\nplace(\"square_nut\", \"yellow\", 9, 11, 1)\nplace(\"square_nut\", \"yellow\", 10, 11, 1)\nplace(\"square_nut\", \"yellow\", 11, 11, 1)"
+    },
+    "170": {
+        "sentence": "Make me a 10 unit tall and 10 unit wide L shape with yellow gasket",
+        "structure": "flat_L",
+        "length": "20",
+        "shape": "gasket",
+        "color": "yellow",
+        "output": "place(\"gasket\", \"yellow\", 5, 1, 1)\nplace(\"gasket\", \"yellow\", 5, 2, 1)\nplace(\"gasket\", \"yellow\", 5, 3, 1)\nplace(\"gasket\", \"yellow\", 5, 4, 1)\nplace(\"gasket\", \"yellow\", 5, 5, 1)\nplace(\"gasket\", \"yellow\", 5, 6, 1)\nplace(\"gasket\", \"yellow\", 5, 7, 1)\nplace(\"gasket\", \"yellow\", 5, 8, 1)\nplace(\"gasket\", \"yellow\", 5, 9, 1)\nplace(\"gasket\", \"yellow\", 5, 10, 1)\nplace(\"gasket\", \"yellow\", 6, 10, 1)\nplace(\"gasket\", \"yellow\", 7, 10, 1)\nplace(\"gasket\", \"yellow\", 8, 10, 1)\nplace(\"gasket\", \"yellow\", 9, 10, 1)\nplace(\"gasket\", \"yellow\", 10, 10, 1)"
+    },
+    "171": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with brown hbridge",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "hbridge",
+        "color": "brown",
+        "output": "place(\"h_bridge\", \"brown\", 3, 1, 1)\nplace(\"h_bridge\", \"brown\", 3, 2, 1)\nplace(\"h_bridge\", \"brown\", 3, 3, 1)\nplace(\"h_bridge\", \"brown\", 3, 4, 1)\nplace(\"h_bridge\", \"brown\", 3, 5, 1)\nplace(\"h_bridge\", \"brown\", 3, 6, 1)\nplace(\"h_bridge\", \"brown\", 3, 7, 1)\nplace(\"h_bridge\", \"brown\", 3, 8, 1)\nplace(\"h_bridge\", \"brown\", 4, 8, 1)\nplace(\"h_bridge\", \"brown\", 5, 8, 1)\nplace(\"h_bridge\", \"brown\", 6, 8, 1)\nplace(\"h_bridge\", \"brown\", 7, 8, 1)\nplace(\"h_bridge\", \"brown\", 8, 8, 1)"
+    },
+    "172": {
+        "sentence": "Make me a 11 unit tall and 11 unit wide L shape with white vbridge",
+        "structure": "flat_L",
+        "length": "22",
+        "shape": "vbridge",
+        "color": "white",
+        "output": "place(\"v_bridge\", \"white\", 3, 1, 1)\nplace(\"v_bridge\", \"white\", 3, 2, 1)\nplace(\"v_bridge\", \"white\", 3, 3, 1)\nplace(\"v_bridge\", \"white\", 3, 4, 1)\nplace(\"v_bridge\", \"white\", 3, 5, 1)\nplace(\"v_bridge\", \"white\", 3, 6, 1)\nplace(\"v_bridge\", \"white\", 3, 7, 1)\nplace(\"v_bridge\", \"white\", 3, 8, 1)\nplace(\"v_bridge\", \"white\", 3, 9, 1)\nplace(\"v_bridge\", \"white\", 3, 10, 1)\nplace(\"v_bridge\", \"white\", 3, 11, 1)\nplace(\"v_bridge\", \"white\", 4, 11, 1)\nplace(\"v_bridge\", \"white\", 5, 11, 1)\nplace(\"v_bridge\", \"white\", 6, 11, 1)\nplace(\"v_bridge\", \"white\", 7, 11, 1)\nplace(\"v_bridge\", \"white\", 8, 11, 1)\nplace(\"v_bridge\", \"white\", 9, 11, 1)\nplace(\"v_bridge\", \"white\", 10, 11, 1)\nplace(\"v_bridge\", \"white\", 11, 11, 1)"
+    },
+    "173": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with magenta vbridge",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "vbridge",
+        "color": "magenta",
+        "output": "place(\"v_bridge\", \"magenta\", 3, 1, 1)\nplace(\"v_bridge\", \"magenta\", 3, 2, 1)\nplace(\"v_bridge\", \"magenta\", 3, 3, 1)\nplace(\"v_bridge\", \"magenta\", 3, 4, 1)\nplace(\"v_bridge\", \"magenta\", 3, 5, 1)\nplace(\"v_bridge\", \"magenta\", 4, 5, 1)\nplace(\"v_bridge\", \"magenta\", 5, 5, 1)"
+    },
+    "174": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with magenta hex_nut",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "hex_nut",
+        "color": "magenta",
+        "output": "place(\"hex_nut\", \"magenta\", 3, 1, 1)\nplace(\"hex_nut\", \"magenta\", 3, 2, 1)\nplace(\"hex_nut\", \"magenta\", 3, 3, 1)\nplace(\"hex_nut\", \"magenta\", 3, 4, 1)\nplace(\"hex_nut\", \"magenta\", 3, 5, 1)\nplace(\"hex_nut\", \"magenta\", 3, 6, 1)\nplace(\"hex_nut\", \"magenta\", 3, 7, 1)\nplace(\"hex_nut\", \"magenta\", 3, 8, 1)\nplace(\"hex_nut\", \"magenta\", 4, 8, 1)\nplace(\"hex_nut\", \"magenta\", 5, 8, 1)\nplace(\"hex_nut\", \"magenta\", 6, 8, 1)\nplace(\"hex_nut\", \"magenta\", 7, 8, 1)\nplace(\"hex_nut\", \"magenta\", 8, 8, 1)"
+    },
+    "175": {
+        "sentence": "Make me a 11 unit tall and 11 unit wide L shape with purple gasket",
+        "structure": "flat_L",
+        "length": "22",
+        "shape": "gasket",
+        "color": "purple",
+        "output": "place(\"gasket\", \"purple\", 3, 1, 1)\nplace(\"gasket\", \"purple\", 3, 2, 1)\nplace(\"gasket\", \"purple\", 3, 3, 1)\nplace(\"gasket\", \"purple\", 3, 4, 1)\nplace(\"gasket\", \"purple\", 3, 5, 1)\nplace(\"gasket\", \"purple\", 3, 6, 1)\nplace(\"gasket\", \"purple\", 3, 7, 1)\nplace(\"gasket\", \"purple\", 3, 8, 1)\nplace(\"gasket\", \"purple\", 3, 9, 1)\nplace(\"gasket\", \"purple\", 3, 10, 1)\nplace(\"gasket\", \"purple\", 3, 11, 1)\nplace(\"gasket\", \"purple\", 4, 11, 1)\nplace(\"gasket\", \"purple\", 5, 11, 1)\nplace(\"gasket\", \"purple\", 6, 11, 1)\nplace(\"gasket\", \"purple\", 7, 11, 1)\nplace(\"gasket\", \"purple\", 8, 11, 1)\nplace(\"gasket\", \"purple\", 9, 11, 1)\nplace(\"gasket\", \"purple\", 10, 11, 1)\nplace(\"gasket\", \"purple\", 11, 11, 1)"
+    },
+    "176": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with red nut",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "nut",
+        "color": "red",
+        "output": "place(\"nut\", \"red\", 3, 1, 1)\nplace(\"nut\", \"red\", 3, 2, 1)\nplace(\"nut\", \"red\", 3, 3, 1)\nplace(\"nut\", \"red\", 3, 4, 1)\nplace(\"nut\", \"red\", 3, 5, 1)\nplace(\"nut\", \"red\", 3, 6, 1)\nplace(\"nut\", \"red\", 3, 7, 1)\nplace(\"nut\", \"red\", 3, 8, 1)\nplace(\"nut\", \"red\", 4, 8, 1)\nplace(\"nut\", \"red\", 5, 8, 1)\nplace(\"nut\", \"red\", 6, 8, 1)\nplace(\"nut\", \"red\", 7, 8, 1)\nplace(\"nut\", \"red\", 8, 8, 1)"
+    },
+    "177": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with yellow square_nut",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "square_nut",
+        "color": "yellow",
+        "output": "place(\"square_nut\", \"yellow\", 3, 1, 1)\nplace(\"square_nut\", \"yellow\", 3, 2, 1)\nplace(\"square_nut\", \"yellow\", 3, 3, 1)\nplace(\"square_nut\", \"yellow\", 3, 4, 1)\nplace(\"square_nut\", \"yellow\", 3, 5, 1)\nplace(\"square_nut\", \"yellow\", 3, 6, 1)\nplace(\"square_nut\", \"yellow\", 4, 6, 1)\nplace(\"square_nut\", \"yellow\", 5, 6, 1)\nplace(\"square_nut\", \"yellow\", 6, 6, 1)"
+    },
+    "178": {
+        "sentence": "Make me a 4 unit tall and 4 unit wide L shape with white gasket",
+        "structure": "flat_L",
+        "length": "8",
+        "shape": "gasket",
+        "color": "white",
+        "output": "place(\"gasket\", \"white\", 3, 1, 1)\nplace(\"gasket\", \"white\", 3, 2, 1)\nplace(\"gasket\", \"white\", 3, 3, 1)\nplace(\"gasket\", \"white\", 3, 4, 1)\nplace(\"gasket\", \"white\", 4, 4, 1)\nplace(\"gasket\", \"white\", 5, 4, 1)\nplace(\"gasket\", \"white\", 6, 4, 1)"
+    },
+    "179": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with white hex_nut",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "hex_nut",
+        "color": "white",
+        "output": "place(\"hex_nut\", \"white\", 3, 1, 1)\nplace(\"hex_nut\", \"white\", 3, 2, 1)\nplace(\"hex_nut\", \"white\", 3, 3, 1)\nplace(\"hex_nut\", \"white\", 3, 4, 1)\nplace(\"hex_nut\", \"white\", 3, 5, 1)\nplace(\"hex_nut\", \"white\", 3, 6, 1)\nplace(\"hex_nut\", \"white\", 3, 7, 1)\nplace(\"hex_nut\", \"white\", 3, 8, 1)\nplace(\"hex_nut\", \"white\", 4, 8, 1)\nplace(\"hex_nut\", \"white\", 5, 8, 1)\nplace(\"hex_nut\", \"white\", 6, 8, 1)\nplace(\"hex_nut\", \"white\", 7, 8, 1)\nplace(\"hex_nut\", \"white\", 8, 8, 1)"
+    },
+    "180": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with yellow vbridge",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "vbridge",
+        "color": "yellow",
+        "output": "place(\"v_bridge\", \"yellow\", 8, 1, 1)\nplace(\"v_bridge\", \"yellow\", 8, 2, 1)\nplace(\"v_bridge\", \"yellow\", 8, 3, 1)\nplace(\"v_bridge\", \"yellow\", 8, 4, 1)\nplace(\"v_bridge\", \"yellow\", 8, 5, 1)\nplace(\"v_bridge\", \"yellow\", 8, 6, 1)\nplace(\"v_bridge\", \"yellow\", 8, 7, 1)\nplace(\"v_bridge\", \"yellow\", 8, 8, 1)\nplace(\"v_bridge\", \"yellow\", 8, 9, 1)\nplace(\"v_bridge\", \"yellow\", 8, 10, 1)\nplace(\"v_bridge\", \"yellow\", 8, 11, 1)\nplace(\"v_bridge\", \"yellow\", 8, 12, 1)\nplace(\"v_bridge\", \"yellow\", 8, 13, 1)\nplace(\"v_bridge\", \"yellow\", 8, 14, 1)\nplace(\"v_bridge\", \"yellow\", 8, 15, 1)\nplace(\"v_bridge\", \"yellow\", 8, 16, 1)\nplace(\"v_bridge\", \"yellow\", 9, 16, 1)\nplace(\"v_bridge\", \"yellow\", 10, 16, 1)\nplace(\"v_bridge\", \"yellow\", 11, 16, 1)\nplace(\"v_bridge\", \"yellow\", 12, 16, 1)\nplace(\"v_bridge\", \"yellow\", 13, 16, 1)\nplace(\"v_bridge\", \"yellow\", 14, 16, 1)\nplace(\"v_bridge\", \"yellow\", 15, 16, 1)"
+    },
+    "181": {
+        "sentence": "Make me a 15 unit tall and 15 unit wide L shape with purple screw",
+        "structure": "flat_L",
+        "length": "30",
+        "shape": "screw",
+        "color": "purple",
+        "output": "place(\"screw\", \"purple\", 3, 1, 1)\nplace(\"screw\", \"purple\", 3, 2, 1)\nplace(\"screw\", \"purple\", 3, 3, 1)\nplace(\"screw\", \"purple\", 3, 4, 1)\nplace(\"screw\", \"purple\", 3, 5, 1)\nplace(\"screw\", \"purple\", 3, 6, 1)\nplace(\"screw\", \"purple\", 3, 7, 1)\nplace(\"screw\", \"purple\", 3, 8, 1)\nplace(\"screw\", \"purple\", 3, 9, 1)\nplace(\"screw\", \"purple\", 3, 10, 1)\nplace(\"screw\", \"purple\", 3, 11, 1)\nplace(\"screw\", \"purple\", 3, 12, 1)\nplace(\"screw\", \"purple\", 3, 13, 1)\nplace(\"screw\", \"purple\", 3, 14, 1)\nplace(\"screw\", \"purple\", 3, 15, 1)\nplace(\"screw\", \"purple\", 4, 15, 1)\nplace(\"screw\", \"purple\", 5, 15, 1)\nplace(\"screw\", \"purple\", 6, 15, 1)\nplace(\"screw\", \"purple\", 7, 15, 1)\nplace(\"screw\", \"purple\", 8, 15, 1)\nplace(\"screw\", \"purple\", 9, 15, 1)\nplace(\"screw\", \"purple\", 10, 15, 1)\nplace(\"screw\", \"purple\", 11, 15, 1)\nplace(\"screw\", \"purple\", 12, 15, 1)\nplace(\"screw\", \"purple\", 13, 15, 1)\nplace(\"screw\", \"purple\", 14, 15, 1)\nplace(\"screw\", \"purple\", 15, 15, 1)"
+    },
+    "182": {
+        "sentence": "Make me a 5 unit tall and 5 unit wide L shape with green bolt",
+        "structure": "flat_L",
+        "length": "10",
+        "shape": "bolt",
+        "color": "green",
+        "output": "place(\"bolt\", \"green\", 3, 1, 1)\nplace(\"bolt\", \"green\", 3, 2, 1)\nplace(\"bolt\", \"green\", 3, 3, 1)\nplace(\"bolt\", \"green\", 3, 4, 1)\nplace(\"bolt\", \"green\", 3, 5, 1)\nplace(\"bolt\", \"green\", 4, 5, 1)\nplace(\"bolt\", \"green\", 5, 5, 1)"
+    },
+    "183": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with black square_nut",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "square_nut",
+        "color": "black",
+        "output": "place(\"square_nut\", \"black\", 3, 1, 1)\nplace(\"square_nut\", \"black\", 3, 2, 1)\nplace(\"square_nut\", \"black\", 3, 3, 1)\nplace(\"square_nut\", \"black\", 3, 4, 1)\nplace(\"square_nut\", \"black\", 3, 5, 1)\nplace(\"square_nut\", \"black\", 3, 6, 1)\nplace(\"square_nut\", \"black\", 3, 7, 1)\nplace(\"square_nut\", \"black\", 4, 7, 1)\nplace(\"square_nut\", \"black\", 5, 7, 1)\nplace(\"square_nut\", \"black\", 6, 7, 1)\nplace(\"square_nut\", \"black\", 7, 7, 1)\nplace(\"square_nut\", \"black\", 8, 7, 1)"
+    },
+    "184": {
+        "sentence": "Make me a 7 unit tall and 7 unit wide L shape with green cap",
+        "structure": "flat_L",
+        "length": "14",
+        "shape": "cap",
+        "color": "green",
+        "output": "place(\"cap\", \"green\", 3, 1, 1)\nplace(\"cap\", \"green\", 3, 2, 1)\nplace(\"cap\", \"green\", 3, 3, 1)\nplace(\"cap\", \"green\", 3, 4, 1)\nplace(\"cap\", \"green\", 3, 5, 1)\nplace(\"cap\", \"green\", 3, 6, 1)\nplace(\"cap\", \"green\", 3, 7, 1)\nplace(\"cap\", \"green\", 4, 7, 1)\nplace(\"cap\", \"green\", 5, 7, 1)\nplace(\"cap\", \"green\", 6, 7, 1)\nplace(\"cap\", \"green\", 7, 7, 1)\nplace(\"cap\", \"green\", 8, 7, 1)"
+    },
+    "185": {
+        "sentence": "Make me a 2 unit tall and 2 unit wide L shape with purple washer",
+        "structure": "flat_L",
+        "length": "4",
+        "shape": "washer",
+        "color": "purple",
+        "output": "place(\"washer\", \"purple\", 3, 1, 1)\nplace(\"washer\", \"purple\", 3, 2, 1)\nplace(\"washer\", \"purple\", 4, 2, 1)"
+    },
+    "186": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with magenta washer",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "washer",
+        "color": "magenta",
+        "output": "place(\"washer\", \"magenta\", 3, 1, 1)\nplace(\"washer\", \"magenta\", 3, 2, 1)\nplace(\"washer\", \"magenta\", 3, 3, 1)\nplace(\"washer\", \"magenta\", 3, 4, 1)\nplace(\"washer\", \"magenta\", 3, 5, 1)\nplace(\"washer\", \"magenta\", 3, 6, 1)\nplace(\"washer\", \"magenta\", 3, 7, 1)\nplace(\"washer\", \"magenta\", 3, 8, 1)\nplace(\"washer\", \"magenta\", 4, 8, 1)\nplace(\"washer\", \"magenta\", 5, 8, 1)\nplace(\"washer\", \"magenta\", 6, 8, 1)\nplace(\"washer\", \"magenta\", 7, 8, 1)\nplace(\"washer\", \"magenta\", 8, 8, 1)\nplace(\"washer\", \"magenta\", 9, 8, 1)"
+    },
+    "187": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with yellow gasket",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "gasket",
+        "color": "yellow",
+        "output": "place(\"gasket\", \"yellow\", 2, 1, 1)\nplace(\"gasket\", \"yellow\", 2, 2, 1)\nplace(\"gasket\", \"yellow\", 2, 3, 1)\nplace(\"gasket\", \"yellow\", 3, 3, 1)"
+    },
+    "188": {
+        "sentence": "Make me a 8 unit tall and 8 unit wide L shape with black hex_nut",
+        "structure": "flat_L",
+        "length": "16",
+        "shape": "hex_nut",
+        "color": "black",
+        "output": "place(\"hex_nut\", \"black\", 3, 1, 1)\nplace(\"hex_nut\", \"black\", 3, 2, 1)\nplace(\"hex_nut\", \"black\", 3, 3, 1)\nplace(\"hex_nut\", \"black\", 3, 4, 1)\nplace(\"hex_nut\", \"black\", 3, 5, 1)\nplace(\"hex_nut\", \"black\", 3, 6, 1)\nplace(\"hex_nut\", \"black\", 3, 7, 1)\nplace(\"hex_nut\", \"black\", 3, 8, 1)\nplace(\"hex_nut\", \"black\", 4, 8, 1)\nplace(\"hex_nut\", \"black\", 5, 8, 1)\nplace(\"hex_nut\", \"black\", 6, 8, 1)\nplace(\"hex_nut\", \"black\", 7, 8, 1)\nplace(\"hex_nut\", \"black\", 8, 8, 1)"
+    },
+    "189": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with red gasket",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "gasket",
+        "color": "red",
+        "output": "place(\"gasket\", \"red\", 3, 1, 1)\nplace(\"gasket\", \"red\", 3, 2, 1)\nplace(\"gasket\", \"red\", 3, 3, 1)\nplace(\"gasket\", \"red\", 3, 4, 1)\nplace(\"gasket\", \"red\", 3, 5, 1)\nplace(\"gasket\", \"red\", 3, 6, 1)\nplace(\"gasket\", \"red\", 4, 6, 1)\nplace(\"gasket\", \"red\", 5, 6, 1)\nplace(\"gasket\", \"red\", 6, 6, 1)"
+    },
+    "190": {
+        "sentence": "Make me a 9 unit tall and 9 unit wide L shape with black cap",
+        "structure": "flat_L",
+        "length": "18",
+        "shape": "cap",
+        "color": "black",
+        "output": "place(\"cap\", \"black\", 3, 1, 1)\nplace(\"cap\", \"black\", 3, 2, 1)\nplace(\"cap\", \"black\", 3, 3, 1)\nplace(\"cap\", \"black\", 3, 4, 1)\nplace(\"cap\", \"black\", 3, 5, 1)\nplace(\"cap\", \"black\", 3, 6, 1)\nplace(\"cap\", \"black\", 3, 7, 1)\nplace(\"cap\", \"black\", 3, 8, 1)\nplace(\"cap\", \"black\", 4, 8, 1)\nplace(\"cap\", \"black\", 5, 8, 1)\nplace(\"cap\", \"black\", 6, 8, 1)\nplace(\"cap\", \"black\", 7, 8, 1)\nplace(\"cap\", \"black\", 8, 8, 1)\nplace(\"cap\", \"black\", 9, 8, 1)"
+    },
+    "191": {
+        "sentence": "Make me a 3 unit tall and 3 unit wide L shape with green bolt",
+        "structure": "flat_L",
+        "length": "6",
+        "shape": "bolt",
+        "color": "green",
+        "output": "place(\"bolt\", \"green\", 2, 1, 1)\nplace(\"bolt\", \"green\", 2, 2, 1)\nplace(\"bolt\", \"green\", 2, 3, 1)\nplace(\"bolt\", \"green\", 3, 3, 1)"
+    },
+    "192": {
+        "sentence": "Make me a 16 unit tall and 16 unit wide L shape with black hex_nut",
+        "structure": "flat_L",
+        "length": "32",
+        "shape": "hex_nut",
+        "color": "black",
+        "output": "place(\"hex_nut\", \"black\", 8, 1, 1)\nplace(\"hex_nut\", \"black\", 8, 2, 1)\nplace(\"hex_nut\", \"black\", 8, 3, 1)\nplace(\"hex_nut\", \"black\", 8, 4, 1)\nplace(\"hex_nut\", \"black\", 8, 5, 1)\nplace(\"hex_nut\", \"black\", 8, 6, 1)\nplace(\"hex_nut\", \"black\", 8, 7, 1)\nplace(\"hex_nut\", \"black\", 8, 8, 1)\nplace(\"hex_nut\", \"black\", 8, 9, 1)\nplace(\"hex_nut\", \"black\", 8, 10, 1)\nplace(\"hex_nut\", \"black\", 8, 11, 1)\nplace(\"hex_nut\", \"black\", 8, 12, 1)\nplace(\"hex_nut\", \"black\", 8, 13, 1)\nplace(\"hex_nut\", \"black\", 8, 14, 1)\nplace(\"hex_nut\", \"black\", 8, 15, 1)\nplace(\"hex_nut\", \"black\", 8, 16, 1)\nplace(\"hex_nut\", \"black\", 9, 16, 1)\nplace(\"hex_nut\", \"black\", 10, 16, 1)\nplace(\"hex_nut\", \"black\", 11, 16, 1)\nplace(\"hex_nut\", \"black\", 12, 16, 1)\nplace(\"hex_nut\", \"black\", 13, 16, 1)\nplace(\"hex_nut\", \"black\", 14, 16, 1)\nplace(\"hex_nut\", \"black\", 15, 16, 1)"
+    },
+    "193": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with yellow cap",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "cap",
+        "color": "yellow",
+        "output": "place(\"cap\", \"yellow\", 3, 1, 1)\nplace(\"cap\", \"yellow\", 3, 2, 1)\nplace(\"cap\", \"yellow\", 3, 3, 1)\nplace(\"cap\", \"yellow\", 3, 4, 1)\nplace(\"cap\", \"yellow\", 3, 5, 1)\nplace(\"cap\", \"yellow\", 3, 6, 1)\nplace(\"cap\", \"yellow\", 3, 7, 1)\nplace(\"cap\", \"yellow\", 3, 8, 1)\nplace(\"cap\", \"yellow\", 3, 9, 1)\nplace(\"cap\", \"yellow\", 3, 10, 1)\nplace(\"cap\", \"yellow\", 3, 11, 1)\nplace(\"cap\", \"yellow\", 3, 12, 1)\nplace(\"cap\", \"yellow\", 4, 12, 1)\nplace(\"cap\", \"yellow\", 5, 12, 1)\nplace(\"cap\", \"yellow\", 6, 12, 1)\nplace(\"cap\", \"yellow\", 7, 12, 1)\nplace(\"cap\", \"yellow\", 8, 12, 1)\nplace(\"cap\", \"yellow\", 9, 12, 1)\nplace(\"cap\", \"yellow\", 10, 12, 1)\nplace(\"cap\", \"yellow\", 11, 12, 1)\nplace(\"cap\", \"yellow\", 12, 12, 1)"
+    },
+    "194": {
+        "sentence": "Make me a 12 unit tall and 12 unit wide L shape with orange gasket",
+        "structure": "flat_L",
+        "length": "24",
+        "shape": "gasket",
+        "color": "orange",
+        "output": "place(\"gasket\", \"orange\", 3, 1, 1)\nplace(\"gasket\", \"orange\", 3, 2, 1)\nplace(\"gasket\", \"orange\", 3, 3, 1)\nplace(\"gasket\", \"orange\", 3, 4, 1)\nplace(\"gasket\", \"orange\", 3, 5, 1)\nplace(\"gasket\", \"orange\", 3, 6, 1)\nplace(\"gasket\", \"orange\", 3, 7, 1)\nplace(\"gasket\", \"orange\", 3, 8, 1)\nplace(\"gasket\", \"orange\", 3, 9, 1)\nplace(\"gasket\", \"orange\", 3, 10, 1)\nplace(\"gasket\", \"orange\", 3, 11, 1)\nplace(\"gasket\", \"orange\", 3, 12, 1)\nplace(\"gasket\", \"orange\", 4, 12, 1)\nplace(\"gasket\", \"orange\", 5, 12, 1)\nplace(\"gasket\", \"orange\", 6, 12, 1)\nplace(\"gasket\", \"orange\", 7, 12, 1)\nplace(\"gasket\", \"orange\", 8, 12, 1)\nplace(\"gasket\", \"orange\", 9, 12, 1)\nplace(\"gasket\", \"orange\", 10, 12, 1)\nplace(\"gasket\", \"orange\", 11, 12, 1)\nplace(\"gasket\", \"orange\", 12, 12, 1)"
+    },
+    "195": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with green cap",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "cap",
+        "color": "green",
+        "output": "place(\"cap\", \"green\", 3, 1, 1)\nplace(\"cap\", \"green\", 3, 2, 1)\nplace(\"cap\", \"green\", 3, 3, 1)\nplace(\"cap\", \"green\", 3, 4, 1)\nplace(\"cap\", \"green\", 3, 5, 1)\nplace(\"cap\", \"green\", 3, 6, 1)\nplace(\"cap\", \"green\", 3, 7, 1)\nplace(\"cap\", \"green\", 3, 8, 1)\nplace(\"cap\", \"green\", 3, 9, 1)\nplace(\"cap\", \"green\", 3, 10, 1)\nplace(\"cap\", \"green\", 3, 11, 1)\nplace(\"cap\", \"green\", 3, 12, 1)\nplace(\"cap\", \"green\", 3, 13, 1)\nplace(\"cap\", \"green\", 3, 14, 1)\nplace(\"cap\", \"green\", 4, 14, 1)\nplace(\"cap\", \"green\", 5, 14, 1)\nplace(\"cap\", \"green\", 6, 14, 1)\nplace(\"cap\", \"green\", 7, 14, 1)\nplace(\"cap\", \"green\", 8, 14, 1)\nplace(\"cap\", \"green\", 9, 14, 1)\nplace(\"cap\", \"green\", 10, 14, 1)\nplace(\"cap\", \"green\", 11, 14, 1)\nplace(\"cap\", \"green\", 12, 14, 1)\nplace(\"cap\", \"green\", 13, 14, 1)\nplace(\"cap\", \"green\", 14, 14, 1)"
+    },
+    "196": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with purple square_nut",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "square_nut",
+        "color": "purple",
+        "output": "place(\"square_nut\", \"purple\", 3, 1, 1)\nplace(\"square_nut\", \"purple\", 3, 2, 1)\nplace(\"square_nut\", \"purple\", 3, 3, 1)\nplace(\"square_nut\", \"purple\", 3, 4, 1)\nplace(\"square_nut\", \"purple\", 3, 5, 1)\nplace(\"square_nut\", \"purple\", 3, 6, 1)\nplace(\"square_nut\", \"purple\", 4, 6, 1)\nplace(\"square_nut\", \"purple\", 5, 6, 1)\nplace(\"square_nut\", \"purple\", 6, 6, 1)"
+    },
+    "197": {
+        "sentence": "Make me a 6 unit tall and 6 unit wide L shape with blue gasket",
+        "structure": "flat_L",
+        "length": "12",
+        "shape": "gasket",
+        "color": "blue",
+        "output": "place(\"gasket\", \"blue\", 3, 1, 1)\nplace(\"gasket\", \"blue\", 3, 2, 1)\nplace(\"gasket\", \"blue\", 3, 3, 1)\nplace(\"gasket\", \"blue\", 3, 4, 1)\nplace(\"gasket\", \"blue\", 3, 5, 1)\nplace(\"gasket\", \"blue\", 3, 6, 1)\nplace(\"gasket\", \"blue\", 4, 6, 1)\nplace(\"gasket\", \"blue\", 5, 6, 1)\nplace(\"gasket\", \"blue\", 6, 6, 1)"
+    },
+    "198": {
+        "sentence": "Make me a 14 unit tall and 14 unit wide L shape with black screw",
+        "structure": "flat_L",
+        "length": "28",
+        "shape": "screw",
+        "color": "black",
+        "output": "place(\"screw\", \"black\", 3, 1, 1)\nplace(\"screw\", \"black\", 3, 2, 1)\nplace(\"screw\", \"black\", 3, 3, 1)\nplace(\"screw\", \"black\", 3, 4, 1)\nplace(\"screw\", \"black\", 3, 5, 1)\nplace(\"screw\", \"black\", 3, 6, 1)\nplace(\"screw\", \"black\", 3, 7, 1)\nplace(\"screw\", \"black\", 3, 8, 1)\nplace(\"screw\", \"black\", 3, 9, 1)\nplace(\"screw\", \"black\", 3, 10, 1)\nplace(\"screw\", \"black\", 3, 11, 1)\nplace(\"screw\", \"black\", 3, 12, 1)\nplace(\"screw\", \"black\", 3, 13, 1)\nplace(\"screw\", \"black\", 3, 14, 1)\nplace(\"screw\", \"black\", 4, 14, 1)\nplace(\"screw\", \"black\", 5, 14, 1)\nplace(\"screw\", \"black\", 6, 14, 1)\nplace(\"screw\", \"black\", 7, 14, 1)\nplace(\"screw\", \"black\", 8, 14, 1)\nplace(\"screw\", \"black\", 9, 14, 1)\nplace(\"screw\", \"black\", 10, 14, 1)\nplace(\"screw\", \"black\", 11, 14, 1)\nplace(\"screw\", \"black\", 12, 14, 1)\nplace(\"screw\", \"black\", 13, 14, 1)\nplace(\"screw\", \"black\", 14, 14, 1)"
+    },
+    "199": {
+        "sentence": "Make me a 13 unit tall and 13 unit wide L shape with magenta vbridge",
+        "structure": "flat_L",
+        "length": "26",
+        "shape": "vbridge",
+        "color": "magenta",
+        "output": "place(\"v_bridge\", \"magenta\", 3, 1, 1)\nplace(\"v_bridge\", \"magenta\", 3, 2, 1)\nplace(\"v_bridge\", \"magenta\", 3, 3, 1)\nplace(\"v_bridge\", \"magenta\", 3, 4, 1)\nplace(\"v_bridge\", \"magenta\", 3, 5, 1)\nplace(\"v_bridge\", \"magenta\", 3, 6, 1)\nplace(\"v_bridge\", \"magenta\", 3, 7, 1)\nplace(\"v_bridge\", \"magenta\", 3, 8, 1)\nplace(\"v_bridge\", \"magenta\", 3, 9, 1)\nplace(\"v_bridge\", \"magenta\", 3, 10, 1)\nplace(\"v_bridge\", \"magenta\", 3, 11, 1)\nplace(\"v_bridge\", \"magenta\", 3, 12, 1)\nplace(\"v_bridge\", \"magenta\", 3, 13, 1)\nplace(\"v_bridge\", \"magenta\", 4, 13, 1)\nplace(\"v_bridge\", \"magenta\", 5, 13, 1)\nplace(\"v_bridge\", \"magenta\", 6, 13, 1)\nplace(\"v_bridge\", \"magenta\", 7, 13, 1)\nplace(\"v_bridge\", \"magenta\", 8, 13, 1)\nplace(\"v_bridge\", \"magenta\", 9, 13, 1)\nplace(\"v_bridge\", \"magenta\", 10, 13, 1)\nplace(\"v_bridge\", \"magenta\", 11, 13, 1)\nplace(\"v_bridge\", \"magenta\", 12, 13, 1)\nplace(\"v_bridge\", \"magenta\", 13, 13, 1)"
+    }
+}

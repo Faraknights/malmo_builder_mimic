@@ -1,0 +1,81 @@
+{
+    "nut": [
+        "Place a eight-sided piece with a hole in the center in the center of the grid.",
+        "Place a octagon-shaped object with a circular cutout in the center of the grid.",
+        "Place a solid octagon with a hollow middle in the center of the grid.",
+        "Place a small, thick octagonal ring in the center of the grid.",
+        "Place a eight-sided frame in the center of the grid."
+    ],
+    "washer": [
+        "Place a flat, round metal piece with a hole in the middle in the center of the grid.",
+        "Place a thin, circular disc with a hollow center in the center of the grid.",
+        "Place a small, ring-like object made of metal in the center of the grid.",
+        "Place a donut-shaped piece, but very flat in the center of the grid.",
+        "Place a flat circle with a hole cut out in the center in the center of the grid.",
+        "Place a metallic ring with smooth edges and a uniform thickness in the center of the grid.",
+        "Place a round, flat piece that looks like a coin with a hole in it in the center of the grid."
+    ],
+    "bolt": [
+        "Place a solid hexagon-shaped piece in the center of the grid.",
+        "Place a six-sided block in the center of the grid.",
+        "Place a chunky hexagon with depth in the center of the grid.",
+        "Place a thick hexagonal prism in the center of the grid.",
+        "Place a heavy, solid piece shaped like a hexagon in the center of the grid.",
+        "Place a hexagon that looks like a solid block in the center of the grid.",
+        "Place a hexagonal shape stretched into a tall, solid piece in the center of the grid."
+    ],
+    "gasket": [
+        "Place a flat, thin ring with a hole in the middle in the center of the grid.",
+        "Place a circular piece of material, like a flat donut in the center of the grid.",
+        "Place a round, flat object with an empty center in the center of the grid.",
+        "Place a thin disc with a perfectly cut hole in the middle in the center of the grid.",
+        "Place a flexible, flat ring that looks like a rubber or metal donut in the center of the grid.",
+        "Place a a thin flat circle with a hollow center in the center of the grid.",
+        "Place a lightweight, ring-shaped piece with smooth edges in the center of the grid."
+    ],
+    "hex_nut": [
+        "Place a small, six-sided metal ring with a hole in the middle in the center of the grid.",
+        "Place a hexagon-shaped object with a circular opening in the center of the grid.",
+        "Place a chunky, six-edged frame with a hollow center in the center of the grid.",
+        "Place a metallic hexagon with a smooth, round hole in the center of the grid.",
+        "Place a solid hexagonal piece with an empty center in the center of the grid.",
+        "Place a six-sided ring that looks like a metal frame in the center of the grid.",
+        "Place a hexagon-shaped object you can fit a bolt through in the center of the grid."
+    ],
+    "horizontal bridge": [
+        "Place a straight, flat horizontal piece stretching across two points in the center of the grid.",
+        "Place a thin, horizontal bar connecting two sides in the center of the grid.",
+        "Place a flat, rectangular object that spans across a gap in the center of the grid.",
+        "Place a long, straight structure that looks like a plank or beam in the center of the grid.",
+        "Place a strip placed horizontally between two supports in the center of the grid.",
+        "Place a straight bridge-like bar lying flat in the center of the grid.",
+        "Place a horizontal line-shaped piece joining two parts together in the center of the grid."
+    ],
+    "screw": [
+        "Place a small, round, flat metal surface with a groove in the center in the center of the grid.",
+        "Place a circular top with a straight slot across it for turning in the center of the grid.",
+        "Place a shiny, flat disc with an indented line in the middle in the center of the grid.",
+        "Place a metallic circle with a cross-shaped groove on its surface in the center of the grid.",
+        "Place a small, flat, round head with a star-like indentation in the center of the grid.",
+        "Place a circular cap with a single or double groove for a screwdriver in the center of the grid.",
+        "Place a smooth, flat top with markings for twisting it in place in the center of the grid."
+    ],
+    "square_nut": [
+        "Place a small, square-shaped piece with a hole in the center in the center of the grid.",
+        "Place a flat square with a circular opening in the middle in the center of the grid.",
+        "Place a chunky square frame with a hollow center in the center of the grid.",
+        "Place a solid, four-sided piece with smooth edges and a round hole in the center of the grid.",
+        "Place a square block with a circular cutout in the middle in the center of the grid.",
+        "Place a piece shaped like a square with a hollow center in the center of the grid.",
+        "Place a four-sided ring that looks like a sturdy frame in the center of the grid."
+    ],
+    "vertical bridge": [
+        "Place a straight, flat vertical piece standing upright between two points in the center of the grid.",
+        "Place a thin, vertical bar connecting the top and bottom parts in the center of the grid.",
+        "Place a tall, rectangular object positioned vertically in the center of the grid.",
+        "Place a long, upright structure that looks like a narrow column or beam in the center of the grid.",
+        "Place a vertical strip placed between two supports in the center of the grid.",
+        "Place a straight, bridge-like bar standing on its end in the center of the grid.",
+        "Place a thin, rectangular piece aligned vertically, bridging two sections in the center of the grid."
+    ]
+}

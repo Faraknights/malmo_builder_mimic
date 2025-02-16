@@ -1,0 +1,8 @@
+[
+  {
+    "instruction": "<Architect> Starting in the first row and first column, place a diagonal row of five blue bolts. it should end in the fifth column and first row."
+  },
+  {
+    "instruction": "<Architect> Starting In the first row and fifth column, place an perpendicular diagonal row of five white bolts, finishing in the fifth row and first column."
+  }
+]

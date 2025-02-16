@@ -1,0 +1,14 @@
+[
+  {
+    "instruction": "<Architect> Start by placing a horizontal row of five yellow bolts anywhere toward the top row (row number one)."
+  },
+  {
+    "instruction": "<Architect> Next, place a vertical row of four yellow bolts starting from the leftmost bolt of the first row, going down"
+  },
+  {
+    "instruction": "<Architect> Do the same on the rightmost bolt of the first row.  Place a vertical row of four yellow bolts extending downward."
+  },
+  {
+    "instruction": "<Architect> Finally, connect the bottom by placing a horizontal row of three yellow bolts between the bottommost bolts of the two vertical rows.  This will complete the 5x5 square outline."
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "instruction": "<Architect> Start by placing a column of five red hex nuts starting from the fifth column and the fifth row of the grid. all parts should be placed on the ground level."
+  },
+  {
+    "instruction": "<Architect> Next, place a horizontal row of two green screws to the right of the first hex nut in the column you have just built"
+  },
+  {
+    "instruction": "<Architect> Then, place a horizontal row of two blue washers in the ninth row and the sixth and seven columns."
+  },
+  {
+    "instruction": "<Architect> Finally, place a single red hex nut next in the seventh row and and the sixth column. "
+  }
+]
