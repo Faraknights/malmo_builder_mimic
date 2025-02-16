@@ -105,7 +105,7 @@ export function parseInstruction(instruction: string, gameLog: GameLog, environm
 				},
 				shape: ShapeList.CUBE,
 			});
-		} else if (environmentMode === EnvironmentMode.COCOBOTS) {
+		} else if (environmentMode === EnvironmentMode.COCORELI) {
 			lastWorldState?.shapeInPlace.push({
 				pending: false,
 				breakable: false,

@@ -7,7 +7,6 @@ import { shapeProps } from '../components/modelisation/shapes/Shape';
 import { GameLog } from '../classes/GameLog';
 import Simulation from '../components/structurals/environmentGames/Simulation';
 import Visualization from '../components/structurals/environmentGames/Visualization';
-import Nebula from '../components/structurals/environmentGames/Nebula';
 import { GameMode } from '../enum/GameMode';
 import { Colors } from '../enum/Colors';
 import { ShapeList } from '../enum/ShapeList';
@@ -19,7 +18,7 @@ import Multimodal from '../components/structurals/environmentGames/multimodal';
 
 export const BLOCK_SIZE: { [key in EnvironmentMode]: CartesianCoordinate } = {
 	[EnvironmentMode.MINECRAFT]: { x: 1, y: 1, z: 1 },
-	[EnvironmentMode.COCOBOTS]: { x: 1, y: 0.3, z: 1 },
+	[EnvironmentMode.COCORELI]: { x: 1, y: 0.3, z: 1 },
 };
 
 export const ENVIRONMENT_COLORS: { [key in EnvironmentMode]: Color[] } = {
@@ -31,7 +30,7 @@ export const ENVIRONMENT_COLORS: { [key in EnvironmentMode]: Color[] } = {
 		COLORS[Colors.ORANGE],
 		COLORS[Colors.YELLOW],
 	],
-	[EnvironmentMode.COCOBOTS]: [
+	[EnvironmentMode.COCORELI]: [
 		COLORS[Colors.BLUE],
 		COLORS[Colors.ORANGE],
 		COLORS[Colors.RED],
@@ -47,7 +46,7 @@ export const ENVIRONMENT_COLORS: { [key in EnvironmentMode]: Color[] } = {
 
 export const ENVIRONMENT_SHAPES: { [key in EnvironmentMode]: ShapeList[] } = {
 	[EnvironmentMode.MINECRAFT]: [ShapeList.CUBE],
-	[EnvironmentMode.COCOBOTS]: [
+	[EnvironmentMode.COCORELI]: [
 		ShapeList.NUT,
 		ShapeList.WASHER,
 		ShapeList.SCREW,
@@ -72,7 +71,7 @@ export const GRID_SIZE: { [key in EnvironmentMode]: gridSizeProps } = {
 		y: { min: 1, max: 11 },
 		z: { min: -5, max: 5 },
 	},
-	[EnvironmentMode.COCOBOTS]: {
+	[EnvironmentMode.COCORELI]: {
 		x: { min: 1, max: 16 },
 		y: { min: 1, max: 16 },
 		z: { min: 1, max: 16 },
@@ -119,12 +118,12 @@ export const GAME_RULE: {
 			return shape;
 		return undefined;
 	},
-	[EnvironmentMode.COCOBOTS]: (shape, newCoordinates, placedCoordinates, skipCheckBelow?) => {
+	[EnvironmentMode.COCORELI]: (shape, newCoordinates, placedCoordinates, skipCheckBelow?) => {
 		//const newCoordinates = coordinateAddition(shapeHitbox[shape.shape] as CartesianCoordinate[], shape.position) as CartesianCoordinate[];
 		//const placedCoordinates = shapeInPlace.getPosition();
 		if (
 			!hasCommonCoordinate(newCoordinates, placedCoordinates) &&
-			isWithinLimits(newCoordinates, GRID_SIZE[EnvironmentMode.COCOBOTS]) &&
+			isWithinLimits(newCoordinates, GRID_SIZE[EnvironmentMode.COCORELI]) &&
 			(skipCheckBelow || newCoordinates.every((coord) => hasCoordinateBelow(coord, placedCoordinates)))
 		)
 			return shape;
@@ -150,7 +149,7 @@ export const EXPORT_GAME_LOG: {
 			})),
 		})),
 	}),
-	[EnvironmentMode.COCOBOTS]: (gameLog: GameLog) => ({
+	[EnvironmentMode.COCORELI]: (gameLog: GameLog) => ({
 		worldStates: gameLog.gameLog.map((worldState) => ({
 			timestamp: worldState.timestamp,
 			chatHistory: worldState.chatHistory.map(
@@ -170,11 +169,10 @@ export const EXPORT_GAME_LOG: {
 };
 
 export const gameModesAvailable: { [key in EnvironmentMode]: GameMode[] } = {
-	[EnvironmentMode.MINECRAFT]: [GameMode.SIMULATION, GameMode.VISUALIZATION, GameMode.NEBULA],
-	[EnvironmentMode.COCOBOTS]: [
+	[EnvironmentMode.MINECRAFT]: [GameMode.SIMULATION, GameMode.VISUALIZATION],
+	[EnvironmentMode.COCORELI]: [
 		GameMode.SIMULATION,
 		GameMode.VISUALIZATION,
-		GameMode.NEBULA,
 		GameMode.DIRECT_INSTRUCTIONS,
 		GameMode.MULTIMODAL,
 	],
@@ -182,13 +180,12 @@ export const gameModesAvailable: { [key in EnvironmentMode]: GameMode[] } = {
 
 export const defaultCameraByEnvironment: { [key in EnvironmentMode]: CameraMode } = {
 	[EnvironmentMode.MINECRAFT]: CameraMode.FREE,
-	[EnvironmentMode.COCOBOTS]: CameraMode.FREE,
+	[EnvironmentMode.COCORELI]: CameraMode.FREE,
 };
 
 export const defaultActionByGameMode: { [key in GameMode]: Action } = {
 	[GameMode.SIMULATION]: Action.PLACE,
 	[GameMode.VISUALIZATION]: Action.BREAK,
-	[GameMode.NEBULA]: Action.BREAK,
 	[GameMode.DIRECT_INSTRUCTIONS]: Action.BREAK,
 	[GameMode.MULTIMODAL]: Action.PLACE,
 };
@@ -198,7 +195,6 @@ export const gameModeComponent: {
 } = {
 	[GameMode.SIMULATION]: Simulation,
 	[GameMode.VISUALIZATION]: Visualization,
-	[GameMode.NEBULA]: Nebula,
 	[GameMode.DIRECT_INSTRUCTIONS]: DirectInstructions,
 	[GameMode.MULTIMODAL]: Multimodal,
 };

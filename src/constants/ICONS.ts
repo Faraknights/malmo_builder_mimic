@@ -10,6 +10,6 @@ export const USERS_ICON_URL: { [key in Users]: string } = {
 };
 
 export const ENVIRONMENT_MODE_ICON_URL: { [key in EnvironmentMode]: string } = {
-	[EnvironmentMode.COCOBOTS]: '/assets/icons/environmentMode/cocobots.png',
+	[EnvironmentMode.COCORELI]: '/assets/icons/environmentMode/cocoreli.png',
 	[EnvironmentMode.MINECRAFT]: '/assets/icons/environmentMode/minecraft.png',
 };

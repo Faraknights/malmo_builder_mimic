@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# Cocoreli Simulator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to Cocoreli simulator
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
 
-### `npm start`
+Install the required dependencies:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+npm install
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> **Note:** Make sure there are no warnings during installation for a smooth setup.
 
-### `npm test`
+## Development
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To start the development server and use the simulator, run:
 
-### `npm run build`
+```bash
+npm run dev
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Your application should now be running on [http://localhost:3000](http://localhost:3000).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![1739713001628](image/README/1739713001628.png)
 
-### `npm run eject`
+Click on the "Try it out !" Button, it should take around 15s to compile everything the first time then you will access the simulator
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![1739713569742](image/README/1739713569742.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In the header, you can select the mode you want. Here are the available modes:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* **Simulation** : Allows you to freely build anything in the environment and download a JSON file of your build.
+* **Visualization** : Lets you replay the JSON file of a game you previously created.
+* **Direct Instruction** : Enables you to place elements in the environment using functions in the chat, such as:
+  * Example:
+  * ```
+    place("nut", "red", 1, 1, 1)
+    place("nut", "red", 1, 1, 2)
+    place("nut", "red", 1, 1, 3)
+    ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+- **Multimodal** : Generates synthetic image data. Build a structure, and it will produce multiple images of it with different elements in the environment.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Focus on the simulator
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+On the right side, you will have access to different sections:
+
+1. **Action** : Choose between placing elements in the environment or breaking placed elements.
+2. **Color Picker** : Select the color of the shape you will place.
+3. **Shape Picker** : Choose the shape to place in the environment.
+4. **Chat** : Communicate with either the architect or the builder. You can switch between them by clicking the white button.
+
+At the bottom, three standalone buttons allow you to:
+
+* Download the JSON logs of the game.
+* Take a screenshot of the environment.
+* Erase the environment.

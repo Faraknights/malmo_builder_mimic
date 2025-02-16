@@ -8,7 +8,7 @@ const ColorPicker: React.FC = () => {
 		environmentMode: { environmentMode },
 	} = useGlobalState();
 
-	const nbColorByRow = environmentMode === EnvironmentMode.COCOBOTS ? 5 : 3;
+	const nbColorByRow = environmentMode === EnvironmentMode.COCORELI ? 5 : 3;
 	const ColorsByRow = [];
 	for (let i = 0; i < colors.length; i += nbColorByRow) {
 		ColorsByRow.push(colors.slice(i, i + nbColorByRow));

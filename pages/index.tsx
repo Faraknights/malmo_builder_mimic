@@ -8,16 +8,16 @@ const Home: React.FC = () => {
 
 	const navigateToSimulator = () => {
 		setClicked(true);
-		router.push('/simulation/minecraft');
+		router.push('/simulation/cocoreli');
 	};
 
 	return (
 		<div id="homepage">
 			<h1>
 				Welcome to the simulator for the <br />
-				<span>project COCOBOTS</span>
+				<span>project COCORELI</span>
 			</h1>
-			<img src={`${router.basePath}/assets/images/logo_cocobots.png`} alt="Logo of Cocobots" />
+			<img src={`${router.basePath}/assets/images/logo_cocoreli.png`} alt="Logo of ENVIRONMENT" />
 			<button onMouseDown={navigateToSimulator}>
 				{clicked ? (
 					<img src={`${router.basePath}/assets/images/loading_horizontal.gif`} alt="loading" />

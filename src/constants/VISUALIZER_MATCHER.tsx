@@ -15,7 +15,7 @@ export const VISUALIZER_MATCHER: {
 		[FileExtension.CSV]: minecraftCSVReader,
 		[FileExtension.JSON]: minecraftJSONReader,
 	},
-	[EnvironmentMode.COCOBOTS]: {
+	[EnvironmentMode.COCORELI]: {
 		[FileExtension.JSON]: cocobotsJSONReader,
 		[FileExtension.JSONL]: cocobotsJSONLReader,
 	},
