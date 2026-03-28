@@ -1,46 +1,168 @@
-# Getting Started with Create React App
+🚀 **Live demo available here:** https://faraknights.github.io/malmo_builder_mimic/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# COCOBOTS 3D Simulator & Visualizer
 
-## Available Scripts
+This repository contains a 3D interactive simulator and visualization tool developed in a research context for the **COCOBOTS project**.
 
-In the project directory, you can run:
+The goal of this tool is to facilitate the **creation, manipulation, and visualization of experimental data** in a controlled virtual environment. It is designed to support both data generation workflows and model interaction, particularly for structured environments and multimodal research.
 
-### `npm start`
+![Environment](/public/assets/images/example_ENVIRONMENT.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Overview
 
-### `npm test`
+The simulator provides a flexible 3D environment where users can:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Create synthetic datasets through structured simulations  
+- Visualize and replay previously generated data  
+- Interact with AI models in a spatial context  
+- Generate multimodal data for future research use cases  
 
-### `npm run build`
+The system is built as a **React / Next.js application**, with additional backend components for handling simulation data.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Simulation Environments
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Minecraft Mode
 
-### `npm run eject`
+This mode is based on a **block-world environment**, inspired by Minecraft-like structures.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Forms the foundation of the **Nebula model development**
+- Allows grid-based spatial reasoning
+- Ideal for structured and discrete environment experiments
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 2. COCOBOTS Mechanical Environment
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This environment eatures 9 basic objects: nuts (3 types),
+washers, screws, bridges (2 types), bolts, and gas-
+kets.
 
-## Learn More
+It is designed for more **realistic and applied scenarios**, especially for robotics and manipulation tasks.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Core Functionalities
+
+### Simulation Mode
+
+Allows users to:
+
+- Freely place objects in the environment  
+- Construct custom scenes  
+- Export simulation data for later reuse  
+
+This mode is primarily used for **dataset creation**.
+
+---
+
+### Visualization Mode
+
+This mode enables:
+
+- Importing simulation data  
+- Loading external data formats compatible with model outputs  
+- Replaying and analyzing previously generated environments  
+
+It is particularly useful for **evaluation and debugging**.
+
+---
+
+### Nebula Interaction Mode
+
+This mode enables interaction with the **Nebula model**.
+
+- Requires Nebula to be running separately  
+- Users interact via a **chat interface**  
+- The model generates actions and places objects in the environment  
+
+This provides a **human-in-the-loop interface** for testing model behavior in a spatial context.
+
+---
+
+### COCOBOTS-Specific Modes
+
+#### Direct Instruction Mode
+
+Allows explicit programmatic control of the environment.
+
+Example:
+
+```javascript
+place("nut", "red", 1, 1, 1);
+place("nut", "red", 1, 2, 1);
+place("nut", "red", 1, 3, 1);
+place("nut", "red", 1, 4, 1);
+```
+
+This will place a vertical row of red nuts in the environment.
+
+This mode is useful for:
+
+- Deterministic scene generation  
+- Debugging  
+- Controlled experiments  
+
+---
+
+#### Multimodal Mode
+
+Designed for **data generation for multimodal models**.
+
+- Captures images of the environment  
+- Produces datasets combining spatial and visual information  
+- Intended for future multimodal learning pipelines  
+
+---
+
+## Project Structure
+
+```
+.
+├── node-backend/     # Backend services for simulation and data handling
+├── pages/            # Next.js pages
+├── public/           # Static assets
+├── src/              # Core application logic
+├── build/            # Build artifacts
+├── out/              # Exported output
+└── electron.mjs      # Electron entry point (desktop integration)
+```
+
+---
+
+## Usage
+
+The environment is fully accessible through the live demo hosted on GitHub Pages:
+
+https://faraknights.github.io/malmo_builder_mimic/
+
+---
+
+## Research Context
+
+This tool was developed as part of the **COCOBOTS research initiative**, with a focus on:
+
+- Structured environment simulation  
+- Human-AI interaction  
+- Multimodal data generation  
+- Robotics-inspired virtual environments  
+
+It is intended as a **research platform**, not a production-ready system.
+
+---
+
+## Future Work
+
+- Integration with multimodal learning pipelines  
+- Improved model-environment interaction  
+- Enhanced dataset export formats  
+- Real-time collaboration features  
+
+---
+
+## Repository
+
+https://github.com/ccbts/
